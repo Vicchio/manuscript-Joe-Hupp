@@ -4,6 +4,8 @@
 %% the target journal and optionally the manuscript type. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[journal=jctcce,manuscript=article]{achemso}
+%\documentclass[12pt]{article}
+%\usepackage[letterpaper,left=0.5in,right=0.5in,top=1.0in,bottom=1.0in]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Place any additional packages needed here.  Only include packages
@@ -16,6 +18,9 @@
 \usepackage{siunitx} % generating degrees Celsius in the document 
 \usepackage{color}
 \usepackage{soul} % allows highlighting text 
+\usepackage{makecell}
+\usepackage{booktabs}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -149,13 +154,6 @@
     \item Outcomes of the paper:
     \begin{itemize}
         \item Probe catalyst stability in environments containing \ce{H2} for both \ce{Ni} and \ce{Cu} supported metal complexes as a function of temperature, and \ce{H2} and \ce{H2O} partial pressures. 
-        \item Preliminary kinetic investigations related to the \ce{H2} adsorption and dissociation as well as proton migration along the cluster: 
-        \begin{itemize}
-            \item Does adsorption and dissociation prefer the following process: \ce{H2 + site -> 2H-site} (onto same site) or \ce{H2 + 2*site -> H-site + H-site} (onto different sites)? 
-            \item What are the sites involved in the dissociation process?
-            \item What are the kinetic barriers behind the dissociation process?
-            \item How easily can the dissociated \ce{H} atoms move along cluster (what are the barrier behind this process)?
-        \end{itemize}
     \end{itemize}
 \end{itemize}
 
@@ -166,49 +164,107 @@
     \label{fig:MOFstructure}
 \end{figure}
 
+% The introduction section should consist of 4 paragraphs. 
+
+% Paragraph 1: General Statement about these catalysts 
+
+
+% Paragraph 2: More specific issue and problems 
+% the different types of potential models for these systems.. there are different modeling choices that can be made for these systems.. talk about the different Ni(II) models comprised of a single Ni(II) atoms.. 
+
+
+% Paragraph 3: 
+% Talk about some of the limitations.. if we want to model the catalysis, we need a reasonable structures to determine the kinetic information.. we don't have that information.. we are missing out on appropriate models.. numerous papers that suggest that modeling is appropriate.. however,. what about the differences in trends between different models..? That could be a major issue and something worth thinking about more.. 
+
+
+
+% Paragraph 4: specifically what has been shown for your work (think precursor here for your project
+% here I state specifically what I find in my paper..
+
+
+% think back to the discuss that I had with Rachel about the paper.. that's what she wants me to include for this section.. I need to talk and emphasize the catalyst structure here, which is something that needs to be done... I can do that.. for sure.. I just need to spend the time in trying to write up that section for this particular paper --> really focus on what those reference structure are going to be actually be like here. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Methodology
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage
 \section{Methodology}
-To capture how the supported metal complex morphology (structure and composition) is impacted by the reaction conditions (temperature ($T$), pressure ($P$), and composition), \textit{ab initio} thermodynamic analysis was used.\textit{ab initio} thermodynamic analysis, also called "first-principles thermodynamics," has been used to study the influence of gas phase conditions on catalysis on Oxygen Chemisorption on \ce{Pt(111)},\cite{Getman2008} the interactions between cluster-support and cluster-adsorbate \ce{Pt8} clusters on alumina in a hydrogen gas (\ce{H2}) environment,\cite{Sun2019} and the structure and reversibility of \ce{Cu}-oxo active sites.\cite{Grundner2015,Li2016,Paolucci2016} The stability of two metal complexes (Cu-NU-1000 and Ni-NU-1000) in a reducing environment were investigated.  
+%To capture how the supported metal complex  (structure and composition) is impacted by the %reaction conditions (temperature ($T$), pressure ($P$), and composition), \textit{ab initio} %thermodynamic analysis was used.\textit{ab initio} thermodynamic analysis, also called %"first-principles thermodynamics," has been used to study the influence of gas phase conditions %on catalysis on Oxygen Chemisorption on \ce{Pt(111)},\cite{Getman2008} the interactions between %cluster-support and cluster-adsorbate \ce{Pt8} clusters on alumina in a hydrogen gas (\ce{H2}) %environment,\cite{Sun2019} and the structure and reversibility of \ce{Cu}-oxo active %sites.\cite{Grundner2015,Li2016,Paolucci2016} The stability of two metal complexes (Cu-NU-1000 %and Ni-NU-1000) in a reducing environment were investigated.  
+%
+%To determine the relative stability of different activated Cu-NU-1000 and Ni-NU-1000, the %following reversible reaction was constructed  to compare structures with different chemical %compositions: 
+%\begin{equation} \label{exp:gibbsfreeoverall}
+%    \ce{z * H2 (g) + Cu3(OH)4-MOF <=>[$\Delta G(T,P)$] Cu3O_{4-n}H_{4+2z-2n}-MOF + n * H2O}
+%\end{equation}
+%where \ce{z} is the number of molecular \ce{H2} that are dissociatively adsorbed onto the %activated cluster supported on the NU-1000 MOF (\ce{Cu3(OH)4-MOF}), \ce{n} is the number %\ce{OH}-ligands that are converted into \ce{H2O} that are removed from the starting cluster, %and \ce{Cu3O_{4-n}H_{4+2z-2n}-MOF} cluster, and $\Delta G(T,P)$ is the equilibrium Gibbs free %energy at a specific temperature ($T$) and pressure ($P$). The reference state for all %calculations is the experimentally synthesized structure (Figure \ref{fig:MOFstructure} e) and %d)), meaning in the absences of \ce{H2} gas the cluster will remain as the experimentally %synthesized structure comprised of metal hydroxo clusters. The equilibrium Gibbs free energy %for Equilibrium \ref{exp:gibbsfreeoverall} can be written as:
+%\begin{equation} \label{eqn:gen-ab-initio}
+%    \begin{split}
+%        \Delta G(T,P) & = \Delta G_{\ce{Cu3O_{4-n}H_{4+2z-2n}-MOF}} + n \cdot %\mu_{H_{2}O}^{*}(T,P) - \Delta G_{\ce{Cu3(OH)4-MOF}} - 2 \cdot z \cdot \mu_{H}^{*}(T,P)
+%    \end{split}
+%\end{equation}
+%where $\Delta G_{\ce{Cu3O_{4-n}H_{4+2z-2n}-MOF}}$ is the Gibbs free energy of the activated %species, $\Delta G_{\ce{Cu3(OH)4-MOF}}$ is the Gibbs free energy of the starting cluster, %$\mu_{H_{2}O}^{*}$ is the chemical potential of \ce{H2O} adsorbed species, and $\mu_{H}^{*}$ is %the chemical potential of an adsorbed \ce{H} atom. Analogous expressions for and Equation %\ref{eqn:gen-ab-initio} where also created for the \ce{Ni4(OH)6} cluster (see \hl{Supporting %Information)}. 
+%
+%In Equation \ref{eqn:gen-ab-initio}, the vibrational and pressure-volume contributions to the %Gibbs free energy were neglected for the cluster structures (\ce{Cu3(OH)4-MOF} and %\ce{Cu3O_{4-n}H_{4+2z-2n}-MOF}), allowing the Gibbs free energies to be approximated by their %electronic energies computed with Density Functional Theory (DFT). The chemical potential %terms, $\mu_{H}^{*}$ and $\mu_{H_{2}O}^{*}$, are dependent on the gas phase conditions ($T$ and %$P$). The adsorbed species, \ce{H2O} and \ce{H2}, are assumed to form an ideal-gas-like %reservoir with $\mu_{H}^{g}$ and $\mu_{H_{2}O}^{g}$, respectively. Therefore, the following %equilibrium expression and chemical reaction and were written:   
+%\begin{equation} \label{exp:chemicalpotential}
+%    \ce{1/2 H2(g) <=> $\mu_{H}^{*}$}
+%\end{equation}
+%\begin{equation} \label{eqn:chemicalpotential}
+%    \frac{1}{2} \: \mu_{H}^{g}(T,P) = \mu_{H}^{*}(T,P)
+%\end{equation}
+%where $\mu_{H}^{g}$ is the gas phase chemical potential. The gas chemical potential terms were %computed by correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule %with the gas-phase Gibbs free energy values. The gas-phase Gibbs free energies were computed %using the NASA Polynomials\cite{Mcbride1993} using pMuTT.\cite{LYM2019106864} The previous %assumption allow the chemical potential (as a function of $T$ and $P$) to be written as %follows:  
+%\begin{equation}
+%     \mu_{H}^{g}(T,P) = \frac{1}{2} E_{H_2} + \Delta \mu_{H}(T,P)
+%\end{equation}
+%where
+%\begin{equation}
+%    \begin{split}
+%    \Delta \mu_{H}(T,P) 
+%    & = \Delta \mu_{H}(T,P^{0}) + \frac{1}{2} RT \ln{(\frac{P_{H_{2}}}{P_{H_{2}}^{0}})} \\
+%    & = \frac{1}{2} \Delta \mu_{H_{2}}(T,P^{0}) + \frac{1}{2} RT %\ln{(\frac{P_{H_{2}}}{P_{H_{2}}^{0}})} \\
+%    & = \frac{1}{2} \bigg[ \Delta G_{H_{2}}(T,P^{0}) + RT %\ln{(\frac{P_{H_{2}}}{P_{H_{2}}^{0}})} \bigg] \\  
+%    & = \frac{1}{2} \bigg[G_{H_{2}}(T,P^{0}) - G_{H_{2}}(0\;K,P^{0}) + RT %\ln{(\frac{P_{H_{2}}}{P_{H_{2}}^{0}})} \bigg]
+%    \end{split}
+%\end{equation}
+%The gas phase values provided by pMuTT are referenced at $T=$ \SI{298}{Kelvin}; therefore, the %gas phase Gibbs Free energy were converted to be referenced at $T=$ \SI{10}{Kelvin} (see the %\hl{Supporting Information} for more details). An analogous expression was constructed for %\ce{H2O} (see \hl{Supporting Information}) to relate the gas phase Gibbs Free energy of %\ce{H2O} to the $\mu_{H_{2}O}^{*}$ chemical potential term. The electronic energies were again %calculated using DFT.  
+%
+%All electronic energies were computed from periodic density functional calculations in %CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE %functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by %\citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set (\hl{reference}) was used %to describe the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} to describe %the core electron, and a plane wave cutoff energy of 360 Ry. All atoms in the periodic unit %cell were allowed to relax during geometry optimizations. For each activated cluster, the %computed electronic energies terms were input into Equation \ref{eqn:gen-ab-initio}. By varying %the chemical potentials terms for both \hl{$\mu_{H2O}$ and $\mu_{H2}$}, the $\Delta %G(T,P,\mu_{H2O},\mu_{H2})$ was determined for a range of reaction conditions. Identifying the %lowest $\Delta G(T,P,\mu_{H_{2}O},\mu_{H_{2}})$ for all activated clusters revealed the most %favorable structure under those conditions.
 
-To determine the relative stability of different activated Cu-NU-1000 and Ni-NU-1000, the following reversible reaction was constructed  to compare structures with different chemical compositions: 
-\begin{equation} \label{exp:gibbsfreeoverall}
-    \ce{z * H2 (g) + Cu3(OH)4-MOF <=>[$\Delta G(T,P)$] Cu3O_{4-n}H_{4+2z-2n}-MOF + n * H2O}
-\end{equation}
-where \ce{z} is the number of molecular \ce{H2} that are dissociatively adsorbed onto the activated cluster supported on the NU-1000 MOF (\ce{Cu3(OH)4-MOF}), \ce{n} is the number \ce{OH}-ligands that are converted into \ce{H2O} that are removed from the starting cluster, and \ce{Cu3O_{4-n}H_{4+2z-2n}-MOF} cluster, and $\Delta G(T,P)$ is the equilibrium Gibbs free energy at a specific temperature ($T$) and pressure ($P$). The reference state for all calculations is the experimentally synthesized structure (Figure \ref{fig:MOFstructure} e) and d)), meaning in the absences of \ce{H2} gas the cluster will remain as the experimentally synthesized structure comprised of metal hydroxo clusters. The equilibrium Gibbs free energy for Equilibrium \ref{exp:gibbsfreeoverall} can be written as:
-\begin{equation} \label{eqn:gen-ab-initio}
-    \begin{split}
-        \Delta G(T,P) & = \Delta G_{\ce{Cu3O_{4-n}H_{4+2z-2n}-MOF}} + n \cdot \mu_{H_{2}O}^{*}(T,P) - \Delta G_{\ce{Cu3(OH)4-MOF}} - 2 \cdot z \cdot \mu_{H}^{*}(T,P)
-    \end{split}
-\end{equation}
-where $\Delta G_{\ce{Cu3O_{4-n}H_{4+2z-2n}-MOF}}$ is the Gibbs free energy of the activated species, $\Delta G_{\ce{Cu3(OH)4-MOF}}$ is the Gibbs free energy of the starting cluster, $\mu_{H_{2}O}^{*}$ is the chemical potential of \ce{H2O} adsorbed species, and $\mu_{H}^{*}$ is the chemical potential of an adsorbed \ce{H} atom. Analogous expressions for and Equation \ref{eqn:gen-ab-initio} where also created for the \ce{Ni4(OH)6} cluster (see \hl{Supporting Information)}. 
 
-In Equation \ref{eqn:gen-ab-initio}, the vibrational and pressure-volume contributions to the Gibbs free energy were neglected for the cluster structures (\ce{Cu3(OH)4-MOF} and \ce{Cu3O_{4-n}H_{4+2z-2n}-MOF}), allowing the Gibbs free energies to be approximated by their electronic energies computed with Density Functional Theory (DFT). The chemical potential terms, $\mu_{H}^{*}$ and $\mu_{H_{2}O}^{*}$, are dependent on the gas phase conditions ($T$ and $P$). The adsorbed species, \ce{H2O} and \ce{H2}, are assumed to form an ideal-gas-like reservoir with $\mu_{H}^{g}$ and $\mu_{H_{2}O}^{g}$, respectively. Therefore, the following equilibrium expression and chemical reaction and were written:   
-\begin{equation} \label{exp:chemicalpotential}
-    \ce{1/2 H2(g) <=> $\mu_{H}^{*}$}
-\end{equation}
-\begin{equation} \label{eqn:chemicalpotential}
-    \frac{1}{2} \: \mu_{H}^{g}(T,P) = \mu_{H}^{*}(T,P)
-\end{equation}
-where $\mu_{H}^{g}$ is the gas phase chemical potential. The gas chemical potential terms were computed by correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase Gibbs free energy values. The gas-phase Gibbs free energies were computed using the NASA Polynomials\cite{Mcbride1993} using pMuTT.\cite{LYM2019106864} The previous assumption allow the chemical potential (as a function of $T$ and $P$) to be written as follows:  
+% The new updated methodology section based on Rachel's suggestions and recommendations: 
+
+% (1) define the reference MOF structure as the starting structure in my analysis and the modified structure as.. write the expressions in terms of a generalized approach here.  
+We model the influence of reaction conditions, such as temperature ($T$) and pressure ($P$), on supported metal complex stability using molecular modeling. Specifically, \textit{ab initio} thermodynamic analysis computes the structurally stability of compositionally different structures by transforming the free energy from a fixed number of atoms to a fixed chemical potential. The as-synthesized supported metal complex on NU-1000 is comprised of adsorbed \ce{OH^{*}} and \ce{M^{*}} species and is activated with molecular \ce{H2} to form \ce{H^{*}} species. The \ce{H^{*}} species are attached to either the \ce{OH^{*}} species forming physisorbed waters (\ce{H2O^{*}}) or the \ce{M^{*}} species forming metal hydrides (\ce{M-H}). The newly formed modified structure exhibits different composition of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} species compared to the reference structure (formerly defined as the as-synthesized structure). 
+
+By transforming the free energy from a fixed number of atoms to a fixed chemical potential ($\mu_{H^{*}}$, $\mu_{OH^{*}}$, and $\mu_{Ni^{*}}$), we determine the thermodynamically favorable modified structures despite having different compositions. Equation \ref{eq:free-energy-trans} shows the generalized free energy expression \hl{(see Supporting Information for more information on derivation).}
 \begin{equation}
-     \mu_{H}^{g}(T,P) = \frac{1}{2} E_{H_2} + \Delta \mu_{H}(T,P)
+    \begin{split}
+        \Delta G^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = & \Delta G(T,N_{H^{*}},N_{OH^{*}},N_{Ni^{*}}) - (\mu_{H^{*}})(\Delta N_{H^{*}}) \\
+        & - (\mu_{OH^{*}})(\Delta N_{OH^{*}}) 
+          - (\mu_{M^{*}})(\Delta N_{M^{*}}) \\ 
+    \end{split}
+    \label{eq:free-energy-trans}
 \end{equation}
-where
+The $\Delta G(T,N_{H^{*}},N_{OH^{*}},N_{Ni^{*}})$ term is the difference in the modified structure and reference structure (defined here as the as-synthesized, starting MOF structure). The chemical potential terms,  $\mu_{H^{*}}$ and $\mu_{OH^{*}}$, depend on the temperature and gas phase reaction conditions because we assume that the adsorbate species are in equilibrium with an ideal-gas like reservoir with \ce{H2} and \ce{H2O} species. The chemical potential of the reservoir is dependent on the reaction conditions. 
+
+At equilibrium, the chemical potential of the adsorbate species is equal to the chemical potential of the gas phase species. The assumed equilibrium for $\ce{H^{*}}$ is with $\frac{1}{2}\ce{H_{2}^{g}}$ and for $\ce{OH^{*}}$ is with $\ce{H_{2}O^{g}}$/$\frac{1}{2}\ce{H_{2}^{g}}$. The combined expression for $\ce{OH^{*}}$ captures the influence of both \ce{H2O} and \ce{H2} gas phase conditions on the stability of the cluster. For further details \hl{see Support Information}. The metal chemical potential term ($\mu_{M^{*}}$) is independent of the reaction conditions and the metal chemical potential term is approximated by free energy for a bulk metal system. Equation \ref{eq:chemicalpotentialeq} shows the chemical potential expressions for the adsorbed species. \begin{equation}
+    \begin{split}
+        \mu_{H^{*}} &= \frac{1}{2} \mu_{H_{2}}^{g}(T,P) \\ 
+        \mu_{OH^{*}} &= \mu_{H_{2}O}^{g}(T,P) - \frac{1}{2} \mu_{H_{2}}^{g}(T,P) \\
+        \mu_{M^{*}} &= E_{M-bulk}
+    \end{split}
+    \label{eq:chemicalpotentialeq}
+\end{equation}
+The $\mu_{i}^{g}(T,P)$ terms contain the temperature and pressure influences of the reaction conditions. Equation \ref{eq:chemicalpotentialrel} computes the chemical potentials by correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase Gibbs free energy values at a specific temperature and pressure.
 \begin{equation}
     \begin{split}
-    \Delta \mu_{H}(T,P) 
-    & = \Delta \mu_{H}(T,P^{0}) + \frac{1}{2} RT \ln{(\frac{P_{H_{2}}}{P_{H_{2}}^{0}})} \\
-    & = \frac{1}{2} \Delta \mu_{H_{2}}(T,P^{0}) + \frac{1}{2} RT \ln{(\frac{P_{H_{2}}}{P_{H_{2}}^{0}})} \\
-    & = \frac{1}{2} \bigg[ \Delta G_{H_{2}}(T,P^{0}) + RT \ln{(\frac{P_{H_{2}}}{P_{H_{2}}^{0}})} \bigg] \\  
-    & = \frac{1}{2} \bigg[G_{H_{2}}(T,P^{0}) - G_{H_{2}}(0\;K,P^{0}) + RT \ln{(\frac{P_{H_{2}}}{P_{H_{2}}^{0}})} \bigg]
+        \mu_{H_{2}}^{g}(T,P) &= E_{H_2} + \Delta \mu_{H_{2}}(T,P)  = E_{H_{2}} + \Big[ \Delta G_{H_{2}}(T,P^{o}) + RT \ln{\Big( \frac{P_{H_{2}}}{P^{o}} \Big)} \Big] \\  
+        \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O} + \Delta \mu_{H_{2}O}(T,P^{o}) =  E_{H_{2}O} + \Big[ \Delta G_{H_{2}O}(T,P^{o}) + RT \ln{\Big( \frac{P_{H_{2}O}}{P^{o}} \Big)} \Big]
     \end{split}
+    \label{eq:chemicalpotentialrel}
 \end{equation}
-The gas phase values provided by pMuTT are referenced at $T=$ \SI{298}{Kelvin}; therefore, the gas phase Gibbs Free energy were converted to be referenced at $T=$ \SI{10}{Kelvin} (see the \hl{Supporting Information} for more details). An analogous expression was constructed for \ce{H2O} (see \hl{Supporting Information}) to relate the gas phase Gibbs Free energy of \ce{H2O} to the $\mu_{H_{2}O}^{*}$ chemical potential term. The electronic energies were again calculated using DFT.  
+ The gas-phase Gibbs free energies ($\Delta G_{i}(T,P^{o})$) were computed using the NASA Polynomials\cite{Mcbride1993} in the pMuTT\cite{LYM2019106864} Python package at standard pressures to capture the influence of temperature. The pressure effects are captured assuming ideal gas for the gas phase species. 
 
-All electronic energies were computed from periodic density functional calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set (\hl{reference}) was used to describe the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} to describe the core electron, and a plane wave cutoff energy of 360 Ry. All atoms in the periodic unit cell were allowed to relax during geometry optimizations. For each activated cluster, the computed electronic energies terms were input into Equation \ref{eqn:gen-ab-initio}. By varying the chemical potentials terms for both \hl{$\mu_{H2O}$ and $\mu_{H2}$}, the $\Delta G(T,P,\mu_{H2O},\mu_{H2})$ was determined for a range of reaction conditions. Identifying the lowest $\Delta G(T,P,\mu_{H_{2}O},\mu_{H_{2}})$ for all activated clusters revealed the most favorable structure under those conditions.  
+All electronic energies were computed from periodic density functional calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set (\hl{reference}) describes the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} describes the core electron. The plane wave cutoff energy is 360 Ry and  all atoms in the periodic unit cell were allowed to relax during geometry optimizations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Results
@@ -233,17 +289,18 @@ All electronic energies were computed from periodic density functional calculati
 
 \begin{center}
 \begin{table}
+  \setlength\tabcolsep{8pt}
   \caption{Copper Formal Charge State and \ce{Cu-Cu} Distances.}
   \label{tbl:Cu3oxidationstates}
   \begin{tabular}{lccc}
     \hline
-        Structure  &  \ce{Cu} Formal Charge &   Potential \ce{Cu} Oxidation State & \ce{Cu-Cu} Distance (A) \\
+        Structure  &  \thead{\ce{Cu} Formal \\ Charge\textsuperscript{\emph{a}}} &   \thead{Potential \ce{Cu} \\ Oxidation State} & \thead{\ce{Cu-Cu} \\ Distance (A)} \\
         \hline
-        a) \ce{(CuHCuHCu)}                 & $\frac{4}{3}$ & \ce{Cu(0)}, \ce{Cu(0)}, \ce{Cu(0)}       & 2.96, 3.10  \\
-        b) \ce{(CuHCu)(Cu)(OH)3}           & 2             & \ce{Cu(I)}, \ce{Cu(I)}, \ce{Cu(II)}      & 2.81, 3.02  \\
-        c) \ce{(CuHCu)Cu(OH)3 \cdot 1H2O}  & 2             & \ce{Cu(I)}, \ce{Cu(I)}, \ce{Cu(II)}      & 2.83, 3.03  \\
-        d) \ce{(CuCu)(Cu)}                 & $\frac{2}{3}$ & \ce{Cu(0)}, \ce{Cu(I)}, \ce{Cu(I)}       & 2.37  \\
-        e) \ce{Cu3(OH)4}                   & 2             & \ce{Cu(II)}, \ce{Cu(II)}, \ce{Cu(II)}    & 2.98, 3.02  \\
+        a) \ce{(CuHCuHCu)}                 & $\frac{4}{3}$ & \ce{Cu(0)}, \ce{Cu(II)}, \ce{Cu(II)}       & 2.96, 3.10  \\
+        b) \ce{(CuHCu)(Cu)(OH)3}           & 2             & \ce{Cu(II)}, \ce{Cu(II)}, \ce{Cu(II)}      & 2.81, 3.02  \\
+        c) \ce{(CuHCu)Cu(OH)3 \cdot 1H2O}  & 2             & \ce{Cu(II)}, \ce{Cu(II)}, \ce{Cu(II)}      & 2.83, 3.03  \\
+        d) \ce{(CuCu)(Cu)}                 & $\frac{2}{3}$ & \ce{Cu(0)}, \ce{Cu(I)}, \ce{Cu(I)}         & 2.37  \\
+        e) \ce{Cu3(OH)4}                   & 2             & \ce{Cu(II)}, \ce{Cu(II)}, \ce{Cu(II)}      & 2.98, 3.02  \\
         \hline
     \end{tabular} \\
     \textsuperscript{\emph{a}} Formal Charge given on a per Cu atom basis. \\
@@ -251,8 +308,12 @@ All electronic energies were computed from periodic density functional calculati
 \end{center}
 
 \begin{itemize}
-    \item The structure of \ce{Cu3(OH)4} complex is altered depending on the gas phase conditions. There exists the formation of physisorbed \ce{H2O} and \ce{Cu-H} species due to the dissociative adsorption of \ce{H2} (which has a larger driving forces as the gas phase, \ce{H2} partial pressure increases). 
-    \item \ce{H2} partial pressure AND \ce{H2O} partial pressure are important in the structural stability. 
+    \item The structure of \ce{Cu3(OH)4} complex is altered depending on the gas phase conditions. The phase diagram for \ce{Cu3(OH)4} shows the formation of physisorbed \ce{H2O} and \ce{Cu-H} species due to the adsorption and dissociation of \ce{H2}. 
+    \begin{itemize}
+        \item The physisorbed \ce{H2O} species are formed by converting one of the \ce{OH}-ligands in the cluster. The additional proton is from the adsorption of the gas phase \ce{H2}. For \ce{Cu(OH)4}, the structure contains 4 \ce{OH}-ligands that link the \ce{Cu} atoms across the c-pore. Figure \ref{fig:phasediagramCu3} c) shows the the physisorbed \ce{H2O} and the \ce{OH}-ligand replacement with an \ce{H} atom. Figure \ref{fig:phasediagramCu3} shows how as the gas phase \ce{H2O} decreases, the weakly bound \ce{H2O} molecule ( \ref{fig:structurediagramCu3} c)) desorbs from the cluster (\ref{fig:structurediagramCu3} b)).
+        \item The \ce{Cu-H} species form when again by the dissociation of \ce{H2} on the cluster. The phase diagram shows that as \ce{H2O} forms, the site previously occupied by the \ce{OH}-ligand now contains the metal hydride (\ce{Cu-H}). Interestingly, the metal hydrides that form 'bridge' two \ce{Cu} atoms. Both \ref{fig:structurediagramCu3} a), b), and c) show the bridging \ce{Cu-H-Cu} structures.
+    \end{itemize}
+    \item \ce{H2} partial pressure and \ce{H2O} partial pressure are important in the structural stability. 
     \begin{itemize}
         \item The \ce{H2O} partial pressure can be used to inhibit the dissociative adsorption of \ce{H2} (orange region on Figure \ref{fig:phasediagramCu3}).
         \item As \ce{H2O} partial pressure decreases when exposed to \ce{H2}, the cluster is reduced.
@@ -265,6 +326,12 @@ All electronic energies were computed from periodic density functional calculati
     \item We are performing additional calculation that contains two mononuclear (single-site) \ce{Cu} sites on both nodes in the c-pore with the middle \ce{Cu} atom being removed. 
 \end{itemize}
 
+\begin{itemize}
+    \item structures a) and d) both generate the more mobile species.. structure a) contained Cu-H-Cu bridge structures whereas d) generates Cu-Cu metal bonds.
+    \item structures b) and c) are analogous structures, except the partial pressure of \ce{H2O} is sufficiently high, which can be used to prevent the desorption of \ce{H2O} on the cluster. Both structures show the replacement of a hydroxo ligand has been replaced with a metal hydride. For the multinuclear clusters, these metal hydride structures are common. 
+    \item 
+\end{itemize}
+ 
 \newpage
 \subsection{Ni-NU-1000}
 \begin{figure}[H]
@@ -280,11 +347,12 @@ Figure \ref{fig:phasediagramNi4} shows the stability of the \ce{Ni4(OH)6} metal 
 %At sufficient gas phase \ce{H2} partial pressures (e.g.\ log $\frac{P_{\ce{H2}}}{P^{o}_{\ce{H2}}}=-1$ at \SI{200}{\celsius}), the cluster exhibits dynamic structural changes in both morphology and composition. The changes show the breakdown of the Ni(II) metal complex. Specifically, the the \ce{OH}-ligands are systematically replaced by \ce{H} atoms that are forming metal hydride species. The replacement of these \ce{OH}-ligands is clearly demonstrated in Figure \ref{fig:structurediagramNi4}. These structural changes are further illustrated by the reduction in the oxidation state of \ce{Ni} and the decreasing distance between \ce{Ni} atoms (Table \ref{tbl:Ni4oxidationstates}). 
 
 \begin{table}
+  \setlength\tabcolsep{8pt}
   \caption{Nickel Formal Charge and \ce{Ni-Ni} Bond Distances.}
   \label{tbl:Ni4oxidationstates}
   \begin{tabular}{lccc}
     \hline
-        Structure  &  \ce{Ni} Formal Charge\textsuperscript{\emph{a}} &    Potential \ce{Ni} Oxidation State & \ce{Ni-Ni} Distance (A) \\
+        Structure  &  \thead{\ce{Ni} Formal \\ Charge\textsuperscript{\emph{a}}} &    \thead{Potential \ce{Ni} \\ Oxidation State} & \thead{\ce{Ni-Ni} \\ Distance (A)} \\
     \hline 
     a) \ce{(NiH2Ni)(NiNi)}             & 1             & \ce{Ni(0)}, \ce{Ni(I)}, \ce{Ni(II)}, \ce{Ni(II)}     & 2.23, 2.42 \\   
     b) \ce{(Ni3H2)(Ni)(OH)2}           & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, \ce{Ni(II)}, \ce{Ni(II)}     & 2.21, 2.54 \\ 
@@ -315,18 +383,16 @@ Figure \ref{fig:phasediagramNi4} shows the stability of the \ce{Ni4(OH)6} metal 
     \item The main structures to focus on are the structures that demonstrate the \ce{Ni} reduction from \ce{Ni(II)} to \ce{Ni(0)}. These structures reveal the presence of metallic \ce{Ni} bonds (the more mobile species).
 \end{itemize}
 
-\subsection{Kinetic Investigation into $H_{2}$ adsorption and dissociation}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Discussion
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \subsection{Discussion}
 \begin{itemize}
     \item The structural characteristics of the supported metal complexes are dependent on the reaction conditions.
     \begin{itemize}
         \item In the presence of a reducing agent (\ce{H2}), the hydroxo-ligands of the supported metal complexes are removed (as \ce{H2O}). As previously suggested, we show computationally that \ce{H2} is important in breaking the bonds between the metal clusters and the NU-1000 nodes. We provide the thermodynamic landscape for these transformations.
-        \item Rather than focusing on just \ce{Cu}-NU-1000 structures, we also explored \ce{Ni}-NU-1000. Our findings show similar structural features and suggest that in a reducing environment these supported metal complexes containing \ce{OH}-ligands are not stable.  
+        \item Our findings show similar structural features and suggest that in an \ce{H2} reducing environment these supported metal complexes containing \ce{OH}-ligands are not stable.  
         \item At present, our modeling efforts demonstrate the formation of the more mobile \ce{M(0)} species. The breakdown of the supported metal complex (removal of \ce{OH}-ligands within the cluster) reduces the metal atoms, thereby generating the mobile \ce{M(0)} species.
     \end{itemize}
     \item A key question that still remains is whether these reduced supported metal complexes still exist as a combination of NPs and multinuclear metal active sites or mononuclear active sites (single-sites) above \SI{200}{Celsius}.
