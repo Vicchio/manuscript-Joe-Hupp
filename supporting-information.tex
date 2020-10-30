@@ -49,11 +49,53 @@ Nickel(II) and Copper(II) Supported Metal Complex Stability in NU-1000 Under Hyd
 
 \section{Computational Methodology}
 \subsection{Deriving Free Energy Expression}
-The free energy was transformed from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of different activated clusters. 
+We transformed the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of the different activated clusters (shown in Equation \ref{eq:transformation1})
 \begin{equation}
-    \Delta G(T,P,N_{H},N_{OH},N_{M}) \rightarrow \Delta G(T,P,\mu_{H},\mu_{OH},\mu_{M})
+    \Delta G^{0}(T,P,N_{H},N_{OH},N_{M}) \rightarrow \Delta G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})
+    \label{eq:transformation1}
 \end{equation}
-Legendre's transformed 
+where $N_{H}$ is the number of adsorbed $H$ on the cluster with chemical potential $\mu_{H^{*}}$, $N_{OH}$ is the number of adsorbed $OH$ on the cluster with chemical potential $\mu_{OH^{*}}$, and $N_{H}$ is the number of adsorbed metal species ($M$) on the cluster with chemical potential $\mu_{M^{*}}$. Using Legendre's transforms, the free energy is is written as Equation \ref{eq:transformation2}:
+\begin{equation}
+    \Delta G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) = \Delta G^{0}(T,P,N_{H},N_{OH},N_{M}) - (\mu_{H^{*}})(N_{H}) - (\mu_{OH^{*}})(N_{OH}) - (\mu_{M^{*}})(N_{OH})  
+    \label{eq:transformation2}
+\end{equation}
+
+%TODO: must continue to outline the different in free energy to generate the reference from the paper about it. 
+
+The $^{*}$ indicates the species is bound to the cluster. For both models (\ce{Cu} and \ce{Ni}), the model is comprised of \ce{OH} ligands linking the metal atoms and connecting the \ce{Zr} nodes. To relate the free energy to reaction conditions ($T$ and $P$), the adsorbed species chemical potential must be related to the chemical potential of the gas phase species through equilibrium expressions. \\ 
+
+For $H^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} gas:
+\begin{equation}
+    \frac{1}{2} H_{2} \ce{<=>} H^{*}
+\end{equation}
+where the chemical potential terms are related by: 
+\begin{equation}
+    \frac{1}{2} \mu_{H_{2}}(T,P) = \mu_{H^{*}}
+\end{equation}
+
+For $OH^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} and \ce{H2O} gas:
+\begin{equation}
+    \frac{1}{2} H_{2} + OH \ce{<=>} H_{2}O
+\end{equation}
+where the chemical potential terms are related by: 
+\begin{equation}
+    \frac{1}{2} \mu_{H_{2}}(T,P) + \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) 
+\end{equation}
+\begin{equation}
+    \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) - \frac{1}{2} \mu_{H_{2}}(T,P)    
+\end{equation}
+
+For $M^{*}$, the assumed equilibrium is with a reservoir of bulk-\ce{M}:
+\begin{equation}
+    bulk-M \ce{<=>} M^{*}
+\end{equation}
+where the chemical potential terms are related by: 
+\begin{equation}
+    \mu_{bulk-M} = \mu_{M^{*}}
+\end{equation}
+\begin{equation}
+    \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) - \frac{1}{2} \mu_{H_{2}}(T,P)    
+\end{equation}
 
 \subsubsection{}
 
