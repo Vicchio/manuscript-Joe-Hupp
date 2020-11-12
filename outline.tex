@@ -297,7 +297,7 @@ The gas phase chemical potential terms ($\mu_{i}^{g}(T,P)$) are computed by by c
  
 All electronic energies were computed from periodic density functional calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set (\hl{reference}) describes the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} describes the core electron. The plane wave cutoff energy is 360 Ry and  all atoms in the periodic unit cell were allowed to relax during geometry optimizations.
 
-Unrestricted Kohn-Sham (UKS) is implemented because of the variable spin states of metal atoms. For example, \ce{Ni(II)} can adopt both singlet (no unpaired electrons) and triplet (two unpaired electron) configurations. For clusters compromised of multiple metal atoms, all permutations of spin state configurations are simulated. Any structures exhibiting spin contamination were removed from the analysis \hl{see support information for more details}.   
+Unrestricted Kohn-Sham (UKS) is implemented because of the variable spin states of metal atoms. For example, \ce{Ni(II)} can adopt both singlet (no unpaired electrons) and triplet (two unpaired electron) configurations. For clusters compromised of multiple metal atoms, all permutations of spin state configurations are simulated and included in the library of candidate structure. However, any structures exhibiting spin contamination were removed from the analysis \hl{see support information for more details}.   
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -305,117 +305,144 @@ Unrestricted Kohn-Sham (UKS) is implemented because of the variable spin states 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Results}
-\subsection{Cu-NU-1000}
+In this work, we show the stability of \ce{Ni(II)} and \ce{Cu(II)} clusters under reducing reaction conditions. The reference cluster is exposed to gaseous molecular \ce{H2} to induce structural changes on the cluster, which results in a modified structure. Phase diagrams show the stability of the cluster as a function of reaction temperature and \ce{H2} partial pressure at a fixed \ce{H2O} partial pressure. The \ce{H2O} partial pressure is $10^{-13}$ atm, which is within the range of ultra high vacuum conditions \hl{REFERENCE FOR THESE CONDITIONS}. We do not expect a large \ce{H2O} partial pressure because gas phase \ce{H2O} species are formed from the removal of \ce{OH}-ligands in the cluster. Phase diagrams that vary the \ce{H2O} partial pressure can be found in the \hl{Supporting Information}. Figure \hl{XXX} shows the stability of the \ce{Ni(II)} cluster. 
 
-\begin{figure}[H]
+\begin{figure}
     \centering
-    \includegraphics[width=0.95\textwidth]{zi-images/02-Cu-Graphics/2020-08-05-Cu3-phase-diagram-V01.png}
-    \caption{Phase diagram generate by \textit{ab initio} thermodynamic analysis that captures the structural stability of a Cu(II) supported metal complex in NU-1000 at \SI{200}{\celsius}. The starting structure is the \ce{Cu3(OH)4} complex. The composition and morphology of the Cu(II) complex changes depending on the \ce{H2} and \ce{H2O} partial pressures, which produces new structural features, such as physisorbed \ce{H2O} and metal hydride structures.}
-    \label{fig:phasediagramCu3}
+%    \includegraphics{}
+    \caption{The stability of the \ce{Ni(II)} cluster at a function of temperature and \ce{H2} partial pressure at a \ce{H2O} partial pressure = $10^-13$ atm.}
+    \label{fig:my_label}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{zi-images/02-Cu-Graphics/2020-08-04-structure-diagram-Cu3OH4-V01-IMAGE.png}
-    \caption{Schematic representation of the lowest energy structures from the \textit{ab initio} thermodynamic analysis. The node colors scheme correspond to the \ce{Cu(II)} supported metal complex phase diagram (Figure \ref{fig:phasediagramCu3}).}
-    \label{fig:structurediagramCu3}
-\end{figure}
+The phase diagrams show the stability of the cluster as a function of reaction temperature and \ce{H2} partial pressure to  
 
-\begin{center}
-\begin{table}
-  \setlength\tabcolsep{8pt}
-  \caption{Copper Formal Charge State and \ce{Cu-Cu} Distances.}
-  \label{tbl:Cu3oxidationstates}
-  \begin{tabular}{lccc}
-    \hline
-        Structure  &  \thead{\ce{Cu} Formal \\ Charge\textsuperscript{\emph{a}}} &   \thead{Potential \ce{Cu} \\ Oxidation State} & \thead{\ce{Cu-Cu} \\ Distance (A)} \\
-        \hline
-        a) \ce{(CuHCuHCu)}                 & $\frac{4}{3}$ & \ce{Cu(0)}, \ce{Cu(II)}, \ce{Cu(II)}       & 2.96, 3.10  \\
-        b) \ce{(CuHCu)(Cu)(OH)3}           & 2             & \ce{Cu(II)}, \ce{Cu(II)}, \ce{Cu(II)}      & 2.81, 3.02  \\
-        c) \ce{(CuHCu)Cu(OH)3 \cdot 1H2O}  & 2             & \ce{Cu(II)}, \ce{Cu(II)}, \ce{Cu(II)}      & 2.83, 3.03  \\
-        d) \ce{(CuCu)(Cu)}                 & $\frac{2}{3}$ & \ce{Cu(0)}, \ce{Cu(I)}, \ce{Cu(I)}         & 2.37  \\
-        e) \ce{Cu3(OH)4}                   & 2             & \ce{Cu(II)}, \ce{Cu(II)}, \ce{Cu(II)}      & 2.98, 3.02  \\
-        \hline
-    \end{tabular} \\
-    \textsuperscript{\emph{a}} Formal Charge given on a per Cu atom basis. \\
-\end{table}    
-\end{center}
+The stability of \ce{Ni(II)} cluster under reducing conditions is shown in \hl{Figure XXXX)}.
 
+The stability of the \ce{Ni(II)} cluster under reducing conditions is sho
 \begin{itemize}
-    \item The structure of \ce{Cu3(OH)4} complex is altered depending on the gas phase conditions. The phase diagram for \ce{Cu3(OH)4} shows the formation of physisorbed \ce{H2O} and \ce{Cu-H} species due to the adsorption and dissociation of \ce{H2}. 
+    \item Reaction conditions are shown to depend on the gas phase conditions. 
+    \item Phase Diagram 1: full transformation with of H*, OH*, M* 
     \begin{itemize}
-        \item The physisorbed \ce{H2O} species are formed by converting one of the \ce{OH}-ligands in the cluster. The additional proton is from the adsorption of the gas phase \ce{H2}. For \ce{Cu(OH)4}, the structure contains 4 \ce{OH}-ligands that link the \ce{Cu} atoms across the c-pore. Figure \ref{fig:phasediagramCu3} c) shows the the physisorbed \ce{H2O} and the \ce{OH}-ligand replacement with an \ce{H} atom. Figure \ref{fig:phasediagramCu3} shows how as the gas phase \ce{H2O} decreases, the weakly bound \ce{H2O} molecule ( \ref{fig:structurediagramCu3} c)) desorbs from the cluster (\ref{fig:structurediagramCu3} b)).
-        \item The \ce{Cu-H} species form when again by the dissociation of \ce{H2} on the cluster. The phase diagram shows that as \ce{H2O} forms, the site previously occupied by the \ce{OH}-ligand now contains the metal hydride (\ce{Cu-H}). Interestingly, the metal hydrides that form 'bridge' two \ce{Cu} atoms. Both \ref{fig:structurediagramCu3} a), b), and c) show the bridging \ce{Cu-H-Cu} structures.
+        \item Phase diagram which show both T and PH2 that contains the correct structures. 
+        \item Selecting a set of conditions and plotting the free energy of those structures along a set of conditions (think back to the line plots shown). Can generate the line plots at different conditions --> and then can use boltzmann weighting to determine the fraction of those structures at those conditions... 
+        \item the most relevant structures that should be included on the diagram for this step. 
+        \item need to select a partial pressure of H2O, which we will select as 10-10 to 10-15 because this is about the pressure for UHV..and I can plot the variation of this assumption in the SI for the paper to show. 
+        \item Last statement..which will show in the SI a structure that contains the full cluster stripped away from MOFs... the phase diagram show the transformation of all Ni atoms away from the cluster
     \end{itemize}
-    \item \ce{H2} partial pressure and \ce{H2O} partial pressure are important in the structural stability. 
-    \begin{itemize}
-        \item The \ce{H2O} partial pressure can be used to inhibit the dissociative adsorption of \ce{H2} (orange region on Figure \ref{fig:phasediagramCu3}).
-        \item As \ce{H2O} partial pressure decreases when exposed to \ce{H2}, the cluster is reduced.
-    \end{itemize}
-    \item The two reduced structures (on Figure \ref{fig:phasediagramCu3} and Figure \ref{fig:structurediagramCu3}) are \ce{(CuHCuHCu)} and \ce{(CuCu)(Cu)}. Both structures show the conversion and removal of all \ce{OH}-ligands.
-    \begin{itemize}
-        \item \ce{(CuHCuHCu)} shows the complete reduction of \ce{Cu} and presence of \ce{Cu-H-Cu} bridging structures. The bond distance seems too large for any \ce{Cu-Cu} metallic bonds.  
-        \item \ce{(CuCu)(Cu)} shows the formation of a metallic \ce{Cu-Cu} bond (as indicated by the 2.37 A. The \ce{Cu} atoms are not completely reduced, rather exist as \ce{Cu(0)}, \ce{Cu(I)}, and \ce{Cu(I)}. This structure is particularly interesting because it shows the formation of the mobile \ce{Cu(0)} species. 
-    \end{itemize}
-    \item We are performing additional calculation that contains two mononuclear (single-site) \ce{Cu} sites on both nodes in the c-pore with the middle \ce{Cu} atom being removed. 
 \end{itemize}
 
-\begin{itemize}
-    \item structures a) and d) both generate the more mobile species.. structure a) contained Cu-H-Cu bridge structures whereas d) generates Cu-Cu metal bonds.
-    \item structures b) and c) are analogous structures, except the partial pressure of \ce{H2O} is sufficiently high, which can be used to prevent the desorption of \ce{H2O} on the cluster. Both structures show the replacement of a hydroxo ligand has been replaced with a metal hydride. For the multinuclear clusters, these metal hydride structures are common. 
-    \item 
-\end{itemize}
- 
-\newpage
-\subsection{Ni-NU-1000}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{zi-images/01-Ni-Graphics/2020-08-31-Phase-Diagram-V02.png}
-    \caption{Phase diagram generate by \textit{ab initio} thermodynamic analysis that captures the structural stability of a Ni(II) supported metal complex in NU-1000 at \SI{200}{\celsius}. The starting structure is the \ce{Ni4(OH)6} complex. The composition and morphology of the Ni(II) complex changes depending on the \ce{H2} and \ce{H2O} partial pressures, which produces new structural features, such as physisorbed \ce{H2O} and metal hydride structures.}
-    \label{fig:phasediagramNi4}
-\end{figure}
-
-Figure \ref{fig:phasediagramNi4} shows the stability of the \ce{Ni4(OH)6} metal complex under different hydrogenation conditions. As the partial pressure of \ce{H2} increase (a more positive chemical potential) under ambient conditions, the \ce{OH}-ligands within the \ce{Ni4(OH)6} metal complex are converted into physisorbed \ce{H2O} through the dissociative adsorption of \ce{H2} onto the cluster. Increasing the gas phase \ce{H2} partial pressure, increases the driving force for dissociative adsorption. However, if the partial pressure of \ce{H2O} in the gas phase is too large, the desorption of weakly bound \ce{H2O} molecules is prevented (as shown in Figures \ref{fig:phasediagramNi4} and \ref{fig:structurediagramNi4}). Additionally, \textit{ab initio} thermodynamic analysis suggests that at high enough partial pressure of both \ce{H2O} and \ce{H2} that the cluster can exhibit both physisorbed waters and metal hydride structures.
- 
-
-%At sufficient gas phase \ce{H2} partial pressures (e.g.\ log $\frac{P_{\ce{H2}}}{P^{o}_{\ce{H2}}}=-1$ at \SI{200}{\celsius}), the cluster exhibits dynamic structural changes in both morphology and composition. The changes show the breakdown of the Ni(II) metal complex. Specifically, the the \ce{OH}-ligands are systematically replaced by \ce{H} atoms that are forming metal hydride species. The replacement of these \ce{OH}-ligands is clearly demonstrated in Figure \ref{fig:structurediagramNi4}. These structural changes are further illustrated by the reduction in the oxidation state of \ce{Ni} and the decreasing distance between \ce{Ni} atoms (Table \ref{tbl:Ni4oxidationstates}). 
-
-\begin{table}
-  \setlength\tabcolsep{8pt}
-  \caption{Nickel Formal Charge and \ce{Ni-Ni} Bond Distances.}
-  \label{tbl:Ni4oxidationstates}
-  \begin{tabular}{lccc}
-    \hline
-        Structure  &  \thead{\ce{Ni} Formal \\ Charge\textsuperscript{\emph{a}}} &    \thead{Potential \ce{Ni} \\ Oxidation State} & \thead{\ce{Ni-Ni} \\ Distance (A)} \\
-    \hline 
-    a) \ce{(NiH2Ni)(NiNi)}             & 1             & \ce{Ni(0)}, \ce{Ni(I)}, \ce{Ni(II)}, \ce{Ni(II)}     & 2.23, 2.42 \\   
-    b) \ce{(Ni3H2)(Ni)(OH)2}           & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, \ce{Ni(II)}, \ce{Ni(II)}     & 2.21, 2.54 \\ 
-    c) \ce{(NiH)(Ni3H)(OH)2 * 1H2O}    & $\frac{3}{2}$ & \ce{Ni(0)}, \ce{Ni(II)}, \ce{Ni(II)}, \ce{Ni(II)}     & 2.27, 2.31 \\   
-    d) \ce{(Ni2)(NiH)2(OH)4 * 2H2O}    & 2             & \ce{Ni(II)}, \ce{Ni(II)}, \ce{Ni(II)}, \ce{Ni(II)}     & 2.72, 3.17 \\     
-    e) \ce{(Ni2H)(NiNi)(OH)}           & 1             & \ce{Ni(0)}, \ce{Ni(I)}, \ce{Ni(I)}, \ce{Ni(II)}     & 2.24, 2.50 \\  
-    f) \ce{Ni4(OH)4}                   & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, \ce{Ni(II)}, \ce{Ni(II)}   & 2.27, 3.06 \\
-    g) \ce{Ni4(OH)4 \cdot 1H2O}        & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, \ce{Ni(II)}, \ce{Ni(II)}   & 2.29, 2.96 \\
-    h) \ce{Ni4(OH)4 \cdot 2H2O}        & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, \ce{Ni(II)}, \ce{Ni(II)}   & 2.33, 3.03 \\
-    i) \ce{Ni4(OH)6}                   & 2             & \ce{Ni(II)}, \ce{Ni(II)}, \ce{Ni(II)}, \ce{Ni(II)} & 2.81, 3.03 \\
-    \hline
-  \end{tabular} \\
-  \textsuperscript{\emph{a}} Formal Charge given on a per Ni atom basis. \\
-\end{table}
-
-%The replacement of structural \ce{OH}-ligands with \ce{H} atoms, the decreasing of \ce{Ni} oxidation state, and the decreasing \ce{Ni-Ni} distances all suggests that under these reducing conditions the \ce{Ni(II)} metal complex is no longer stable. That is, thermodynamically, under these conditions the metal atoms of the supported metal complex are being liberated, suggesting that the formation of \ce{Ni} nanoparticles is favorable in this regime. The \ce{Ni(II)} atoms are reduced to metallic \ce{Ni(0)}, supported by the formation of metallic \ce{Ni} bonds. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{zi-images/01-Ni-Graphics/2020-08-31-StructureDiagram-V01.png}
-    \caption{Schematic representation of the lowest energy structures from the \textit{ab initio} thermodynamic analysis. The node colors scheme correspond to the \ce{Ni(II)} supported metal complex phase diagram (Figure \ref{fig:phasediagramNi4}).}
-    \label{fig:structurediagramNi4}
-\end{figure}
-
-\begin{itemize}
-    \item The \ce{Ni4(OH)6} phase diagram is structurally more diverse than the \ce{Cu3(OH)4} phase diagram (attributed to more metal and \ce{OH}-ligands in the \ce{Ni} metal complex). However, there are similar features as the \ce{Cu3(OH)4 }(\ref{fig:phasediagramCu3}). Both demonstrate metal hydrides, and physisorbed \ce{H2O}.
-    \item The presence of \ce{H2O} in the gas phase has a strong influence over the structurally stability. For example, at \ce{H2} partial pressure of ~ $10^-1$ bar, the reduction of the cluster is illustrated going from \ce{Ni2(NiH)2(OH)4} to \ce{(NiH2Ni)(NiNi)}. At higher \ce{H2O} partial pressure, the cluster is more likely to exist as a combination of \ce{Ni-H} and physisorbed \ce{H2O}. As the partial pressure of \ce{H2O} decreases, the formed physisorbed \ce{H2O} is removed. Overall, if the cluster is exposed to a sufficient \ce{H2} gas the cluster is reduced. 
-    \item The main structures to focus on are the structures that demonstrate the \ce{Ni} reduction from \ce{Ni(II)} to \ce{Ni(0)}. These structures reveal the presence of metallic \ce{Ni} bonds (the more mobile species).
-\end{itemize}
+%
+%\subsection{Cu-NU-1000}
+%
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.95\textwidth]{zi-images/02-Cu-Graphics/2020-08-05-Cu3-ph%ase-diagram-V01.png}
+%    \caption{Phase diagram generate by \textit{ab initio} thermodynamic analysis that %captures the structural stability of a Cu(II) supported metal complex in NU-1000 %at \SI{200}{\celsius}. The starting structure is the \ce{Cu3(OH)4} complex. The %composition and morphology of the Cu(II) complex changes depending on the \ce{H2} %and \ce{H2O} partial pressures, which produces new structural features, such as %physisorbed \ce{H2O} and metal hydride structures.}
+%    \label{fig:phasediagramCu3}
+%\end{figure}
+%
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.85\textwidth]{zi-images/02-Cu-Graphics/2020-08-04-struct%ure-diagram-Cu3OH4-V01-IMAGE.png}
+%    \caption{Schematic representation of the lowest energy structures from the %\textit{ab initio} thermodynamic analysis. The node colors scheme correspond to %the \ce{Cu(II)} supported metal complex phase diagram (Figure %\ref{fig:phasediagramCu3}).}
+%    \label{fig:structurediagramCu3}
+%\end{figure}
+%
+%\begin{center}
+%\begin{table}
+%  \setlength\tabcolsep{8pt}
+%  \caption{Copper Formal Charge State and \ce{Cu-Cu} Distances.}
+%  \label{tbl:Cu3oxidationstates}
+%  \begin{tabular}{lccc}
+%    \hline
+%        Structure  &  \thead{\ce{Cu} Formal \\ Charge\textsuperscript{\emph{a}}} &   %\thead{Potential \ce{Cu} \\ Oxidation State} & \thead{\ce{Cu-Cu} \\ Distance %(A)} \\
+%        \hline
+%        a) \ce{(CuHCuHCu)}                 & $\frac{4}{3}$ & \ce{Cu(0)}, \ce{Cu(II)}, %\ce{Cu(II)}       & 2.96, 3.10  \\
+%        b) \ce{(CuHCu)(Cu)(OH)3}           & 2             & \ce{Cu(II)}, %\ce{Cu(II)}, \ce{Cu(II)}      & 2.81, 3.02  \\
+%        c) \ce{(CuHCu)Cu(OH)3 \cdot 1H2O}  & 2             & \ce{Cu(II)}, %\ce{Cu(II)}, \ce{Cu(II)}      & 2.83, 3.03  \\
+%        d) \ce{(CuCu)(Cu)}                 & $\frac{2}{3}$ & \ce{Cu(0)}, \ce{Cu(I)}, %\ce{Cu(I)}         & 2.37  \\
+%        e) \ce{Cu3(OH)4}                   & 2             & \ce{Cu(II)}, %\ce{Cu(II)}, \ce{Cu(II)}      & 2.98, 3.02  \\
+%        \hline
+%    \end{tabular} \\
+%    \textsuperscript{\emph{a}} Formal Charge given on a per Cu atom basis. \\
+%\end{table}    
+%\end{center}
+%
+%\begin{itemize}
+%    \item The structure of \ce{Cu3(OH)4} complex is altered depending on the gas %phase conditions. The phase diagram for \ce{Cu3(OH)4} shows the formation of %physisorbed \ce{H2O} and \ce{Cu-H} species due to the adsorption and dissociation %of \ce{H2}. 
+%    \begin{itemize}
+%        \item The physisorbed \ce{H2O} species are formed by converting one of the %\ce{OH}-ligands in the cluster. The additional proton is from the adsorption %of the gas phase \ce{H2}. For \ce{Cu(OH)4}, the structure contains 4 %\ce{OH}-ligands that link the \ce{Cu} atoms across the c-pore. Figure %\ref{fig:phasediagramCu3} c) shows the the physisorbed \ce{H2O} and the %\ce{OH}-ligand replacement with an \ce{H} atom. Figure %\ref{fig:phasediagramCu3} shows how as the gas phase \ce{H2O} decreases, the %weakly bound \ce{H2O} molecule ( \ref{fig:structurediagramCu3} c)) desorbs %from the cluster (\ref{fig:structurediagramCu3} b)).
+%        \item The \ce{Cu-H} species form when again by the dissociation of \ce{H2} on %the cluster. The phase diagram shows that as \ce{H2O} forms, the site %previously occupied by the \ce{OH}-ligand now contains the metal hydride %(\ce{Cu-H}). Interestingly, the metal hydrides that form 'bridge' two \ce{Cu} %atoms. Both \ref{fig:structurediagramCu3} a), b), and c) show the bridging %\ce{Cu-H-Cu} structures.
+%    \end{itemize}
+%    \item \ce{H2} partial pressure and \ce{H2O} partial pressure are important in the %structural stability. 
+%    \begin{itemize}
+%        \item The \ce{H2O} partial pressure can be used to inhibit the dissociative %adsorption of \ce{H2} (orange region on Figure \ref{fig:phasediagramCu3}).
+%        \item As \ce{H2O} partial pressure decreases when exposed to \ce{H2}, the %cluster is reduced.
+%    \end{itemize}
+%    \item The two reduced structures (on Figure \ref{fig:phasediagramCu3} and Figure %\ref{fig:structurediagramCu3}) are \ce{(CuHCuHCu)} and \ce{(CuCu)(Cu)}. Both %structures show the conversion and removal of all \ce{OH}-ligands.
+%    \begin{itemize}
+%        \item \ce{(CuHCuHCu)} shows the complete reduction of \ce{Cu} and presence of %\ce{Cu-H-Cu} bridging structures. The bond distance seems too large for any %\ce{Cu-Cu} metallic bonds.  
+%        \item \ce{(CuCu)(Cu)} shows the formation of a metallic \ce{Cu-Cu} bond (as %indicated by the 2.37 A. The \ce{Cu} atoms are not completely reduced, rather %exist as \ce{Cu(0)}, \ce{Cu(I)}, and \ce{Cu(I)}. This structure is %particularly interesting because it shows the formation of the mobile %\ce{Cu(0)} species. 
+%    \end{itemize}
+%    \item We are performing additional calculation that contains two mononuclear %(single-site) \ce{Cu} sites on both nodes in the c-pore with the middle \ce{Cu} %atom being removed. 
+%\end{itemize}
+%
+%\begin{itemize}
+%    \item structures a) and d) both generate the more mobile species.. structure a) %contained Cu-H-Cu bridge structures whereas d) generates Cu-Cu metal bonds.
+%    \item structures b) and c) are analogous structures, except the partial pressure %of \ce{H2O} is sufficiently high, which can be used to prevent the desorption of %\ce{H2O} on the cluster. Both structures show the replacement of a hydroxo ligand %has been replaced with a metal hydride. For the multinuclear clusters, these %metal hydride structures are common. 
+%    \item 
+%\end{itemize}
+% 
+%\newpage
+%\subsection{Ni-NU-1000}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.95\textwidth]{zi-images/01-Ni-Graphics/2020-08-31-Phase-%Diagram-V02.png}
+%    \caption{Phase diagram generate by \textit{ab initio} thermodynamic analysis that %captures the structural stability of a Ni(II) supported metal complex in NU-1000 %at \SI{200}{\celsius}. The starting structure is the \ce{Ni4(OH)6} complex. The %composition and morphology of the Ni(II) complex changes depending on the \ce{H2} %and \ce{H2O} partial pressures, which produces new structural features, such as %physisorbed \ce{H2O} and metal hydride structures.}
+%    \label{fig:phasediagramNi4}
+%\end{figure}
+%
+%Figure \ref{fig:phasediagramNi4} shows the stability of the \ce{Ni4(OH)6} metal %complex under different hydrogenation conditions. As the partial pressure of \ce{H2} %increase (a more positive chemical potential) under ambient conditions, the %\ce{OH}-ligands within the \ce{Ni4(OH)6} metal complex are converted into physisorbed %\ce{H2O} through the dissociative adsorption of \ce{H2} onto the cluster. Increasing %the gas phase \ce{H2} partial pressure, increases the driving force for dissociative %adsorption. However, if the partial pressure of \ce{H2O} in the gas phase is too %large, the desorption of weakly bound \ce{H2O} molecules is prevented (as shown in %Figures \ref{fig:phasediagramNi4} and \ref{fig:structurediagramNi4}). Additionally, %\textit{ab initio} thermodynamic analysis suggests that at high enough partial %pressure of both \ce{H2O} and \ce{H2} that the cluster can exhibit both physisorbed %waters and metal hydride structures.
+% 
+%
+%%At sufficient gas phase \ce{H2} partial pressures (e.g.\ log %$\frac{P_{\ce{H2}}}{P^{o}_{\ce{H2}}}=-1$ at \SI{200}{\celsius}), the cluster exhibits %dynamic structural changes in both morphology and composition. The changes show the %breakdown of the Ni(II) metal complex. Specifically, the the \ce{OH}-ligands are %systematically replaced by \ce{H} atoms that are forming metal hydride species. The %replacement of these \ce{OH}-ligands is clearly demonstrated in Figure %\ref{fig:structurediagramNi4}. These structural changes are further illustrated by %the reduction in the oxidation state of \ce{Ni} and the decreasing distance between %\ce{Ni} atoms (Table \ref{tbl:Ni4oxidationstates}). 
+%
+%\begin{table}
+%  \setlength\tabcolsep{8pt}
+%  \caption{Nickel Formal Charge and \ce{Ni-Ni} Bond Distances.}
+%  \label{tbl:Ni4oxidationstates}
+%  \begin{tabular}{lccc}
+%    \hline
+%        Structure  &  \thead{\ce{Ni} Formal \\ Charge\textsuperscript{\emph{a}}} &   % \thead{Potential \ce{Ni} \\ Oxidation State} & \thead{\ce{Ni-Ni} \\ Distance %(A)} \\
+%    \hline 
+%    a) \ce{(NiH2Ni)(NiNi)}             & 1             & \ce{Ni(0)}, \ce{Ni(I)}, %\ce{Ni(II)}, \ce{Ni(II)}     & 2.23, 2.42 \\   
+%    b) \ce{(Ni3H2)(Ni)(OH)2}           & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, %\ce{Ni(II)}, \ce{Ni(II)}     & 2.21, 2.54 \\ 
+%    c) \ce{(NiH)(Ni3H)(OH)2 * 1H2O}    & $\frac{3}{2}$ & \ce{Ni(0)}, \ce{Ni(II)}, %\ce{Ni(II)}, \ce{Ni(II)}     & 2.27, 2.31 \\   
+%    d) \ce{(Ni2)(NiH)2(OH)4 * 2H2O}    & 2             & \ce{Ni(II)}, \ce{Ni(II)}, %\ce{Ni(II)}, \ce{Ni(II)}     & 2.72, 3.17 \\     
+%    e) \ce{(Ni2H)(NiNi)(OH)}           & 1             & \ce{Ni(0)}, \ce{Ni(I)}, %\ce{Ni(I)}, \ce{Ni(II)}     & 2.24, 2.50 \\  
+%    f) \ce{Ni4(OH)4}                   & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, %\ce{Ni(II)}, \ce{Ni(II)}   & 2.27, 3.06 \\
+%    g) \ce{Ni4(OH)4 \cdot 1H2O}        & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, %\ce{Ni(II)}, \ce{Ni(II)}   & 2.29, 2.96 \\
+%    h) \ce{Ni4(OH)4 \cdot 2H2O}        & $\frac{3}{2}$ & \ce{Ni(I)}, \ce{Ni(I)}, %\ce{Ni(II)}, \ce{Ni(II)}   & 2.33, 3.03 \\
+%    i) \ce{Ni4(OH)6}                   & 2             & \ce{Ni(II)}, \ce{Ni(II)}, %\ce{Ni(II)}, \ce{Ni(II)} & 2.81, 3.03 \\
+%    \hline
+%  \end{tabular} \\
+%  \textsuperscript{\emph{a}} Formal Charge given on a per Ni atom basis. \\
+%\end{table}
+%
+%%The replacement of structural \ce{OH}-ligands with \ce{H} atoms, the decreasing of %\ce{Ni} oxidation state, and the decreasing \ce{Ni-Ni} distances all suggests that %under these reducing conditions the \ce{Ni(II)} metal complex is no longer stable. %That is, thermodynamically, under these conditions the metal atoms of the supported %metal complex are being liberated, suggesting that the formation of \ce{Ni} %nanoparticles is favorable in this regime. The \ce{Ni(II)} atoms are reduced to %metallic \ce{Ni(0)}, supported by the formation of metallic \ce{Ni} bonds. 
+%
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.85\textwidth]{zi-images/01-Ni-Graphics/2020-08-31-Struct%ureDiagram-V01.png}
+%    \caption{Schematic representation of the lowest energy structures from the %\textit{ab initio} thermodynamic analysis. The node colors scheme correspond to %the \ce{Ni(II)} supported metal complex phase diagram (Figure %\ref{fig:phasediagramNi4}).}
+%    \label{fig:structurediagramNi4}
+%\end{figure}
+%
+%\begin{itemize}
+%    \item The \ce{Ni4(OH)6} phase diagram is structurally more diverse than the %\ce{Cu3(OH)4} phase diagram (attributed to more metal and \ce{OH}-ligands in the %\ce{Ni} metal complex). However, there are similar features as the \ce{Cu3(OH)4 %}(\ref{fig:phasediagramCu3}). Both demonstrate metal hydrides, and physisorbed %\ce{H2O}.
+%    \item The presence of \ce{H2O} in the gas phase has a strong influence over the %structurally stability. For example, at \ce{H2} partial pressure of ~ $10^-1$ %bar, the reduction of the cluster is illustrated going from \ce{Ni2(NiH)2(OH)4} %to \ce{(NiH2Ni)(NiNi)}. At higher \ce{H2O} partial pressure, the cluster is more %likely to exist as a combination of \ce{Ni-H} and physisorbed \ce{H2O}. As the %partial pressure of \ce{H2O} decreases, the formed physisorbed \ce{H2O} is %removed. Overall, if the cluster is exposed to a sufficient \ce{H2} gas the %cluster is reduced. 
+%    \item The main structures to focus on are the structures that demonstrate the %\ce{Ni} reduction from \ce{Ni(II)} to \ce{Ni(0)}. These structures reveal the %presence of metallic \ce{Ni} bonds (the more mobile species).
+%\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Discussion
