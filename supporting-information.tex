@@ -60,20 +60,16 @@ where $N_{H}$ is the number of adsorbed $H$ on the cluster with chemical potenti
     \label{eq:transformation2}
 \end{equation}
 
-The new free energy expression (Equation \ref{eq:transformation2}) allows for compsitionally different structures to be compared, with the different compositions stemming from the different gas phase conditions. The final free energy expression defining the difference between the modified and the reference structure is defined in Equation \ref{eq:freenergyfinal}:
+The new free energy expression (Equation \ref{eq:transformation2}) allows for compositionally different structures to be compared with the gas phase conditions being included in the free energy expression. The final free energy expression defining the difference between the modified and the reference structure is defined in Equation \ref{eq:freenergyfinal}:
 \begin{equation}
     \begin{split}
         \Delta G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) = \Big[&G^{0}(T,P,N_{H,mod},N_{OH,mod},N_{M^{*},mod}) \\ &- G^{0}(T,P,N_{H,ref},N_{OH,ref},N_{M^{*},ref}) \Big] \\ &- (\mu_{H^{*}})(\Delta N_{H}) \\ &- (\mu_{OH^{*}})(\Delta N_{OH}) \\ &- (\mu_{M^{*}})(\Delta N_{M^{*}}) 
     \end{split}
     \label{eq:freenergyfinal}
 \end{equation}
-where $\Delta N_{i}$ terms represent the different between the modified ($N_{i,mod}$) and reference ($N_{i,ref}$) structures. 
+where $\Delta N_{i}$ terms represent the different between the modified ($N_{i,mod}$) and reference ($N_{i,ref}$) structures. The $^{*}$ indicates the species is bound to the cluster. For both models (\ce{Cu} and \ce{Ni}), the model is comprised of \ce{OH} ligands linking the metal atoms and connecting the \ce{Zr} nodes. To relate the free energy to reaction conditions ($T$ and $P$), the adsorbed species chemical potential must be related to the chemical potential of the gas phase species through equilibrium expressions. \\ 
 
-%TODO: must continue to outline the different in free energy to generate the reference from the paper about it. 
-
-The $^{*}$ indicates the species is bound to the cluster. For both models (\ce{Cu} and \ce{Ni}), the model is comprised of \ce{OH} ligands linking the metal atoms and connecting the \ce{Zr} nodes. To relate the free energy to reaction conditions ($T$ and $P$), the adsorbed species chemical potential must be related to the chemical potential of the gas phase species through equilibrium expressions. \\ 
-
-\subsubsection{H}
+\subsubsection{Equilibrium expression for $H^{*}$}
 For $H^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} gas:
 \begin{equation}
     \frac{1}{2} H_{2} \ce{<=>} H^{*}
@@ -83,7 +79,7 @@ where the chemical potential terms are related by:
     \frac{1}{2} \mu_{H_{2}}(T,P) = \mu_{H^{*}}
 \end{equation}
 
-\subsubsection{OH}
+\subsubsection{Equilibrium expression for $OH^{*}$}
 For $OH^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} and \ce{H2O} gas:
 \begin{equation}
     \frac{1}{2} H_{2} + OH \ce{<=>} H_{2}O
@@ -92,13 +88,13 @@ where the chemical potential terms are related by:
 \begin{equation}
     \frac{1}{2} \mu_{H_{2}}(T,P) + \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) 
 \end{equation}
+The \ce{OH^{*}} chemical potential term is dependent on both the \ce{H2} and \ce{H2O} gas phase conditions. 
 \begin{equation}
     \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) - \frac{1}{2} \mu_{H_{2}}(T,P)    
 \end{equation}
+At a fixed \ce{H2O} chemical potential, increasing the \ce{H2} chemical potential thermodynamically drives the removal of \ce{OH*} ligands off the cluster as \ce{H2O}. At a fixed \ce{H2} partial pressure, increasing \ce{H2O} partial pressure thermodynamically prevents the removal of \ce{OH*} away from the cluster as \ce{H2O}. For these \ce{Ni(II)} clusters, we expect a low \ce{H2O} chemical potential under activation conditions\ because any \ce{H2O} gas stems from the breakdown of the cluster. 
 
-The OH term depends both on the chemical potential of H2O AND H! 
-
-\subsubsection{M}
+\subsubsection{Equilibrium expression for $M^{*}$}
 For $M^{*}$, the assumed equilibrium is with a reservoir of bulk-\ce{M}:
 \begin{equation}
     bulk-M \ce{<=>} M^{*}
@@ -107,9 +103,8 @@ where the chemical potential terms are related by:
 \begin{equation}
     \mu_{bulk-M} = \mu_{M^{*}}
 \end{equation}
-\begin{equation}
-    \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) - \frac{1}{2} \mu_{H_{2}}(T,P)    
-\end{equation}
+
+%TODO do I need a statement here about the bulk model and where the bulk models ended up coming from?
 
 \subsubsection{}
 
