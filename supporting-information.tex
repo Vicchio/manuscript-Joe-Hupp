@@ -15,7 +15,7 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=white,
+    linkcolor=black,
     urlcolor=blue, 
     breaklinks=true
 }
@@ -49,21 +49,23 @@ Nickel(II) and Copper(II) Supported Metal Complex Stability in NU-1000 Under Hyd
 
 \section{Computational Methodology}
 \subsection{Deriving Free Energy Expression}
-We transformed the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of the different activated clusters (shown in Equation \ref{eq:transformation1})
+We transformed the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of the different activated clusters (shown in Equation \ref{eq:transformation1}):
 \begin{equation}
     G^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) \rightarrow G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})
     \label{eq:transformation1}
 \end{equation}
 where $N_{H}$ is the number of adsorbed $H$ on the cluster with chemical potential $\mu_{H^{*}}$, $N_{OH}$ is the number of adsorbed $OH$ on the cluster with chemical potential $\mu_{OH^{*}}$, and $N_{H}$ is the number of adsorbed metal species ($M$) on the cluster with chemical potential $\mu_{M^{*}}$. Using Legendre's transforms, the free energy is is written as Equation \ref{eq:transformation2}:
 \begin{equation}
-    G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) = G^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) - (\mu_{H^{*}})(N_{H}) - (\mu_{OH^{*}})(N_{OH}) - (\mu_{M^{*}})(N_{M^{*}})  
-    \label{eq:transformation2}
+    \begin{split}
+        G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) &= G^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) \\ &- (\mu_{H^{*}})(N_{H}) \\ &- (\mu_{OH^{*}})(N_{OH}) \\ &- (\mu_{M^{*}})(N_{M^{*}})  
+        \label{eq:transformation2}    
+    \end{split}
 \end{equation}
 
 The new free energy expression (Equation \ref{eq:transformation2}) allows for compositionally different structures to be compared with the gas phase conditions being included in the free energy expression. The final free energy expression defining the difference between the modified and the reference structure is defined in Equation \ref{eq:freenergyfinal}:
 \begin{equation}
     \begin{split}
-        \Delta G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) = \Big[&G^{0}(T,P,N_{H,mod},N_{OH,mod},N_{M^{*},mod}) \\ &- G^{0}(T,P,N_{H,ref},N_{OH,ref},N_{M^{*},ref}) \Big] \\ &- (\mu_{H^{*}})(\Delta N_{H}) \\ &- (\mu_{OH^{*}})(\Delta N_{OH}) \\ &- (\mu_{M^{*}})(\Delta N_{M^{*}}) 
+        \Delta G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) &= \Big[G^{0}(T,P,N_{H,mod},N_{OH,mod},N_{M^{*},mod}) \\ &- G^{0}(T,P,N_{H,ref},N_{OH,ref},N_{M^{*},ref}) \Big] \\ &- (\mu_{H^{*}})(\Delta N_{H}^{*}) \\ &- (\mu_{OH^{*}})(\Delta N_{OH}^{*}) \\ &- (\mu_{M^{*}})(\Delta N_{M^{*}}) 
     \end{split}
     \label{eq:freenergyfinal}
 \end{equation}
@@ -106,7 +108,13 @@ where the chemical potential terms are related by:
 
 %TODO do I need a statement here about the bulk model and where the bulk models ended up coming from?
 
-\subsubsection{}
+\subsection{Water Content Phase Diagram}
+\begin{figure}
+    \centering
+%    \includegraphics{}
+    \caption{The stability adsorbed water on the \ce{Ni(II)} cluster as a function of temperature and \ce{H2O} partial pressure. Adsorbed \ce{H2O}s are removed from the cluster at higher temperatures and lower \ce{H2O} partial pressure.}
+    \label{fig:h2o-content}
+\end{figure}
 
 
 \end{document}
