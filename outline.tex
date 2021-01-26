@@ -166,17 +166,7 @@ Herein our work addresses questions related to the structural changes of the met
 \newpage
 \section{Methodology}
 % First paragraph about the different transformations of the cluster 
-We demonstrate the influence of reaction conditions, such as temperature ($T$) and pressure ($P$), on a multinuclear \ce{Ni(II)} supported metal complex. The \ce{Ni(II)} complex (shown in Figure \ref{fig:ref_Ni4_structure}) is located within the small pore of NU-1000. Exposure to \ce{H2} gas induces structural and compositional changes to the cluster because of the presence of \ce{OH}- and \ce{M}-ligands provide sites for \ce{H2} adsorption and dissociation. The \ce{OH}- and \ce{M} sites accept \ce{H} atoms from \ce{H2} adsorption and dissociation to generate \ce{H2O} and \ce{Ni-H} species, respectively. The generated adsorbed \ce{H2O} species can desorb into the gas phase. All the aforementioned transformations are dependent on the reaction conditions, which includes the partial pressure of \ce{H2} ($P_{H_2}$), the partial pressure of \ce{H2O} ($P_{H_{2}O}$), and the reaction temperature ($T$). The dynamic changes in cluster structure and composition as a function of reaction conditions are modeled.
-
-Specifically, \textit{ab initio} thermodynamic analysis computes the stability of structurally and compositionally different structures by transforming the free energy from a fixed number of atoms to a fixed chemical potential. 
-
-
-
-The \ce{Ni(II)} complex features adsorbed \ce{OH^{*}} and \ce{M^{*}} species and, when activated with molecular \ce{H2}, forms \ce{H^{*}} species attached to either the \ce{OH^{*}} species forming waters (\ce{H2O^{*}}) or the \ce{M^{*}} species forming metal hydrides (\ce{M-H}).
-
-The newly formed structure exhibits a different composition of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} species relative to the reference structure, with the stability of the structure dependent on the reaction conditions. With \ce{H2} activation, the cluster stability is dependent on $T$ and  
-
-There is a finite number of modified structures of the cluster when ac
+Reaction conditions, such as temperature ($T$) and pressure ($P$), on a multinuclear \ce{Ni(II)} supported metal complex. The \ce{Ni(II)} complex (shown in Figure \ref{fig:ref_Ni4_structure}) is located within the small pore of NU-1000. Exposure to \ce{H2} gas induces structural and compositional changes to the cluster because of the presence of \ce{OH}- and \ce{M}-ligands. The \ce{OH}- and \ce{M}- ligands accept \ce{H} atoms from \ce{H2} adsorption and dissociation to generate \ce{H2O} and \ce{Ni-H} species, respectively. The generated adsorbed \ce{H2O} species can desorb into the gas phase. All the aforementioned transformations are dependent on the partial pressure of \ce{H2} ($P_{H_2}$), the partial pressure of \ce{H2O} ($P_{H_{2}O}$), and the reaction temperature ($T$). We model the dynamic changes in cluster structure and composition as a function of reaction conditions. 
 
 \begin{figure}
     \centering
@@ -185,16 +175,26 @@ There is a finite number of modified structures of the cluster when ac
     \label{fig:ref_Ni4_structure}
 \end{figure}
 
-We compared the free energy of structures that are compositionally different than the reference structure using \textit{ab initio} thermodynamic analysis. Fundamental to the approach is the transformation of the free energy from a fixed number of atoms ($N_i$) to a fixed chemical potential ($\mu_i$). We transform for the free energy with respect to ($\mu_{H^{*}}$, $\mu_{OH^{*}}$, and $\mu_{Ni^{*}}$) (Figure \ref{fig:FPT-process}). Equation \ref{eq:free-energy-trans} shows the generalized free energy expression (see Supporting Information for the full derivation).
+Inclusion of reaction conditions required \textit{ab initio} thermodynamic analysis to compute the stability of the different structural and compositional variations by transforming the free energy from a fixed number of atoms to a fixed chemical potential. The multinuclear \ce{Ni(II)} complex features \ce{OH^{*}} and \ce{M^{*}} species and, when activated with molecular \ce{H2}, accept \ce{H} species on either \ce{OH^{*}} (forming waters, \ce{H2O}) or \ce{M^{*}} (forming metal hydrides, \ce{M-H}). The process of \ce{H2} adsorption and dissociation generates new structures that are compositional different relative to the reference structure. Here, we investigate structures that are compositionally different with respect to the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} species relative to a reference structure. 
+
+Fundamental to the \textit{ab initio} thermodynamic analysis is the transformation of the free energy ($F$) from a fixed number of atoms ($N_i$) to a fixed chemical potential ($\mu_i$). We transform for the free energy with respect to $\mu_{H^{*}}$, $\mu_{OH^{*}}$, and $\mu_{Ni^{*}}$ (Figure \ref{fig:FPT-process}). Equation \ref{eq:free-energy-trans} shows the generalized free energy expression (see Supporting Information for the full derivation).
 \begin{equation}
     \begin{split}
-        \Delta G^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = & \Delta G(T,N_{H^{*}},N_{OH^{*}},N_{Ni^{*}}) - (\mu_{H^{*}})(\Delta N_{H^{*}}) \\
+        \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = & \Delta F(T,N_{H^{*}},N_{OH^{*}},N_{Ni^{*}}) - (\mu_{H^{*}})(\Delta N_{H^{*}}) \\
         & - (\mu_{OH^{*}})(\Delta N_{OH^{*}}) 
           - (\mu_{M^{*}})(\Delta N_{M^{*}}) \\ 
     \end{split}
     \label{eq:free-energy-trans}
 \end{equation}
-The $\Delta G(T,N_{H^{*}},N_{OH^{*}},N_{Ni^{*}})$ term is the difference in the modified structure and reference structure (defined here as the as-synthesized, starting MOF structure). The chemical potential terms,  $\mu_{H^{*}}$ and $\mu_{OH^{*}}$, depend on the temperature and gas phase reaction conditions because we assume that the adsorbate species are in equilibrium with an ideal-gas like reservoir with \ce{H2} and \ce{H2O} species (as shown in Figure \ref{fig:FPT-process}). The chemical potential of the reservoir is dependent on the reaction conditions ($T$ and $P$). At equilibrium, the chemical potential of the adsorbate species is equal to the chemical potential of the gas phase species. The assumed equilibrium for $\ce{H^{*}}$ is with $\frac{1}{2}\ce{H_{2}^{g}}$ and for $\ce{OH^{*}}$ is with $\ce{H_{2}O^{g}}$/$\frac{1}{2}\ce{H_{2}^{g}}$. The combined expression for $\ce{OH^{*}}$ captures the influence of both \ce{H2O} and \ce{H2} gas phase conditions on the stability of the cluster (further details in the Supporting Information). The metal chemical potential term ($\mu_{M^{*}}$) is independent of the reaction conditions and the metal chemical potential term is approximated by the electronic energy for a bulk metal system. Equation \ref{eq:chemicalpotentialeq} shows the chemical potential expressions for the $\ce{H^{*}}$ and $\ce{OH^{*}}$ adsorbed species with respect to gas phase \ce{H2} and \ce{H2O} conditions. 
+The $\Delta F(T,N_{H^{*}},N_{OH^{*}},N_{Ni^{*}})$ term is the difference in the modified structure and reference structure (defined here as the as-synthesized, starting MOF structure). The chemical potential terms,  $\mu_{H^{*}}$ and $\mu_{OH^{*}}$, depend on the temperature and gas phase reaction conditions. We assume that $\ce{H^{*}}$ and $\ce{OH^{*}}$ are in equilibrium with an ideal-gas like reservoir with of \ce{H2} and \ce{H2O}, respectively (as shown in Figure \ref{fig:FPT-process}). The chemical potential of the reservoir is dependent on the reaction conditions ($T$ and $P$).  The assumed equilibrium for $\ce{H^{*}}$ is with $\frac{1}{2}$ \ce{H2} (g) and for $\ce{OH^{*}}$ is with \ce{H2O} (g)/$\frac{1}{2}$\ce{H2} (g) (Equation \ref{eq:reaction_equilibrium}). The combined expression for $\ce{OH^{*}}$ captures the influence of both \ce{H2O} and \ce{H2} gas phase conditions on the stability of the cluster (further details in the Supporting Information).
+\begin{equation}
+    \begin{split}
+        \frac{1}{2} H_{2} (g) + OH^{*} & \ce{<=>} H_{2}O (g) \\ 
+        \frac{1}{2} H_{2} (g) & \ce{<=>} H^{*}            
+    \end{split}
+    \label{eq:reaction_equilibrium}
+\end{equation}
+Using Equation \ref{eq:reaction_equilibrium}, the relationship between the $\ce{H^{*}}$ and $\ce{OH^{*}}$ species and the gas phase \ce{H2} and \ce{H2O} conditions are shown in Equation \ref{eq:chemicalpotentialeq}. 
 \begin{equation}
     \begin{split}
         \mu_{H^{*}} &= \frac{1}{2} \mu_{H_{2}}^{g}(T,P) \\ 
@@ -202,7 +202,14 @@ The $\Delta G(T,N_{H^{*}},N_{OH^{*}},N_{Ni^{*}})$ term is the difference in the 
     \end{split}
     \label{eq:chemicalpotentialeq}
 \end{equation}
-The $\mu_{i}^{g}(T,P)$ terms contain the temperature and pressure influences of the reaction conditions.
+The $\mu_{i}^{g}(T,P)$ terms contain the temperature and pressure influences of the reaction conditions. The metal chemical potential term ($\mu_{M^{*}}$) is independent of the reaction conditions and the metal chemical potential term is approximated by the electronic energy for a bulk metal system (see Supporting Information).
+
+
+
+
+
+At every combination of $\mu_{H_{2}}^{g}(T,P)$ and $\mu_{H_{2}O}^{g}(T,P)$, the structure with
+the lowest free energy is identified to generate phase diagrams revealing the thermodynamic landscape of the modified metal cluster under reducing conditions. 
 
 \begin{figure}[h]
     \centering
@@ -211,7 +218,6 @@ The $\mu_{i}^{g}(T,P)$ terms contain the temperature and pressure influences of 
     \label{fig:FPT-process}
 \end{figure}
 
-
 \textit{ab initio} thermodynamic analysis determines the thermodynamically stable structures by computing the free energy (Equation \ref{eq:free-energy-trans}) as a function of gas phase chemical potential species. 
 
 We generate a library of unique, candidate modified structures for the \textit{ab initio} thermodynamic analysis by systematically adding \ce{H} atoms to different atoms on metal cluster and removing any formed \ce{H2O} (\hl{see Supporting Information for further details}).
@@ -219,7 +225,7 @@ We generate a library of unique, candidate modified structures for the \textit{a
 
 
 
-for all structures in the library. At every combination of $\mu_{H_{2}}^{g}(T,P)$ and $\mu_{H_{2}O}^{g}(T,P)$, the structure with the lowest free energy is identified to generate phase diagrams revealing the thermodynamic landscape of the modified metal cluster under reducing conditions. 
+for all structures in the library.
 
 The gas phase chemical potential terms ($\mu_{i}^{g}(T,P)$) are computed by by correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase Gibbs free energy values at a specific temperature and pressure (Equation \ref{eq:chemicalpotentialrel}).
 \begin{equation}
@@ -231,9 +237,7 @@ The gas phase chemical potential terms ($\mu_{i}^{g}(T,P)$) are computed by by c
 \end{equation}
  The gas-phase Gibbs free energies ($\Delta G_{i}(T,P^{o})$) were computed using the NASA Polynomials\cite{Mcbride1993} in the pMuTT\cite{LYM2019106864} Python package at standard pressure ($P^{o}$) to capture the influence of temperature. The pressure effects are captured assuming ideal gas for the gas phase species. 
  
-All electronic energies were computed from periodic density functional calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set (\hl{reference}) describes the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} describes the core electron. The plane wave cutoff energy is 360 Ry and  all atoms in the periodic unit cell were allowed to relax during geometry optimizations.
-
-The variable spin states of the metal atoms required Unrestricted Kohn-Sham (UKS). For example, \ce{Ni(II)} can adopt both singlet (no unpaired electrons) and triplet (two unpaired electron) configurations. For clusters compromised of multiple metal atoms, all permutations of spin state configurations are simulated and included in the library of candidate structures. Any structures exhibiting spin contamination were removed from the analysis \hl{see support information for more details}.
+All electronic energies were computed from periodic density functional calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set (\hl{reference}) describes the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} describes the core electron. The plane wave cutoff energy is 360 Ry and  all atoms in the periodic unit cell were allowed to relax during geometry optimizations. The variable spin states of the metal atoms required Unrestricted Kohn-Sham (UKS). For example, \ce{Ni(II)} can adopt both singlet (no unpaired electrons) and triplet (two unpaired electron) configurations. For clusters compromised of multiple metal atoms, all permutations of spin state configurations are simulated and included in the library of candidate structures. Any structures exhibiting spin contamination were removed from the analysis \hl{see support information for more details}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
