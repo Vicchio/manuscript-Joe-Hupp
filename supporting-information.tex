@@ -51,25 +51,27 @@ Nickel(II) and Copper(II) Supported Metal Complex Stability in NU-1000 Under Hyd
 \subsection{Deriving Free Energy Expression}
 We transformed the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of the different activated clusters (shown in Equation \ref{eq:transformation1}):
 \begin{equation}
-    G^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) \rightarrow G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})
+    F^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) \rightarrow F^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})
     \label{eq:transformation1}
 \end{equation}
-where $N_{H}$ is the number of adsorbed $H$ on the cluster with chemical potential $\mu_{H^{*}}$, $N_{OH}$ is the number of adsorbed $OH$ on the cluster with chemical potential $\mu_{OH^{*}}$, and $N_{H}$ is the number of adsorbed metal species ($M$) on the cluster with chemical potential $\mu_{M^{*}}$. Using Legendre's transforms, the free energy is is written as Equation \ref{eq:transformation2}:
+where $N_{H}$ is the number of adsorbed $H$ on the cluster with chemical potential $\mu_{H^{*}}$, $N_{OH}$ is the number of adsorbed $OH$ on the cluster with chemical potential $\mu_{OH^{*}}$, and $N_{M}$ is the number of adsorbed metal species ($M$) on the cluster with chemical potential $\mu_{M^{*}}$. Using Legendre's transforms, the free energy is is written as Equation \ref{eq:transformation2}:
 \begin{equation}
     \begin{split}
-        G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) &= G^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) \\ &- (\mu_{H^{*}})(N_{H}) \\ &- (\mu_{OH^{*}})(N_{OH}) \\ &- (\mu_{M^{*}})(N_{M^{*}})  
+        F^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) &= F^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) \\ &- (\mu_{H^{*}})(N_{H}) \\ &- (\mu_{OH^{*}})(N_{OH}) \\ &- (\mu_{M^{*}})(N_{M^{*}})  
         \label{eq:transformation2}    
     \end{split}
 \end{equation}
-
-The new free energy expression (Equation \ref{eq:transformation2}) allows for compositionally different structures to be compared with the gas phase conditions being included in the free energy expression. The final free energy expression defining the difference between the modified and the reference structure is defined in Equation \ref{eq:freenergyfinal}:
+The new free energy expression (Equation \ref{eq:transformation2}) allows for compositionally different structures to be compared with the gas phase conditions being included in the free energy expression. The final free energy expression defining the difference between the modified ($k$) and the reference ($i$) structure is defined in Equation \ref{eq:freenergyfinal}:
 \begin{equation}
     \begin{split}
-        \Delta G^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) &= \Big[G^{0}(T,P,N_{H,mod},N_{OH,mod},N_{M^{*},mod}) \\ &- G^{0}(T,P,N_{H,ref},N_{OH,ref},N_{M^{*},ref}) \Big] \\ &- (\mu_{H^{*}})(\Delta N_{H}^{*}) \\ &- (\mu_{OH^{*}})(\Delta N_{OH}^{*}) \\ &- (\mu_{M^{*}})(\Delta N_{M^{*}}) 
+        \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = 
+        & F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}}) - 
+          F_{i}(T,N_{i,H^{*}},N_{i,OH^{*}},N_{i,M^{*}}) \\
+        & - (\mu_{H^{*}})(\Delta N_{H^{*}}) - (\mu_{OH^{*}})(\Delta N_{OH^{*}}) - (\mu_{M^{*}})(\Delta N_{M^{*}}) \\ 
     \end{split}
     \label{eq:freenergyfinal}
 \end{equation}
-where $\Delta N_{i}$ terms represent the different between the modified ($N_{i,mod}$) and reference ($N_{i,ref}$) structures. The $^{*}$ indicates the species is bound to the cluster. For both models (\ce{Cu} and \ce{Ni}), the model is comprised of \ce{OH} ligands linking the metal atoms and connecting the \ce{Zr} nodes. To relate the free energy to reaction conditions ($T$ and $P$), the adsorbed species chemical potential must be related to the chemical potential of the gas phase species through equilibrium expressions. \\ 
+where $\Delta N_{i}$ terms represent the different between the modified ($N_{j}$) and reference ($N_{i}$) structures for a particular species. The $^{*}$ indicates the species is bound to the cluster. For both models (\ce{Cu} and \ce{Ni}), the model is comprised of \ce{OH} ligands linking the metal atoms and connecting the \ce{Zr} nodes. To relate the free energy to reaction conditions ($T$ and $P$), the adsorbed species chemical potential must be related to the chemical potential of the gas phase species through equilibrium expressions. \\ 
 
 \subsubsection{Equilibrium expression for $H^{*}$}
 For $H^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} gas:
@@ -78,8 +80,18 @@ For $H^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} gas:
 \end{equation}
 where the chemical potential terms are related by: 
 \begin{equation}
-    \frac{1}{2} \mu_{H_{2}}(T,P) = \mu_{H^{*}}
+    \frac{1}{2} \mu_{H_{2}}^{g}(T,P) = \mu_{H^{*}}
+\end{equation}  
+The $\mu_{H_{2}}^{g}(T,P)$ is computed by  correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase Gibbs free energy values at a specific temperature and pressure (shown in Equation \ref{H2-to-reaction-conditions}). 
+\begin{equation}
+    \begin{split}
+         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \Delta \mu_{H_{2}}(T,P)  \\
+         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \Delta G_{H_{2}}(T,P) \\ 
+         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \Big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \Big]  \\ 
+    \end{split}
+    \label{H2-to-reaction-conditions}
 \end{equation}
+With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) and zero-point energy ($E_{H_{2}}^{ZPE}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript. 
 
 \subsubsection{Equilibrium expression for $OH^{*}$}
 For $OH^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} and \ce{H2O} gas:
@@ -88,13 +100,30 @@ For $OH^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} and \ce{H2O
 \end{equation}
 where the chemical potential terms are related by: 
 \begin{equation}
-    \frac{1}{2} \mu_{H_{2}}(T,P) + \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) 
+    \frac{1}{2} \mu_{H_{2}^{g}}(T,P) + \mu_{OH^{*}} = \mu_{H_{2}O}^{g}(T,P) 
 \end{equation}
 The \ce{OH^{*}} chemical potential term is dependent on both the \ce{H2} and \ce{H2O} gas phase conditions. 
 \begin{equation}
     \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) - \frac{1}{2} \mu_{H_{2}}(T,P)    
 \end{equation}
-At a fixed \ce{H2O} chemical potential, increasing the \ce{H2} chemical potential thermodynamically drives the removal of \ce{OH*} ligands off the cluster as \ce{H2O}. At a fixed \ce{H2} partial pressure, increasing \ce{H2O} partial pressure thermodynamically prevents the removal of \ce{OH*} away from the cluster as \ce{H2O}. For these \ce{Ni(II)} clusters, we expect a low \ce{H2O} chemical potential under activation conditions\ because any \ce{H2O} gas stems from the breakdown of the cluster. 
+The $\mu_{H_{2}O}^{g}(T,P)$ was evaluated just like $\mu_{H_{2}}^{g}(T,P)$ in Equation \ref{H2-to-reaction-conditions}. 
+\begin{equation}
+    \begin{split}
+         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Delta \mu_{H_{2}O}(T,P)  \\
+         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Delta G_{H_{2}O}(T,P) \\ 
+         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Big[ \Delta G_{H_{2}O}(T,P)  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big]  \\ 
+    \end{split}
+    \label{H2O-to-reaction-conditions}
+\end{equation}
+With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The combined expression for $\mu_{OH^{*}}$ is given by Equation \ref{OH-to-reaction-conditions}.
+\begin{equation}
+    \begin{split}
+    \mu_{OH^{*}} &=  E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Big[ \Delta G_{H_{2}O}(T,P^{o})  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big] \\
+    &- \frac{1}{2} \Big[ E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \big] \Big] 
+    \end{split}
+    \label{OH-to-reaction-conditions}
+\end{equation} 
+The $\mu_{OH^{*}}$ chemical potential is dependent on temperature ($T$) and both gas phase partial pressures ($P_{H_2}$ and $P_{H_{2}O}$). The electronic energy ($E_{H_{2}O}^{DFT}$) and zero-point energy ($E_{H_{2}O}^{ZPE}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript. \\
 
 \subsubsection{Equilibrium expression for $M^{*}$}
 For $M^{*}$, the assumed equilibrium is with a reservoir of bulk-\ce{M}:
@@ -105,16 +134,39 @@ where the chemical potential terms are related by:
 \begin{equation}
     \mu_{bulk-M} = \mu_{M^{*}}
 \end{equation}
+Unlike $\mu_{OH^{*}}$ and $\mu_{H^{*}}$, $\mu_{M^{*}}$ was determined by the  electronic energy of a bulk metal surface (Equation \ref{Ni-to-reaction-conditions})
+\begin{equation}
+    \mu_{M^{*}} = \mu_{bulk-M} = E_{M}^{DFT}
+    \label{Ni-to-reaction-conditions}
+\end{equation}
+%TODO explain that the computational parameters are different here.... 
+
+\subsection{Final Transformed Free Energy Expression}
+The final transformed free energy expression is given by Equation \ref{eq:final-free-energy-equation-full}. All the terms dervied above are included in the expression. 
+\begin{equation}
+    \begin{split}
+        \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = 
+        & F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}}) - 
+          F_{i}(T,N_{i,H^{*}},N_{i,OH^{*}},N_{i,M^{*}}) \\
+        & - (\Delta N_{H^{*}}) (E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \Big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \Big])  \\
+        & - (\Delta N_{OH^{*}}) \Big( E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Big[ \Delta G_{H_{2}O}(T,P^{o})  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big] \\ 
+        & - \frac{1}{2} \Big[ E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \big] \Big] \Big) \\
+        & - (\Delta N_{M^{*}}) (E_{M}^{DFT}) \\ 
+    \end{split}
+    \label{eq:final-free-energy-equation-full}
+\end{equation}
+
+
 
 %TODO do I need a statement here about the bulk model and where the bulk models ended up coming from?
 
-\subsection{Water Content Phase Diagram}
-\begin{figure}
-    \centering
-%    \includegraphics{}
-    \caption{The stability adsorbed water on the \ce{Ni(II)} cluster as a function of temperature and \ce{H2O} partial pressure. Adsorbed \ce{H2O}s are removed from the cluster at higher temperatures and lower \ce{H2O} partial pressure.}
-    \label{fig:h2o-content}
-\end{figure}
-
-
+%\subsection{Water Content Phase Diagram}
+%\begin{figure}
+%    \centering
+%%    \includegraphics{}
+%    \caption{The stability adsorbed water on the \ce{Ni(II)} cluster as a function of %temperature and \ce{H2O} partial pressure. Adsorbed \ce{H2O}s are removed from the %cluster at higher temperatures and lower \ce{H2O} partial pressure.}
+%    \label{fig:h2o-content}
+%\end{figure}
+%
+%
 \end{document}
