@@ -174,17 +174,17 @@ We use a multinuclear \ce{Ni(II)} as a model to investigate how the reaction con
     \label{fig:ref_Ni4_structure}
 \end{figure}
 
-We used \textit{ab initio} thermodynamic analysis to compute the stability of the different structural and compositional variations by transforming the free energy from a fixed number of atoms ($N_i$) to a fixed chemical potential ($\mu_i$). The free energy is transformed with respect to $\mu_{H^{*}}$, $\mu_{OH^{*}}$, and $\mu_{M^{*}}$ to account for structural and compositional variations in the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} on the cluster (Figure \ref{fig:FPT-process}). Equation \ref{eq:free-energy-trans} shows the free energy difference ($ \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})$) between structures $j$ and $i$ (see Supporting Information for the full derivation).
+We used \textit{ab initio} thermodynamic analysis to compute the stability of the different structural and compositional variations by transforming the free energy from a fixed number of atoms ($N_i$) to a fixed chemical potential ($\mu_i$). The free energy is transformed with respect to $\mu_{H^{*}}$, $\mu_{OH^{*}}$, and $\mu_{M^{*}}$ to account for structural and compositional variations in the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} on the cluster (Figure \ref{fig:FPT-process}). Equation \ref{eq:free-energy-trans} shows the free energy difference ($\Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})$) between structure $j$ and the reference structure ($ref$).  (see Supporting Information for the full derivation).
 \begin{equation}
     \begin{split}
         \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = 
         & F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}}) - 
-          F_{i}(T,N_{i,H^{*}},N_{i,OH^{*}},N_{i,M^{*}}) \\
+          F_{ref}(T,N_{ref,H^{*}},N_{ref,OH^{*}},N_{ref,M^{*}}) \\
         & - (\mu_{H^{*}})(\Delta N_{H^{*}}) - (\mu_{OH^{*}})(\Delta N_{OH^{*}}) - (\mu_{M^{*}})(\Delta N_{M^{*}}) \\ 
     \end{split}
     \label{eq:free-energy-trans}
 \end{equation}
-The $F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}})$ term is the free energy of structure $j$ with configuration of $N_{j,H^{*}}$, $N_{j,OH^{*}}$, and $N_{j,M^{*}}$. The $\Delta N_{H^{*}}$, $\Delta N_{OH^{*}}$, and $\Delta N_{M^{*}}$ terms are the difference between $N_{j}$ and $N_{i}$ for that particular species. 
+The $F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}})$ term is the free energy of structure $j$ with configuration of $N_{j,H^{*}}$, $N_{j,OH^{*}}$, and $N_{j,M^{*}}$. The $\Delta N_{H^{*}}$, $\Delta N_{OH^{*}}$, and $\Delta N_{M^{*}}$ terms are the difference between $N_{j}$ and $N_{ref}$ for that particular species. 
 
 The chemical potential terms,  $\mu_{H^{*}}$ and $\mu_{OH^{*}}$, depend on the temperature and gas phase reaction conditions. We assume that $\ce{H^{*}}$ and $\ce{OH^{*}}$ are in equilibrium with an ideal-gas like reservoir with of \ce{H2} and \ce{H2O}, respectively (as shown in Figure \ref{fig:FPT-process}). The chemical potential of the reservoir is dependent on the reaction conditions ($T$ and $P$). The assumed equilibrium for $\ce{H^{*}}$ is with $\frac{1}{2}$ \ce{H2} (g) and for $\ce{OH^{*}}$ is with \ce{H2O} (g)/$\frac{1}{2}$\ce{H2} (g) (Equation \ref{eq:reaction_equilibrium}). The combined expression for $\ce{OH^{*}}$ captures the influence of both \ce{H2O} and \ce{H2} gas phase conditions on the stability of the cluster (further details in the Supporting Information).
 \begin{equation}
@@ -202,19 +202,29 @@ Using Equation \ref{eq:reaction_equilibrium}, the relationship between the $\ce{
     \end{split}
     \label{eq:chemicalpotentialeq}
 \end{equation}
- The gas phase chemical potential terms ($\mu_{i}^{g}(T,P)$) are computed by correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule  
-
-
-
-with the gas-phase Gibbs free energy values at a specific temperature and pressure. The gas-phase Gibbs free energies ($\Delta G_{i}(T,P^{o})$) were computed using the NASA Polynomials\cite{Mcbride1993} in the pMuTT\cite{LYM2019106864} Python package at standard pressure ($P^{o}$) to capture the influence of temperature. The pressure effects ($P_{H_{2}}$ and $P_{H_{2}O}$) are captured assuming ideal gas for the gas phase species. The final expression for $\mu_{H_{2}}^{g}(T,P)$ and $\mu_{H_{2}O}^{g}(T,P)$ is given by Equation \ref{eq:chemicalpotentialrel}. 
+ The gas phase chemical potential terms ($\mu_{i}^{g}(T,P)$) are computed by correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule with a term ($\Delta \mu_{H_{2}}(T,P)$) that includes all the temperature- and pressure- dependent free-energy contributions. 
 \begin{equation}
     \begin{split}
-        \mu_{H_{2}}^{g}(T,P) &= E_{H_2} + \Delta \mu_{H_{2}}(T,P)  = E_{H_{2}} + \Big[ \Delta G_{H_{2}}(T,P^{o}) + RT \ln{\Big( \frac{P_{H_{2}}}{P^{o}} \Big)} \Big] \\  
-        \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O} + \Delta \mu_{H_{2}O}(T,P^{o}) =  E_{H_{2}O} + \Big[ \Delta G_{H_{2}O}(T,P^{o}) + RT \ln{\Big( \frac{P_{H_{2}O}}{P^{o}} \Big)} \Big]
+        \mu_{H_{2}}^{g}(T,P) &= E_{H_2} + \Delta \mu_{H_{2}}(T,P)  \\  
+        \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O} + \Delta \mu_{H_{2}O}(T,P) 
     \end{split}
     \label{eq:chemicalpotentialrel}
 \end{equation}
-The $\Delta \mu_{H_{2}}(T,P)$ and $\Delta \mu_{H_{2}O}(T,P^{o})$ 
+Where
+\begin{equation}
+    \begin{split}
+        \Delta \mu_{H_{2}}(T,P) &= \Big[ \Delta G_{H_{2}}(T,P^{o}) + RT \ln{\Big( \frac{P_{H_{2}}}{P^{o}} \Big)} \Big] \\
+        \Delta \mu_{H_{2}O}(T,P^{o}) &=  \Big[ \Delta G_{H_{2}O}(T,P^{o}) + RT \ln{\Big( \frac{P_{H_{2}O}}{P^{o}} \Big)} \Big]
+    \end{split}
+\end{equation}
+The gas-phase Gibbs free energies ($\Delta G_{i}(T,P^{o})$) at standard pressure ($P^{o}$) were computed using the NASA Polynomials\cite{Mcbride1993} in the pMuTT\cite{LYM2019106864} Python package. The pressure effects ($P_{H_{2}}$ and $P_{H_{2}O}$) are captured assuming ideal gas. The final expression for $\mu_{H_{2}}^{g}(T,P)$ and $\mu_{H_{2}O}^{g}(T,P)$ is given by Equation \ref{eq:chemicalpotentialrel}. 
+\begin{equation}
+    \begin{split}
+        \mu_{H_{2}}^{g}(T,P) &=  E_{H_{2}} + \Big[ \Delta G_{H_{2}}(T,P^{o}) + RT \ln{\Big( \frac{P_{H_{2}}}{P^{o}} \Big)} \Big] \\  
+        \mu_{H_{2}O}^{g}(T,P) &=  E_{H_{2}O} + \Big[ \Delta G_{H_{2}O}(T,P^{o}) + RT \ln{\Big( \frac{P_{H_{2}O}}{P^{o}} \Big)} \Big]
+    \end{split}
+    \label{eq:chemicalpotentialrel}
+\end{equation}
 
 Unlike the gas phase chemical potential terms, the metal chemical potential term ($\mu_{M^{*}}$) is independent of the reaction conditions and the metal chemical potential term assumed to be in equilibrium with a bulk metal system. The chemical potential $\mu_{M^{*}}$ is approximated by the electronic energy for a bulk metal system (see Supporting Information). 
 
@@ -238,16 +248,36 @@ The energies for the structures are from periodic density functional (DFT) calcu
 
 \begin{itemize}
     \item Water content phase diagram. \hl{Insert the diagram that shows the water content as a function of T and partial pressure H2O.}
+    
+    \begin{figure}
+        \centering
+%        \includegraphics{}
+        \caption{The stability of adsorbed \ce{H2O} on the \ce{Ni(II)} cluster as a function of temperature and \ce{H2O} partial pressure. The regions identify structures with the lowest free energy, thereby demonstrating amount of \ce{H2O} on the cluster.}
+        \label{fig:h2o-partial-pressure}
+    \end{figure}
+    
+    
+    
     \item Structure diagram for the content phase diagram. 
     \item Figure for phase diagram while transforming at fixed \ce{Ni(II)} content. 
         \begin{figure}
             \centering
         %    \includegraphics{}
             \caption{The stability of the \ce{Ni(II)} cluster at a function of temperature and \ce{H2} partial pressure at a \ce{H2O} partial pressure = $10^{-9}$ atm. Regions indicate the the modified structure that minimizes the free energy Equation (\ref{eq:free-energy-trans}) at a given combination of $T/P_{H_{2}}$ and fixed \ce{H2O} partial pressure. The name convention utilized to label each region is used throughout. The \ce{H2} partial pressure is reported as $log(P_{H_{2}}/P_{H_{2}}^{o})$, where the standard state is 1 atm.}
-            \label{fig:phase_diagram_TandP}
+            \label{fig:phase_diagram_TandP_fixed_Ni}
         \end{figure}
     \item Figure for key structures on the phase diagram. 
     \item Figure now for transforming with \ce{H}, \ce{OH}, and \ce{Ni}. Draw the line the includes when accounting for removal of all \ce{Ni} atoms. Result shows that thermodynamically, the cluster is driven towards complete breakdown. The discussion will therefore suggest that ultimately the structure is driven towards complete breakdown. 
+    
+    \begin{figure}
+        \centering
+%        \includegraphics{}
+        \caption{The stability of the \ce{Ni(II)} cluster at a function of temperature and \ce{H2} partial pressure at a \ce{H2O} partial pressure = $10^{-9}$ atm. The free energy expression includes all transformations (\ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}}). Regions indicate the the modified structure that minimizes the free energy Equation (\ref{eq:free-energy-trans}) at a given combination of $T/P_{H_{2}}$ and fixed \ce{H2O} partial pressure. The name convention utilized to label each region is used throughout. The \ce{H2} partial pressure is reported as $log(P_{H_{2}}/P_{H_{2}}^{o})$, where the standard state is 1 atm. Regions to the right of the dashed line identifies the region where \ce{Ni} nano-particle (NP) formation via the complete removal of all \ce{Ni} atoms is thermodynamically favorable.}
+        \label{fig:phase_diagram_TandP_trans_Ni}
+    \end{figure}
+    
+    
+
 \end{itemize}
 
 
@@ -258,7 +288,7 @@ In this work, we show the stability of \ce{Ni(II)} and \ce{Cu(II)} clusters unde
 
 
 
-We reduce the complexity of \ref{fig:phase_diagram_TandP} by defining two sets of reaction conditions to plot the free energy for all species in the \ce{Ni(II)} cluster library. The first set of conditions is at room temperature ($T = 20 ^{o}C$) and in the absence of \ce{H2} gas ($P_{H2}$ = \hl{XXX}) to show the stability of the cluster. The second set of conditions is activation conditions, with temperatures around $T = 200 ^{o}C$ and pressures around \hl{5\% H2 in 95\% (cite all the articles that activate with H2)}.      
+We reduce the complexity of \ref{fig:phase_diagram_TandP_fixed_Ni} by defining two sets of reaction conditions to plot the free energy for all species in the \ce{Ni(II)} cluster library. The first set of conditions is at room temperature ($T = 20 ^{o}C$) and in the absence of \ce{H2} gas ($P_{H2}$ = \hl{XXX}) to show the stability of the cluster. The second set of conditions is activation conditions, with temperatures around $T = 200 ^{o}C$ and pressures around \hl{5\% H2 in 95\% (cite all the articles that activate with H2)}.      
 
 %TODO: need to write the python script to show the differences... 
 \begin{figure}
