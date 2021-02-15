@@ -156,7 +156,37 @@ The final transformed free energy expression is given by Equation \ref{eq:final-
     \label{eq:final-free-energy-equation-full}
 \end{equation}
 
+\newpage
+\subsection{pMuTT Expressions}
 
+
+\subsubsection{}
+
+
+
+\subsubsection{Gas Phase Free Energy as a Function of Temperature}
+The NASA Polynomials are defined for a very specific temperature range. To correct the electronic energies from DFT, the gas phase species must be referenced to approximately 0 K. When using pMuTT, the reference state for the free energy values is $298 K$. The empirical methods do not allow for referencing at 0 K, so the free energies are approximated by values at 10 K (shown below):
+
+\begin{equation}
+    \begin{split}
+        \Delta G(T) &= [G(T) - G(T=298 K)] - [G(T=10 K) - G(T=298 K)] \\
+        \Delta G(T) &= [G(T)] - [G(T=10 K)] 
+    \end{split}
+\end{equation} 
+where $\Delta G(T)$ is the free energy referenced at $T = 10 K$, and G(T) is the free energy reference at $T = 298 K$. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/2021-figure-H2-pMuTT.png}
+    \caption{Figure XXX. The gas phase free energy of \ce{H2} as a function of temperature. The reference state it defined as 10 K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}
+    \label{fig:h2-pmutt-expression}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/2021-figure-H2O-pMuTT.png}
+    \caption{Figure XXX. The gas phase free energy of \ce{H2O} as a function of temperature. The reference state it defined as 10 K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}    \label{fig:h2o-pmutt-expression}
+\end{figure}
 
 %TODO do I need a statement here about the bulk model and where the bulk models ended up coming from?
 
