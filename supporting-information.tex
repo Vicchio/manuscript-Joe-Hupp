@@ -46,7 +46,10 @@ Nickel(II) and Copper(II) Supported Metal Complex Stability in NU-1000 Under Hyd
 \begin{document}
 \maketitle
 
+\newpage
+\tableofcontents
 
+\newpage
 \section{Computational Methodology}
 \subsection{Deriving Free Energy Expression}
 We transformed the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of the different activated clusters (shown in Equation \ref{eq:transformation1}):
@@ -159,11 +162,6 @@ The final transformed free energy expression is given by Equation \ref{eq:final-
 \newpage
 \subsection{pMuTT Expressions}
 
-
-\subsubsection{}
-
-
-
 \subsubsection{Gas Phase Free Energy as a Function of Temperature}
 The NASA Polynomials are defined for a very specific temperature range. To correct the electronic energies from DFT, the gas phase species must be referenced to approximately 0 K. When using pMuTT, the reference state for the free energy values is $298 K$. The empirical methods do not allow for referencing at 0 K, so the free energies are approximated by values at 10 K (shown below):
 
@@ -178,25 +176,33 @@ where $\Delta G(T)$ is the free energy referenced at $T = 10 K$, and G(T) is the
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/2021-figure-H2-pMuTT.png}
-    \caption{Figure XXX. The gas phase free energy of \ce{H2} as a function of temperature. The reference state it defined as 10 K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}
+    \caption{The gas phase free energy of \ce{H2} as a function of temperature. The reference state it defined as 10 K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}
     \label{fig:h2-pmutt-expression}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/2021-figure-H2O-pMuTT.png}
-    \caption{Figure XXX. The gas phase free energy of \ce{H2O} as a function of temperature. The reference state it defined as 10 K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}    \label{fig:h2o-pmutt-expression}
+    \caption{The gas phase free energy of \ce{H2O} as a function of temperature. The reference state it defined as 10 K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}    \label{fig:h2o-pmutt-expression}
 \end{figure}
 
 %TODO do I need a statement here about the bulk model and where the bulk models ended up coming from?
 
-%\subsection{Water Content Phase Diagram}
-%\begin{figure}
-%    \centering
-%%    \includegraphics{}
-%    \caption{The stability adsorbed water on the \ce{Ni(II)} cluster as a function of %temperature and \ce{H2O} partial pressure. Adsorbed \ce{H2O}s are removed from the %cluster at higher temperatures and lower \ce{H2O} partial pressure.}
-%    \label{fig:h2o-content}
-%\end{figure}
-%
-%
+
+
+\subsection{Spin Contamination}
+
+\subsection{Sample Input File}
+
+
+\section{Water Content Phase Diagram}
+\begin{figure}[H]
+   \centering
+    \includegraphics{zi-images/00-General-Graphics/2021-figure-H2O-phase-diagram-manuscript.png}
+   \caption{}
+   \label{fig:phase-diagram-h2o}
+\end{figure}
+
+\section{Generating Phase Diagram structures with inter-atomic distances}
+
 \end{document}

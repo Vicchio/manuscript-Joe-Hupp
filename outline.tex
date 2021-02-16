@@ -145,6 +145,8 @@
  Catalysts are vital to the present and future of society, with currently 90\% of the world's consumer goods requiring a catalyst during manufacturing.\cite{Hagen2015} Most industrially relevant catalysts are heterogeneous because of their robustness to reaction conditions and ease of recovery. However, standard bulk heterogeneous catalysts suffer from poorly defined active sites that inhibit molecular understandings of the precise catalyst structure and catalytic mechanisms; this lack of knowledge has limited rational catalyst design for bulk metal catalysts. Over the last two decades, a new area of heterogeneous catalysis has emerged involving metal-organic frameworks (MOFs). MOFs, a porous material formed from inorganic nodes interconnected by organic linkers, function as both a heterogeneous catalysts and catalyst supports.\hl{REFERENCE} MOFs exhibit a diverse platform of tunable structures with well-defined active sites and chemical functionality thus making them an attractive material for single-atom catalysis. 
  % note to self.. I think the end of this paragraph is OKAY.. it's the beginning that needs work.
 
+% There's the large review paper that is good for the introduction section. 
+
 \subsection{Paragraph 1}
 Within the scientific community, the \ce{Zr} based MOF NU-1000 is commonly used as a catalyst support for 3d metal complexes. Structurally, the NU-1000 MOF contains \ce{Zr} nodes interconnected by carbon based pyrene linkers to generate both large hexagonal channels (30 A), triangular channels (10 A), and small pores (8 A).(\hl{REFERENCE}) The staggered arrangement of protons forming \ce{OH}- and \ce{OH2}-ligand pairs on the node generate anchoring sites for 3d transition metals.\cite{Planas2014} Deposition of 3d transition metal atoms on MOF framework occurs in the vapor phase via atomic layer deposition (ALD) in MOFs (AIM) \hl{REFERENCE} and in condensed phase via solvothermal deposition in MOFs (SIM) \hl{REFERENCE}. The \ce{OH_{x}}-ligands within the small pore (\~8 A) of NU-1000 preferentially bind the metal species within the framework,\cite{Gallington2016,Rimoldi2017} and the synthesis conditions regulate the active species loading to generate complex active site structures.\cite{Kim2015} Elucidating the exact structure of the active site is challenging; characterization of the metal active sites is suppressed by the bulk framework structure, leading to questions about the structure and composition of the synthesized active site.
 
@@ -228,7 +230,7 @@ The gas-phase Gibbs free energies ($\Delta G_{i}(T,P^{o})$) at standard pressure
 
 Unlike the gas phase chemical potential terms, the metal chemical potential term ($\mu_{M^{*}}$) is independent of the reaction conditions and the metal chemical potential term assumed to be in equilibrium with a bulk metal system. The chemical potential $\mu_{M^{*}}$ is approximated by the electronic energy for a bulk metal system (see Supporting Information). 
 
-Combining Equations \ref{eq:free-energy-trans}, \ref{eq:chemicalpotentialeq}, and \ref{eq:chemicalpotentialrel} produces the final transformed free energy expression (shown in the supporting information). The free energy expression was solved at every combination of $T$, $P_{H_2}$, and $P_{H_{2}O}$ for all structures. We generate a library of unique, modified structures for the \textit{ab initio} thermodynamic analysis by systematically adding \ce{H} atoms to different atoms on metal cluster and removing any formed \ce{H2O}. There are specific combinations of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} within the library. At all combinations of $T$, $P_{H_2}$, and $P_{H_{2}O}$, the lowest free energy structure was identified thereby revealing the thermodynamic landscape of the modified metal cluster under reducing conditions. 
+Combining Equations \ref{eq:free-energy-trans}, \ref{eq:chemicalpotentialeq}, and \ref{eq:chemicalpotentialrel} produces the final transformed free energy expression (shown in the supporting information). The free energy expression was solved at every combination of $T$, $P_{H_2}$, and $P_{H_{2}O}$ for all structures. We generate a library of unique, modified structures for the \textit{ab initio} thermodynamic analysis by systematically adding \ce{H} atoms to different atoms on metal cluster and then removing any formed \ce{H2O}. Each modified structure was optimized at each addition of \ce{H} atoms and removal of adsorbed \ce{H2O}. There are specific combinations of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} within the library. At all combinations of $T$, $P_{H_2}$, and $P_{H_{2}O}$, the lowest free energy structure was identified thereby revealing the thermodynamic landscape of the modified metal cluster under reducing conditions. 
 
 \begin{figure}[h]
     \centering
@@ -239,6 +241,8 @@ Combining Equations \ref{eq:free-energy-trans}, \ref{eq:chemicalpotentialeq}, an
 
 The energies for the structures are from periodic density functional (DFT) calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set describes the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} describes the core electrons. The plane wave cutoff energy is 360 Ry and  all atoms in the periodic unit cell were allowed to relax during geometry optimizations. \hl{A sample input file that contains the convergence criteria is located in the Supporting Information.} The variable spin states of the metal atoms required Unrestricted Kohn-Sham (UKS). For example, \ce{Ni(II)} can adopt both singlet (no unpaired electrons) and triplet (two unpaired electron) configurations. For clusters compromised of multiple metal atoms, all permutations of spin state configurations are simulated and included in the library of candidate structures. Any structures exhibiting spin contamination were removed from the analysis (see support information for more details).
 
+\hl{How the PDFs are calculated from the model structures is something that is going to need to be included by Karena and Woodrow here.}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Results
@@ -246,18 +250,19 @@ The energies for the structures are from periodic density functional (DFT) calcu
 \newpage
 \section{Results Outline}
 
+
+
 \begin{itemize}
     \item Water content phase diagram. \hl{Insert the diagram that shows the water content as a function of T and partial pressure H2O.}
     
-    \begin{figure}
+    \begin{figure}[H]
         \centering
-%        \includegraphics{}
+        \includegraphics{zi-images/00-General-Graphics/2021-figure-H2O-phase-diagram-manuscript.png}
         \caption{The stability of adsorbed \ce{H2O} on the \ce{Ni(II)} cluster as a function of temperature and \ce{H2O} partial pressure. The regions identify structures with the lowest free energy, thereby demonstrating amount of \ce{H2O} on the cluster.}
         \label{fig:h2o-partial-pressure}
     \end{figure}
-    
-    
-    
+
+
     \item Structure diagram for the content phase diagram. 
     \item Figure for phase diagram while transforming at fixed \ce{Ni(II)} content. 
         \begin{figure}
@@ -457,7 +462,27 @@ We reduce the complexity of \ref{fig:phase_diagram_TandP_fixed_Ni} by defining t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \subsection{Discussion}
+The stability of metal complexes supported on MOFs depend on the reaction environment. 
+
 The \ce{Ni(II)} metal complex structure is dependent on the environment. In the absence of any \ce{H2}, the cluster contains four \ce{Ni(II)} atoms interconnected by \ce{OH}-ligands as suggested by \hl{REFERENCE Platero-Prats}. The tetranuclear configuration of the \ce{Ni(II)} cluster spans the c-pore of the NU-1000 framework. When exposed to \ce{H2} gas, the \ce{OH}-ligands provide sites for \ce{H} adsorption onto the cluster resulting in the formation of \ce{H2O}.  \hl{HIGHLIGHT THE SINTERING PAPER} investigate \ce{H2} adsorption and dissociation on a single \ce{Ni} atom also supported on NU-1000, finding that barriers for \ce{H2} adsorption and dissociation and removal of \ce{H2O} are 141 $kJ/mol$. However within our work, we do not look at the kinetics of \ce{H2} adsorption and dissociation and the subsequent removal of \ce{H2O}. Our discussion focuses on the equilibrium thermodynamic structure resulting from exposure to \ce{H2} gas at different partial pressure and temperatures. 
+
+
+\begin{outline}
+    \item Paragraph 1:
+    \begin{itemize}
+        \item the metal complex structure is dependent on the reaction environment. 
+        \item the changes show the removal of \ce{OH}-ligands as \ce{H2O}
+    \end{itemize}
+    \item Paragraph 2:
+    \begin{itemize}
+        \item The suggested model structure is the light blue structure, which shows that the \ce{\mu_3-OH} ligands are removed here. Note that this structure does NOT show any Ni-H formation on the cluster. Also, comparing the work from Platero-prats this structure contains undercoordinated \ce{Ni-atoms} 
+        \item \ce{H2O} phase diagram suggests that at 50oC even with a small partial pressure of \ce{H2O} that the sample will be fully hydrated (from the \ce{H2O} partial pressure phase diagram.  
+    \end{itemize}
+    \item Paragraph 3:
+    \begin{itemize}
+        \item There are features shown on the phase diagram that are not present on the most recent 
+    \end{itemize}
+\end{outline}
 
 % Paragraph on the inclusion of the reducing agent
 
@@ -467,26 +492,26 @@ The \ce{Ni(II)} metal complex structure is dependent on the environment. In the 
 
 % Paragraph on the kinetic restraints
 
-\begin{itemize}
-    \item The structural characteristics of the supported metal complexes are dependent on the reaction conditions.
-    \begin{itemize}
-        \item In the presence of a reducing agent (\ce{H2}), the hydroxo-ligands of the supported metal complexes are removed (as \ce{H2O}). As previously suggested, we show computationally that \ce{H2} is important in breaking the bonds between the metal clusters and the NU-1000 nodes. We provide the thermodynamic landscape for these transformations.
-        \item Our findings show similar structural features and suggest that in an \ce{H2} reducing environment these supported metal complexes containing \ce{OH}-ligands are not stable.  
-        \item At present, our modeling efforts demonstrate the formation of the more mobile \ce{M(0)} species. The breakdown of the supported metal complex (removal of \ce{OH}-ligands within the cluster) reduces the metal atoms, thereby generating the mobile \ce{M(0)} species.
-    \end{itemize}
-    \item A key question that still remains is whether these reduced supported metal complexes still exist as a combination of NPs and multinuclear metal active sites or mononuclear active sites (single-sites) above \SI{200}{Celsius}.
-    \begin{itemize}
-        \item \citeauthor{Halder2020} determined that in an \ce{H2} environment the \ce{Cu3(OH)4} supported metal complexes showed large \ce{Cu} NP formation. These particles were ~6.0 nm in diameter, which is larger than the ~3.0 nm diameter hexagonal pore in NU-1000. Therefore, for \ce{Cu}-NU-1000 we know that these NPs grow, and we show using our modeling that for \ce{Ni} we expect \ce{Ni} NPs to grow as well. 
-        \item Our present results support the experimental findings of \citeauthor{Halder2020} that reduced metal atoms are generated. However, we extend the findings further and hypothesize that some of the single-site metal atoms remain intact. Not all of the metal atoms are reduced to \ce{M(0)}; the metal atoms attached to the \ce{OH}-ligands of the node remain. 
-        \item There are a few more additional calculations to be computed to test our theory (and these calculations are currently being performed). The calculations contain two single-site models (with and without the \ce{M-H} species). The metal atoms removed from the system will be accounted for as nanoclusters.
-    \end{itemize}
-\end{itemize}
-We have the following list of questions:
-\begin{itemize}
-    \item Experimentally, there is a different in the protocols to generate the single-site and the clusters in NU-1000? Experimentally, you can differentiate between the two different catalysts in NU-1000? 
-    \item When looking at the Cu-NU-1000 discussion, did you ever remove the Cu-NPs and determine whether the framework that was left behind was catalytically active? We wonder whether or not all the metal atoms are becoming the mobile \ce{M(0)} species. 
-    \item The hexagonal pore returned to its original ~34 A value. How does the value of the pore compare when there are single-site metal atoms attached to the node? 
-\end{itemize}
+%\begin{itemize}
+%    \item The structural characteristics of the supported metal complexes are dependent on the reaction conditions.
+%    \begin{itemize}
+%        \item In the presence of a reducing agent (\ce{H2}), the hydroxo-ligands of the supported metal complexes are %removed (as \ce{H2O}). As previously suggested, we show computationally that \ce{H2} is important in breaking the %bonds between the metal clusters and the NU-1000 nodes. We provide the thermodynamic landscape for these %transformations.
+%        \item Our findings show similar structural features and suggest that in an \ce{H2} reducing environment these %supported metal complexes containing \ce{OH}-ligands are not stable.  
+%        \item At present, our modeling efforts demonstrate the formation of the more mobile \ce{M(0)} species. The breakdown %of the supported metal complex (removal of \ce{OH}-ligands within the cluster) reduces the metal atoms, thereby %generating the mobile \ce{M(0)} species.
+%    \end{itemize}
+%    \item A key question that still remains is whether these reduced supported metal complexes still exist as a combination %of NPs and multinuclear metal active sites or mononuclear active sites (single-sites) above \SI{200}{Celsius}.
+%    \begin{itemize}
+%        \item \citeauthor{Halder2020} determined that in an \ce{H2} environment the \ce{Cu3(OH)4} supported metal complexes %showed large \ce{Cu} NP formation. These particles were ~6.0 nm in diameter, which is larger than the ~3.0 nm %diameter hexagonal pore in NU-1000. Therefore, for \ce{Cu}-NU-1000 we know that these NPs grow, and we show using %our modeling that for \ce{Ni} we expect \ce{Ni} NPs to grow as well. 
+%        \item Our present results support the experimental findings of \citeauthor{Halder2020} that reduced metal atoms are %generated. However, we extend the findings further and hypothesize that some of the single-site metal atoms remain %intact. Not all of the metal atoms are reduced to \ce{M(0)}; the metal atoms attached to the \ce{OH}-ligands of the %node remain. 
+%        \item There are a few more additional calculations to be computed to test our theory (and these calculations are %currently being performed). The calculations contain two single-site models (with and without the \ce{M-H} species). %The metal atoms removed from the system will be accounted for as nanoclusters.
+%    \end{itemize}
+%\end{itemize}
+%We have the following list of questions:
+%\begin{itemize}
+%    \item Experimentally, there is a different in the protocols to generate the single-site and the clusters in NU-1000? %Experimentally, you can differentiate between the two different catalysts in NU-1000? 
+%    \item When looking at the Cu-NU-1000 discussion, did you ever remove the Cu-NPs and determine whether the framework that %was left behind was catalytically active? We wonder whether or not all the metal atoms are becoming the mobile \ce{M(0)} %species. 
+%    \item The hexagonal pore returned to its original ~34 A value. How does the value of the pore compare when there are %single-site metal atoms attached to the node? 
+%\end{itemize}
 
 %\subsection{References}
 
