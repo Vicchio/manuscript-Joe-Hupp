@@ -239,7 +239,7 @@ Combining Equations \ref{eq:free-energy-trans}, \ref{eq:chemicalpotentialeq}, an
     \label{fig:FPT-process}
 \end{figure}
 
-The energies for the structures are from periodic density functional (DFT) calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set describes the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} describes the core electrons. The plane wave cutoff energy is 360 Ry and  all atoms in the periodic unit cell were allowed to relax during geometry optimizations. \hl{A sample input file that contains the convergence criteria is located in the Supporting Information.} The variable spin states of the metal atoms required Unrestricted Kohn-Sham (UKS). For example, \ce{Ni(II)} can adopt both singlet (no unpaired electrons) and triplet (two unpaired electron) configurations. For clusters compromised of multiple metal atoms, all permutations of spin state configurations are simulated and included in the library of candidate structures. Any structures exhibiting spin contamination were removed from the analysis (see support information for more details).
+The energies for the structures are from periodic density functional (DFT) calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set describes the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} describes the core electrons. The plane wave cutoff energy is 360 Ry and  all atoms in the periodic unit cell were allowed to relax during geometry optimizations (see Supporting information for a sample input file for further computational details). The variable spin states of the metal atoms required Unrestricted Kohn-Sham (UKS). For example, \ce{Ni(II)} can adopt both singlet (no unpaired electrons) and triplet (two unpaired electron) configurations. For clusters compromised of multiple metal atoms, all permutations of spin state configurations are simulated and included in the library of candidate structures. Any structures exhibiting spin contamination were removed from the analysis (see support information for more details).
 
 \hl{How the PDFs are calculated from the model structures is something that is going to need to be included by Karena and Woodrow here.}
 
@@ -467,7 +467,7 @@ The stability of metal complexes supported on MOFs depend on the reaction enviro
 The \ce{Ni(II)} metal complex structure is dependent on the environment. In the absence of any \ce{H2}, the cluster contains four \ce{Ni(II)} atoms interconnected by \ce{OH}-ligands as suggested by \hl{REFERENCE Platero-Prats}. The tetranuclear configuration of the \ce{Ni(II)} cluster spans the c-pore of the NU-1000 framework. When exposed to \ce{H2} gas, the \ce{OH}-ligands provide sites for \ce{H} adsorption onto the cluster resulting in the formation of \ce{H2O}.  \hl{HIGHLIGHT THE SINTERING PAPER} investigate \ce{H2} adsorption and dissociation on a single \ce{Ni} atom also supported on NU-1000, finding that barriers for \ce{H2} adsorption and dissociation and removal of \ce{H2O} are 141 $kJ/mol$. However within our work, we do not look at the kinetics of \ce{H2} adsorption and dissociation and the subsequent removal of \ce{H2O}. Our discussion focuses on the equilibrium thermodynamic structure resulting from exposure to \ce{H2} gas at different partial pressure and temperatures. 
 
 
-\begin{outline}
+\begin{itemize}
     \item Paragraph 1:
     \begin{itemize}
         \item the metal complex structure is dependent on the reaction environment. 
@@ -475,14 +475,15 @@ The \ce{Ni(II)} metal complex structure is dependent on the environment. In the 
     \end{itemize}
     \item Paragraph 2:
     \begin{itemize}
-        \item The suggested model structure is the light blue structure, which shows that the \ce{\mu_3-OH} ligands are removed here. Note that this structure does NOT show any Ni-H formation on the cluster. Also, comparing the work from Platero-prats this structure contains undercoordinated \ce{Ni-atoms} 
+        \item The suggested model structure is the light blue structure, which shows that the mu3-OH ligands are removed here. Note that this structure does NOT show any Ni-H formation on the cluster. Also, comparing the work from Platero-prats this structure contains undercoordinated \ce{Ni-atoms} 
         \item \ce{H2O} phase diagram suggests that at 50oC even with a small partial pressure of \ce{H2O} that the sample will be fully hydrated (from the \ce{H2O} partial pressure phase diagram.  
     \end{itemize}
     \item Paragraph 3:
     \begin{itemize}
         \item There are features shown on the phase diagram that are not present on the most recent 
+        \item The dPDFs are from XRD data that is the average of ALL potential structures within the MOF framework.. the model dPDFs are snapshots of potential structures within the framework here. 
     \end{itemize}
-\end{outline}
+\end{itemize}
 
 % Paragraph on the inclusion of the reducing agent
 
