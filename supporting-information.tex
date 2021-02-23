@@ -216,6 +216,10 @@ The library was optimized at different \ce{Ni} spin states; the considered spin 
 From Table \ref{tbl:spin_contamination}, the lowest energy structure is  c) three singlet, one triplet; however, the structure is removed from the analysis because the ideal $S^{**}2$ and single $S^{**}2$ deviate. Therefore, the lowest energy structure for this particular configuration is the e) one singlet, three triplet. This type of analysis was included for all structures. 
 
 \newpage
+\subsection{Information about the bulk metal calculations in CP2K.}
+\hl{I need to write up the information about the bulk metal systems...and I need to report whether or not I have the correct bulk metal system for Ni...what about correcting the electronic energy of the bulk metal system to be closer to the atomisation energy of the Ni metal species?}
+
+\newpage
 \subsection{Sample Input File}
 Below is a sample CP2K input file. If the singlet spin state was desired for all \ce{Ni(II)} atoms, UKS F and MULTIPLICITY 1 were used. 
 \begin{center}
@@ -338,14 +342,16 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
 \end{center}
 
 \newpage
-\section{Water Content Phase Diagram}
-\begin{figure}[H]
-   \centering
-    \includegraphics{zi-images/00-General-Graphics/2021-figure-H2O-phase-diagram-manuscript.png}
-   \caption{}
-   \label{fig:phase-diagram-h2o}
-\end{figure}
 
+\section{Water Content Phase Diagram}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{zi-images/00-General-Graphics/2021-figure-H2O-phase-diagram-manuscript.png}
+        \caption{The stability of adsorbed \ce{H2O} on the \ce{Ni(II)} cluster as a function of temperature and \ce{H2O} partial pressure. The regions identify structures with the lowest free energy, thereby demonstrating amount of \ce{H2O} on the cluster. The following naming convention is adopted for the structures: a) \ce{Ni4(OH)6}, b) \ce{Ni4(OH)6 \cdot H2O}, and c) \ce{Ni4(OH)6 \cdot 4H2O}.}
+        \label{fig:h2o-partial-pressure}
+    \end{figure}
+
+\newpage
 \section{Generating Phase Diagram structures with inter-atomic distances}
 
 \end{document}
