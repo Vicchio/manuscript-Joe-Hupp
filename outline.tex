@@ -165,6 +165,7 @@ Herein our work addresses questions related to the structural changes of the met
 
 
 \newpage
+
 \section{Methodology}
 We use a multinuclear \ce{Ni(II)} as a model to investigate how the reaction conditions, such as temperature ($T$) and pressure ($P$), influence the structure and composition of a supported metal complex. The model \ce{Ni(II)} complex (shown in Figure \ref{fig:ref_Ni4_structure}) is located within the small pore of NU-1000. The process of \ce{H2} adsorption and dissociation generates new structures that are compositional different relative to the reference structure. The metal complex features \ce{OH^{*}} and \ce{M^{*}} sites and, when activated with molecular \ce{H2}, accept \ce{H} species. The \ce{OH^{*}} sites can accept a \ce{H} atom to form adsorbed \ce{H2O}, that can desorb into the gas phase depending on conditions. The \ce{M^{*}} sites can accept an \ce{H} atom to form a metal hydride (\ce{M-H}). All the aforementioned transformations are dependent on the partial pressure of \ce{H2} ($P_{H_2}$), the partial pressure of \ce{H2O} ($P_{H_{2}O}$), and the reaction temperature ($T$). We model the changes in cluster structure and composition as a function of reaction conditions by computing the free energy of compositionally different structures (with respect to the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} species) relative to a reference structure. 
 
@@ -250,6 +251,7 @@ The energies for the structures are from periodic density functional (DFT) calcu
 %% Results
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+
 \section{Results}
 We create phase diagrams that show the stability of different configurations and clusters as a function of $T$, $P_{\text{\ce{H2}}}$, and $P_{\text{\ce{H2O}}}$. At each set of conditions, the structure with the lowest free energy is identified and plotted to produce the phase diagram. The regions on the phase diagram correspond to a specific low energy structure, and at the interface between two regions the free energies values are the same. To reduce complexity, the phase diagrams show structural stability at a fixed partial pressure of $P_{\text{\ce{H2O}}} = 10^{-9} \text{bar}$ with the value selected to account for all \ce{H2O} removed at 100 oC. We expect a small value for \ce{H2O} partial pressure the activation conditions do not contain any \ce{H2O}. The only \ce{H2O} present on the cluster is from the initial hydration during synthesis or from the conversion of \ce{OH}-ligands into \ce{H2O} during the activation. The hydrated and anhydrated phase diagram for the \ce{Ni4(OH)6} cluster is located in the Supporting Information. 
 
@@ -284,27 +286,32 @@ The cluster is fully transformed with respect to composition of $\ce{H^{*}}$, $\
     \label{fig:dPDFs_TandP_trans_Ni}
 \end{figure}
 
-We evaluate the performance of our model by comparing the dPDFs of the model structures to the experimental activation dPDF of \citeauthor{PlateroPrats2017}. The dPDFs provide structural insights into the cluster by revealing key interatomic distances with peaks indicating the distance between different atoms. Experimentally, the significant dPDF peaks are the \ce{Ni-O} bond length at \hl{XXX}, the \ce{Ni \cdots Ni} distances at \hl{XXX} and \hl{XXX}, and the \ce{Ni \cdots Zr} distances at \hl{XXX} and \hl{XXX}. The experimental, activated dPDFs for \ce{Ni \cdots Ni} and \ce{Ni \cdots Zr} contain multiple peaks (hence the multiple distances), thus suggest the formation of an asymmetric cluster. Figure \ref{fig:dPDFs_TandP_trans_Ni} shows the dPDFs for all the thermodynamically favorable structures found in Figure \hl{XXX}. For the \ce{Ni-O} peak, we observe that the good agreement between the 1 cycle (activated) dPDF and the \ce{Ni4(OH)6} (purple) dPDF. However, the other model structures either under predict (\ce{Ni4(OH)4}, \ce{Ni3(OH)2}, and \ce{(NiH)2}) or over predict (\ce{Ni4(OH)6 \cdot 4H2O}) the \ce{Ni-O} distance. There is less agreement between the 1 cycle (activated) dPDFs and the model dPDFs for the \ce{Ni \cdots  Ni} and \ce{Ni \cdots Zr} split peaks. None of the model structures recreate the split peaks for \ce{Ni \cdots  Ni} and \ce{Ni \cdots Zr}. \ce{Ni4(OH)6}, \ce{Ni4(OH)4 \cdot 42O} and \ce{Ni4(OH)4} show a broad \ce{Ni \cdots Ni} peak between \hl{XXX} and \hl{XXX} rather than two distinct \ce{Ni \cdots Ni} peaks. There is no agreement for \ce{(NiH)2} and \ce{Ni3(OH)2} compared to the 1 Cycle (activated) dPDF. Additionally, \ce{Ni4(OH)4} contains a small peak around \hl{XXX} A that is attributed to another \ce{Ni \cdots Ni} distance (\hl{see support information}).  \citeauthor{PlateroPrats2017} found the \ce{Ni} coordination environment to decrease slightly from 5.4 under activation conditions.\cite{PlateroPrats2017} The model structures (\hl{REFERENCE-STRUCTURE-FIGURE}) fail to match the experimentally observed coordination environment. Therefore, we explore the stability of the cluster with a fixed \ce{Ni^{*}} composition.
+We evaluate the performance of our model by comparing the dPDFs of the model structures to the experimental activation dPDF of \citeauthor{PlateroPrats2017}. The dPDFs provide structural insights into the cluster by revealing key interatomic distances with peaks indicating the distance between different atoms. Experimentally, the significant dPDF peaks are the \ce{Ni-O} bond length at \hl{XXX}, the \ce{Ni \cdots Ni} distances at \hl{XXX} and \hl{XXX}, and the \ce{Ni \cdots Zr} distances at \hl{XXX} and \hl{XXX}. The experimental, activated dPDFs for \ce{Ni \cdots Ni} and \ce{Ni \cdots Zr} contain multiple peaks (hence the multiple distances), thus suggest the formation of an asymmetric cluster. Figure \ref{fig:dPDFs_TandP_trans_Ni} shows the dPDFs for all the thermodynamically favorable structures found in Figure \hl{XXX}. For the \ce{Ni-O} peak, we observe that the good agreement between the 1 cycle (activated) dPDF and the \ce{Ni4(OH)6} (purple) dPDF. However, the other model structures either under predict (\ce{Ni4(OH)4}, \ce{Ni3(OH)2}, and \ce{(NiH)2}) or over predict (\ce{Ni4(OH)6 \cdot 4H2O}) the \ce{Ni-O} distance. There is less agreement between the 1 cycle (activated) dPDFs and the model dPDFs for the \ce{Ni \cdots  Ni} and \ce{Ni \cdots Zr} split peaks. None of the model structures recreate the split peaks for \ce{Ni \cdots  Ni} and \ce{Ni \cdots Zr}. \ce{Ni4(OH)6}, \ce{Ni4(OH)4 \cdot 4H2O} and \ce{Ni4(OH)4} show a broad \ce{Ni \cdots Ni} peak between \hl{XXX} and \hl{XXX} rather than two distinct \ce{Ni \cdots Ni} peaks. There is no agreement for \ce{(NiH)2} and \ce{Ni3(OH)2} compared to the 1 Cycle (activated) dPDF. Additionally, \ce{Ni4(OH)4} contains a small peak around \hl{XXX} A that is attributed to another \ce{Ni \cdots Ni} distance (\hl{see support information}).  \citeauthor{PlateroPrats2017} found the \ce{Ni} coordination environment to decrease slightly from 5.4 under activation conditions.\cite{PlateroPrats2017} The model structures (\hl{REFERENCE-STRUCTURE-FIGURE}) fail to match the experimentally observed coordination environment. Therefore, we explore the stability of the cluster with a fixed \ce{Ni^{*}} composition.
 
-The cluster is now transformed with respect to composition of $\ce{H^{*}}$ and $\ce{OH^{*}}$ (Figure \ref{fig:phase_diagram_Ni_combined} b)). Unlike Figure \ref{fig:phase_diagram_Ni_combined} a), Figure \ref{fig:phase_diagram_Ni_combined} b) contains a fixed \ce{Ni^{*}} composition . \ce{Ni4(OH)6 \cdot 4H2O}, \ce{Ni4(OH)6 \cdot H2O}, \ce{Ni4(OH)6}, and \ce{Ni4(OH)4} appear on both (Figure \ref{fig:phase_diagram_Ni_combined} a) and b); however, the structures now appear on the diagram are \ce{Ni4(OH)4 \cdot H2O}, \ce{(NiH2Ni)(Ni2)}, \ce{Ni(NiOH)2(NiH2)}, and \ce{Ni(NiH)2Ni(OH)2 \cdot H2O}.
+%Despite Figure \ref{fig:structure_diagram_TandP_trans_Ni} suggesting the complete breakdown of the cluster in a bulk-\ce{Ni} species, there is no experimental evidence. Therefore, we remove all structures with a \ce{Ni} compositional less than four and remove the \ce{Ni} transformation in the free energy expression. Figure \ref{fig:phase_diagram_TandP_fixed_Ni} shows the thermodynamic stability as a function of T and P-H2 at a fixed partial pressure of H2O and \ce{Ni} composition. 
 
+The cluster is now transformed with respect to composition of $\ce{H^{*}}$ and $\ce{OH^{*}}$ (Figure \ref{fig:phase_diagram_Ni_combined} b)). Unlike Figure \ref{fig:phase_diagram_Ni_combined} a), Figure \ref{fig:phase_diagram_Ni_combined} b) contains a fixed \ce{Ni^{*}} composition. \ce{Ni4(OH)6 \cdot 4H2O}, \ce{Ni4(OH)6 \cdot H2O}, \ce{Ni4(OH)6}, and \ce{Ni4(OH)4} appear on both (Figure \ref{fig:phase_diagram_Ni_combined} a) and b); however, the structures now appear on the diagram are \ce{Ni4(OH)4 \cdot H2O} (yellow), \ce{(NiH2Ni)(Ni2)} (mint), \ce{Ni(NiOH)2(NiH2)} (green), and \ce{Ni(NiH)2Ni(OH)2 \cdot H2O} (pink). A similar trend is observed in Figure \ref{fig:phase_diagram_Ni_combined} b) as \ref{fig:phase_diagram_Ni_combined} a); the continued conversion of \ce{\mu_{2}-OH^{*}} sites into \ce{H2O} with increasing \ce{H2} partial pressure. Starting from \ce{Ni4(OH)4}, the lowest energy structures exhibit the replacement of \ce{\mu_{2}-OH} ligands with \ce{Ni-H-Ni} structural units. \ce{Ni(NiOH)2(NiH2)} shows the partial conversion of and \ce{(NiH2Ni)(Ni2)} shows the full conversion of the \ce{\mu_{2}-OH} ligands that link the \ce{Ni} atoms of the cluster. 
+
+
+At lower temperatures, adsorbed \ce{H2O} is found in the lowest energy structures (\ce{Ni4(OH)4 \cdot H2O} and \ce{Ni(NiH)2Ni(OH)2 \cdot H2O}). 
+
+We again evaluate the performance of our model system by comparing the model dPDFs to the experimental 1 cycle (activated) dPDF by comparing peaks across all structures (Figure \ref{fig:dPDFs_TandP_fixed_Ni}). First, we again observe that all model structures underpredict the \ce{Ni-O} bond length. Second, we find that as the cluster is reduced and \ce{OH^{*}} are removed a sharp peak appears between 2.1 and 2.5 A. The peak is related a \ce{Ni \cdots Ni} distance between the two middle atoms of the cluster and is seen by \ce{Ni4(OH)4 \cdot H2O}, \ce{(NiH2Ni)(Ni2)}, \ce{Ni(NiOH)2(NiH2)}, and \ce{Ni(NiH)2Ni(OH)2 \cdot H2O}. The split \ce{Ni \cdots Ni} peaks are not captured by any of the thermodynamically dominate structures. However, \ce{Ni4(OH)4 \cdot H2O} and \ce{(NiH2Ni)(Ni2)} show a single sharp peak centered around the split \ce{Ni \cdots Ni} peaks. Interestingly, \ce{Ni(NiH)2Ni(OH)2 \cdot H2O} shows no peak within the \hl{XXX} to \hl{XXX}, but shows a prominent peak associated to a \ce{Ni \cdots Ni} distance at \hl{XXX} A. \ce{(NiH2Ni)(Ni2)} and \ce{Ni(NiH)2Ni(OH)2 \cdot H2O} show a single peak within the bounds for the 1 Cycle (activated) \ce{Ni \cdots Zr} split peaks. \ce{Ni(NiOH)2(NiH2)} weakly exhibits the split \ce{Ni \cdots Zr} peaks, but includes an additional peak at \hl{XXX} that is attributed to a \hl{XXX} distance.    
+  
 
 \ce{Ni \cdots  Ni} and \ce{Ni \cdots Zr}
 
-%\begin{itemize}
-%    \item \ce{Ni4(OH)6 \cdot 4H2O} 
-%    \item \ce{Ni4(OH)6}
-%    \item \ce{Ni4(OH)6 \cdot H2O} structure (gray) 
-%    \item \ce{Ni4(OH)6} (purple) 
-%    \item \ce{Ni4(OH)4} (light blue)
-%    \item \ce{Ni3(OH)2} (red)
-%    \item \ce{(NiH)2} (lilac) 
-%    \item \ce{Ni4(OH)4} \cdot H2O (yellow) <---- this structure and below are new
-%    \item 
-%    \item
-%    \item
-%\end{itemize}
- 
+
+%    (1)  \ce{Ni4(OH)6},                % purple
+%    (2)  \ce{Ni4(OH)6 \cdot H2O},      % gray
+%    (3)  \ce{Ni4(OH)6 \cdot 4H2O},     % orange
+%    (4)  \ce{Ni4(OH)4},                % light blue
+%    (5)  \ce{Ni3(OH)2},                % red
+%    (6)  \ce{(NiH)2},                  % lilac
+%    (7)  \ce{Ni4(OH)4 \cdot H2O},      % yellow
+%    (8)  \ce{(NiH2Ni)(Ni2)},           % mint
+%    (9)  \ce{Ni(NiOH)2(NiH2)}, and    % green 
+%    (10) \ce{Ni(NiH)2Ni(OH)2 \cdot H2O}. % pink
+
 
 
 % Fixed Ni content phase diagram
@@ -337,7 +344,7 @@ We compare the the thermodynamically favorable structures from Figure \ref{fig:p
 
 
 % Talk about the Ni coordination.. talk about the lack of Ni NPs forming under these conditions.. talk about the Ni fixed phase diagram... 
-Despite Figure \ref{fig:structure_diagram_TandP_trans_Ni} suggesting the complete breakdown of the cluster in a bulk-\ce{Ni} species, there is no experimental evidence. Therefore, we remove all structures with a \ce{Ni} compositional less than four and remove the \ce{Ni} transformation in the free energy expression. Figure \ref{fig:phase_diagram_TandP_fixed_Ni} shows the thermodynamic stability as a function of T and P-H2 at a fixed partial pressure of H2O and \ce{Ni} composition. 
+
 
 
 % talk about the structures on the phase diagram
