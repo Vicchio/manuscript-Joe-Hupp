@@ -21,6 +21,7 @@
 \usepackage{makecell}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage{todonotes}
 
 
 
@@ -165,30 +166,37 @@ Herein our work addresses questions related to the structural changes of the met
 
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Methodology
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Methodology}
-We use a multinuclear \ce{Ni(II)} as a model to investigate how the reaction conditions, such as temperature ($T$) and pressure ($P$), influence the structure and composition of a supported metal complex. The model \ce{Ni(II)} complex (shown in Figure \ref{fig:ref_Ni4_structure}) is located within the small pore of NU-1000. The process of \ce{H2} adsorption and dissociation generates new structures that are compositional different relative to the reference structure. The metal complex features \ce{OH^{*}} and \ce{M^{*}} sites and, when activated with molecular \ce{H2}, accept \ce{H} species. The \ce{OH^{*}} sites can accept a \ce{H} atom to form adsorbed \ce{H2O}, that can desorb into the gas phase depending on conditions. The \ce{M^{*}} sites can accept an \ce{H} atom to form a metal hydride (\ce{M-H}). All the aforementioned transformations are dependent on the partial pressure of \ce{H2} ($P_{H_2}$), the partial pressure of \ce{H2O} ($P_{H_{2}O}$), and the reaction temperature ($T$). We model the changes in cluster structure and composition as a function of reaction conditions by computing the free energy of compositionally different structures (with respect to the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} species) relative to a reference structure. 
+We use a multinuclear \ce{Ni(II)} as a model to investigate how the reaction conditions, such as temperature ($T$) and pressure ($P$), influence the structure and composition of a supported metal complex. The model \ce{Ni(II)} complex (shown in Figure \ref{fig:ref_Ni4_structure}) is located within the small pore of NU-1000. The process of \ce{H2} adsorption and dissociation generates new structures that are compositional different relative to the reference structure. The metal complex features \ce{OH^{*}} and \ce{M^{*}} sites and, when activated with molecular \ce{H2}, accept \ce{H} species. The \ce{OH^{*}} sites can accept a \ce{H} atom to form adsorbed \ce{H2O}, that can desorb into the gas phase depending on conditions. The \ce{M^{*}} sites can accept an \ce{H} atom to form a metal hydride (\ce{M-H}). All the aforementioned transformations are dependent on the partial pressure of \ce{H2} ($P_{\text{\ce{H2}}}$), the partial pressure of \ce{H2O} ($P_{\text{\ce{H2O}}}$), and the reaction temperature ($T$). We model the changes in cluster structure and composition as a function of reaction conditions by computing the free energy of compositionally different structures (with respect to the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} species) relative to a reference structure. 
 
 \begin{figure}
     \centering
     \includegraphics[width=0.20\textwidth]{zi-images/00-General-Graphics/Reference-structure.png}
     \caption{Structure of the multinuclear Ni(II) cluster supported on NU-1000. The cluster spans the small pore in NU-1000, and therefore attaches to two nodes. The structure is the reference for all \textit{ab initio} thermodynamic analysis calculations.}
     \label{fig:ref_Ni4_structure}
+    \todo[inline]{Need to show a NU-1000 framework structure, and then go from the NU-1000 framework to the model structure... }
 \end{figure}
 
-We use \textit{ab initio} thermodynamic analysis to compute the stability of the different structural and compositional variations by transforming the free energy from a fixed number of atoms ($N_i$) to a fixed chemical potential ($\mu_i$). The free energy is transformed with respect to $\mu_{H^{*}}$, $\mu_{OH^{*}}$, and $\mu_{M^{*}}$ to account for structural and compositional variations in the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} on the cluster (Figure \ref{fig:FPT-process}). Equation \ref{eq:free-energy-trans} shows the free energy difference ($\Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})$) between structure $j$ and the reference structure ($ref$).  (see Supporting Information for the full derivation).
+We use \textit{ab initio} thermodynamic analysis to compute the stability of the different structural and compositional variations by transforming the free energy from a fixed number of atoms ($N_i$) to a fixed chemical potential ($\mu_i$). The free energy is transformed with respect to $\mu_{H^{*}}$, $\mu_{OH^{*}}$, and $\mu_{M^{*}}$ to account for structural and compositional variations in the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} on the cluster (Figure \ref{fig:FPT-process}). Equation \ref{eq:free-energy-trans} shows the free energy difference ($\Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})$) between structure $j$ and the reference structure (ref).  (see Supporting Information for the full derivation).
 \begin{equation}
     \begin{split}
-        \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = 
-        & F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}}) - 
-          F_{ref}(T,N_{ref,H^{*}},N_{ref,OH^{*}},N_{ref,M^{*}}) \\
-        & - (\mu_{H^{*}})(\Delta N_{H^{*}}) - (\mu_{OH^{*}})(\Delta N_{OH^{*}}) - (\mu_{M^{*}})(\Delta N_{M^{*}}) \\ 
+        \Delta F^{(3)}(T,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})  = 
+            & \Delta F^{(0)}(T,N_{\text{H}^{*}},N_{\text{OH}^{*}},N_{\text{Ni}^{*}})) \\
+            & - (\mu_{\text{H}^{*}})(\Delta N_{\text{H}^{*}}) - (\mu_{\text{OH}^{*}})(\Delta N_{\text{OH}^{*}}) - (\mu_{\text{Ni}^{*}})(\Delta N_{\text{Ni}^{*}}) \\ 
+%        \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = 
+%        & F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}}) - 
+%          F_{ref}(T,N_{ref,H^{*}},N_{ref,OH^{*}},N_{ref,M^{*}}) \\
+%        & - (\mu_{H^{*}})(\Delta N_{H^{*}}) - (\mu_{OH^{*}})(\Delta N_{OH^{*}}) - (\mu_{M^{*}})(\Delta N_{M^{*}}) \\ 
     \end{split}
     \label{eq:free-energy-trans}
 \end{equation}
 The $F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}})$ term is the free energy of structure $j$ with configuration of $N_{j,H^{*}}$, $N_{j,OH^{*}}$, and $N_{j,M^{*}}$. The $\Delta N_{H^{*}}$, $\Delta N_{OH^{*}}$, and $\Delta N_{M^{*}}$ terms are the difference between $N_{j}$ and $N_{ref}$ for that particular species. 
 
-The chemical potential terms,  $\mu_{H^{*}}$ and $\mu_{OH^{*}}$, depend on the temperature and gas phase reaction conditions. We assume that $\ce{H^{*}}$ and $\ce{OH^{*}}$ are in equilibrium with an ideal-gas like reservoir with of \ce{H2} and \ce{H2O}, respectively (as shown in Figure \ref{fig:FPT-process}). The chemical potential of the reservoir is dependent on the reaction conditions ($T$ and $P$). The assumed equilibrium for $\ce{H^{*}}$ is with $\frac{1}{2}$ \ce{H2} (g) and for $\ce{OH^{*}}$ is with \ce{H2O} (g)/$\frac{1}{2}$\ce{H2} (g) (Equation \ref{eq:reaction_equilibrium}). The combined expression for $\ce{OH^{*}}$ captures the influence of both \ce{H2O} and \ce{H2} gas phase conditions on the stability of the cluster (further details in the Supporting Information).
+The chemical potential terms,  $\mu_{\text{H}^{*}}$ and $\mu_{\text{OH}^{*}}$, depend on the temperature and gas phase reaction conditions. We assume that $\ce{\text{H}^{*}}$ and $\ce{\text{OH}^{*}}$ are in equilibrium with an ideal-gas like reservoir with of \ce{H2} and \ce{H2O}, respectively (as shown in Figure \ref{fig:FPT-process}). The chemical potential of the reservoir is dependent on the reaction conditions ($T$ and $P$). The assumed equilibrium for $\ce{\text{H}^{*}}$ is with $\frac{1}{2}$ \ce{H2} (g) and for $\ce{\text{OH}^{*}}$ is with \ce{H2O} (g)/$\frac{1}{2}$\ce{H2} (g) (Equation \ref{eq:reaction_equilibrium}). The combined expression for $\ce{OH^{*}}$ captures the influence of both \ce{H2O} and \ce{H2} gas phase conditions on the stability of the cluster (further details in the Supporting Information).
 \begin{equation}
     \begin{split}
         \frac{1}{2} H_{2} (g) & \ce{<=>} H^{*} \\           
@@ -196,7 +204,7 @@ The chemical potential terms,  $\mu_{H^{*}}$ and $\mu_{OH^{*}}$, depend on the t
     \end{split}
     \label{eq:reaction_equilibrium}
 \end{equation}
-Using Equation \ref{eq:reaction_equilibrium}, the relationship between the $\ce{H^{*}}$ and $\ce{OH^{*}}$ species and the gas phase \ce{H2} and \ce{H2O} conditions are shown in Equation \ref{eq:chemicalpotentialeq}. The $\mu_{i}^{g}(T,P)$ terms contain the temperature and pressure influences of the reaction conditions. 
+Using Equation \ref{eq:reaction_equilibrium}, the relationship between the $\ce{\text{H}^{*}}$ and $\ce{OH^{*}}$ species and the gas phase \ce{H2} and \ce{H2O} conditions are shown in Equation \ref{eq:chemicalpotentialeq}. The $\mu_{i}^{g}(T,P)$ terms contain the temperature and pressure influences of the reaction conditions. 
 \begin{equation}
     \begin{split}
         \mu_{H^{*}} &= \frac{1}{2} \mu_{H_{2}}^{g}(T,P) \\ 
@@ -230,12 +238,12 @@ The gas-phase Gibbs free energies ($\Delta G_{i}(T,P^{o})$) at standard pressure
 
 Unlike the gas phase chemical potential terms, the metal chemical potential term ($\mu_{M^{*}}$) is independent of the reaction conditions and the metal chemical potential term assumed to be in equilibrium with a bulk metal system. The chemical potential $\mu_{M^{*}}$ is approximated by the electronic energy for a bulk metal system (see Supporting Information). 
 
-Combining Equations \ref{eq:free-energy-trans}, \ref{eq:chemicalpotentialeq}, and \ref{eq:chemicalpotentialrel} produces the final transformed free energy expression (shown in the supporting information). The free energy expression was solved at every combination of $T$, $P_{H_2}$, and $P_{H_{2}O}$ for all structures. We generate a library of unique, modified structures for the \textit{ab initio} thermodynamic analysis by systematically adding \ce{H} atoms to different atoms on metal cluster and then removing any formed \ce{H2O}. Each modified structure was optimized at each addition of \ce{H} atoms and removal of adsorbed \ce{H2O}. There are specific combinations of \ce{H^{*}}, \ce{OH^{*}} and \ce{M^{*}} within the library. At all combinations of $T$, $P_{H_2}$, and $P_{H_{2}O}$, the lowest free energy structure was identified thereby revealing the thermodynamic landscape of the modified metal cluster under reducing conditions. 
+Combining Equations \ref{eq:free-energy-trans}, \ref{eq:chemicalpotentialeq}, and \ref{eq:chemicalpotentialrel} produces the final transformed free energy expression (shown in the supporting information). The free energy expression was solved at every combination of $T$, $P_{H_2}$, and $P_{H_{2}O}$ for all structures. We generate a library of unique, modified structures for the \textit{ab initio} thermodynamic analysis by systematically adding \ce{H} atoms to different atoms on metal cluster and then removing any formed \ce{H2O}. Each modified structure was optimized at each addition of \ce{H} atoms and removal of adsorbed \ce{H2O}. There are specific combinations of \ce{\text{H}^{*}}, \ce{OH^{*}} and \ce{M^{*}} within the library. At all combinations of $T$, $P_{H_2}$, and $P_{H_{2}O}$, the lowest free energy structure was identified thereby revealing the thermodynamic landscape of the modified metal cluster under reducing conditions. 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{zi-images/00-General-Graphics/FPT-schematic-full.png}
-    \caption{Diagram showing the assumed equilibria necessary to transform with \ce{H^{*}}, \ce{OH^{*}}, and \ce{M^{*}} in the \textit{ab initio} thermodynamic analysis approach. The assumed equilibria for these adsorbed species capture the the reaction conditions on the stability of the metal cluster when using Equation \ref{eq:free-energy-trans}.}
+    \caption{Diagram showing the assumed equilibria necessary to transform with \ce{\text{H}^{*}}, \ce{OH^{*}}, and \ce{M^{*}} in the \textit{ab initio} thermodynamic analysis approach. The assumed equilibria for these adsorbed species capture the the reaction conditions on the stability of the metal cluster when using Equation \ref{eq:free-energy-trans}.}
     \label{fig:FPT-process}
 \end{figure}
 
@@ -260,7 +268,7 @@ We create phase diagrams that show the stability of different configurations and
 %    \centering
 %    \includegraphics{zi-images/01-Ni-Graphics/2021-02-25-Ni-phase-diagram-combined%-manuscript.png}
 %    \caption{
-%    Phase diagram (a) and corresponding dPDF diagram (b) for the stability of the %\ce{Ni(II)} cluster as a function of temperature and \ce{H2} partial pressure %at a \ce{H2O} partial pressure = $10^{-9}$ bar when transforming with %\ce{H^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}}. Regions in (a) indicate the the %modified structure that minimizes the free energy Equation %(\ref{eq:free-energy-trans}) at a given combination of $T/P_{H_{2}}$ and fixed %\ce{H2O} partial pressure. The \ce{H2} partial pressure is reported as %$log(P_{H_{2}}/P_{H_{2}}^{o})$, where the standard state is 1 atm. The dPDF %diagram (b) 
+%    Phase diagram (a) and corresponding dPDF diagram (b) for the stability of the %\ce{Ni(II)} cluster as a function of temperature and \ce{H2} partial pressure %at a \ce{H2O} partial pressure = $10^{-9}$ bar when transforming with %\ce{\text{H}^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}}. Regions in (a) indicate the the %modified structure that minimizes the free energy Equation %(\ref{eq:free-energy-trans}) at a given combination of $T/P_{H_{2}}$ and fixed %\ce{H2O} partial pressure. The \ce{H2} partial pressure is reported as %$log(P_{H_{2}}/P_{H_{2}}^{o})$, where the standard state is 1 atm. The dPDF %diagram (b) 
 %    
 %    
 %    The following naming convention is adopted for the structures: 
@@ -285,7 +293,7 @@ We create phase diagrams that show the stability of different configurations and
     \includegraphics{zi-images/01-Ni-Graphics/2021-02-25-Ni-phase-diagram-combined-manuscript.png}
     \caption{
     The stability of the \ce{Ni(II)} cluster as a function of temperature and \ce{H2} partial pressure at a \ce{H2O} partial pressure = $10^{-9}$ bar when transforming with a)
-    \ce{H^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}} and, b) \ce{H^{*}} and \ce{OH^{*}} (fixed \ce{Ni^{*}}). Regions indicate the the modified structure that minimizes the free energy Equation (\ref{eq:free-energy-trans}) at a given combination of $T/P_{H_{2}}$ and fixed \ce{H2O} partial pressure. The \ce{H2} partial pressure is reported as $log(P_{H_{2}}/P_{H_{2}}^{o})$, where the standard state is 1 atm. The following naming convention is adopted for the structures: 
+    \ce{H^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}} and, b) \ce{H^{*}} and \c (fixed \ce{Ni^{*}}). Regions indicate the the modified structure that minimizes the free energy Equation (\ref{eq:free-energy-trans}) at a given combination of $T/P_{H_{2}}$ and fixed \ce{H2O} partial pressure. The \ce{H2} partial pressure is reported as $log(P_{H_{2}}/P_{H_{2}}^{o})$, where the standard state is 1 atm. The following naming convention is adopted for the structures: 
     (1) \ce{Ni4(OH)6} (purple),              % purple
     (2) \ce{Ni4(OH)6.H2O} (gray),            % gray
     (3) \ce{Ni4(OH)6.4H2O} (orange),         % orange
