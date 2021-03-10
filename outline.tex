@@ -171,18 +171,23 @@ Herein our work addresses questions related to the structural changes of the met
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Methodology}
-We investigate how reaction conditions, such as temperature ($T$) and pressure ($P$), influence the structure and composition of a \ce{Ni(II)} supported metal complex on NU-1000. \hl{Figure XXX} shows the NU-1000 MOF and the location of the supported metal complex. The model consists of four \ce{Ni(II)} species located within the small pore of NU-1000 (\ce{Zr...Zr} \hl{distance of A}). Structurally, the \ce{Ni(II)} atoms are linked together by \ce{\mu3-OH} and \ce{\mu2-OH} ligands.  
+We investigate how reaction conditions, such as temperature ($T$) and pressure ($P$), influence the structure and composition of a \ce{Ni(II)} supported metal complex on NU-1000. \hl{Figure} \ref{fig:Ni-MOF-model} shows the NU-1000 MOF and the location of the \ce{Ni(II)} supported metal complex. The model consists of four \ce{Ni(II)} species located within the c-pore of NU-1000 (pore diameter of \hl{XXXX A}). Structurally, the \ce{Ni(II)} atoms are linked together by \ce{\mu3-OH} and \ce{\mu2-OH} ligands that connect adjacent \ce{Zr} nodes of the c-pore (\hl{Figure} \ref{fig:Ni-MOF-model} \hl{X})). Depending on conditions, \ce{Ni} may also be coordinated with adsorbed \ce{H2O} species.
 
-We use a multinuclear \ce{Ni(II)} as a model to investigate how the reaction conditions, such as temperature ($T$) and pressure ($P$), influence the structure and composition of a supported metal complex. The model \ce{Ni(II)} complex (shown in Figure \ref{fig:ref_Ni4_structure}) is located within the small pore of NU-1000. The process of \ce{H2} adsorption and dissociation generates new structures that are compositional different relative to the reference structure. The metal complex features \ce{OH^{*}} and \ce{M^{*}} sites and, when activated with molecular \ce{H2}, accept \ce{H} species. The \ce{OH^{*}} sites can accept a \ce{H} atom to form adsorbed \ce{H2O}, that can desorb into the gas phase depending on conditions. The \ce{Ni^{*}} sites can accept an \ce{H} atom to form a metal hydride (\ce{Ni-H}). All the aforementioned transformations are dependent on the partial pressure of \ce{H2} ($P_{\text{\ce{H2}}}$), the partial pressure of \ce{H2O} ($P_{\text{\ce{H2O}}}$), and the reaction temperature ($T$). We model the changes in cluster structure and composition as a function of reaction conditions by computing the free energy of compositionally different structures (with respect to the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{Ni^{*}} species) relative to a reference structure. 
-\todo[inline]{Write a chemical reaction for the transformation of the cluster}
-
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.20\textwidth]{zi-images/00-General-Graphics/Reference-structure.png}
-    \caption{Structure of the multinuclear Ni(II) cluster supported on NU-1000. The cluster spans the small pore in NU-1000, and therefore attaches to two nodes. The structure is the reference for all \textit{ab initio} thermodynamic analysis calculations.}
-    \label{fig:ref_Ni4_structure}
-    \todo[inline]{Need to show a NU-1000 framework structure, and then go from the NU-1000 framework to the model structure... }
+%    \includegraphics{}
+    \caption{Caption \hl{(the structure that we used here was considered our reference structure)}}
+    \label{fig:Ni-MOF-model}
 \end{figure}
+
+We select the \ce{Ni4(OH)6} model shown in \hl{Figure} \ref{fig:Ni-MOF-model} \hl{X}) to be the reference structure for all chemical transformations. Under \ce{H2}, both the \ce{Ni(II)} and \ce{OH} ligands provide sites that can accept dissociated \ce{H} atoms after \ce{H2} adsorption and dissociation. When these sites, defined as \ce{OH^{*}} and \ce{Ni^{*}}, accept dissociated \ce{H} atoms, the composition of the cluster changes to include additional adsorbed \ce{H2O} (\ce{H2O^{*}}) and/or Nickel-hydride (\ce{Ni-H}). However, the adsorbed \ce{H2O} are not fixed to the \ce{Ni} cluster; our modeling include the subsequent desorption of \ce{H2O} into the gas-phase. All the aforementioned transformations are dependent on the reaction temperature ($T$), and the partial pressure of \ce{H2} ($P_{\text{\ce{H2}}}$) and \ce{H2O} ($P_{\text{\ce{H2O}}}$). We model the changes in cluster structure and composition as a function of these conditions by computing the free energy of compositionally different model structures  relative to a reference structure. We consider the chemical transformed described by the reversible reaction shown below (Equation \hl{XXX}):
+\begin{equation}
+    \begin{split}
+        \ce{Ni4(OH)6 + z \cdot H2 (g) <=>} Ni4(OH)6 \cdot (6)H2O
+    \end{split}
+\end{equation}
+\todo[inline]{Write the chemical equation that describes the transformations. If needed, check one of the old presentations for a description (maybe my Oral Qualifier?).}
+(with respect to the number of \ce{H^{*}}, \ce{OH^{*}} and \ce{Ni^{*}} species)
 
 Using \textit{ab initio} thermodynamic analysis, we transform the free energy from a fixed number of atoms ($N_{\text{i}}$) to a fixed chemical potential ($\mu_{\text{i}}$) to determine the stability of the different structural and compositional variations. The free energy is transformed with respect to $\mu_{\text{H}^{*}}$, $\mu_{\text{OH}^{*}}$, and $\mu_{\text{Ni}^{*}}$ to account for structural and compositional variations in the number of adsorbed \ce{H} species ($N_{\text{H}^{*}}$), \ce{OH}-ligands ($N_{\text{OH}^{*}}$), and \ce{Ni} species ($N_{\text{Ni}^{*}}$). Equation \ref{eq:free-energy-trans} shows the free energy difference ($\Delta F^{(3)}(T,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})$) between structure $\text{j}$ and the \ce{Ni4(OH)6} reference structure (ref).
 \begin{equation}
@@ -220,7 +225,7 @@ The chemical potential terms, $\mu_{\text{H}^{*}}$ and $\mu_{\text{OH}^{*}}$, in
     \end{split}
     \label{eq:chemicalpotentialrel}
 \end{equation}
-where $\text{i}$ represents either species \ce{H2} or \ce{H2O}. The gas-phase Gibbs free energies ($\Delta G_{\text{i}}(T,P^{o})$) at standard pressure ($P^{o}$) were computed using the NASA Polynomials\cite{Mcbride1993} in the pMuTT\cite{LYM2019106864} Python package. We approximate the \ce{Ni} chemical potential term ($\mu_{\text{Ni}^{*}}$) using the electronic energy of a bulk \ce{Ni} metal system. \hl{XXXX of the Supporting Information contains the full derivation for the \textit{ab initio} thermodynamic modeling approach.} 
+where $\text{i}$ represents either species \ce{H2} or \ce{H2O}. The gas-phase Gibbs free energies ($\Delta G_{\text{i}}(T,P^{o})$) at standard pressure ($P^{o}$) were computed using the NASA Polynomials\cite{Mcbride1993} in the pMuTT\cite{LYM2019106864} Python package. For \ce{Ni}, we approximate the chemical potential term ($\mu_{\text{Ni}^{*}}$) using the electronic energy of a bulk \ce{Ni} metal system. \hl{XXXX of the Supporting Information contains the full derivation for the \textit{ab initio} thermodynamic modeling approach.} 
 
 % NEED A SECTION HERE THAT TALKS MORE ABOUT THE LIBRARY THAT WAS GENERATED
 
