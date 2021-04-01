@@ -165,8 +165,6 @@ Further complicating our understanding of the active site structure is the struc
 \subsection{Paragraph 4}
 Herein our work addresses questions related to the structural changes of the metal complex active site as a function of both temperature and gas phase conditions. By combining Density Functional Theory (DFT) calculations with gas phase empirical models, we investigate cluster stability under different gas phase conditions (\ce{H2}) and temperature. Modeling focuses on the 1-\ce{Ni4(OH)6} (purple) cluster proposed by \citeauthor{PlateroPrats2017} and the \ce{Cu3(OH)4} cluster proposed by \cite{Ikuno2017}. Our results provide structural information about the types of changes exhibited by the cluster to establish more appropriate molecular models. 
 
-
-
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Methodology
@@ -177,12 +175,13 @@ We investigate how reaction conditions, such as temperature ($T$) and pressure (
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{zi-images/00-General-Graphics/2021-figure-MOF-structure.png}
-    \caption{The structure of NU-1000: (a) the inorganic \ce{Zr}-based node, (b) the organic linker, (c) NU-1000 MOF structure shown along the c-axis and a-axis, and the model structure for tetranuclear \ce{Ni} cluster shown (d) atomistically and (e) schematically. The \ce{Ni} metal complex is located in the c-pore (gray box in (c)). The node structure is truncated for the atomic and schematic rendering of the \ce{Ni} metal complex shown in (d) and (e).}
+    \includegraphics{zi-images/00-General-Graphics/2021-figure-MOF-structure.png}
+    \caption{
+    The structure of NU-1000 shown along the (a) c-axis and the (b) a-axis with the location of the metal complex location highlighted by the gray box. The proposed structure for the tetranuclear \ce{Ni} cluster is shown (c) atomistically and (d) schematically, with the MOF framework truncated from the renderings.}
     \label{fig:Ni-MOF-model}
 \end{figure}
 
-We select the \ce{Ni4(OH)6.4H2O} model, shown in Figure \ref{fig:Ni-MOF-model} (d) and (e), to be the as-synthesized \ce{Ni} structure and the reference structure for our investigation. While investigating how reaction conditions alter the catalyst structure, all structural and compositional transformations begin from the \ce{Ni4(OH)6.4H2O} model. Under \ce{H2}, both the \ce{Ni(II)} and \ce{OH} ligands provide sites that can accept dissociated \ce{H} atoms after \ce{H2} adsorption and dissociation. When these sites, defined as \ce{OH^{*}} and \ce{Ni^{*}}, accept dissociated \ce{H} atoms, the composition of the cluster changes to include additional adsorbed \ce{H2O} (\ce{H2O^{*}}) and/or Nickel-hydride (\ce{Ni-H}). However, the adsorbed \ce{H2O} are not fixed to the \ce{Ni} cluster; our modeling includes the subsequent desorption of \ce{H2O} into the gas-phase. All the aforementioned transformations are dependent on the reaction temperature ($T$), and \ce{H2} ($P_{\text{\ce{H2}}}$) and \ce{H2O} ($P_{\text{\ce{H2O}}}$) partial pressures. We model how the cluster structure and composition changes as a function of these different conditions by computing the free energy of compositionally different model structures  relative to a reference structure. We consider the chemical transformed described by the reversible reaction shown below (Equation \ref{eq:chemical-formula}):
+We select the \ce{Ni4(OH)6.4H2O} model, shown in Figure \ref{fig:Ni-MOF-model} \hl{(d) and (e)}, to be the as-synthesized \ce{Ni} structure and the reference structure for our investigation. While investigating how reaction conditions alter the catalyst structure, all structural and compositional transformations start from the \ce{Ni4(OH)6.4H2O} model, that is we explore the evolution of the composition and structure starting from the \ce{Ni4(OH)6.4H2O} model. Under \ce{H2}, both the \ce{Ni(II)} and \ce{OH} ligands provide sites that can accept dissociated \ce{H} atoms after \ce{H2} adsorption and dissociation. When these sites, defined as \ce{OH^{*}} and \ce{Ni^{*}}, accept dissociated \ce{H} atoms, the composition of the cluster changes to include additional adsorbed \ce{H2O} (\ce{H2O^{*}}) and/or Nickel-hydride (\ce{Ni-H}). However, the adsorbed \ce{H2O} are not fixed to the \ce{Ni} cluster; our modeling includes the subsequent desorption of \ce{H2O} into the gas-phase. All the aforementioned transformations are dependent on the reaction temperature ($T$), and \ce{H2} ($P_{\text{\ce{H2}}}$) and \ce{H2O} ($P_{\text{\ce{H2O}}}$) partial pressures. We model how the cluster structure and composition changes as a function of these different conditions by computing the free energy of compositionally different model structures  relative to a reference structure. We consider the chemical transformed described by the reversible reaction shown below (Equation \ref{eq:chemical-formula}):
 \begin{equation}
     \begin{split}
         \ce{Ni4(OH)6.4H2O + xH2 (g) <=> Ni4(OH)_{10-(y+z)}(H)_{4+2x-(x+y)}.yH2O + zH2O (g)} \\
@@ -231,11 +230,12 @@ The chemical potential terms, $\mu_{\text{H}^{*}}$ and $\mu_{\text{OH}^{*}}$, in
 \end{equation}
 where $\text{i}$ represents either species \ce{H2} or \ce{H2O}. The gas-phase Gibbs free energies ($\Delta G_{\text{i}}(T,P^{o})$) at standard pressure ($P^{o}$) were computed using the NASA Polynomials\cite{Mcbride1993} in the pMuTT\cite{LYM2019106864} Python package. For \ce{Ni}, we approximate the chemical potential term ($\mu_{\text{Ni}^{*}}$) using the electronic energy of a bulk \ce{Ni} metal system. \hl{XXXX of the Supporting Information contains the full derivation for the \textit{ab initio} thermodynamic modeling approach.} 
 
-We calculate $\mu_{\text{i}}^{\text{g}}(T,P)$ for both \ce{H2} and \ce{H2O} at temperatures ranging from 20 \degree C to 320 \degree C and \ce{H2} partial pressure ranging from $10^{-30}$ bar to $10^{0}$ bar at a fixed \ce{H2O} partial pressure of $10^{-9}$ bar. For each structure in the library, the free energy (Equation \ref{eq:free-energy-trans}) is calculated under range of activation conditions. For a given set of reaction conditions, we determined the most thermodynamically favorable structure by determining which structure minimizes the free energy (Equation \ref{eq:free-energy-trans}).  
+We calculate $\mu_{\text{i}}^{\text{g}}(T,P)$ for both \ce{H2} and \ce{H2O} at temperatures ranging from 20 \degree C to 320 \degree C and \ce{H2} partial pressure ranging from $10^{-30}$ bar to $10^{5}$ bar at a fixed \ce{H2O} partial pressure of $10^{-9}$ bar. For each structure in the library, the free energy (Equation \ref{eq:free-energy-trans}) is calculated under range of activation conditions. For a given set of reaction conditions, we determined the most thermodynamically favorable structure by determining which structure minimizes the free energy (Equation \ref{eq:free-energy-trans}).  
 
 The energies for the structures are from periodic density functional (DFT) calculations in CP2K.\cite{Hutter2014} The exchange correlation energy was calculated with the PBE functional\cite{Perdew1996} and corrected using damped D3 dispersion corrections formulated by \citeauthor{Grimme2010}.\cite{Grimme2010} The DZVP-MOLOPT basis set describes the valance electrons, Goedecker pseudopotentials\cite{Goedecker1996} describes the core electrons. The plane wave cutoff energy is 360 Ry and  all atoms in the periodic unit cell were allowed to relax during geometry optimizations (see Supporting information for a sample input file for further computational details). The variable spin states of the metal atoms required Unrestricted Kohn-Sham (UKS). For example, \ce{Ni(II)} can adopt both singlet (no unpaired electrons) and triplet (two unpaired electron) configurations. For clusters consisting of multiple \ce{Ni} atoms, we consider spin state permutations within the library of model structures. Any structures exhibiting spin contamination were removed from the analysis (see support information for more details).
 
 \hl{How the PDFs are calculated from the model structures is something that is going to need to be included by Karena and Woodrow here.}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Results
@@ -243,12 +243,14 @@ The energies for the structures are from periodic density functional (DFT) calcu
 \newpage
 
 \section{Results}
-We create phase diagrams that show the stability of different configurations and clusters as a function of $T$, $P_{\text{\ce{H2}}}$, and $P_{\text{\ce{H2O}}}$. At each set of conditions, the structure with the lowest free energy is identified and plotted to produce the phase diagram. The regions on the phase diagram correspond to a specific low energy structure, and at the interface between two regions the free energies values are the same. The phase diagrams show structural stability at a fixed \ce{H2O} partial pressure ($P_{\text{\ce{H2O}}} = 10^{-9}$ bar), which allows us to generate phase diagrams only as a function of $T$ and $P_{\text{\ce{H2O}}}$. The activation and reaction conditions do not contain any \ce{H2O} gas; therefore, we assume a small value for \ce{H2O} partial pressure. We select the fixed \ce{H2O} partial pressure under the assumption that all \ce{H2O} is removed at 100 \degree C. A phase diagram describing \ce{H2O} evolution from the \ce{Ni4(OH)6.4H2O} model under different conditions is provided in the \hl{Supporting Information}.
+We create phase diagrams that show the stability of different configurations and clusters as a function of $T$, $P_{\text{\ce{H2}}}$, and $P_{\text{\ce{H2O}}}$. At each set of conditions, the structure with the lowest free energy is identified and plotted to produce the phase diagram. The regions on the phase diagram correspond to a specific low energy structure, and at the interface between two regions the free energies values are the same. The phase diagrams show structural stability at a fixed \ce{H2O} partial pressure, which allows us to generate phase diagrams only as a function of $T$ and $P_{\text{\ce{H2}}}$. Experimentally, the conditions the tetranuclear \ce{Ni(II)} cluster is exposed to do not contain any \ce{H2O} gas; therefore, we assume a small value for \ce{H2O} partial pressure ($P_{\text{\ce{H2O}}}$) of $10^{-9}$ bar. We provide a phase diagram describing the \ce{H2O} evolution from a \ce{Ni4(OH)6.4H2O} model as a function of $T$ and $P_{\text{\ce{H2O}}}$ in the \hl{Supporting Information}.
 
 \begin{figure}[H]
     \centering
     \includegraphics{zi-images/01-Ni-Graphics/2021-figure-structure-Ni-transformations_manuscript-structure.png}
-    \caption{Schematic representation of the structures that minimize the free energy expression (\ref{eq:free-energy-trans}) the \textit{ab initio} thermodynamic analysis. The blue colored \ce{H2O}s indicate \ce{H2O} coordinated to \ce{Ni} atoms and the red colored \ce{H} atoms indicate the formation of a \ce{Ni-H}.} 
+    \caption{
+    Schematic representation of the structures that minimize the free energy expression (\ref{eq:free-energy-trans}) the \textit{ab initio} thermodynamic analysis. The blue colored \ce{H2O}s indicate \ce{H2O} coordinated to \ce{Ni} atoms and the red colored \ce{H} atoms indicate the formation of a \ce{Ni-H}.
+    \hl{This figure will ALSO need to be updated.. show only the structures that are absolutely necessary here now.}} 
     \label{fig:Ni-structure-diagram}
 \end{figure}
 
@@ -259,7 +261,7 @@ Under the studied reaction conditions, the stable structures that minimize the f
     \centering
     \includegraphics{zi-images/01-Ni-Graphics/2021-03-23-Ni-phase-diagram-combined-manuscript.png}
     \caption{
-    The stability of the \ce{Ni(II)} cluster as a function of temperature and \ce{H2} partial pressure at a \ce{H2O} partial pressure = $10^{-9}$ bar when transforming with (a) \ce{H^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}} and, (b) \ce{H^{*}} and \ce{OH^{*}} (fixed \ce{Ni^{*}}). Regions indicate the the modified structure that minimizes the free energy Equation (\ref{eq:free-energy-trans}) at a given combination of $T/P_{H_{2}}$ and fixed \ce{H2O} partial pressure. The \ce{H2} partial pressure is reported as $log(P_{H_{2}}/P_{H_{2}}^{o})$, where the standard state is 1 atm. The following naming convention is adopted for the structures: 
+    The stability of the \ce{Ni(II)} cluster as a function of temperature and \ce{H2} partial pressure at a \ce{H2O} partial pressure = $10^{-9}$ bar when transforming with (a) \ce{H^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}} and, (b) \ce{H^{*}} and \ce{OH^{*}} (fixed \ce{Ni^{*}}). \hl{Regions indicate the the modified structure that minimizes the free energy} Equation (\ref{eq:free-energy-trans}) at a given combination of $T/P_{H_{2}}$ and fixed \ce{H2O} partial pressure. The \ce{H2} partial pressure is reported as $log(P_{H_{2}}/P_{H_{2}}^{o})$, where the standard state is 1 bar. The following naming convention is adopted for the structures: 
     1-\ce{Ni4(OH)6} (purple),              % purple
     2-\ce{Ni4(OH)6.H2O} (gray),            % gray
     3-\ce{Ni4(OH)6.4H2O} (orange),         % orange
@@ -289,7 +291,7 @@ With all coordinated \ce{H2O} removed, an increase in \ce{H2} partial pressure s
     \label{fig:dPDFs_TandP_trans_Ni}
 \end{figure}
 
-We evaluate the performance of our model by comparing the model dPDFs to experimental dPDFs for an activated \ce{Ni} metal complex supported on NU-1000. \citeauthor{PlateroPrats2017} synthesized the tetranuclear \ce{Ni} cluster, and then activated it by performing a temperature ramp to 200 \degree C and holding the temperature at 200 \degree C for 2 hours under \ce{H2} (3.5\% in \ce{He}).\cite{PlateroPrats2017} 
+We evaluate the performance of our model by comparing the model dPDFs to experimental dPDFs for an activated \ce{Ni} metal complex supported on NU-1000. \citeauthor{PlateroPrats2017} synthesized the tetranuclear \ce{Ni} cluster, and then activated it by performing a temperature ramp to 200 \degree C and holding the temperature at 200 \degree C for 2 hours under \ce{H2} (3.5\% in \ce{He}).\cite{PlateroPrats2017} \hl{The XRD data needed to generate the dPDFs were then determined in H2 at 50 \degree C.}
 
 The dPDFs provide structural insights into the cluster by revealing key interatomic distances with peaks indicating the distance between different atoms. Experimentally, the significant dPDF peaks are the \ce{Ni-O} bond length at 2.02 {\AA}, the \ce{Ni{\Compactcdots}Ni} distances at 3.01 {\AA} and 3.27 {\AA}, and the \ce{Ni{\Compactcdots}Zr} distances at 3.78 {\AA} and 4.08 {\AA}. The experimental, activated dPDFs for \ce{Ni{\Compactcdots}Ni} and \ce{Ni{\Compactcdots}Zr} contain multiple peaks that suggests asymmetric distances within the cluster. Figure \ref{fig:dPDFs_TandP_trans_Ni} shows the dPDFs for all the thermodynamically favorable structures found in Figure \ref{fig:phase_diagram_Ni_combined} (a). 
 
@@ -370,8 +372,19 @@ The phase diagrams, Figure \ref{fig:phase_diagram_Ni_combined}, highlight the mo
 
 
 \begin{itemize}
-    \item Discussion Topic 1: Comparisons with experiments
-    \item Discussion Topic 2: \ce{Ni-H} formation in 8-\ce{Ni4(OH)5(H).4H2O} (teal)
+    \item Discussion Topic 1: Comparisons with experiments 
+    \begin{itemize}
+        \item the conditions that the catalyst experiences, and how those conditions could be different.. and maybe discuss what the goals of those conditions are in terms of the structure of the catalyst
+        \item \ce{Ni-H} formation in 8-\ce{Ni4(OH)5(H).4H2O} (teal).. how this structure generates the \ce{Ni-H} that everything thinks is the active species within the catalyst.
+        \item 4-\ce{Ni4(OH)4} (light blue) containing the \ce{Ni{\Compactcdots}} peak at 2-ish {\AA}.. dominates the phase space
+        \item talk about what these results mean in the context of the activated structure and how the free energies of the structures are very similar in energy.
+        \item talk about how, despite the additional \ce{Ni} species, only a single \ce{Ni} atom is the activated metal because structures.. we see that all the other structures are not in good agreement..  
+    \end{itemize}
+    \item Discussion Topic 2: Formate vs. Formate-Free
+    \begin{itemize}
+        \item The implications of formate vs. formate-free NU-1000 could impact the structure of the active site, since formate containing blocks potential metal loading sites on the node struture
+        \item We model the node structure assuming formate free, but the cluster that is created might actual contain formate species. 
+    \end{itemize}
     \item Discussion Topic 3:
     \item Discussion Topic 4:
     
