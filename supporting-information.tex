@@ -32,6 +32,7 @@
 \usepackage{siunitx}
 \usepackage{makecell}
 \usepackage{booktabs}
+\usepackage{soul}
 
 
 %\renewcommand{\thefigure}{S\arabic{figure}}
@@ -370,6 +371,58 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
 \newpage
 \section{Generating Phase Diagram structures with inter-atomic distances}
 
+
+\newpage
+\section{Phase diagrams as a function of \ce{H2O} partial pressure.}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.60\linewidth]{zi-images/04-SI-images/2021-05-04-Trans-Ni.png}
+    \caption{
+    The thermodynamic stability of the cluster is plotted as a function of \ce{H2O} partial pressure from $10^{-25}$ to $10^{0.0}$ bar for a variable \ce{Ni} composition. The structures present on the phase diagram include:
+        1-\ce{Ni4(OH)6} (purple),               % purple 
+        2-\ce{Ni4(OH)4} (blue),                 % blue
+        3-\ce{Ni3(OH)2} (red),                  % red 
+        4-\ce{Ni2(H)2} (lilac),                 % lilac 
+        5-\ce{Ni4(H)2} (mint),                  % mint
+        7-\ce{Ni4(OH)6.H2O} (gray), and         % gray
+        8-\ce{Ni4(OH)6.4H2O} (orange).          % orange
+    With increasing \ce{H2O} partial pressure, the \ce{Ni} atoms remain highly coordinated because \ce{OH}-ligands and any coordinated \ce{H2O} remain on the cluster.  
+    }
+    \label{fig:SI-phase-Ni-trans}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.60\linewidth]{zi-images/04-SI-images/2021-05-04-Fixed-Ni.png}
+    \caption{
+    The thermodynamic stability of the cluster is plotted as a function of \ce{H2O} partial pressure from $10^{-25}$ to $10^{0.0}$ bar for a fixed \ce{Ni} composition. The structures present on the phase diagram include:
+        1-\ce{Ni4(OH)6} (purple),               % purple 
+        2-\ce{Ni4(OH)4} (blue),                 % blue
+        5-\ce{Ni4(H)2} (mint),                  % mint
+        6-\ce{Ni4(OH)2(H)2} (green),            % green
+        7-\ce{Ni4(OH)6.H2O} (gray),             % gray
+        8-\ce{Ni4(OH)6.4H2O} (orange),          % orange
+        9-\ce{Ni4(OH)4.H2O} (yellow),           % yellow
+        10-\ce{Ni4(OH)5(H).4H2O} (teal), and    % teal
+        11-\ce{Ni4(OH)2(H)2.H2O} (pink).        % pink
+    With increasing \ce{H2O} partial pressure, the \ce{Ni} atoms remain highly coordinated because \ce{OH}-ligands and any coordinated \ce{H2O} remain on the cluster.  
+    }
+    \label{fig:SI-phase-Ni-fixed}
+\end{figure}
+
+\hl{Platero-Prats} observed a \ce{Ni} coordination number of approximately 5, which we observe at larger \ce{H2O} partial pressure. Our analysis uses {H2O} partial pressure as tunable parameter. Therefore, we select an \ce{H2O} partial pressure of $10^{-10}$ bar for both the variable and fixed \ce{Ni} phase diagrams presented within the manuscript. The structures that dominate the phase space at lower \ce{H2O} partial pressures lack the correct \ce{Ni} coordination environment and fail to recreate the experimental dPDF peak positions. 
+
+\newpage
+\section{Structure diagram for all phase diagram structures.}
+\begin{figure}[H]
+    \centering
+%    \includegraphics{
+%    }
+    \caption{All the structures located on Figures \ref{fig:SI-phase-Ni-trans} and \ref{fig:SI-phase-Ni-fixed} are shown. The same naming convention and color scheme is used as the phase diagram figure.}
+    \label{fig:SI-structure-diagram}
+\end{figure}
+
+
 \newpage
 \section{Temporary section for information from the SI}
 
@@ -381,5 +434,9 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
     \caption{Diagram showing the assumed equilibria necessary to transform with \ce{\text{H}^{*}}, \ce{OH^{*}}, and \ce{M^{*}} in the \textit{ab initio} thermodynamic analysis approach. The assumed equilibria for these adsorbed species capture the the reaction conditions on the stability of the metal cluster when using Equation \ref{eq:free-energy-trans}.}
     \label{fig:FPT-process}
 \end{figure}
+
+
+
+
 
 \end{document}
