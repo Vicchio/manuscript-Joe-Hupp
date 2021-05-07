@@ -1,1 +1,8 @@
 Inorganic nodes interconnected by organic linkers form the MOF structure with over 16,000 different MOF structures currently found on the Metal Organic Framework Database. 
+
+
+
+
+
+
+The key interatomic distances for the experimental dPDFs are labeled with dashed lines. The labeled structures that include an * denote structure that are not thermodynamic minima, but were selected to represent solely based on the dPDFs measurement. 
