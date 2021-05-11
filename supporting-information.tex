@@ -45,8 +45,9 @@
 % % % % % % % % % % % % % % % % % % % % % % % 
 % PROJECT SPECIFICATIONS
 % % % % % % % % % % % % % % % % % % % % % % %  
-\title{Support Information: \\
-Nickel(II) and Copper(II) Supported Metal Complex Stability in NU-1000 Under Hydrogenation Conditions}
+\title{Supporting Information: \\
+Identifying the structure and composition of \ce{Ni(II)}-hydroxo catalyst supported the NU-1000 metal-organic framework
+}
 \author{Stephen Vicchio}
 
 % % % % % % % % % % % % % % % % % % % % % % % 
@@ -63,23 +64,23 @@ Nickel(II) and Copper(II) Supported Metal Complex Stability in NU-1000 Under Hyd
 \subsection{Deriving Free Energy Expression}
 We transformed the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of the different activated clusters (shown in Equation \ref{eq:transformation1}):
 \begin{equation}
-    F^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) \rightarrow F^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})
+    F^{0}(T,P,N_{\text{H}^{*}},N_{\text{OH}^{*}},N_{\text{Ni}^{*}}) \rightarrow F^{3}(T,P,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})
     \label{eq:transformation1}
 \end{equation}
-where $N_{H}$ is the number of adsorbed $H$ on the cluster with chemical potential $\mu_{H^{*}}$, $N_{OH}$ is the number of adsorbed $OH$ on the cluster with chemical potential $\mu_{OH^{*}}$, and $N_{M}$ is the number of adsorbed metal species ($M$) on the cluster with chemical potential $\mu_{M^{*}}$. Using Legendre's transforms, the free energy is is written as Equation \ref{eq:transformation2}:
+where $N_{\text{H}^{*}}$ is the number of adsorbed $H$ on the cluster with chemical potential $\mu_{\text{H}^{*}}$, $N_{\text{OH}^{*}}$ is the number of adsorbed $OH$ on the cluster with chemical potential $\mu_{\text{OH}^{*}}$, and $N_{M}$ is the number of adsorbed metal species ($M$) on the cluster with chemical potential $\mu_{\text{Ni}^{*}}$. Using Legendre's transforms, the free energy is is written as Equation \ref{eq:transformation2}:
 \begin{equation}
     \begin{split}
-        F^{3}(T,P,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}}) &= F^{0}(T,P,N_{H},N_{OH},N_{M^{*}}) \\ &- (\mu_{H^{*}})(N_{H}) \\ &- (\mu_{OH^{*}})(N_{OH}) \\ &- (\mu_{M^{*}})(N_{M^{*}})  
+        F^{3}(T,P,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}}) &= F^{0}(T,P,N_{\text{H}^{*}},N_{\text{OH}^{*}},N_{\text{Ni}^{*}}) \\ &- (\mu_{\text{H}^{*}})(N_{\text{H}^{*}}) \\ &- (\mu_{\text{OH}^{*}})(N_{\text{OH}^{*}}) \\ &- (\mu_{\text{Ni}^{*}})(N_{\text{Ni}^{*}})  
         \label{eq:transformation2}    
     \end{split}
 \end{equation}
 The new free energy expression (Equation \ref{eq:transformation2}) allows for compositionally different structures to be compared with the gas phase conditions being included in the free energy expression. The final free energy expression defining the difference between the modified ($k$) and the reference ($i$) structure is defined in Equation \ref{eq:freenergyfinal}:
 \begin{equation}
     \begin{split}
-        \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = 
-        & F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}}) - 
-          F_{i}(T,N_{i,H^{*}},N_{i,OH^{*}},N_{i,M^{*}}) \\
-        & - (\mu_{H^{*}})(\Delta N_{H^{*}}) - (\mu_{OH^{*}})(\Delta N_{OH^{*}}) - (\mu_{M^{*}})(\Delta N_{M^{*}}) \\ 
+        \Delta F^{(3)}(T,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})  = 
+        & F_{j}(T,N_{j,\text{H}^{*}},N_{j,\text{OH}^{*}},N_{j,\text{Ni}^{*}}) - 
+          F_{i}(T,N_{i,\text{H}^{*}},N_{i,\text{OH}^{*}},N_{i,\text{Ni}^{*}}) \\
+        & - (\mu_{\text{H}^{*}})(\Delta N_{\text{H}^{*}}) - (\mu_{\text{OH}^{*}})(\Delta N_{\text{OH}^{*}}) - (\mu_{\text{Ni}^{*}})(\Delta N_{\text{Ni}^{*}}) \\ 
     \end{split}
     \label{eq:freenergyfinal}
 \end{equation}
@@ -89,7 +90,7 @@ where $\Delta N_{i}$ terms represent the different between the modified ($N_{j}$
 \begin{figure}[H]
     \centering
     \includegraphics{zi-images/00-General-Graphics/FPT-schematic-full.png}
-    \caption{Diagram showing the assumed equilibria necessary to transform with \ce{H^{*}}, \ce{OH^{*}}, \ce{Ni^{*}} for the \textit{ab initio} thermodynamic analysis method. The assume assumed equilibria capture the reaction conditions influences on the stability of the metal cluster.}
+    \caption{Diagram showing the assumed equilibria necessary to transform with \ce{\text{H}^{*}}, \ce{\text{OH}^{*}}, \ce{Ni^{*}} for the \textit{ab initio} thermodynamic analysis method. The assume assumed equilibria capture the reaction conditions influences on the stability of the metal cluster.}
     \label{fig:FPT-process-diagram}
 \end{figure}
 
@@ -100,18 +101,18 @@ For $H^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} gas:
 \end{equation}
 where the chemical potential terms are related by: 
 \begin{equation}
-    \frac{1}{2} \mu_{H_{2}}^{g}(T,P) = \mu_{H^{*}}
+    \frac{1}{2} \mu_{H_{2}}^{g}(T,P) = \mu_{\text{H}^{*}}
 \end{equation}  
 The $\mu_{H_{2}}^{g}(T,P)$ is computed by  correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase Gibbs free energy values at a specific temperature and pressure (shown in Equation \ref{H2-to-reaction-conditions}). 
 \begin{equation}
     \begin{split}
-         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \Delta \mu_{H_{2}}(T,P)  \\
-         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \Delta G_{H_{2}}(T,P) \\ 
-         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \Big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \Big]  \\ 
+         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + \Delta \mu_{H_{2}}(T,P)  \\
+         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + \Delta G_{H_{2}}(T,P) \\ 
+         \mu_{H_{2}}^{g}(T,P) &= E_{H_{2}}^{DFT} + \Big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \Big]  \\ 
     \end{split}
     \label{H2-to-reaction-conditions}
 \end{equation}
-With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) and zero-point energy ($E_{H_{2}}^{ZPE}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript. 
+With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript. 
 
 \subsubsection{Equilibrium expression for $OH^{*}$}
 For $OH^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} and \ce{H2O} gas:
@@ -120,30 +121,30 @@ For $OH^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} and \ce{H2O
 \end{equation}
 where the chemical potential terms are related by: 
 \begin{equation}
-    \frac{1}{2} \mu_{H_{2}^{g}}(T,P) + \mu_{OH^{*}} = \mu_{H_{2}O}^{g}(T,P) 
+    \frac{1}{2} \mu_{H_{2}^{g}}(T,P) + \mu_{\text{OH}^{*}} = \mu_{H_{2}O}^{g}(T,P) 
 \end{equation}
-The \ce{OH^{*}} chemical potential term is dependent on both the \ce{H2} and \ce{H2O} gas phase conditions. 
+The \ce{\text{OH}^{*}} chemical potential term is dependent on both the \ce{H2} and \ce{H2O} gas phase conditions. 
 \begin{equation}
-    \mu_{OH^{*}} = \mu_{H_{2}O}(T,P) - \frac{1}{2} \mu_{H_{2}}(T,P)    
+    \mu_{\text{OH}^{*}} = \mu_{H_{2}O}(T,P) - \frac{1}{2} \mu_{H_{2}}(T,P)    
 \end{equation}
 The $\mu_{H_{2}O}^{g}(T,P)$ was evaluated just like $\mu_{H_{2}}^{g}(T,P)$ in Equation \ref{H2-to-reaction-conditions}. 
 \begin{equation}
     \begin{split}
-         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Delta \mu_{H_{2}O}(T,P)  \\
-         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Delta G_{H_{2}O}(T,P) \\ 
-         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Big[ \Delta G_{H_{2}O}(T,P)  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big]  \\ 
+         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + \Delta \mu_{H_{2}O}(T,P)  \\
+         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + \Delta G_{H_{2}O}(T,P) \\ 
+         \mu_{H_{2}O}^{g}(T,P) &= E_{H_{2}O}^{DFT} + \Big[ \Delta G_{H_{2}O}(T,P)  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big]  \\ 
     \end{split}
     \label{H2O-to-reaction-conditions}
 \end{equation}
-With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The combined expression for $\mu_{OH^{*}}$ is given by Equation \ref{OH-to-reaction-conditions}.
+With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The combined expression for $\mu_{\text{OH}^{*}}$ is given by Equation \ref{OH-to-reaction-conditions}.
 \begin{equation}
     \begin{split}
-    \mu_{OH^{*}} &=  E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Big[ \Delta G_{H_{2}O}(T,P^{o})  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big] \\
-    &- \frac{1}{2} \Big[ E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \big] \Big] 
+    \mu_{\text{OH}^{*}} &=  E_{H_{2}O}^{DFT} + \Big[ \Delta G_{H_{2}O}(T,P^{o})  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big] \\
+    &- \frac{1}{2} \Big[ E_{H_{2}}^{DFT} + \big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \big] \Big] 
     \end{split}
     \label{OH-to-reaction-conditions}
 \end{equation} 
-The $\mu_{OH^{*}}$ chemical potential is dependent on temperature ($T$) and both gas phase partial pressures ($P_{H_2}$ and $P_{H_{2}O}$). The electronic energy ($E_{H_{2}O}^{DFT}$) and zero-point energy ($E_{H_{2}O}^{ZPE}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript. \\
+The $\mu_{\text{OH}^{*}}$ chemical potential is dependent on temperature ($T$) and both gas phase partial pressures ($P_{H_2}$ and $P_{H_{2}O}$). The electronic energy ($E_{H_{2}O}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript. \\
 
 \subsubsection{Equilibrium expression for $M^{*}$}
 For $M^{*}$, the assumed equilibrium is with a reservoir of bulk-\ce{M}:
@@ -152,11 +153,11 @@ For $M^{*}$, the assumed equilibrium is with a reservoir of bulk-\ce{M}:
 \end{equation}
 where the chemical potential terms are related by: 
 \begin{equation}
-    \mu_{bulk-M} = \mu_{M^{*}}
+    \mu_{bulk-M} = \mu_{\text{Ni}^{*}}
 \end{equation}
-Unlike $\mu_{OH^{*}}$ and $\mu_{H^{*}}$, $\mu_{M^{*}}$ was determined by the  electronic energy of a bulk metal surface (Equation \ref{Ni-to-reaction-conditions})
+Unlike $\mu_{\text{OH}^{*}}$ and $\mu_{\text{H}^{*}}$, $\mu_{\text{Ni}^{*}}$ was determined by the  electronic energy of a bulk metal surface (Equation \ref{Ni-to-reaction-conditions})
 \begin{equation}
-    \mu_{M^{*}} = \mu_{bulk-M} = E_{M}^{DFT}
+    \mu_{\text{Ni}^{*}} = \mu_{bulk-M} = E_{M}^{DFT}
     \label{Ni-to-reaction-conditions}
 \end{equation}
 %TODO explain that the computational parameters are different here.... 
@@ -165,13 +166,13 @@ Unlike $\mu_{OH^{*}}$ and $\mu_{H^{*}}$, $\mu_{M^{*}}$ was determined by the  el
 The final transformed free energy expression is given by Equation \ref{eq:final-free-energy-equation-full}. All the terms dervied above are included in the expression. 
 \begin{equation}
     \begin{split}
-        \Delta F^{(3)}(T,\mu_{H^{*}},\mu_{OH^{*}},\mu_{M^{*}})  = 
-        & F_{j}(T,N_{j,H^{*}},N_{j,OH^{*}},N_{j,M^{*}}) - 
-          F_{i}(T,N_{i,H^{*}},N_{i,OH^{*}},N_{i,M^{*}}) \\
-        & - (\Delta N_{H^{*}}) (E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \Big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \Big])  \\
-        & - (\Delta N_{OH^{*}}) \Big( E_{H_{2}O}^{DFT} + E_{H_{2}O}^{ZPE} + \Big[ \Delta G_{H_{2}O}(T,P^{o})  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big] \\ 
-        & - \frac{1}{2} \Big[ E_{H_{2}}^{DFT} + E_{H_{2}}^{ZPE} + \big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \big] \Big] \Big) \\
-        & - (\Delta N_{M^{*}}) (E_{M}^{DFT}) \\ 
+        \Delta F^{(3)}(T,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})  = 
+        & F_{j}(T,N_{j,\text{H}^{*}},N_{j,\text{OH}^{*}},N_{j,\text{Ni}^{*}}) - 
+          F_{i}(T,N_{i,\text{H}^{*}},N_{i,\text{OH}^{*}},N_{i,\text{Ni}^{*}}) \\
+        & - (\Delta N_{\text{H}^{*}}) (E_{H_{2}}^{DFT} + \Big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \Big])  \\
+        & - (\Delta N_{\text{OH}^{*}}) \Big( E_{H_{2}O}^{DFT} + \Big[ \Delta G_{H_{2}O}(T,P^{o})  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big] \\ 
+        & - \frac{1}{2} \Big[ E_{H_{2}}^{DFT} + \big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \big] \Big] \Big) \\
+        & - (\Delta N_{\text{Ni}^{*}}) (E_{M}^{DFT}) \\ 
     \end{split}
     \label{eq:final-free-energy-equation-full}
 \end{equation}
@@ -416,11 +417,56 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
 \section{Structure diagram for all phase diagram structures.}
 \begin{figure}[H]
     \centering
-%    \includegraphics{
-%    }
-    \caption{All the structures located on Figures \ref{fig:SI-phase-Ni-trans} and \ref{fig:SI-phase-Ni-fixed} are shown. The same naming convention and color scheme is used as the phase diagram figure.}
+    \includegraphics{zi-images/04-SI-images/2021-05-11-updated-manuscript-structure-SI-ALL.png}
+    \caption{
+    All the structures located on Figures \ref{fig:SI-phase-Ni-trans} and \ref{fig:SI-phase-Ni-fixed} are shown. The same naming convention and color scheme is used as the phase diagram figure. The structures shown are: 
+        1-\ce{Ni4(OH)6} (purple),               % purple 
+        2-\ce{Ni4(OH)4} (blue),                 % blue
+        5-\ce{Ni4(H)2} (mint),                  % mint
+        6-\ce{Ni4(OH)2(H)2} (green),            % green
+        7-\ce{Ni4(OH)6.H2O} (gray),             % gray
+        8-\ce{Ni4(OH)6.4H2O} (orange),          % orange
+        9-\ce{Ni4(OH)4.H2O} (yellow),           % yellow
+        10-\ce{Ni4(OH)5(H).4H2O} (teal), and    % teal
+        11-\ce{Ni4(OH)2(H)2.H2O} (pink).        % pink
+    }
     \label{fig:SI-structure-diagram}
 \end{figure}
+
+\section{dPDF diagram for all phase diagram structures.}
+\begin{figure}[H]
+    \centering
+    \includegraphics{zi-images/04-SI-images/2021-05-11-Ni-single-dPDF-ALL-SI-ALL.png}
+    \caption{
+    All the structures located on Figures \ref{fig:SI-phase-Ni-trans} and \ref{fig:SI-phase-Ni-fixed} are shown. The same naming convention and color scheme is used as the phase diagram figure. The structures shown are: 
+        1-\ce{Ni4(OH)6} (purple),               % purple 
+        2-\ce{Ni4(OH)4} (blue),                 % blue
+        5-\ce{Ni4(H)2} (mint),                  % mint
+        6-\ce{Ni4(OH)2(H)2} (green),            % green
+        7-\ce{Ni4(OH)6.H2O} (gray),             % gray
+        8-\ce{Ni4(OH)6.4H2O} (orange),          % orange
+        9-\ce{Ni4(OH)4.H2O} (yellow),           % yellow
+        10-\ce{Ni4(OH)5(H).4H2O} (teal), and    % teal
+        11-\ce{Ni4(OH)2(H)2.H2O} (pink).        % pink
+    }
+    \label{fig:SI-structure-diagram}
+\end{figure}
+
+
+
+\newpage
+\section{Structure diagram for structure containing a NiH species}
+\begin{figure}[H]
+    \centering
+    \includegraphics{zi-images/04-SI-images/2021-05-10-Ni-single-dPDF-Ni-H.png}
+    \caption{
+    The dPDFs and structure diagrams for structures that feature a traditional \ce{Ni-H} species. The * denotes structures that are not thermodynamic minimum on during any of the \textit{ab initio} thermodynamic analysis. \hl{Statement about the structures here.. need to explain some of the key features from the dPDFs and what that means in the context of the story.}
+    }
+    \label{fig:SI-structure-diagram}
+\end{figure}
+
+
+
 
 
 \newpage
@@ -431,7 +477,7 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{zi-images/00-General-Graphics/FPT-schematic-full.png}
-    \caption{Diagram showing the assumed equilibria necessary to transform with \ce{\text{H}^{*}}, \ce{OH^{*}}, and \ce{M^{*}} in the \textit{ab initio} thermodynamic analysis approach. The assumed equilibria for these adsorbed species capture the the reaction conditions on the stability of the metal cluster when using Equation \ref{eq:free-energy-trans}.}
+    \caption{Diagram showing the assumed equilibria necessary to transform with \ce{\text{H}^{*}}, \ce{\text{OH}^{*}}, and \ce{M^{*}} in the \textit{ab initio} thermodynamic analysis approach. The assumed equilibria for these adsorbed species capture the the reaction conditions on the stability of the metal cluster when using Equation \ref{eq:free-energy-trans}.}
     \label{fig:FPT-process}
 \end{figure}
 
