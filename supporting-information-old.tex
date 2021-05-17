@@ -1,32 +1,13 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% This is a (brief) model paper using the achemso class
-%% The document class accepts keyval options, which should include
-%% the target journal and optionally the manuscript type. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[journal=jacsat,manuscript=article]{achemso}
-\SectionNumbersOn
-\SubsectionNumbersOn
-%\documentclass[12pt]{article}
-%\usepackage[letterpaper,left=0.5in,right=0.5in,top=1.0in,bottom=1.0in]{geometry}
+% % % % % % % % % % % % % % % % % % % % % % % 
+% DOCUMENT SETUP
+% % % % % % % % % % % % % % % % % % % % % % % 
+\documentclass[12pt]{article}
+\usepackage[letterpaper,left=0.75in,right=0.75in,top=1.0in,bottom=1.0in]{geometry}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Place any additional packages needed here.  Only include packages
-%% which are essential, to avoid problems later. Do NOT use any
-%% packages which require e-TeX (for example etoolbox): the e-TeX
-%% extensions are not currently available on the ACS conversion
-%% servers.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
-\usepackage{siunitx} % generating degrees Celsius in the document 
-\usepackage{color}
-\usepackage{soul} % allows highlighting text 
-\usepackage{makecell}
-\usepackage{booktabs}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{gensymb}
-\usepackage{verbatim}
 
+% % % % % % % % % % % % % % % % % % % % % % % 
+% IMPORTED PACKAGES
+% % % % % % % % % % % % % % % % % % % % % % % 
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
 \usepackage{dsfont}
@@ -36,11 +17,11 @@
     colorlinks=true,
     linkcolor=black,
     urlcolor=blue, 
-    breaklinks=true,
-    citecolor = red,
+    breaklinks=true
 }
 \usepackage{breakcites}
 %\usepackage{caption}
+\usepackage[version=4]{mhchem}
 \usepackage{float}
 \usepackage[hang]{subfigure}
 \usepackage{overpic}
@@ -48,120 +29,52 @@
 \usepackage[super]{nth}
 \usepackage{multicol}
 \linespread{1.15}
+\usepackage{siunitx}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{soul}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% If issues arise when submitting your manuscript, you may want to
-%% un-comment the next line.  This provides information on the
-%% version of every file you have used.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\listfiles
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Place any additional macros here.  Please use \newcommand* where
-%% possible, and avoid layout-changing macros (which are not used
-%% when typesetting).
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand*\mycommand[1]{\texttt{\emph{#1}}}
-\DeclareRobustCommand
-  \Compactcdots{\mathinner{\cdotp\mkern-2mu\cdotp\mkern-2mu\cdotp}}
+%\renewcommand{\thefigure}{S\arabic{figure}}
+%\setcounter{figure}{0}
+%
+%\renewcommand{\thetable}{S\arabic{table}}
+%\setcounter{table}{0}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Meta-data block
-%% ---------------
-%% Each author should be given as a separate \author command.
-%%
-%% Corresponding authors should have an e-mail given after the author
-%% name as an \email command. Phone and fax numbers can be given
-%% using \phone and \fax, respectively; this information is optional.
-%%
-%% The affiliation of authors is given after the authors; each
-%% \affiliation command applies to all preceding authors not already
-%% assigned an affiliation.
-%%
-%% The affiliation takes an option argument for the short name.  This
-%% will typically be something like "University of Somewhere".
-%%
-%% The \altaffiliation macro should be used for new address, etc.
-%% On the other hand, \alsoaffiliation is used on a per author basis
-%% when authors are associated with multiple institutions.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\author{Stephen P. Vicchio}
-\affiliation[Clemson University]
-{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, SC}
-\author{Zhihengyu Chen}
-\affiliation[Stony Brook University]
-{Department of Chemistry, Stony Brook University, Stony Brook, NY}
-\author{Karena Chapman}
-\affiliation[Stony Brook University]
-{Department of Chemistry, Stony Brook University, Stony Brook, NY}
-\author{Rachel B. Getman}
-\email{rgetman@g.clemson.edu}
-\affiliation[Clemson University]
-{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, SC}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The document title should be given as usual. Some journals require
-%% a running title from the author: this should be supplied as an
-%% optional argument to \title.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[manuscript]{
-Supporting Information:\\Identifying the structure and composition of \ce{Ni(II)}-hydroxo catalyst supported the NU-1000 metal-organic framework
+% % % % % % % % % % % % % % % % % % % % % % % 
+% PROJECT SPECIFICATIONS
+% % % % % % % % % % % % % % % % % % % % % % %  
+\title{Supporting Information: \\
+Identifying the structure and composition of \ce{Ni(II)}-hydroxo catalyst supported the NU-1000 metal-organic framework
 }
+\author{Stephen Vicchio}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Some journals require a list of abbreviations or keywords to be
-%% supplied. These should be set up here, and will be printed after
-%% the title and author information, if needed.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abbreviations{IR,NMR,UV}
-\keywords{American Chemical Society, \LaTeX}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The manuscript does not need to include \maketitle, which is
-%% executed automatically.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % % % % % % % % 
+% THE DOCUMENT
+% % % % % % % % % % % % % % % % % % % % % % %
 \begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Start the table of content here
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
 
 \newpage
 \tableofcontents
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Start the main part of the manuscript here.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \newpage
 \section{Computational Methodology}
-
-\subsection{Schematic for \textit{ab initio} thermodynamic analysis}
-    \begin{figure}[H]
-        \centering
-        \includegraphics{zi-images/00-General-Graphics/FPT-schematic-full.png}
-        \caption{Diagram showing the assumed equilibria necessary to transform with \ce{\text{H}^{*}}, \ce{\text{OH}^{*}}, \ce{Ni^{*}} for the \textit{ab initio} thermodynamic analysis method. The assume assumed equilibria capture the reaction conditions influences on the stability of the metal cluster.}
-        \label{fig:SI-FPT-process-diagram}
-    \end{figure}
-
-    Figure \ref{fig:SI-FPT-process-diagram} shows the \textit{ab initio} thermodynamic analysis process we used to evaluate the stability of a \ce{Ni4}-cluster supported on the NU-1000 MOF. We assume the cluster is in equilibrium with three different reservoirs, which allows for transformations with respect to \ce{H^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}}. We derive expressions relating the chemical potentials for each transformed species to their respective bulk reservoirs.   
-
-    \newpage
-    
-    
-\subsection{Deriving the free energy expressions}
-We transform the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of the different activated clusters (Equation \ref{eq:transformation1}):
+\subsection{Deriving Free Energy Expression}
+We transformed the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of the different activated clusters (shown in Equation \ref{eq:transformation1}):
 \begin{equation}
     F^{0}(T,P,N_{\text{H}^{*}},N_{\text{OH}^{*}},N_{\text{Ni}^{*}}) \rightarrow F^{3}(T,P,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})
     \label{eq:transformation1}
 \end{equation}
-where $N_{\text{H}^{*}}$ is the number of adsorbed \ce{H} on the cluster with chemical potential $\mu_{\text{H}^{*}}$, $N_{\text{OH}^{*}}$ is the number of adsorbed \ce{OH} on the cluster with chemical potential $\mu_{\text{OH}^{*}}$, and $N_{\text{Ni}^{*}}$ is the number of adsorbed metal species (\ce{Ni}) on the cluster with chemical potential $\mu_{\text{Ni}^{*}}$. We write the transformed free energy expressions as Equation \ref{eq:transformation2}:
+where $N_{\text{H}^{*}}$ is the number of adsorbed $H$ on the cluster with chemical potential $\mu_{\text{H}^{*}}$, $N_{\text{OH}^{*}}$ is the number of adsorbed $OH$ on the cluster with chemical potential $\mu_{\text{OH}^{*}}$, and $N_{M}$ is the number of adsorbed metal species ($M$) on the cluster with chemical potential $\mu_{\text{Ni}^{*}}$. Using Legendre's transforms, the free energy is is written as Equation \ref{eq:transformation2}:
 \begin{equation}
     \begin{split}
         F^{3}(T,P,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}}) &= F^{0}(T,P,N_{\text{H}^{*}},N_{\text{OH}^{*}},N_{\text{Ni}^{*}}) \\ &- (\mu_{\text{H}^{*}})(N_{\text{H}^{*}}) \\ &- (\mu_{\text{OH}^{*}})(N_{\text{OH}^{*}}) \\ &- (\mu_{\text{Ni}^{*}})(N_{\text{Ni}^{*}})  
         \label{eq:transformation2}    
     \end{split}
 \end{equation}
-Equation \ref{eq:transformation2} allows  for compositionally different structures to be compared with the gas phase conditions being included in the free energy expression. The free energy between two different structures, defined modified ($k$) and reference ($i$), is determined by Equation \ref{eq:freenergyfinal}:
+The new free energy expression (Equation \ref{eq:transformation2}) allows for compositionally different structures to be compared with the gas phase conditions being included in the free energy expression. The final free energy expression defining the difference between the modified ($k$) and the reference ($i$) structure is defined in Equation \ref{eq:freenergyfinal}:
 \begin{equation}
     \begin{split}
         \Delta F^{(3)}(T,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})  = 
@@ -171,9 +84,17 @@ Equation \ref{eq:transformation2} allows  for compositionally different structur
     \end{split}
     \label{eq:freenergyfinal}
 \end{equation}
-where $\Delta N_{i}$ terms represent the different between the modified ($N_{j}$) and reference ($N_{i}$) structures for a particular species. The $^{*}$ indicates the species is bound to the cluster. The reference structure is the \ce{Ni4(OH)6.4H2O} cluster, which was initially proposed by \citeauthor{PlateroPrats2017} \cite{PlateroPrats2017} The model consists of \ce{OH}-ligands linking the \ce{Ni} atoms. Our goal is to determine the influence of reaction conditions on the thermodynamic stability of the \ce{Ni4}-cluster, which we accomplish by relating the free energy expression to the reaction conditions, temperature ($T$) and pressure ($P$) using the chemical potential terms. The assumed equilibrium (Figure \ref{fig:SI-FPT-process-diagram}) relate the chemical potential of the gas phase species to the chemical of the adsorbed species. The following sections derive the necessary equilibrium expression. 
+where $\Delta N_{i}$ terms represent the different between the modified ($N_{j}$) and reference ($N_{i}$) structures for a particular species. The $^{*}$ indicates the species is bound to the cluster. For both models (\ce{Cu} and \ce{Ni}), the model is comprised of \ce{OH} ligands linking the metal atoms and connecting the \ce{Zr} nodes. To relate the free energy to reaction conditions ($T$ and $P$), the adsorbed species chemical potential must be related to the chemical potential of the gas phase species through equilibrium expressions. \\ 
 
-\subsubsection{Equilibrium expression for $\text{H}^{*}$}
+\subsubsection{\textit{ab initio} thermodynamic analysis schematic}
+\begin{figure}[H]
+    \centering
+    \includegraphics{zi-images/00-General-Graphics/FPT-schematic-full.png}
+    \caption{Diagram showing the assumed equilibria necessary to transform with \ce{\text{H}^{*}}, \ce{\text{OH}^{*}}, \ce{Ni^{*}} for the \textit{ab initio} thermodynamic analysis method. The assume assumed equilibria capture the reaction conditions influences on the stability of the metal cluster.}
+    \label{fig:FPT-process-diagram}
+\end{figure}
+
+\subsubsection{Equilibrium expression for $H^{*}$}
 For $H^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} gas:
 \begin{equation}
     \frac{1}{2} H_{2} \ce{<=>} H^{*}
@@ -193,7 +114,7 @@ The $\mu_{H_{2}}^{g}(T,P)$ is computed by  correcting the electronic energy (ref
 \end{equation}
 With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript. 
 
-\subsubsection{Equilibrium expression for $\text{OH}^{*}$}
+\subsubsection{Equilibrium expression for $OH^{*}$}
 For $OH^{*}$, the assumed equilibrium is with a reservoir of \ce{H2} and \ce{H2O} gas:
 \begin{equation}
     \frac{1}{2} H_{2} + OH \ce{<=>} H_{2}O
@@ -225,7 +146,7 @@ With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was reference
 \end{equation} 
 The $\mu_{\text{OH}^{*}}$ chemical potential is dependent on temperature ($T$) and both gas phase partial pressures ($P_{H_2}$ and $P_{H_{2}O}$). The electronic energy ($E_{H_{2}O}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript. \\
 
-\subsubsection{Equilibrium expression for $\text{M}^{*}$}
+\subsubsection{Equilibrium expression for $M^{*}$}
 For $M^{*}$, the assumed equilibrium is with a reservoir of bulk-\ce{M}:
 \begin{equation}
     bulk-M \ce{<=>} M^{*}
@@ -242,7 +163,7 @@ Unlike $\mu_{\text{OH}^{*}}$ and $\mu_{\text{H}^{*}}$, $\mu_{\text{Ni}^{*}}$ was
 %TODO explain that the computational parameters are different here.... 
 
 \subsection{Final Transformed Free Energy Expression}
-The final transformed free energy expression is given by Equation \ref{eq:final-free-energy-equation-full}. All the terms derived above are included in the expression. 
+The final transformed free energy expression is given by Equation \ref{eq:final-free-energy-equation-full}. All the terms dervied above are included in the expression. 
 \begin{equation}
     \begin{split}
         \Delta F^{(3)}(T,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})  = 
@@ -256,34 +177,10 @@ The final transformed free energy expression is given by Equation \ref{eq:final-
     \label{eq:final-free-energy-equation-full}
 \end{equation}
 
-\begin{comment}
-    \begin{center}
-    \begin{table}[H]
-    \centering
-      \setlength\tabcolsep{8pt}
-      \caption{NEEDS TITLE}
-      \label{tbl:spin_contamination}
-      \begin{tabular}{ll}
-        \hline
-            Term  & Explanation \\
-            \hline
-            $\Delta F^{(3)}(T,\mu_{\text{H}^{*}},\mu_{\text{OH}^{*}},\mu_{\text{Ni}^{*}})$ & The difference in free energy between structures $j$ and $i$ \\ at a fixed chemical potential. \\
-            $F_{j}(T,N_{j,\text{H}^{*}},N_{j,\text{OH}^{*}},N_{j,\text{Ni}^{*}})$ &  The free energy of structure $j$ that contains a specific \\ compositions of \ce{H^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}}\\
-            $F_{i}(T,N_{i,\text{H}^{*}},N_{i,\text{OH}^{*}},N_{i,\text{Ni}^{*}})$ &  \\
-            $\Delta N_{\text{H}^{*}}$ &  \\
-            $\Delta N_{\text{OH}^{*}}$ &  \\
-            $\Delta N_{\text{Ni}^{*}}$ &  \\
-            $E_{H_{2}}^{DFT}$ &  \\
-            $\Delta G_{H_{2}}(T,P^{o})$ &  \\
-            \hline
-        \end{tabular} \\
-    \end{table}    
-    \end{center}
-\end{comment}
-
-
 \newpage
-\subsection{Determining the gas phase free energies values}
+\subsection{pMuTT Expressions}
+
+\subsubsection{Gas Phase Free Energy as a Function of Temperature}
 The NASA Polynomials are defined for a very specific temperature range. To correct the electronic energies from DFT, the gas phase species must be referenced to approximately 0 K. When using pMuTT, the reference state for the free energy values is $298 K$. The empirical methods do not allow for referencing at 0 K, so the free energies are approximated by values at 10 K (shown below):
 
 \begin{equation}
@@ -309,6 +206,8 @@ where $\Delta G(T)$ is the free energy referenced at $T = 10 K$, and G(T) is the
 
 %TODO do I need a statement here about the bulk model and where the bulk models ended up coming from?
 
+
+
 \subsection{Spin Contamination}
 The library was optimized at different \ce{Ni} spin states; the considered spin states for \ce{Ni(II)} were singlet (no unpaired electrons) and triplet (two unpaired electrons). With the cluster initially containing four \ce{Ni(II)} species, the intermediate combinations were calculated (one singlet and three triplet, two singlet and two triplet, etc.). Structures that exhibited spin contamination were removed from the analysis. Comparisons between the ideal and single determinant $S^{**}2$ values were inspected. If the single determinant value deviated by more than 10\% of the ideal determinant the structure was removed from analysis. 
 \begin{center}
@@ -332,7 +231,7 @@ The library was optimized at different \ce{Ni} spin states; the considered spin 
     \textsuperscript{a} Restricted Kohn-Sham \\
 \end{table}    
 \end{center}
-From Table \ref{tbl:spin_contamination}, the lowest energy structure is  c) three singlet, one triplet; however, the structure is removed from the analysis because the ideal $S^{**}2$ and single $S^{**}2$ deviate. Therefore, the lowest energy structure for this particular configuration is the e) one singlet, three triplet. We checked the spin state for all structures.
+From Table \ref{tbl:spin_contamination}, the lowest energy structure is  c) three singlet, one triplet; however, the structure is removed from the analysis because the ideal $S^{**}2$ and single $S^{**}2$ deviate. Therefore, the lowest energy structure for this particular configuration is the e) one singlet, three triplet. This type of analysis was included for all structures. 
 
 \newpage
 \subsection{Information about the bulk metal calculations in CP2K.}
@@ -340,7 +239,7 @@ From Table \ref{tbl:spin_contamination}, the lowest energy structure is  c) thre
 
 \newpage
 \subsection{Sample Input File}
-Below is a sample CP2K input file. If the singlet spin state was desired for all \ce{Ni(II)} atoms, UKS F and MULTIPLICITY 1 were used. Otherwise, UKS T was used with the appropriate MULTIPLICITY specified.
+Below is a sample CP2K input file. If the singlet spin state was desired for all \ce{Ni(II)} atoms, UKS F and MULTIPLICITY 1 were used. 
 \begin{center}
     \lstset{numbers=left, basicstyle=\ttfamily, numbersep=-45pt}
     \begin{lstlisting}[language=bash]
@@ -460,11 +359,22 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
     \end{lstlisting}
 \end{center}
 
+\newpage
 
-    \newpage
-    
-    
-\section{Influence of \ce{H2O} partial pressure on the thermodynamic stability.}
+\section{Water Content Phase Diagram}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{zi-images/00-General-Graphics/2021-figure-H2O-phase-diagram-manuscript.png}
+        \caption{The stability of adsorbed \ce{H2O} on the \ce{Ni(II)} cluster as a function of temperature and \ce{H2O} partial pressure. The regions identify structures with the lowest free energy, thereby demonstrating amount of \ce{H2O} on the cluster. The following naming convention is adopted for the structures: a) \ce{Ni4(OH)6}, b) \ce{Ni4(OH)6 \cdot H2O}, and c) \ce{Ni4(OH)6 \cdot 4H2O}.}
+        \label{fig:h2o-partial-pressure}
+    \end{figure}
+
+\newpage
+\section{Generating Phase Diagram structures with inter-atomic distances}
+
+
+\newpage
+\section{Phase diagrams as a function of \ce{H2O} partial pressure.}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.60\linewidth]{zi-images/04-SI-images/2021-05-04-Trans-Ni.png}
@@ -501,7 +411,7 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
     \label{fig:SI-phase-Ni-fixed}
 \end{figure}
 
-We highlight the importance of \ce{H2O} partial pressure on the thermodynamic stability of the \ce{Ni4} cluster. Both Figure \ref{fig:SI-phase-Ni-trans} and Figure \ref{fig:SI-phase-Ni-fixed} show the evolution of the phase diagram as a function of \ce{H2O} partial pressure. Experimentally, the \ce{H2O} partial pressure is assumed to be small. However, we have no method for quantifying how small the partial pressure is. Therefore, we select an \ce{H2O} partial pressure of $10^{-10}$ bar for both the variable and fixed \ce{Ni} phase diagrams presented within the manuscript. Ultra-high vacuum conditions range from $10^{-10}$ to $10^{-15}$ bar, so our selected \ce{H2O} partial pressure is within that range. \citeauthor{PlateroPrats2017} observed a \ce{Ni} coordination number of approximately 5,\cite{PlateroPrats2017} which we only observe at larger \ce{H2O} partial pressure.
+\hl{Platero-Prats} observed a \ce{Ni} coordination number of approximately 5, which we observe at larger \ce{H2O} partial pressure. Our analysis uses {H2O} partial pressure as tunable parameter. Therefore, we select an \ce{H2O} partial pressure of $10^{-10}$ bar for both the variable and fixed \ce{Ni} phase diagrams presented within the manuscript. The structures that dominate the phase space at lower \ce{H2O} partial pressures lack the correct \ce{Ni} coordination environment and fail to recreate the experimental dPDF peak positions. 
 
 \newpage
 \section{Structure diagram for all phase diagram structures.}
@@ -542,6 +452,8 @@ We highlight the importance of \ce{H2O} partial pressure on the thermodynamic st
     \label{fig:SI-structure-diagram}
 \end{figure}
 
+Figure \ref{fig:SI-structure-diagram} compares the local structural information of model structures to the experimental dPDF from 
+
 \newpage
 \section{Structure diagram for structure containing a NiH species}
 \begin{figure}[H]
@@ -554,81 +466,23 @@ We highlight the importance of \ce{H2O} partial pressure on the thermodynamic st
 \end{figure}
 
 
+
+
+
 \newpage
-\section{References}
+\section{Temporary section for information from the SI}
 
-%The class makes various changes to the way that references are
-%handled.  The class loads \textsf{natbib}, and also the
-%appropriate bibliography style.  References can be made using
-%the normal method; the citation should be placed before any
-%punctuation, as the class will move it if using a superscript
-%citation style
-%\cite{Mena2000,Abernethy2003,Friedman-Hill2003,EuropeanCommission2008}.
-%The use of \textsf{natbib} allows the use of the various citation
-%commands of that package: \citeauthor{Abernethy2003} have shown
-%something, in \citeyear{Cotton1999}, or as given by
-%Ref.~\citenum{Mena2000}.  Long lists of authors will be
-%automatically truncated in most article formats, but not in
-%supplementary information or reviews \cite{Pople2003}. If you
-%encounter problems with the citation macros, please check that
-%your copy of \textsf{natbib} is up to date. The demonstration
-%database file \texttt{achemso-demo.bib} shows how to complete
-%entries correctly. Notice that ``\latin{et al.}'' is auto-formatted
-%using the \texttt{\textbackslash latin} command.
+\subsection{FPT schematic figure}
 
-%Multiple citations to be combined into a list can be %given as
-%a single citation.  This uses the \textsf{mciteplus} %package
-%\cite{Johnson1972,*Arduengo1992,*Eisenstein2005,*Arduengo%1994}.
-%Citations other than the first of the list should be %indicated
-%with a star. If the \textsf{mciteplus} package is not %installed,
-%the standard bibliography tools will still work but %starred
-%references will be ignored. Individual references can be %referred
-%to using \texttt{\textbackslash mciteSubRef}:
-%``ref.~\mciteSubRef{Eisenstein2005}''.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{zi-images/00-General-Graphics/FPT-schematic-full.png}
+    \caption{Diagram showing the assumed equilibria necessary to transform with \ce{\text{H}^{*}}, \ce{\text{OH}^{*}}, and \ce{M^{*}} in the \textit{ab initio} thermodynamic analysis approach. The assumed equilibria for these adsorbed species capture the the reaction conditions on the stability of the metal cluster when using Equation \ref{eq:free-energy-trans}.}
+    \label{fig:FPT-process}
+\end{figure}
 
-%The class also handles notes to be added to the bibliography.  These
-%should be given in place in the document \bibnote{This is a note.
-%The text will be moved the the references section.  The title of the
-%section will change to ``Notes and References''.}.  As with
-%citations, the text should be placed before punctuation.  A note is
-%also generated if a citation has an optional note.  This assumes that
-%the whole work has already been cited: odd numbering will result if
-%this is not the case \cite[p.~1]{Cotton1999}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The "Acknowledgement" section can be given in all manuscript
-%% classes.  This should be given within the "acknowledgement"
-%% environment, which will make the correct section or running title.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{acknowledgement}
-%
-%\hl{authors would like to thank \ldots''.
-%
-%The author thanks Mats Dahlgren for version one of \textsf{achemso},
-%and Donald Arseneau for the code taken from \textsf{cite} to move
-%citations after punctuation. Many users have provided feedback on the
-%class, which is reflected in all of the different demonstrations
-%shown in this document.}
-%
-%\end{acknowledgement}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The same is true for Supporting Information, which should use the
-%% suppinfo environment.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{suppinfo}
-%
-%\hl{This will usually read something like: ``Experimental procedures and
-%characterization data for all new compounds. The class will
-%automatically add a sentence pointing to the information on-line:}
-%
-%\end{suppinfo}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% The appropriate \bibliography command should be placed here.
-%% Notice that the class file automatically sets \bibliographystyle
-%% and also names the section correctly.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliography{achemso-demo}
 
 \end{document}
