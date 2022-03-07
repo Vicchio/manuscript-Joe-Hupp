@@ -35,3 +35,13 @@ To provide further insight into the structure and composition of the Ni catalyst
 %While several structures on this phase diagram exhibit \ce{Ni-O} peaks in good agreement with experiment, only one, 8-\ce{Ni4(OH)5(H).4H2O} (teal in Figure~\ref{fig:Ni-structure-diagram}), exhibits double \ce{Ni{\Compactcdots}Ni} peaks. This ``teal" structure features hydride ($\ce{H^{*}}$), hydroxyl ($\ce{OH^{*}}$), and water ($\ce{H2O^{*}}$) ligands as well as additional \ce{H2O} molecules that form a hydrogen bonded chain between a hydroxyl ligand and a water ligand. \st{and is the thermodynamically preferred structure under conditions of relevance to catalysis}. 
 
 % provides further insight into the structure and composition of the \ce{Ni} catalysts. We compare the dPDFs of all structures present on Figures~\ref{fig:phase_diagram_Ni_combined} (a) and (b) to the dPDF from the experimental structure (black line) as shown in
+
+
+
+
+By definition, $\mu$ are functions of $T$ and $P$. Assuming ideal gas conditions, $\mu_{\text{H}_2(\text{g})}$ is\cite{Reuter2003,Reuter2004,Grundner2015,Paolucci2016,Li2016,Getman2008,Mandal2020}   
+\begin{equation}
+    \mu_{\text{H}_{2}(\text{g})}(T,P_{\text{H}_{2}}) = E^\text{elec}_{\text{H}_{2}} + E^\text{ZP}_{\text{H}_{2}} + \left[ G_{\text{H}_{2}}(T,P^{o}) - G_{\text{H}_{2}}(0~\text{K},P^{o}) + RT \ln{\left( \frac{P_{\text{H}_{2}}}{P^{o}} \right)} \right] 
+    \label{eq:chemicalpotentialrel}
+\end{equation}
+where $G$ is the Gibbs free energy, $P$ is partial pressure, and $P^{o}$ is the standard pressure (1 bar). We calculate values of $G$ using the NASA Polynomials\cite{Mcbride1993} in the pMuTT\cite{LYM2019106864} Python package. $G(0~\text{K},P^{o})$ is approximated as $G(10~\text{K},P^{o})$ and obtained by extrapolating the NASA Polynomials, following prior work.\cite{Getman2008,Li2016} The \ce{H2O} chemical potential ($\mu_{\text{H}_2\text{O}(\text{g})}$) is computed analogously. Phase diagrams could be constructed in three dimensions, i.e., as functions of $T$, $P_{\text{\ce{H2}}}$, and $P_{\text{\ce{H2O}}}$. However, since \ce{H2O} is not conventionally thought of being present in hydrogenation reaction conditions, in our analysis, we construct two dimensional phase diagrams as functions of $T$ and $P_{\text{\ce{H2}}}$. These phase diagrams are constructed at constant $P_{\text{\ce{H2O}}}$ of $10^{-1}$ bar and \hl{$10^{-1}$ bar}. These values were selected to show how increasing $P_{\text{\ce{H2O}}}$ leads to structures with \ce{Ni} coordination numbers that are commensurate with experimental observations (see Section \hl{XXX}).
