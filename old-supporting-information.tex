@@ -144,7 +144,7 @@ Supporting Information:\\Identifying the structure and composition of \ce{Ni(II)
 
     Figure \ref{fig:SI-FPT-process-diagram} shows the \textit{ab initio} thermodynamic analysis process we used to evaluate the stability of a \ce{Ni4}-cluster supported on the NU-1000 MOF. We assume the cluster is in equilibrium with three different reservoirs, which allows for transformations with respect to \ce{H^{*}}, \ce{OH^{*}}, and \ce{Ni^{*}}. We derive expressions relating the chemical potentials for each transformed species to their respective bulk reservoirs.   
 
-    \newpage
+\newpage
     
     
 \subsection{Deriving the free energy expressions}
@@ -789,6 +789,14 @@ Below is a sample CP2K input file for the \ce{H2} gas phase species. A similar i
     \end{lstlisting}
 \end{center}
 
+\newpage
+\section{Free Energy Calculations...relating the important species}
+% Free energies are calculated assuming equilibrium with an \ce{H2} reservoir to simulate conditions commensurate with catalytic hydrogenation, thus enabling different compositions of \ce{H} to be explored. Further, the structure is also assumed to be in equilibrium with an \ce{H2O} reservoir to account for different \ce{O} content of the cluster (in the form of \ce{O}, \ce{OH}, and \ce{H2O} ligands). 
+The chemical potentials of gas phase molecules are calculated as:\cite{Grundner2015}
+\begin{equation}
+    \mu_{\ce{H}_2(\text{g})}(T,P_{\text{H}_{2}}) = E^\text{elec}_{\text{H}_{2}} + E^\text{ZP}_{\text{H}_{2}} + \Delta \mu_{\text{H}_{2}}(T,P_{\text{H}_{2}})
+\end{equation}
+The \ce{H2O} chemical potential ($\mu_{\ce{H}_2\text{O}(\text{g})}(T,P_{\text{H}_{2}\text{O}})$) is computed analogously. 
 
 \newpage
 \section{Reference Structure}
@@ -804,7 +812,7 @@ Below is a sample CP2K input file for the \ce{H2} gas phase species. A similar i
 \section{Influence of \ce{H2O} partial pressure on the thermodynamic stability.}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.60\linewidth]{zi-images/04-SI-images/2021-05-04-Trans-Ni.png}
+    \includegraphics[width=0.60\linewidth]{zi-images/04-SI-images-old-old/2021-05-04-Trans-Ni.png}
     \caption{
     The thermodynamic stability of the cluster is plotted as a function of \ce{H2O} partial pressure from $10^{-25}$ to $10^{0.0}$ bar for a variable \ce{Ni} composition. The structures present on the phase diagram include:
         1-\ce{Ni4(OH)6} (purple),               % purple 
@@ -821,7 +829,7 @@ Below is a sample CP2K input file for the \ce{H2} gas phase species. A similar i
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.60\linewidth]{zi-images/04-SI-images/2021-05-04-Fixed-Ni.png}
+    \includegraphics[width=0.60\linewidth]{zi-images/04-SI-images-old/2021-05-04-Fixed-Ni.png}
     \caption{
     The thermodynamic stability of the cluster is plotted as a function of \ce{H2O} partial pressure from $10^{-25}$ to $10^{0.0}$ bar for a fixed \ce{Ni} composition. The structures present on the phase diagram include:
         1-\ce{Ni4(OH)6} (purple),               % purple 
@@ -844,7 +852,7 @@ We highlight the importance of \ce{H2O} partial pressure on the thermodynamic st
 \section{Structure diagram for all phase diagram structures.}
 \begin{figure}[H]
     \centering
-    \includegraphics{zi-images/04-SI-images/2021-05-11-updated-manuscript-structure-SI-ALL.png}
+    \includegraphics{zi-images/04-SI-images-old/2021-05-11-updated-manuscript-structure-SI-ALL.png}
     \caption{
     All the structures located on Figures \ref{fig:SI-phase-Ni-trans} and \ref{fig:SI-phase-Ni-fixed} are shown. The same naming convention and color scheme is used as the phase diagram figure. The structures shown are: 
         1-\ce{Ni4(OH)6} (purple),               % purple 
@@ -863,7 +871,7 @@ We highlight the importance of \ce{H2O} partial pressure on the thermodynamic st
 \section{dPDF diagram for all phase diagram structures.}
 \begin{figure}[H]
     \centering
-    \includegraphics{zi-images/04-SI-images/2021-05-11-Ni-single-dPDF-ALL-SI-ALL.png}
+    \includegraphics{zi-images/04-SI-images-old/2021-05-11-Ni-single-dPDF-ALL-SI-ALL.png}
     \caption{
     The dPDFs for the structure located on Figure \ref{fig:SI-phase-Ni-trans} (variable \ce{Ni} content) and \ref{fig:SI-phase-Ni-fixed} (fixed \ce{Ni} content). The same naming convention and color is used as illustrated on previous figures. The dPDFs for the following structures are shown:
         1-\ce{Ni4(OH)6} (purple),               % purple 
@@ -883,7 +891,7 @@ We highlight the importance of \ce{H2O} partial pressure on the thermodynamic st
 \section{Structure diagram for structure containing a NiH species}
 \begin{figure}[H]
     \centering
-    \includegraphics{zi-images/04-SI-images/2021-05-10-Ni-single-dPDF-Ni-H.png}
+    \includegraphics{zi-images/04-SI-images-old/2021-05-10-Ni-single-dPDF-Ni-H.png}
     \caption{
     The dPDFs and structure diagrams for structures that feature a traditional \ce{Ni-H} species. The * denotes structures that are not thermodynamic minimum on during any of the \textit{ab initio} thermodynamic analysis. \hl{Statement about the structures here.. need to explain some of the key features from the dPDFs and what that means in the context of the story.}
     }
@@ -934,6 +942,12 @@ as the GitHub.\hl{REF-XXX}
     \end{tabular} \\
 \end{table}    
 \end{center}
+
+\newpage
+\section{Frequency Calculations}
+
+We fix the organic linker and inorganic nodes, thereby only calculating only the \ce{Ni} cluster vibrational contributions to the free energy ($F^\text{vib}$). We ensure that the same atoms are fixed across all frequency calculations in order to correctly compare ($F^\text{vib}$). When constructing the vibrational partition function, all frequencies less than 50 cm\textsuperscript{-1} are replaced with 50 cm\textsuperscript{-1} to correct for the breakdown in the harmonic oscillator approximation for low frequency vibrational modes.\cite{Ribeiro2011} The partitions functions are computed in the pMuTT\cite{LYM2019106864} Python package to compute $E^\text{ZP}$ and $F^\text{vib}$ for all structures. A sample input file for the CP2K frequency calculations is provided in the Supporting Information.
+
 
 
 %\newpage

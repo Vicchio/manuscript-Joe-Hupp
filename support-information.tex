@@ -1,0 +1,679 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is a (brief) model paper using the achemso class
+%% The document class accepts keyval options, which should include
+%% the target journal and optionally the manuscript type. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[journal=jacsat,manuscript=article]{achemso}
+\SectionNumbersOn
+%\usepackage[letterpaper,left=0.5in,right=0.5in,top=1.0in,bottom=1.0in]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Place any additional packages needed here.  Only include packages
+%% which are essential, to avoid problems later. Do NOT use any
+%% packages which require e-TeX (for example etoolbox): the e-TeX
+%% extensions are not currently available on the ACS conversion
+%% servers. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
+\usepackage{siunitx} % generating degrees Celsius in the document 
+\usepackage{color}
+\usepackage{soul} % allows highlighting text 
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{todonotes}
+\usepackage{gensymb}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    citecolor= red,
+    linkcolor=blue,
+    urlcolor=blue, 
+    breaklinks=true
+}
+\usepackage{ulem}
+\usepackage{float}
+
+% Packages from the old SI section 
+\usepackage{breakcites}
+%\usepackage{caption}
+\usepackage{float}
+\usepackage[hang]{subfigure}
+\usepackage{overpic}
+\usepackage{listings}
+\usepackage[super]{nth}
+\usepackage{multicol}
+\linespread{1.15}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% If issues arise when submitting your manuscript, you may want to
+%% un-comment the next line.  This provides information on the
+%% version of every file you have used.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Place any additional macros here.  Please use \newcommand* where
+%% possible, and avoid layout-changing macros (which are not used
+%% when typesetting).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\mycommand[1]{\texttt{\emph{#1}}}
+\DeclareRobustCommand
+  \Compactcdots{\mathinner{\cdotp\mkern-2mu\cdotp\mkern-2mu\cdotp}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Meta-data block
+%% ---------------
+%% Each author should be given as a separate \author command.
+%%
+%% Corresponding authors should have an e-mail given after the author
+%% name as an \email command. Phone and fax numbers can be given
+%% using \phone and \fax, respectively; this information is optional.
+%%
+%% The affiliation of authors is given after the authors; each
+%% \affiliation command applies to all preceding authors not already
+%% assigned an affiliation.
+%%
+%% The affiliation takes an option argument for the short name.  This
+%% will typically be something like "University of Somewhere".
+%%
+%% The \altaffiliation macro should be used for new address, etc.
+%% On the other hand, \alsoaffiliation is used on a per author basis
+%% when authors are associated with multiple institutions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Stephen P. Vicchio}
+\affiliation[Clemson University]
+{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, SC}
+\author{Zhihengyu Chen}
+\affiliation[Stony Brook University]
+{Department of Chemistry, Stony Brook University, Stony Brook, NY}
+\author{Karena Chapman}
+\email{karena.chapman@stonybrook.edu}
+\affiliation[Stony Brook University]
+{Department of Chemistry, Stony Brook University, Stony Brook, NY}
+\author{Rachel B. Getman}
+\email{rgetman@clemson.edu}
+\affiliation[Clemson University]
+{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, SC}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The document title should be given as usual. Some journals require
+%% a running title from the author: this should be supplied as an
+%% optional argument to \title.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[manuscript]{
+Modeling the ligand environment of a supported four ion \ce{Ni} cluster under different operating conditions
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Some journals require a list of abbreviations or keywords to be
+%% supplied. These should be set up here, and will be printed after
+%% the title and author information, if needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abbreviations{IR,NMR,UV}
+\keywords{American Chemical Society, \LaTeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The manuscript does not need to include \maketitle, which is
+%% executed automatically.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The "tocentry" environment can be used to create an entry for the
+%% graphical table of contents. It is given here as some journals
+%% require that it is printed as part of the abstract page. It will
+%% be automatically moved as appropriate.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{tocentry}
+%
+%Some journals require a graphical entry for the Table of Contents.
+%This should be laid out ``print ready'' so that the sizing of the
+%text is correct.
+%
+%Inside the \texttt{tocentry} environment, the font used is %Helvetica
+%8\,pt, as required by \emph{Journal of the American Chemical
+%Society}.
+%
+%The surrounding frame is 9\,cm by 3.5\,cm, which is the maximum
+%permitted for  \emph{Journal of the American Chemical Society}
+%graphical table of content entries. The box will not resize if the
+%content is too big: instead it will overflow the edge of the box.
+%
+%This box and the associated title will always be printed on a
+%separate page at the end of the document.
+%
+%\end{tocentry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The abstract environment will automatically gobble the contents
+%% if an abstract is not used by the target journal.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Start the main part of the manuscript here.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Start the table of content here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Computational Methodology
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Computational Methodology}
+\subsection{Schematic for \textit{ab initio} thermodynamic analysis}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.80\textwidth]{zi-images/00-General-Graphics/FPT-schematic-full.png}
+        \caption{Diagram showing the assumed equilibria necessary to transform with \ce{H}, \ce{OH}, \ce{Ni} for the \textit{ab initio} thermodynamic analysis method. The assume assumed equilibria capture the operating conditions influences on the stability of the \ce{Ni} ion cluster.}
+        \label{fig:SI-FPT-process-diagram}
+    \end{figure}
+
+    Figure~\ref{fig:SI-FPT-process-diagram} shows a schematic for \textit{ab initio} thermodynamic analysis, which is used to evaluate the stability of a \ce{Ni4}-cluster supported on NU-1000. We assume the \ce{Ni} ion cluster is in equilibrium with three different reservoirs, which allows for transformations with respect to \ce{H}, \ce{O}, and \ce{Ni}. Equilibrium with the bulk \ce{Ni} reservoir is turned off by assuming $\Delta N_{\ce{Ni}} = 0$, implying that the number of \ce{Ni} ions is fixed at four. We derive expressions relating the chemical potentials for each transformed species to their respective bulk reservoirs.   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Free Energy Expression
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\subsection{Deriving the free energy expressions}
+We transform the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of different activated clusters (Eq.~\ref{eq:transformation1}):
+\begin{equation}
+    F(V,T,N_{\text{H}},N_{\text{O}},N_{\text{Ni}}) \rightarrow 
+    F^{(2)}(V,T,\mu_{\text{H}}, \mu_{\text{O}}, N_{\text{Ni}})    \rightarrow F^{(3)}(V,T,\mu_{\text{H}},\mu_{\text{O}},\mu_{\text{Ni}})
+    \label{eq:transformation1}
+\end{equation}
+where $F$ is the Helmholtz free energy, $V$ is volume, $T$ is temperature, $\mu$ is chemical potential, and $N$ is the number of \ce{O}, \ce{H}, and \ce{Ni} atoms. The (2) superscript on $F^{(2)}$ indicates the second Legendre transform of $F$,\cite{Alberty1997} i.e., of $N_{\ce{H}}$ and $N_{\ce{O}}$ to $\mu_{\ce{H}}$ and $\mu_{\ce{O}}$. Additionally, the (3) superscript on $F^{(3)}$ indicates the Legendre transform of $F^{(2)}$ from $N_{\ce{Ni}}$ to $\mu_{\ce{Ni}}$.
+
+We write the transformed free energy expression for $F^{(2)}$ as Eq.~\ref{eq:free-energy-trans}: 
+\begin{equation}
+    \begin{split}
+        \Delta F^{(2)}(V,T,\mu_{\text{H}},\mu_{\text{O}},N_{\text{Ni}})  
+        & = \Delta F(V,T,N_{\text{H}},N_{\text{O}},N_{\text{Ni}}) - (\mu_{\text{H}})(\Delta N_{\text{H}}) 
+        - (\mu_{\text{O}})(\Delta N_{\text{O}})  \\ 
+    \end{split}
+    \label{eq:free-energy-trans}
+\end{equation}
+where \hl{LABEL ALL OF THE DIFFERENT VARIABLES HERE}
+
+We write the transformed free energy expression for $F^{(3)}$ as Eq.~\ref{eq:free-energy-trans-Ni}:
+\begin{equation}
+    \begin{split}
+        \Delta F^{(3)}(V,T,\mu_{\text{H}},\mu_{\text{O}},\mu_{\text{Ni}})  
+        & = \Delta F^{(2)}(V,T,\mu_{\text{H}},\mu_{\text{O}},N_{\text{Ni}}) - (\mu_{\text{Ni}})(\Delta N_{\text{Ni}}) \\ 
+    \end{split}
+    \label{eq:free-energy-trans-Ni}
+\end{equation}
+where \hl{LABEL ALL OF THE DIFFERENT VARIABLES HERE}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Equilibrium Expressions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\subsection{Equilibrium expressions for chemical potential terms}
+For \ce{H}, the assumed equilibrium is with a reservoir of \ce{H2} gas:
+\begin{equation}
+    \frac{1}{2} H_{2}(g) \ce{<=>} H
+\end{equation}
+where the chemical potential terms are related by: 
+\begin{equation}
+    \frac{1}{2} \mu_{\ce{H2}}^{g}(T,P) = \mu_{\ce{H}}
+\end{equation}  
+\hl{The $\mu_{\ce{H2}}^{g}(T,P)$ is computed by  correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase Gibbs free energy values at a specific temperature and pressure} (shown in Eq.~S\ref{H2-to-reaction-conditions}). 
+\begin{equation}
+    \begin{split}
+         \mu_{\ce{H2}}^{g}(T,P) &= E_{\ce{H2}}^{DFT} + E_{\ce{H2}}^{ZPE}+ \Delta \mu_{\ce{H2}}(T,P)  \\
+    \end{split}
+    \label{H2-to-reaction-conditions}
+\end{equation}
+Furthermore, the $\mu_{\ce{H2}}^{g}(T,P)$ can be related to the temperature and pressure conditions of the system by relating the term to the free energy of the gas phase species using Eq.~S\ref{mu_2_G}:
+\begin{equation}
+    \begin{split}
+         \Delta \mu_{\ce{H2}}(T,P) &= \Delta G_{H_{2}}(T,P)\\
+         \Delta \mu_{\ce{H2}}(T,P) &= \Big[ \Delta G_{\ce{H2}}(T,P^{o})  + RT \ln{ \frac{P_{\ce{H2}}}{P_{\ce{H2}}^{o}}} \Big]  \\ 
+    \end{split}
+    \label{mu_2_G}
+\end{equation}
+where $\Delta G_{\ce{H2}}(T,P^{o})$ is the free energy referenced to 0 K, $R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
+
+\hl{With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript.} 
+
+
+
+\newpage
+\subsection{Deriving gas phase free energies values from empirical data}
+The NASA Polynomials\hl{REF-XXX} are defined for a specific temperature range \hl{(i.e., from XXX to XXX)}. To correct the electronic energies from DFT, the gas phase species must be referenced to approximately 0 K. The standard reference state for the NASA Polynomials is 298 K; therefore, the empirical methods are approximated to 0 K using Eq.~S\ref{eq:pmutt-expression} by referencing the values at 10 K, following prior work.\hl{REF-Getman-FPT-Paper}
+\begin{equation}
+    \begin{split}
+        \Delta G(T, P^{o}) &= [G(T,P^{o}) - G(T=298 K, P^{o})] - [G(T=10 K, P^{o}) - G(T=298 K, P^{o})] \\
+        \Delta G(T, P^{o}) &= [G(T,P^{o})] - [G(T=10 K, P^{o})] 
+    \end{split}
+    \label{eq:pmutt-expression}
+\end{equation} 
+where $\Delta G(T, P^{o})$ is the free energy referenced at $T = 10$~K, and $G(T,P^{o})$ is the free energy referenced at $T = 298$~K. Figures~\ref{fig:h2-pmutt-expression} and \ref{fig:h2o-pmutt-expression} show the extrapolation of the NASA Polynomial referenced to 0~K. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/2021-figure-H2-pMuTT.png}
+    \caption{The gas phase free energy of \ce{H2} as a function of temperature. The reference state it defined as 10~K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}
+    \label{fig:h2-pmutt-expression}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/2021-figure-H2O-pMuTT.png}
+    \caption{The gas phase free energy of \ce{H2O} as a function of temperature. The reference state it defined as 10~K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}    \label{fig:h2o-pmutt-expression}
+\end{figure}
+
+
+\newpage
+\subsection{Identifying spin contamination in DFT calculations}
+The library was optimized at different \ce{Ni} spin states; the considered spin states for \ce{Ni} ions were singlet (no unpaired electrons) and triplet (two unpaired electrons). With the cluster initially containing four \ce{Ni} ions, the intermediate combinations were calculated (one singlet and three triplet, two singlet and two triplet, etc.). Structures that exhibited spin contamination were removed from the analysis. Comparisons between the ideal and single determinant $S^{**}2$ values were inspected. If the single determinant value deviated by more than 10\% of the ideal determinant the structure was removed from analysis. 
+\begin{center}
+\begin{table}[H]
+\centering
+  \setlength\tabcolsep{8pt}
+  \caption{Example of Spin Contamination Analysis for \ce{Ni4(OH)6 \cdot 2H2O} Structure.}
+  \label{tbl:spin_contamination}
+  \begin{tabular}{lcccc}
+    \hline
+        \ce{Ni(II)} Spin Configuration  & \thead{ Electronic \\ Energy (hartree)} &  Ideal $S^{**}2$ &   Single $S^{**}2$ & Contamination? \\
+        \hline
+        a) Four singlet (RKS\textsuperscript{a}) & -4778.84071 & N\/a & N\/a & No \\
+        b) Four singlet (UKS)                    & -4778.87973 & 0.000  & 2.386  & Yes \\
+        c) Three singlet, one triplet            & -4778.88313 & 2.000  & 3.978  & Yes \\
+        d) Two singlet, two triplet              & -4778.88042 & 6.000  & 6.457  & Yes \\
+        e) One singlet, three triplet            & -4778.88209 & 12.000 & 12.014 & No \\
+        f) Four triplet                          & -4778.84120 & 20.000 & 20.013 & No \\
+        \hline
+    \end{tabular} \\
+    \textsuperscript{a} Restricted Kohn-Sham \\
+\end{table}    
+\end{center}
+From Table \ref{tbl:spin_contamination}, the lowest energy structure is c) three singlet, one triplet \ce{Ni} ions; however, the structure is removed from the analysis because the ideal $S^{**}2$ and single $S^{**}2$ deviate. Therefore, the lowest energy structure for this particular configuration is the e) one singlet, three triplet \ce{Ni} ions. 
+
+
+\newpage
+\subsection{Sample Input File for \ce{Ni4} Clusters - Optimization}
+Below is a sample CP2K input file. If the singlet spin state was desired for all \ce{Ni(II)} atoms, UKS F and MULTIPLICITY 1 were used. Otherwise, UKS T was used with the appropriate MULTIPLICITY specified. The following sample input file is for optimizations. 
+\begin{center}
+    \lstset{numbers=left, basicstyle=\ttfamily, numbersep=-45pt, }
+    \begin{lstlisting}[language=bash]
+        &GLOBAL
+           PRINT_LEVEL  MEDIUM
+           PROJECT_NAME info-ni4oh6-4h2o-config2-MULTI9
+           RUN_TYPE  GEO_OPT
+           WALLTIME 71:47:00
+         &END GLOBAL
+         &MOTION
+           &GEO_OPT
+             TYPE  MINIMIZATION
+             OPTIMIZER  BFGS
+             MAX_ITER  2000
+             MAX_DR     5.0000000000000001E-04
+             MAX_FORCE     5.0000000000000002E-05
+             RMS_DR     5.0000000000000001E-04
+             RMS_FORCE     5.0000000000000002E-05
+             STEP_START_VAL  0
+             &BFGS
+               TRUST_RADIUS     2.5000000000000006E-01
+             &END BFGS
+           &END GEO_OPT
+         &END MOTION
+         &FORCE_EVAL
+           METHOD  QS
+           STRESS_TENSOR  ANALYTICAL
+           &DFT
+             BASIS_SET_FILE_NAME BASIS_file
+             POTENTIAL_FILE_NAME POTENTIALS_file
+             UKS  T
+             MULTIPLICITY  9
+             CHARGE  0
+             &SCF
+               MAX_SCF  1000
+               EPS_SCF     9.9999999999999995E-07
+               SCF_GUESS  ATOMIC
+               &OT  T
+                 MINIMIZER  CG
+                 PRECONDITIONER  FULL_ALL
+                 ENERGY_GAP     1.0000000000000000E-03
+               &END OT
+               &OUTER_SCF  T
+                 EPS_SCF     9.9999999999999995E-07
+                 MAX_SCF  50
+               &END OUTER_SCF
+             &END SCF
+             &QS
+               EPS_DEFAULT     1.0000000000000000E-10
+               METHOD  GPW
+             &END QS
+             &MGRID
+               NGRIDS  5
+               CUTOFF     3.6000000000000000E+02
+               REL_CUTOFF     8.0000000000000000E+01
+             &END MGRID
+             &XC
+               DENSITY_CUTOFF     1.0000000000000000E-10
+               GRADIENT_CUTOFF     1.0000000000000000E-10
+               TAU_CUTOFF     1.0000000000000000E-10
+               &XC_FUNCTIONAL  NO_SHORTCUT
+                 &PBE  T
+                 &END PBE
+               &END XC_FUNCTIONAL
+               &VDW_POTENTIAL
+                 POTENTIAL_TYPE  PAIR_POTENTIAL
+                 &PAIR_POTENTIAL
+                   TYPE  DFTD3(BJ)
+                   PARAMETER_FILE_NAME dftd3.dat
+                   REFERENCE_FUNCTIONAL PBE
+                   CALCULATE_C9_TERM  F
+                 &END PAIR_POTENTIAL
+               &END VDW_POTENTIAL
+             &END XC
+           &END DFT
+           &SUBSYS
+             &CELL
+               A     4.061108E+01   0.00000E+00    0.00000E+00
+               B     2.03054E+01    3.51702E+01    0.00000E+00
+               C     0.00000E+00    0.00000E+00    1.59897E+01
+               MULTIPLE_UNIT_CELL  1 1 1
+               SYMMETRY  MONOCLINIC_GAMMA_AB
+             &END CELL
+             &KIND C
+               BASIS_SET DZVP-MOLOPT-SR-GTH-q4
+               POTENTIAL GTH-PBE-q4
+             &END KIND
+             &KIND H
+               BASIS_SET DZVP-MOLOPT-SR-GTH-q1
+               POTENTIAL GTH-PBE-q1
+             &END KIND
+             &KIND Ni
+               BASIS_SET DZVP-MOLOPT-SR-GTH-q18
+               POTENTIAL GTH-PBE-q18
+             &END KIND
+             &KIND O
+               BASIS_SET DZVP-MOLOPT-SR-GTH-q6
+               POTENTIAL GTH-PBE-q6
+             &END KIND
+             &KIND Zr
+               BASIS_SET DZVP-MOLOPT-SR-GTH-q12
+               POTENTIAL GTH-PBE-q12
+             &END KIND
+             &TOPOLOGY
+               COORD_FILE_NAME ./sNi4OH6-4H2O-config2.xyz
+               COORD_FILE_FORMAT  XYZ
+               NUMBER_OF_ATOMS  584
+               CONN_FILE_FORMAT  OFF
+               MULTIPLE_UNIT_CELL  1 1 1
+             &END TOPOLOGY
+           &END SUBSYS
+           &PRINT
+             &FORCES  ON
+             &END FORCES
+           &END PRINT
+         &END FORCE_EVAL
+    \end{lstlisting}
+\end{center}
+\newpage
+\subsection{Sample Input File for \ce{Ni4} Clusters - Frequency}
+Below is a sample CP2K input file for frequency calculations. The &MOTION section is used to freeze all framework and node atoms in the MOF, thereby calculating only the vibrational modes of the cluster atoms. The xyz file is formatted so that the frozen atoms are the first 548 atoms of the file. 
+
+\begin{center}
+    \lstset{numbers=left, basicstyle=\ttfamily, numbersep=-45pt, }
+    \begin{lstlisting}[language=bash]
+     &GLOBAL
+       PRINT_LEVEL  MEDIUM
+       PROJECT_NAME info-000-014_Zr18_C264_Ni4_O96_H178_UKS-multi5-freq
+       RUN_TYPE VIBRATIONAL_ANALYSIS
+       WALLTIME 71:47:00
+     &END GLOBAL
+     &VIBRATIONAL_ANALYSIS
+       FULLY_PERIODIC T
+       NPROC_REP 16
+     &END VIBRATIONAL_ANALYSIS
+     &MOTION
+        &CONSTRAINT
+          &FIXED_ATOMS
+              COMPONENTS_TO_FIX  XYZ
+              LIST  1..548
+          &END FIXED_ATOMS
+       &END CONSTRAINT
+     &END MOTION
+     &FORCE_EVAL
+       METHOD  QS
+       STRESS_TENSOR  ANALYTICAL
+       &DFT
+         BASIS_SET_FILE_NAME BASIS_file
+         POTENTIAL_FILE_NAME POTENTIALS_file
+         UKS T
+         MULTIPLICITY 5
+         CHARGE  0
+         &SCF
+           MAX_SCF  1000
+           EPS_SCF     9.9999999999999995E-07
+           SCF_GUESS  ATOMIC
+           &OT  T
+             MINIMIZER  CG
+             PRECONDITIONER  FULL_ALL
+             ENERGY_GAP     1.0000000000000000E-03
+           &END OT
+           &OUTER_SCF  T
+             EPS_SCF     9.9999999999999995E-07
+             MAX_SCF  50
+           &END OUTER_SCF
+         &END SCF
+         &QS
+           EPS_DEFAULT     1.0000000000000000E-10
+           METHOD  GPW
+         &END QS
+         &MGRID
+           NGRIDS  5
+           CUTOFF     3.6000000000000000E+02
+           REL_CUTOFF     8.0000000000000000E+01
+         &END MGRID
+         &XC
+           DENSITY_CUTOFF     1.0000000000000000E-10
+           GRADIENT_CUTOFF     1.0000000000000000E-10
+           TAU_CUTOFF     1.0000000000000000E-10
+           &XC_FUNCTIONAL  NO_SHORTCUT
+             &PBE  T
+             &END PBE
+           &END XC_FUNCTIONAL
+           &VDW_POTENTIAL
+             POTENTIAL_TYPE  PAIR_POTENTIAL
+             &PAIR_POTENTIAL
+               TYPE  DFTD3(BJ)
+               PARAMETER_FILE_NAME dftd3.dat
+               REFERENCE_FUNCTIONAL PBE
+               CALCULATE_C9_TERM  F
+             &END PAIR_POTENTIAL
+           &END VDW_POTENTIAL
+         &END XC
+       &END DFT
+       &SUBSYS
+         &CELL
+           A     4.0611054456722748E+01    0.0000000000000000E+00    0.0000000000000000E+00
+           B     2.0305492374827001E+01    3.5170224956669564E+01    0.0000000000000000E+00
+           C     0.0000000000000000E+00    0.0000000000000000E+00    1.5989790987837972E+01
+           MULTIPLE_UNIT_CELL  1 1 1
+           SYMMETRY  MONOCLINIC_GAMMA_AB
+         &END CELL
+         &KIND C
+           BASIS_SET DZVP-MOLOPT-SR-GTH-q4
+           POTENTIAL GTH-PBE-q4
+         &END KIND
+         &KIND H
+           BASIS_SET DZVP-MOLOPT-SR-GTH-q1
+           POTENTIAL GTH-PBE-q1
+         &END KIND
+         &KIND Ni
+           BASIS_SET DZVP-MOLOPT-SR-GTH-q18
+           POTENTIAL GTH-PBE-q18
+         &END KIND
+         &KIND O
+           BASIS_SET DZVP-MOLOPT-SR-GTH-q6
+           POTENTIAL GTH-PBE-q6
+         &END KIND
+         &KIND Zr
+           BASIS_SET DZVP-MOLOPT-SR-GTH-q12
+           POTENTIAL GTH-PBE-q12
+         &END KIND
+         &TOPOLOGY
+           COORD_FILE_NAME 014_Zr18_C264_Ni4_O96_H178_UKS-multi5.xyz
+           COORD_FILE_FORMAT  XYZ
+           CONN_FILE_FORMAT  OFF
+           MULTIPLE_UNIT_CELL  1 1 1
+         &END TOPOLOGY
+       &END SUBSYS
+       &PRINT
+         &FORCES  ON
+         &END FORCES
+       &END PRINT
+     &END FORCE_EVAL
+    \end{lstlisting}
+\end{center}
+\subsection{Sample Input File for bulk Ni}
+Below is a sample CP2K input file. If the singlet spin state was desired for all \ce{Ni(II)} atoms, UKS F and MULTIPLICITY 1 were used. Otherwise, UKS T was used with the appropriate MULTIPLICITY specified.
+\begin{center}
+    \lstset{numbers=left, basicstyle=\ttfamily, numbersep=-45pt}
+    \begin{lstlisting}[language=bash]
+        &GLOBAL
+          PRINT_LEVEL low
+          PROJECT_NAME Ni-MULTI9
+          RUN_TYPE cell_opt
+        &END GLOBAL
+        &MOTION
+          &CELL_OPT
+            EXTERNAL_PRESSURE [bar] 1.0
+            MAX_DR 0.001
+            MAX_FORCE 0.0001
+            MAX_ITER 400
+            OPTIMIZER BFGS
+            PRESSURE_TOLERANCE [bar] 10.0
+            RMS_DR 0.0003
+            RMS_FORCE 0.00003
+            TYPE direct_cell_opt
+            &BFGS
+              TRUST_RADIUS 0.1
+              USE_MODEL_HESSIAN off
+              USE_RAT_FUN_OPT on
+            &END BFGS
+          &END CELL_OPT
+        &END MOTION
+        &FORCE_EVAL
+          METHOD QS
+          STRESS_TENSOR analytical
+          &DFT
+            BASIS_SET_FILE_NAME ./BASIS_file
+            POTENTIAL_FILE_NAME ./POTENTIALS_file
+            &KPOINTS
+              SCHEME MONKHORST-PACK 6 6 6
+              FULL_GRID yes
+              SYMMETRY yes
+              VERBOSE yes
+              PARALLEL_GROUP_SIZE -1
+            &END KPOINTS
+            &MGRID
+              NGRIDS 5
+              CUTOFF 400.0
+              REL_CUTOFF 60.0
+            &END MGRID
+            &QS
+              EPS_DEFAULT 1.0E-12
+              EXTRAPOLATION use_prev_p
+            &END QS
+            &SCF
+              ADDED_MOS 60
+              EPS_SCF 1.0E-8
+              MAX_SCF 300
+              SCF_GUESS restart
+              &DIAGONALIZATION yes
+                ALGORITHM STANDARD
+              &END DIAGONALIZATION
+              &MIXING yes
+                ALPHA 0.4
+                BETA 1.0
+                METHOD broyden_mixing
+                NBROYDEN 8
+              &END MIXING
+              &SMEAR on
+                METHOD FERMI_DIRAC
+                ELECTRONIC_TEMPERATURE [K] 2000.0
+              &END SMEAR
+            &END SCF
+            &XC
+              &XC_FUNCTIONAL PBE
+              &END XC_FUNCTIONAL
+              &VDW_POTENTIAL
+                POTENTIAL_TYPE pair_potential
+                &PAIR_POTENTIAL
+                  TYPE DFTD3(BJ)
+                  PARAMETER_FILE_NAME dftd3.dat
+                  REFERENCE_FUNCTIONAL PBE
+                &END PAIR_POTENTIAL
+              &END VDW_POTENTIAL
+            &END XC
+          &END DFT
+          &SUBSYS
+            &CELL
+              ABC 3.50 3.50 3.50
+              MULTIPLE_UNIT_CELL 2 2 2
+            &END CELL
+            &COORD
+              SCALED
+              Ni    0    0    0
+              Ni    0  1/2  1/2
+              Ni  1/2    0  1/2
+              Ni  1/2  1/2    0
+            &END COORD
+            &KIND Ni
+              BASIS_SET DZVP-MOLOPT-SR-GTH-q18
+              POTENTIAL GTH-PBE-q18
+            &END KIND
+            &TOPOLOGY
+              MULTIPLE_UNIT_CELL 2 2 2
+            &END TOPOLOGY
+          &END SUBSYS
+        &END FORCE_EVAL
+    \end{lstlisting}
+\end{center}
+\newpage
+\subsection{Frequency calculation freezing strategy}
+We fix the organic linker and inorganic nodes, thereby only calculating only the \ce{Ni} cluster vibrational contributions to the free energy ($F^\text{vib}$). We ensure that the same atoms are fixed across all frequency calculations in order to correctly compare ($F^\text{vib}$). When constructing the vibrational partition function, all frequencies less than 50 cm\textsuperscript{-1} are replaced with 50 cm\textsuperscript{-1} to correct for the breakdown in the harmonic oscillator approximation for low frequency vibrational modes.\cite{Ribeiro2011} The partitions functions are computed in the pMuTT\cite{LYM2019106864} Python package to compute $E^\text{ZP}$ and $F^\text{vib}$ for all structures. A sample input file for the CP2K frequency calculations is provided in the Supporting Information.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ab initio thermodynamic analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{\textit{ab initio} thermodynamic analysis}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Phase Diagram Structures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Phase Diagram Structures}
+% Structure Diagram
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{zi-images/04-SI-images/2022-05-02-Blue-SI.png}
+    \caption{}
+    \label{fig:Ni-blue}
+\end{figure}
+%TODO: insert the phase diagram structures here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The appropriate \bibliography command should be placed here.
+%% Notice that the class file automatically sets \bibliographystyle
+%% and also names the section correctly.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\bibliography{achemso-demo}
+
+\end{document}
