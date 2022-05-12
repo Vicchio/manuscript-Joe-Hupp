@@ -643,8 +643,9 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
         &END FORCE_EVAL
     \end{lstlisting}
 \end{center}
+
 \newpage
-\subsection{Frequency calculation freezing strategy}
+\subsection{Frequency Calculations}
 We fix the organic linker and inorganic nodes, thereby only calculating only the \ce{Ni} cluster vibrational contributions to the free energy ($F^\text{vib}$). We ensure that the same atoms are fixed across all frequency calculations in order to correctly compare ($F^\text{vib}$). When constructing the vibrational partition function, all frequencies less than 50 cm\textsuperscript{-1} are replaced with 50 cm\textsuperscript{-1} to correct for the breakdown in the harmonic oscillator approximation for low frequency vibrational modes.\cite{Ribeiro2011} The partitions functions are computed in the pMuTT\cite{LYM2019106864} Python package to compute $E^\text{ZP}$ and $F^\text{vib}$ for all structures. A sample input file for the CP2K frequency calculations is provided in the Supporting Information.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
