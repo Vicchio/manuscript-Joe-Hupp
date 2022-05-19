@@ -185,32 +185,51 @@ Modeling the ligand environment of a supported four ion \ce{Ni} cluster under di
 \subsection{Deriving the free energy expressions}
 We transform the free energy from a fixed number of atoms to a fixed chemical potential to account for the compositional variation of different activated clusters (Eq.~\ref{eq:transformation1}):
 \begin{equation}
-    F(V,T,N_{\text{H}},N_{\text{O}},N_{\text{Ni}}) \rightarrow 
+    F^{(0)}(V,T,N_{\text{H}},N_{\text{O}},N_{\text{Ni}}) \rightarrow 
     F^{(2)}(V,T,\mu_{\text{H}}, \mu_{\text{O}}, N_{\text{Ni}})    \rightarrow F^{(3)}(V,T,\mu_{\text{H}},\mu_{\text{O}},\mu_{\text{Ni}})
     \label{eq:transformation1}
 \end{equation}
-where $F$ is the Helmholtz free energy, $V$ is volume, $T$ is temperature, $\mu$ is chemical potential, and $N$ is the number of \ce{O}, \ce{H}, and \ce{Ni} atoms. The (2) superscript on $F^{(2)}$ indicates the second Legendre transform of $F$,\cite{Alberty1997} i.e., of $N_{\ce{H}}$ and $N_{\ce{O}}$ to $\mu_{\ce{H}}$ and $\mu_{\ce{O}}$. Additionally, the (3) superscript on $F^{(3)}$ indicates the Legendre transform of $F^{(2)}$ from $N_{\ce{Ni}}$ to $\mu_{\ce{Ni}}$.
+where $F$ is the Helmholtz free energy, $V$ is volume, $T$ is temperature, $\mu$ is chemical potential, and $N$ is the number of \ce{O}, \ce{H}, and \ce{Ni} atoms. The (2) superscript on $F^{(2)}$ indicates the second Legendre transform of $F^{(0)}$,\cite{Alberty1997} i.e., of $N_{\ce{H}}$ and $N_{\ce{O}}$ to $\mu_{\ce{H}}$ and $\mu_{\ce{O}}$, respectively. Additionally, the (3) superscript on $F^{(3)}$ indicates the Legendre transform of $F^{(2)}$ from $N_{\ce{Ni}}$ to $\mu_{\ce{Ni}}$. We write the transformed free energy expression for $F^{(2)}$ as Eq.~\ref{eq:free-energy-ind} and $F^{(3)}$ as Eq.~\ref{eq:free-energy-ind-Ni}. 
+\begin{equation}
+    \begin{split}
+        F^{(2)}(V,T,\mu_{\text{H}},\mu_{\text{O}},N_{\text{Ni}}) =  F^{(0)}(V,T,N_{\text{H}},N_{\text{O}},N_{\text{Ni}}) - (\mu_{\text{H}})(N_{\text{H}}) - (\mu_{\text{O}})(N_{\text{O}})  \\ 
+    \end{split}
+    \label{eq:free-energy-ind}
+\end{equation}
+\begin{equation}
+    \begin{split}
+        F^{(3)}(V,T,\mu_{\text{H}},\mu_{\text{O}},\mu_{\text{Ni}}) = F^{(2)}(V,T,\mu_{\text{H}},\mu_{\text{O}},N_{\text{Ni}}) - (\mu_{\text{Ni}})(N_{\text{Ni}}) \\ 
+    \end{split}
+    \label{eq:free-energy-ind-Ni}
+\end{equation}
 
-We write the transformed free energy expression for $F^{(2)}$ as Eq.~\ref{eq:free-energy-trans}: 
+
+%The difference in free energy between structures is then calculated by taking the difference between two structures, denoted modified and reference. 
+
+%The free energy expressions in Eq.~\ref{eq:free-energy-ind} and $F^{(3)}$ as Eq.~\ref{eq:free-energy-ind-Ni} 
+
+%We write the transformed free energy expression for $F^{(3)}$ as Eq.~\ref{eq:free-energy-trans-Ni}:
+
+%where \hl{LABEL ALL OF THE DIFFERENT VARIABLES HERE}
+
+The final transformed free energy expression ($\Delta F^{(2)}$) is computed relative to the reference structure (\hl{as shown in the main text in} Figure~\ref{fig:Ni-MOF-structures}a). We write the transformed free energy expression for $\Delta F^{(2)}$ as Eq.~\ref{eq:free-energy-trans}: 
 \begin{equation}
     \begin{split}
         \Delta F^{(2)}(V,T,\mu_{\text{H}},\mu_{\text{O}},N_{\text{Ni}})  
-        & = \Delta F(V,T,N_{\text{H}},N_{\text{O}},N_{\text{Ni}}) - (\mu_{\text{H}})(\Delta N_{\text{H}}) 
+        & = \Delta F^{(0)}(V,T,N_{\text{H}},N_{\text{O}},N_{\text{Ni}}) - (\mu_{\text{H}})(\Delta N_{\text{H}}) 
         - (\mu_{\text{O}})(\Delta N_{\text{O}})  \\ 
     \end{split}
     \label{eq:free-energy-trans}
 \end{equation}
-where \hl{LABEL ALL OF THE DIFFERENT VARIABLES HERE}
-
-We write the transformed free energy expression for $F^{(3)}$ as Eq.~\ref{eq:free-energy-trans-Ni}:
+where $\Delta N_{\text{H}}$ and $\Delta N_{\text{O}}$ are computed by taking the difference in the number of \ce{O} and \ce{H} atoms of the cluster relative to the reference structure. A similar expression is constructed for $F^{(3)}$ (Eq.~\ref{eq:free-energy-trans-Ni}):
 \begin{equation}
     \begin{split}
         \Delta F^{(3)}(V,T,\mu_{\text{H}},\mu_{\text{O}},\mu_{\text{Ni}})  
-        & = \Delta F^{(2)}(V,T,\mu_{\text{H}},\mu_{\text{O}},N_{\text{Ni}}) - (\mu_{\text{Ni}})(\Delta N_{\text{Ni}}) \\ 
+        = \Delta F^{(2)}(V,T,\mu_{\text{H}},\mu_{\text{O}},N_{\text{Ni}}) - (\mu_{\text{Ni}})(\Delta N_{\text{Ni}}) \\ 
     \end{split}
     \label{eq:free-energy-trans-Ni}
 \end{equation}
-where \hl{LABEL ALL OF THE DIFFERENT VARIABLES HERE}
+where $\Delta N_{\text{Ni}}$ is also computed by taking the difference in the number of \ce{Ni} atoms of the cluster relative to the reference structure. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Equilibrium Expressions
@@ -232,7 +251,7 @@ where the chemical potential terms are related by:
     \end{split}
     \label{H2-to-reaction-conditions}
 \end{equation}
-Furthermore, the $\mu_{\ce{H2}}^{g}(T,P)$ can be related to the temperature and pressure conditions of the system by relating the term to the free energy of the gas phase species using Eq.~S\ref{mu_2_G}:
+In our analysis, $\mu_{\ce{H2}}(T,P)$ is an independent variable; we varied $\mu_{\ce{H2}}(T,P)$ to generate the \hl{phase diagrams shown in} Figure~\ref{fig:Ni-structure-diagram}. Furthermore, the $\mu_{\ce{H2}}^{g}(T,P)$ can be related to the temperature and pressure conditions of the system by relating the term to the free energy of the gas phase species using Eq.~S\ref{mu_2_G}:
 \begin{equation}
     \begin{split}
          \Delta \mu_{\ce{H2}}(T,P) &= \Delta G_{H_{2}}(T,P)\\
