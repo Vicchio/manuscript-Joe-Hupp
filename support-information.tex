@@ -317,6 +317,13 @@ The library was optimized at different \ce{Ni} spin states; the considered spin 
 \end{center}
 From Table \ref{tbl:spin_contamination}, the lowest energy structure is c) three singlet, one triplet \ce{Ni} ions; however, the structure is removed from the analysis because the ideal $S^{**}2$ and single $S^{**}2$ deviate. Therefore, the lowest energy structure for this particular configuration is the e) one singlet, three triplet \ce{Ni} ions. 
 
+\newpage
+\subsection{Frequency Calculations}
+We fix the organic linker and inorganic nodes, thereby only calculating only the \ce{Ni} cluster vibrational contributions to the free energy ($F^\text{vib}$). We ensure that the same atoms are fixed across all frequency calculations in order to correctly compare ($F^\text{vib}$). When constructing the vibrational partition function, all frequencies less than 50 cm\textsuperscript{-1} are replaced with 50 cm\textsuperscript{-1} to correct for the breakdown in the harmonic oscillator approximation for low frequency vibrational modes.\cite{Ribeiro2011} The partitions functions are computed in the pMuTT\cite{LYM2019106864} Python package to compute $E^\text{ZP}$ and $F^\text{vib}$ for all structures. A sample input file for the CP2K frequency calculations is provided in the Supporting Information.
+
+\newpage
+\subsection{\ce{Ni-O} Coordination Numbers}
+We report the \ce{Ni-O} coordination numbers for structures appearing on the phase diagram. The \ce{Ni-O} coordination numbers are determined by geometric criteria defined by the \ce{Ni-O} distance, which is between 1.9 {\AA} and 2.4 {\AA} for \ce{OH} and\ce{O} ligands. For \ce{H2O} ligands, we add an additional geometric criteria that includes the orientation of the \ce{H2O} ligand relative to the cluster. If the \ce{Ni-O} distance is below 2.4 {\AA}, the \ce{H2O} is coordinated. Additionally for \ce{H2O} ligands, if the \ce{Ni-O} distance is below 3.3 and the \ce{Ni-O} distance is less than the \ce{Ni-H} distances is coordinated to the cluster. We report the coordination numbers on a per \ce{Ni} basis, which is the average of the four \ce{Ni} ions present within the cluster.
 
 \newpage
 \subsection{Sample Input File for \ce{Ni4} Clusters - Optimization}
@@ -441,7 +448,7 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
 \end{center}
 \newpage
 \subsection{Sample Input File for \ce{Ni4} Clusters - Frequency}
-Below is a sample CP2K input file for frequency calculations. The &MOTION section is used to freeze all framework and node atoms in the MOF, thereby calculating only the vibrational modes of the cluster atoms. The xyz file is formatted so that the frozen atoms are the first 548 atoms of the file. 
+Below is a sample CP2K input file for frequency calculations. The $&$MOTION section is used to freeze all framework and node atoms in the MOF, thereby calculating only the vibrational modes of the cluster atoms. The xyz file is formatted so that the frozen atoms are the first 548 atoms of the file. 
 
 \begin{center}
     \lstset{numbers=left, basicstyle=\ttfamily, numbersep=-45pt, }
@@ -663,9 +670,7 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
     \end{lstlisting}
 \end{center}
 
-\newpage
-\subsection{Frequency Calculations}
-We fix the organic linker and inorganic nodes, thereby only calculating only the \ce{Ni} cluster vibrational contributions to the free energy ($F^\text{vib}$). We ensure that the same atoms are fixed across all frequency calculations in order to correctly compare ($F^\text{vib}$). When constructing the vibrational partition function, all frequencies less than 50 cm\textsuperscript{-1} are replaced with 50 cm\textsuperscript{-1} to correct for the breakdown in the harmonic oscillator approximation for low frequency vibrational modes.\cite{Ribeiro2011} The partitions functions are computed in the pMuTT\cite{LYM2019106864} Python package to compute $E^\text{ZP}$ and $F^\text{vib}$ for all structures. A sample input file for the CP2K frequency calculations is provided in the Supporting Information.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ab initio thermodynamic analysis
@@ -673,20 +678,139 @@ We fix the organic linker and inorganic nodes, thereby only calculating only the
 \newpage
 \section{\textit{ab initio} thermodynamic analysis}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Phase Diagram Structures
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Phase Diagram Structures}
-% Structure Diagram
+\subsubsection{Green}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \ce{Ni4(OH)6.4H2O} (green) structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \ce{Ni4(OH)6.4H2O} (green) based on d-PDF analysis include a \ce{Ni-O} peak at 2.02 {\AA}, a \ce{Ni{\Compactcdots}Ni} peak at 3.03 {\AA}, and a \ce{Ni{\Compactcdots}Zr} peak at 3.92 {\AA}, as seen in (a). The structure does not exhibit any \ce{Ni{\Compactcdots}Ni} or \ce{Ni{\Compactcdots}Zr} peak splitting.
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+    
+\subsubsection{Purple}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \ce{Ni4(OH)6.3H2O} (purple) structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \ce{Ni4(OH)6.3H2O} (purple) based on d-PDF analysis include a \ce{Ni-O} peak at 2.07 {\AA}, a \ce{Ni{\Compactcdots}Ni} peak at 3.03 {\AA}, and a \ce{Ni{\Compactcdots}Zr} peak at 3.92 {\AA}, as seen in (a). The structure does not exhibit any \ce{Ni{\Compactcdots}Ni} or \ce{Ni{\Compactcdots}Zr} peak splitting. 
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}  
+    
+\subsubsection{Blue}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \ce{Ni4(OH)5(H).4H2O} (blue) structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \ce{Ni4(OH)5(H).4H2O} (blue) based on d-PDF analysis include a \ce{Ni-O} peak at 1.93 {\AA}, \ce{Ni{\Compactcdots}Ni} peaks at 2.75, 3.05, and 3.37 {\AA}, and \ce{Ni{\Compactcdots}Zr} peaks at 3.87 {\AA}, as seen in (a). The structure exhibits a triplet of \ce{Ni{\Compactcdots}Ni} peaks and a broadening of the \ce{Ni-O} peak due to the chain of \ce{H2O} molecules. 
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+
+\subsubsection{Cyan}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \ce{Ni4(OH)6.2H2O} (cyan) structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \ce{Ni4(OH)6.2H2O} (cyan) based on d-PDF analysis include a \ce{Ni-O} peak at 2.03 {\AA}, \ce{Ni{\Compactcdots}Ni} peaks at 2.77 and 3.14 {\AA}, and a  \ce{Ni{\Compactcdots}Zr} peak at 3.88 {\AA}, as seen in (a). The structure exhibits split \ce{Ni{\Compactcdots}Ni} peaks that do not match the experimental d-PDF.
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+    
+\subsubsection{Yellow}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \ce{Ni4(OH)4(O)} (yellow) structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \ce{Ni4(OH)4(O)} (yellow) based on d-PDF analysis include a \ce{Ni-O} peak at 2.00 {\AA}, \ce{Ni{\Compactcdots}Ni} peaks at 2.74 and 3.06 {\AA}, and \ce{Ni{\Compactcdots}Zr} peaks at 3.93 {\AA}, as seen in (a). The split \ce{Ni{\Compactcdots}Ni} peaks are not as pronounced as other structures, with the peaks being broad. 
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+
+\subsubsection{Orange}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \ce{Ni4(OH)4.2H2O} (orange) structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \ce{Ni4(OH)4.2H2O} (orange) based on d-PDF analysis include a \ce{Ni-O} peak at 2.02 {\AA}, \ce{Ni{\Compactcdots}Ni} peaks at 2.54 and 3.34 {\AA}, and a  \ce{Ni{\Compactcdots}Zr} peak at 3.98 {\AA}, as seen in (a). The peak at 2.54 {\AA} is from the middle \ce{Ni} ions having a low \ce{Ni-O} coordination number. 
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+
+\subsubsection{White}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \hl{XXX} structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \hl{XXX} based on d-PDF analysis include \ce{Ni-O} peaks at \hl{XXX} {\AA}, \ce{Ni{\Compactcdots}Ni} peaks at \hl{XXX} {\AA}, and \ce{Ni{\Compactcdots}Zr} peaks at \hl{XXX} {\AA}, as seen in (a). 
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+
+\subsubsection{Magenta}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \hl{XXX} structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \hl{XXX} based on d-PDF analysis include \ce{Ni-O} peaks at \hl{XXX} {\AA}, \ce{Ni{\Compactcdots}Ni} peaks at \hl{XXX} {\AA}, and \ce{Ni{\Compactcdots}Zr} peaks at \hl{XXX} {\AA}, as seen in (a). 
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+
+\subsubsection{Gray}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \hl{XXX} structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \hl{XXX} based on d-PDF analysis include \ce{Ni-O} peaks at \hl{XXX} {\AA}, \ce{Ni{\Compactcdots}Ni} peaks at \hl{XXX} {\AA}, and \ce{Ni{\Compactcdots}Zr} peaks at \hl{XXX} {\AA}, as seen in (a). 
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+    
+\subsubsection{Red}
+    \begin{figure}[H]
+        \centering
+    %    \includegraphics[width=0.75\textwidth]{}
+        \caption{The local structural information for the \hl{XXX} structure, presented as the (a) d-PDF, (b) the schematic representation, and (c) a 3D rendering. The key distances for \hl{XXX} based on d-PDF analysis include \ce{Ni-O} peaks at \hl{XXX} {\AA}, \ce{Ni{\Compactcdots}Ni} peaks at \hl{XXX} {\AA}, and \ce{Ni{\Compactcdots}Zr} peaks at \hl{XXX} {\AA}, as seen in (a). 
+        }
+        \label{fig:SI-structure-diagram-blue}
+    \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Full d-PDF Diagrams for all structures on the phase diagram
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{d-PDFs for All Thermodynamic Minima}
+% d-PDF diagram for all thermodynamic minima
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{zi-images/04-SI-images/2022-05-02-Blue-SI.png}
-    \caption{}
-    \label{fig:Ni-blue}
+%    \includegraphics[width=0.75\textwidth]{}
+    \caption{d-PDFs for (a) the synthesized structure and (b) simulated structures representing thermodynamic minima with \ce{Ni-O} coordination numbers $\ge$ 4, and (c) simulated structures representing thermodynamic minima with \ce{Ni-O} coordination numbers $<$ 4. The d-PDFs presented in (c) are the structures that do not appear in the main text, given the observed d-PDFs. %The structure labels and colors for the simulated structures are the same as in the text and in Figures~\ref{fig:phase_diagram_Ni} and \ref{fig:Ni-structure-diagram}. 
+    Gray dotted lines indicate key distances observed for the synthesized structure, which are also annotated on the figure.
+    }
+    \label{fig:SI-all-dPDFs}
 \end{figure}
-%TODO: insert the phase diagram structures here
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Weighted d-PDFs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{d-PDFs for All Thermodynamic Minima}
+% d-PDF diagram for all thermodynamic minima
+\begin{figure}
+    \centering
+   \includegraphics[width=0.50\textwidth]{zi-images/04-SI-images/2022-single-weighted_dPDF.png}
+    \caption{The d-PDFs for (a) the synthesized structure and Botlzmann weighted d-PDFs (b-d).
+    Gray dotted lines indicate key distances observed for the synthesized structure, which are also annotated on the figure.
+    }
+    \label{fig:SI-all-dPDFs}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Structure Heat Maps
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Phase Diagram Structure Heat Maps}
+% Structure Diagram
+\hl{Insert all of the heat map structures here for reference..just show the structures are they are for reference...}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The appropriate \bibliography command should be placed here.
