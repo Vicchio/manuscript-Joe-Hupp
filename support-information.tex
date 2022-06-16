@@ -793,19 +793,21 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Boltzmann Weighted d-PDFs}
-We using Boltzmann weighting to combine the structural information of unique structures into a Boltzmann weighted d-PDF. We perform the Boltzmann weighting using the  
-
+We use Boltzmann weighting to combine the structural information of unique structures into a Boltzmann weighted d-PDF. We perform the Boltzmann weighting by computing the free energies of all the structures at specific \ce{H2} and \ce{H2O} chemical potentials, and then use Eq.~\ref{eq:weighted-dPDFs} to compute the Boltzmann factor ($P_{i}$) for each structure ${i}$.
+\begin{equation}
+    P_{i} = \frac{e^{\frac{-\Delta G_{i}}{k_{b}T}}}{\sum_{l} e^{\frac{-\Delta G_{l}}{k_{b}T}}}
+    \label{eq:weighted-dPDFs}
+\end{equation}
+where $\Delta G$ is the free energy of structure computed according to Eq.~S\hl{XXX}. We assume a temperature of $T=298 \text{K}$. Note that the Boltzmann weighting considers all the d-PDFs in our library of structures; not just the structures that are thermodynamically relevant. For each structure, we then take each d-PDF between 0 {\AA} and 5 {\AA} multiplied by each Boltzmann factor and then sum all the d-PDFs to generate the weighted d-PDF at specific \ce{H2} and \ce{H2O} chemical potentials. Key weighted Boltzmann factors are shown in Figure~S\ref{fig:SI-all-dPDFs}.
 
 % d-PDF diagram for all thermodynamic minima
-\begin{figure}
+\begin{figure}[H]
     \centering
    \includegraphics[width=0.50\textwidth]{zi-images/04-SI-images/2022-single-weighted_dPDF.png}
-    \caption{The d-PDFs for (a) the synthesized structure and Botlzmann weighted d-PDFs (b-d).
-    Gray dotted lines indicate key distances observed for the synthesized structure, which are also annotated on the figure.
+    \caption{The d-PDFs for (a) the synthesized structure and Botlzmann weighted d-PDFs (b-d). Gray dotted lines indicate key distances observed for the synthesized structure, which are also annotated on the figure.
     }
     \label{fig:SI-all-dPDFs}
 \end{figure}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Structure Heat Maps
