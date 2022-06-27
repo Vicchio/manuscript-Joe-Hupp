@@ -268,17 +268,13 @@ with the chemical potential terms related according to:
 \begin{equation}
     \mu_{\ce{O}} = \mu_{\ce{H2O}}^{g}(T,P) - \mu_{\ce{H2}}^{g}(T,P)
 \end{equation}
-where $\mu_{\ce{H2O}}^{g}(T,P)$ is the gas phase reservoir chemical potential term. A similar expression to Eq.~\ref{H2-to-reaction-conditions} is constructed to relate the electronic energy (referenced at T=0 K) of an isolated molecule with the gas-phase free energy values () 
-
+where $\mu_{\ce{H2O}}^{g}(T,P)$ is the gas phase reservoir chemical potential term. A similar expression to Eq.~\ref{H2-to-reaction-conditions} is constructed to relate the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase free energy values (Eq.~\ref{H2O-to-reaction-conditions}). 
 \begin{equation}
     \begin{split}
-    \mu_{\ce{OH}^{*}} &=  E_{H_{2}O}^{DFT} + \Big[ \Delta G_{H_{2}O}(T,P^{o})  + RT \ln{ \frac{P_{H_{2}O}}{P_{H_{2}O}^{o}}} \Big] \\
-    &- \frac{1}{2} \Big[ E_{H_{2}}^{DFT} + \big[ \Delta G_{H_{2}}(T,P^{o})  + RT \ln{ \frac{P_{H_2}}{P_{H_2}^{o}}} \big] \Big] 
+         \mu_{\ce{H2O}}^{g}(T,P) &= E_{\ce{H2O}}^{DFT} + E_{\ce{H2O}}^{ZPE} + \Delta \mu_{\ce{H2O}}(T,P)  \\
     \end{split}
-    \label{OH-to-reaction-conditions}
-\end{equation
-
-Here, $\mu_{\ce{O}}$ is dependent on both $\mu_{H_{2}^{g}}(T,P)$ and $\mu_{H_{2}O}^{g}(T,P)$. 
+    \label{H2O-to-reaction-conditions}
+\end{equation}
 
 
 
