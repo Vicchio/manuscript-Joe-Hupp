@@ -275,30 +275,60 @@ where $\mu_{\ce{H2O}}^{g}(T,P)$ is the gas phase reservoir chemical potential te
     \end{split}
     \label{H2O-to-reaction-conditions}
 \end{equation}
+Again, $\Delta \mu_{\ce{H2O}}(T,P)$ is another independent variable that is tunable in our analysis. Unlike \ce{H2}, the \ce{H2O} chemical potential is not known for these systems. During activation, the cluster is exposed to 3.5\% \ce{H2} in \ce{He} gas at $P$ = 1 bar and $T$ ranging from 50 \degree C to 200 \degree C.\cite{Li2016sintering} We can relate these conditions to an \ce{H2} chemical potential; however, water is not explicitly added to the system during activation or subsequent steps. We therefore vary the \ce{H2O} chemical potential by changing $\Delta \mu_{\ce{H2O}}(T,P)$ during \textit{ab initio} thermodynamic analysis. 
 
 
 
 
-\hl{---------------------------------------------------------}
+$R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
 
 
-Furthermore, the $\mu_{\ce{H2}}^{g}(T,P)$ can be related to the temperature and pressure conditions of the system by relating the term to the free energy of the gas phase species using Eq.~\ref{mu_2_G}:
+
+
+% Both $\Delta \mu_{\ce{H2}}(T,P)$ and $\Delta \mu_{\ce{H2O}}(T,P)$ are equal to $\Delta G_{\ce{H2}}(T,P)$ and $\Delta G_{\ce{H2O}}(T,P)$, respectively. Therefore, the temperature and pressure conditions of the system are linked to the 
+
+% Both $\Delta G_{\ce{H2}}(T,P)$ and $\Delta G_{\ce{H2O}}(T,P)$ must be referenced at 0 K and vacuum instead of standard state conditions found within the literature.   
+
+
+% \hl{With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript.} 
+
+
+% \hl{---------------------------------------------------------}
+
+
+% Furthermore, the $\mu_{\ce{H2}}^{g}(T,P)$ can be related to the temperature and pressure conditions of the system by relating the term to the free energy of the gas phase species using Eq.~\ref{mu_2_G}:
+% \begin{equation}
+%     \begin{split}
+%          \Delta \mu_{\ce{H2}}(T,P) &= \Delta G_{H_{2}}(T,P)\\
+%          \Delta \mu_{\ce{H2}}(T,P) &= \Big[ \Delta G_{\ce{H2}}(T,P^{o})  + RT \ln{ \frac{P_{\ce{H2}}}{P_{\ce{H2}}^{o}}} \Big]  \\ 
+%     \end{split}
+%     \label{mu_2_G}
+% \end{equation}
+% where $\Delta G_{\ce{H2}}(T,P^{o})$ is the free energy referenced to 0 K, $R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
+
+% \hl{With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript.} 
+
+\newpage
+\subsection{Deriving gas phase free energies values from empirical data}
+Both $\Delta \mu_{\ce{H2}}(T,P)$ and $\Delta \mu_{\ce{H2O}}(T,P)$ written as a function of $T$ and $P$ is shown in Eq.~\ref{chemical_potential_ref}:
+\begin{equation}
+        \Delta \mu_{i}(T,P) = \Delta \mu_{i}(T,P^{o}) + \Big[ RT \ln{ \frac{P_{i}}{P^{o}}} \Big]
+    \label{chemical_potential_ref}
+\end{equation}
+where $\Delta \mu_{i}(T,P^{o})$ is the chemical potential of species $i$ referenced at $T$ is the temperature and $P^{o}$, and $R$ is gas constant.
+
+The NASA Polynomials\hl{REF-XXX} are defined for a specific temperature range \hl{(i.e., from XXX to XXX)}. To correct the electronic energies from DFT, the gas phase species must be referenced to approximately 0 K and vacuum. 
+
+
 \begin{equation}
     \begin{split}
-         \Delta \mu_{\ce{H2}}(T,P) &= \Delta G_{H_{2}}(T,P)\\
-         \Delta \mu_{\ce{H2}}(T,P) &= \Big[ \Delta G_{\ce{H2}}(T,P^{o})  + RT \ln{ \frac{P_{\ce{H2}}}{P_{\ce{H2}}^{o}}} \Big]  \\ 
+         \Delta G_{H_{2}}(T,P) &= \Big[ \Delta G_{\ce{H2}}(T,P^{o})  + RT \ln{ \frac{P_{\ce{H2}}}{P_{\ce{H2}}^{o}}} \Big]  \\ 
     \end{split}
     \label{mu_2_G}
 \end{equation}
 where $\Delta G_{\ce{H2}}(T,P^{o})$ is the free energy referenced to 0 K, $R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
 
-\hl{With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript.} 
-
-
-
-\newpage
-\subsection{Deriving gas phase free energies values from empirical data}
-The NASA Polynomials\hl{REF-XXX} are defined for a specific temperature range \hl{(i.e., from XXX to XXX)}. To correct the electronic energies from DFT, the gas phase species must be referenced to approximately 0 K. The standard reference state for the NASA Polynomials is 298 K; therefore, the empirical methods are approximated to 0 K using Eq.~\ref{eq:pmutt-expression} by referencing the values at 10 K, following prior work.\hl{REF-Getman-FPT-Paper}
+The standard reference state for the NASA Polynomials is 298 K; therefore, the empirical methods are approximated to 0 K using Eq.~\ref{eq:pmutt-expression} by referencing the values at 10 K, following prior work.\hl{REF-Getman-FPT-Paper}
 \begin{equation}
     \begin{split}
         \Delta G(T, P^{o}) &= [G(T,P^{o}) - G(T=298 K, P^{o})] - [G(T=10 K, P^{o}) - G(T=298 K, P^{o})] \\
