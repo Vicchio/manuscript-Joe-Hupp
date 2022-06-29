@@ -254,7 +254,7 @@ with the chemical potential terms related according to:
 $\mu_{\ce{H2}}^{g}(T,P)$ is the gas phase reservoir chemical potential term, and is computed by  correcting the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase free energy values at a specific temperature and pressure.\cite{Li2016} Eq.~\ref{H2-to-reaction-conditions} shows the correction. 
 \begin{equation}
     \begin{split}
-         \mu_{\ce{H2}}^{g}(T,P) &= E_{\ce{H2}}^{DFT} + E_{\ce{H2}}^{ZPE}+ \Delta \mu_{\ce{H2}}(T,P)  \\
+         \mu_{\ce{H2}}^{g}(T,P) &= E_{\ce{H2}}^{\text{DFT}} + E_{\ce{H2}}^{\text{ZPE}}+ \Delta \mu_{\ce{H2}}(T,P)  \\
     \end{split}
     \label{H2-to-reaction-conditions}
 \end{equation}
@@ -271,16 +271,13 @@ with the chemical potential terms related according to:
 where $\mu_{\ce{H2O}}^{g}(T,P)$ is the gas phase reservoir chemical potential term. A similar expression to Eq.~\ref{H2-to-reaction-conditions} is constructed to relate the electronic energy (referenced at $T$=0 K) of an isolated molecule with the gas-phase free energy values (Eq.~\ref{H2O-to-reaction-conditions}). 
 \begin{equation}
     \begin{split}
-         \mu_{\ce{H2O}}^{g}(T,P) &= E_{\ce{H2O}}^{DFT} + E_{\ce{H2O}}^{ZPE} + \Delta \mu_{\ce{H2O}}(T,P)  \\
+         \mu_{\ce{H2O}}^{g}(T,P) &= E_{\ce{H2O}}^{\text{DFT}} + E_{\ce{H2O}}^{\text{ZPE}} + \Delta \mu_{\ce{H2O}}(T,P)  \\
     \end{split}
     \label{H2O-to-reaction-conditions}
 \end{equation}
-Again, $\Delta \mu_{\ce{H2O}}(T,P)$ is another independent variable that is tunable in our analysis. Unlike \ce{H2}, the \ce{H2O} chemical potential is not known for these systems. During activation, the cluster is exposed to 3.5\% \ce{H2} in \ce{He} gas at $P$ = 1 bar and $T$ ranging from 50 \degree C to 200 \degree C.\cite{Li2016sintering} We can relate these conditions to an \ce{H2} chemical potential; however, water is not explicitly added to the system during activation or subsequent steps. We therefore vary the \ce{H2O} chemical potential by changing $\Delta \mu_{\ce{H2O}}(T,P)$ during \textit{ab initio} thermodynamic analysis. 
+Again, $\Delta \mu_{\ce{H2O}}(T,P)$ is another independent variable that is tunable in our analysis. Unlike \ce{H2}, the \ce{H2O} chemical potential is not known for these systems. During activation, the cluster is exposed to 3.5\% \ce{H2} in \ce{He} gas at $P$ = 1 bar and $T$ ranging from 50 \degree C to 200 \degree C.\cite{Li2016sintering} We can relate these conditions to an \ce{H2} chemical potential; however, water is not explicitly added to the system during activation or subsequent steps. We therefore vary the \ce{H2O} chemical potential by changing $\Delta \mu_{\ce{H2O}}(T,P)$ during \textit{ab initio} thermodynamic analysis. Phase diagrams are computed as a function of $\Delta \mu_{\ce{H2}}(T,P)$ and $\Delta \mu_{\ce{H2O}}(T,P)$.
 
-
-
-
-$R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
+% $R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
 
 
 
@@ -309,26 +306,24 @@ $R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressu
 % \hl{With all calculations being performed at 0 K, the $G_{H_{2}}(T,P)$ was referenced to 0 K when evaluating the free energy from pMuTT. The electronic energy ($E_{H_{2}}^{DFT}$) were calculated in CP2K using the same computational parameters as described in the methodology section of the manuscript.} 
 
 \newpage
-\subsection{Deriving gas phase free energies values from empirical data}
-Both $\Delta \mu_{\ce{H2}}(T,P)$ and $\Delta \mu_{\ce{H2O}}(T,P)$ written as a function of $T$ and $P$ is shown in Eq.~\ref{chemical_potential_ref}:
-\begin{equation}
-        \Delta \mu_{i}(T,P) = \Delta \mu_{i}(T,P^{o}) + \Big[ RT \ln{ \frac{P_{i}}{P^{o}}} \Big]
-    \label{chemical_potential_ref}
-\end{equation}
-where $\Delta \mu_{i}(T,P^{o})$ is the chemical potential of species $i$ referenced at $T$ is the temperature and $P^{o}$, and $R$ is gas constant.
-
-The NASA Polynomials\hl{REF-XXX} are defined for a specific temperature range \hl{(i.e., from XXX to XXX)}. To correct the electronic energies from DFT, the gas phase species must be referenced to approximately 0 K and vacuum. 
-
-
+\subsection{Frequency Calculations}
+We fix the organic linker and inorganic nodes, thereby only calculating only the \ce{Ni4}-cluster vibrational contributions to the free energy ($F^\text{vib}$). We ensure that the same atoms are fixed across all frequency calculations in order to correctly compare ($F^\text{vib}$). When constructing the vibrational partition function, all frequencies less than 50 cm\textsuperscript{-1} are replaced with 50 cm\textsuperscript{-1} to correct for the breakdown in the harmonic oscillator approximation for low frequency vibrational modes.\cite{Ribeiro2011} The partitions functions are computed in the pMuTT\cite{LYM2019106864} Python package to compute $E^\text{ZPE}$ and $F^\text{vib}$ for all structures. A sample input file for the CP2K frequency calculations is provided in the Supporting Information. The following expression is used to compute $F^{(0)}$ of each \ce{Ni4}-cluster structure: 
 \begin{equation}
     \begin{split}
-         \Delta G_{H_{2}}(T,P) &= \Big[ \Delta G_{\ce{H2}}(T,P^{o})  + RT \ln{ \frac{P_{\ce{H2}}}{P_{\ce{H2}}^{o}}} \Big]  \\ 
+        F^{(0)} = E^{\text{DFT}} + E^\text{ZPE} + F^\text{vib}
     \end{split}
-    \label{mu_2_G}
+    \label{eq:free-energy-from-DFT}
 \end{equation}
-where $\Delta G_{\ce{H2}}(T,P^{o})$ is the free energy referenced to 0 K, $R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
 
-The standard reference state for the NASA Polynomials is 298 K; therefore, the empirical methods are approximated to 0 K using Eq.~\ref{eq:pmutt-expression} by referencing the values at 10 K, following prior work.\hl{REF-Getman-FPT-Paper}
+
+\newpage
+\subsection{Deriving gas phase free energies values from empirical data}
+Both $\Delta \mu_{\ce{H2}}(T,P)$ and $\Delta \mu_{\ce{H2O}}(T,P)$ written as a function of $T$ and $P$ is shown generically in Eq.~\ref{chemical_potential_ref}. The $\Delta \mu_{i}(T,P)$ term includes all temperature- and pressure- free energy contributions. 
+\begin{equation}
+        \Delta \mu_{i}(T,P) = \Delta \mu_{i}(T,P^{o}) + \Big[ RT \ln{ \frac{P}{P^{o}}} \Big]
+    \label{chemical_potential_ref}
+\end{equation}
+where $\Delta \mu_{i}(T,P^{o})$ is the chemical potential of species $i$ referenced at $T$ is the temperature and $P^{o}$, and $R$ is gas constant. $\Delta \mu_{i}(T,P^{o})$ is computed using the NASA Polynomials\cite{Mcbride1993}, following a conversion from standard temperature to 0 K:
 \begin{equation}
     \begin{split}
         \Delta G(T, P^{o}) &= [G(T,P^{o}) - G(T=298 K, P^{o})] - [G(T=10 K, P^{o}) - G(T=298 K, P^{o})] \\
@@ -336,7 +331,7 @@ The standard reference state for the NASA Polynomials is 298 K; therefore, the e
     \end{split}
     \label{eq:pmutt-expression}
 \end{equation} 
-where $\Delta G(T, P^{o})$ is the free energy referenced at $T = 10$~K, and $G(T,P^{o})$ is the free energy referenced at $T = 298$~K. Figures~\ref{fig:h2-pmutt-expression} and \ref{fig:h2o-pmutt-expression} show the extrapolation of the NASA Polynomial referenced to 0~K. 
+where $\Delta G(T, P^{o})$ is the free energy referenced at $T = 10$~K. Figures~\ref{fig:h2-pmutt-expression} and \ref{fig:h2o-pmutt-expression} show the extrapolation of the NASA Polynomial referenced to 0~K using pMuTT\cite{LYM2019106864} python package. Now, with a given $T$ and $P$ the chemical potential can be determined. For example, under the aforementioned \ce{H2} conditions during activation, Eq.~\ref{eq:pmutt-expression} can be used to calculate $\Delta G(T, P^{o})$ and then subsequently  Eq.~\ref{chemical_potential_ref} to calculate $\Delta \mu_{\ce{H2}}(T,P)$; this is how the white dashed line on Figure~\hl{XXX} is constructed. 
 
 \begin{figure}[H]
     \centering
@@ -348,8 +343,31 @@ where $\Delta G(T, P^{o})$ is the free energy referenced at $T = 10$~K, and $G(T
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/2021-figure-H2O-pMuTT.png}
-    \caption{The gas phase free energy of \ce{H2O} as a function of temperature. The reference state it defined as 10~K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}    \label{fig:h2o-pmutt-expression}
+    \caption{The gas phase free energy of \ce{H2O} as a function of temperature. The reference state it defined as 10~K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}    
+    \label{fig:h2o-pmutt-expression}
 \end{figure}
+
+% The NASA Polynomials\hl{REF-XXX} are defined for a specific temperature range \hl{(i.e., from XXX to XXX)}. To correct the electronic energies from DFT, the gas phase species must be referenced to approximately 0 K and vacuum.
+
+% \begin{equation}
+%     \begin{split}
+%          \Delta G_{H_{2}}(T,P) &= \Big[ \Delta G_{\ce{H2}}(T,P^{o})  + RT \ln{ \frac{P_{\ce{H2}}}{P_{\ce{H2}}^{o}}} \Big]  \\ 
+%     \end{split}
+%     \label{mu_2_G}
+% \end{equation}
+% where $\Delta G_{\ce{H2}}(T,P^{o})$ is the free energy referenced to 0 K, $R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
+% where $\Delta G_{\ce{H2}}(T,P^{o})$ is the free energy referenced to 0 K, $R$ is gas constant, $T$ is the temperature, $P_{\ce{H2}}$ is the partial pressure of \ce{H2} gas and $P_{\ce{H2}}^{o}$ is the standard pressure (1 bar).  
+% The standard reference state for the NASA Polynomials is 298 K; therefore, the empirical methods are approximated to 0 K using Eq.~\ref{eq:pmutt-expression} by referencing the values at 10 K, following prior work.\hl{REF-Getman-FPT-Paper}
+% \begin{equation}
+%     \begin{split}
+%         \Delta G(T, P^{o}) &= [G(T,P^{o}) - G(T=298 K, P^{o})] - [G(T=10 K, P^{o}) - G(T=298 K, P^{o})] \\
+%         \Delta G(T, P^{o}) &= [G(T,P^{o})] - [G(T=10 K, P^{o})] 
+%     \end{split}
+%     \label{eq:pmutt-expression}
+% \end{equation} 
+% where $\Delta G(T, P^{o})$ is the free energy referenced at $T = 10$~K, and $G(T,P^{o})$ is the free energy referenced at $T = 298$~K. Figures~\ref{fig:h2-pmutt-expression} and \ref{fig:h2o-pmutt-expression} show the extrapolation of the NASA Polynomial referenced to 0~K. 
+
+
 
 
 \newpage
@@ -378,9 +396,7 @@ The library was optimized at different \ce{Ni} spin states; the considered spin 
 \end{center}
 From Table \ref{tbl:spin_contamination}, the lowest energy structure is c) three singlet, one triplet \ce{Ni} ions; however, the structure is removed from the analysis because the ideal $S^{**}2$ and single $S^{**}2$ deviate. Therefore, the lowest energy structure for this particular configuration is the e) one singlet, three triplet \ce{Ni} ions. 
 
-\newpage
-\subsection{Frequency Calculations}
-We fix the organic linker and inorganic nodes, thereby only calculating only the \ce{Ni} cluster vibrational contributions to the free energy ($F^\text{vib}$). We ensure that the same atoms are fixed across all frequency calculations in order to correctly compare ($F^\text{vib}$). When constructing the vibrational partition function, all frequencies less than 50 cm\textsuperscript{-1} are replaced with 50 cm\textsuperscript{-1} to correct for the breakdown in the harmonic oscillator approximation for low frequency vibrational modes.\cite{Ribeiro2011} The partitions functions are computed in the pMuTT\cite{LYM2019106864} Python package to compute $E^\text{ZP}$ and $F^\text{vib}$ for all structures. A sample input file for the CP2K frequency calculations is provided in the Supporting Information. 
+
 
 \newpage
 \subsection{\ce{Ni-O} Coordination Numbers}
@@ -510,7 +526,7 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
 
 \newpage
 \subsection{Sample Input File for \ce{Ni4} Clusters - Frequency}
-Below is a sample CP2K input file for frequency calculations. The $&$MOTION section is used to freeze all framework and node atoms in the MOF, thereby calculating only the vibrational modes of the cluster atoms. The xyz file is formatted so that the frozen atoms are the first 548 atoms of the file. 
+Below is a sample CP2K input file for frequency calculations. The \&MOTION section is used to freeze all framework and node atoms in the MOF, thereby calculating only the vibrational modes of the cluster atoms. The xyz file is formatted so that the frozen atoms are the first 548 atoms of the file. 
 
 \begin{center}
     \lstset{numbers=left, basicstyle=\ttfamily, numbersep=-45pt, }
@@ -883,7 +899,7 @@ We use Boltzmann weighting to combine the structural information of unique struc
     P_{i} = \frac{e^{\frac{-\Delta G_{i}}{k_{b}T}}}{\sum_{l} e^{\frac{-\Delta G_{l}}{k_{b}T}}}
     \label{eq:weighted-dPDFs}
 \end{equation}
-where $\Delta G$ is the free energy of structure computed according to Eq.~\hl{XXX}. We assume a temperature of $T=298 \text{K}$. Note that the Boltzmann weighting considers all the d-PDFs in our library of structures; not just the structures that are thermodynamically relevant. At specific \ce{H2} and \ce{H2O} chemical potentials, we take each d-PDF intensity between 0 {\AA} and 5 {\AA} multiplied by each Boltzmann factor for each structure and then sum all the d-PDF intensities to generate the weighted d-PDF. Key weighted Boltzmann factors are shown in Figure~\ref{fig:SI-all-dPDFs}b-d. 
+where $\Delta G$ is the free energy of structure computed according to Eq.~\hl{XXX}. We assume a temperature of $T=298 \text{K}$. Note that the Boltzmann weighting considers all the d-PDFs in our library of structures; not just the structures that are thermodynamically relevant. At specific \ce{H2} and \ce{H2O} chemical potentials, we take each d-PDF intensity between 0 {\AA} and 5 {\AA} multiplied by each Boltzmann factor for each structure and then sum all the d-PDF intensities to generate the weighted d-PDF. Key weighted Boltzmann factors are shown in Figure~\ref{fig:SI-weighted-dPDFs}b-d. 
 
 % d-PDF diagram for all thermodynamic minima
 \begin{figure}[H]
@@ -892,7 +908,7 @@ where $\Delta G$ is the free energy of structure computed according to Eq.~\hl{X
     \caption{
     The d-PDFs for (a) the synthesized structure and Botlzmann weighted d-PDFs (b-d). The Botlzmann weighted d-PDFs are determined at (b) $\mu_{\ce{H2O}}=$ -75.0 kJ/mol and $\mu_{\ce{H2}}=$ -200.0 kJ/mol, (c) $\mu_{\ce{H2O}}=$ 206.1 kJ/mol and $\mu_{\ce{H2}}=$ -250.0 kJ/mol, and (d) $\mu_{\ce{H2O}}=$ 206.1 kJ/mol and $\mu_{\ce{H2}}=$ -47.5 kJ/mol. Gray dotted lines indicate key distances observed for the synthesized structure, which are also annotated on the figure.
     }
-    \label{fig:SI-all-dPDFs}
+    \label{fig:SI-weighted-dPDFs}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -905,116 +921,34 @@ We generate heat maps further probe the potential energy surface of the \ce{Ni4}
     \Delta \Delta F^{(2)}_{i}(V,T,\mu_{\text{H}}, \mu_{\text{O}}, N_{\text{Ni}}) = F^{(2)}_{i}(V,T,\mu_{\text{H}}, \mu_{\text{O}}, N_{\text{Ni}}) - F^{(2)}_{o}(V,T,\mu_{\text{H}}, \mu_{\text{O}}, N_{\text{Ni}})
     \label{eq:delta_delta_F}
 \end{equation}
-The heat maps for all thermodynamically relevant structures and select structures are shown in Figures~S\ref{fig:SI-heatmap-green} to~S\ref{fig:SI-heatmap-maroon}. 
+The heat maps for all thermodynamically relevant structures and select structures are shown in Figures~\ref{fig:SI-heatmap-combined} and~\ref{fig:SI-heatmap-combined_select}. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_green.png}
+    \includegraphics[width=0.95\textwidth]{zi-images/04-SI-images/SI-heat_map_combined.png}
     \caption{
-    Heat map for the \ce{Ni4(OH)6.4H2O} (green) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.  
+        Heat map for the thermodynamic minima appearing on the phase diagram, which shows $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$. The following structure are shown: 
+            (a) \ce{Ni4(OH)6.4H2O} (green)
+            (b) \ce{Ni4(OH)6.3H2O} (purple)
+            (c) \ce{Ni4(OH)5(H).4H2O} (blue)
+            (d) \ce{Ni4(OH)6.2H2O} (cyan)
+            (e) \ce{Ni4(OH)4(O)} (yellow)
+            (f) \ce{Ni4(OH)4.2H2O} (orange)
+            (g) \ce{Ni4(OH)4} (white)
+            (h) \ce{Ni4(OH)3(H).H2O} (magenta)
+            (j) \ce{Ni4} (gray)
     }
-    \label{fig:SI-heatmap-green}
-\end{figure}
-    
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_purple.png}
-    \caption{
-    Heat map for the \ce{Ni4(OH)6.3H2O} (purple) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-purple}
-\end{figure}  
-    
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_blue.png}
-    \caption{
-    Heat map for the \ce{Ni4(OH)5(H).4H2O} (blue) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-blue}
+    \label{fig:SI-heatmap-combined}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_cyan.png}
+    \includegraphics[width=0.95\textwidth]{zi-images/04-SI-images/SI-heat_map_combined_select.png}
     \caption{
-    Heat map for the \ce{Ni4(OH)6.2H2O} (cyan) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
+        Heat map for the (a) \ce{Ni4(OH)6.1H2O} (teal) and (b) \ce{Ni4(OH)4(O).3H2O} (maroon) showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$. Both structures are not thermodynamic minima under any of the explored conditions, as shown by the heat maps. 
     }
-    \label{fig:SI-heatmap-cyan}
+    \label{fig:SI-heatmap-combined_select}
 \end{figure}
-    
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_yellow.png}
-    \caption{
-    Heat map for the \ce{Ni4(OH)4(O)} (yellow) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-yellow}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_orange.png}
-    \caption{
-    Heat map for the  \ce{Ni4(OH)4.2H2O} (orange) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-orange}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_white.png}
-    \caption{
-    Heat map for the \ce{Ni4(OH)4} (white) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-white}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_magenta.png}
-    \caption{
-    Heat map for the \ce{Ni4(OH)3(H).H2O} (magenta) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$. 
-    }
-    \label{fig:SI-heatmap-magneta}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_gray.png}
-    \caption{
-        Heat map for the \ce{Ni4} (gray) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-gray}
-\end{figure}
-    
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_red.png}
-    \caption{
-        Heat map for the \ce{Ni4(H)4} (red) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-red}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_teal.png}
-    \caption{
-        Heat map for the \ce{Ni4(OH)6.1H2O} (teal) structure showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-teal}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/SI-heat_map_maroon.png}
-    \caption{
-        Heat map for the \ce{Ni4(OH)4(O).3H2O} (maroon) showing $\Delta \Delta F^{(2)}$ as a function of $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$.
-    }
-    \label{fig:SI-heatmap-maroon}
-\end{figure}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The appropriate \bibliography command should be placed here.
