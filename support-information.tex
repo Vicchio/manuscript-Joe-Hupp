@@ -294,21 +294,7 @@ where $\Delta \mu_{i}(T,P^{o})$ is the chemical potential of species $i$ referen
     \end{split}
     \label{eq:pmutt-expression}
 \end{equation} 
-where $\Delta G(T, P^{o})$ is the free energy referenced at $T = 10$~K. Figures~\ref{fig:h2-pmutt-expression} and \ref{fig:h2o-pmutt-expression} show the extrapolation of the NASA Polynomial referenced to 0~K using pMuTT\cite{LYM2019106864} python package. Now, with a given $T$ and $P$ the chemical potential can be determined. For example, under the aforementioned \ce{H2} conditions during activation, Eq.~\ref{eq:pmutt-expression} can be used to calculate $\Delta G(T, P^{o})$ and then subsequently  Eq.~\ref{chemical_potential_ref} to calculate $\Delta \mu_{\ce{H2}}(T,P)$; this is how the white dashed line on Figure~\hl{XXX} is constructed. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/SI-figure-H2-pMuTT.png}
-    \caption{The gas phase free energy of \ce{H2} as a function of temperature. The reference state it defined as 10~K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}
-    \label{fig:h2-pmutt-expression}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.70\textwidth]{zi-images/00-General-Graphics/SI-figure-H2O-pMuTT.png}
-    \caption{The gas phase free energy of \ce{H2O} as a function of temperature. The reference state it defined as 10~K. The red line shows the NASA Polynomial within defined range, and the blue line shows the extrapolation.}    
-    \label{fig:h2o-pmutt-expression}
-\end{figure}
+where $\Delta G(T, P^{o})$ is the free energy referenced at $T = 10$~K. The NASA Polynomial were extrapolated to be referenced to 0~K using pMuTT\cite{LYM2019106864} python package. Now, with a given $T$ and $P$ the chemical potential can be determined. For example, under the aforementioned \ce{H2} conditions during activation, Eq.~\ref{eq:pmutt-expression} can be used to calculate $\Delta G(T, P^{o})$ and then subsequently  Eq.~\ref{chemical_potential_ref} to calculate $\Delta \mu_{\ce{H2}}(T,P)$; this is how the white dashed line on phase diagram (Figure~\hl{XXX}) is constructed. 
 
 \newpage
 \subsection{Identifying spin contamination in DFT calculations}
