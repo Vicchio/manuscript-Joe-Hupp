@@ -27,9 +27,9 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    citecolor= red,
-    linkcolor=blue,
-    urlcolor=blue, 
+    citecolor=black, % citecolor= red
+    linkcolor=black, % linkcolor=blue
+    urlcolor=black, % urlcolor=blue
     breaklinks=true
 }
 \usepackage{ulem}
@@ -158,9 +158,9 @@ Powder X-ray diffraction (XRD) and total scattering data suitable for PDF analys
 
 \subsubsection{Catalyst Structure Models}
 
-Modeling is carried out to provide molecular level insight into the ligand environment of Ni-NU-1000. NU-1000 crystallizes in the P6/mmm space group, with unit cell models employing DFT-optimized parameters of $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$. Following prior work,\cite{Ye2017} \ce{Ni} oxo catalysts are modeled with \ce{Ni4} clusters. Clusters comprising fewer than four \ce{Ni} ions were also evaluated, but gave poor agreement with the experimental d-PDF (see Supporting Information Section S3). \ce{Ni4} clusters span the 8 {\AA} pores of NU-1000, connecting two adjacent nodes (Figure~\ref{fig:Ni-MOF-model}b) by replacing a proton on each node.\cite{Ye2017} 
+Modeling is carried out to provide molecular level insight into the ligand environment of Ni-NU-1000. NU-1000 crystallizes in the P6/mmm space group, with unit cell models employing DFT-optimized parameters of $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$. \hl{The unit cell parameters are were fixed for all structures; we observed no differences in the PDFs  with the sensitivity of this decision discussed within the SI.} Following prior work,\cite{Ye2017} \ce{Ni} oxo catalysts are modeled with \ce{Ni4} clusters. Clusters comprising fewer than four \ce{Ni} ions were also evaluated, but gave poor agreement with the experimental d-PDF (see Supporting Information Section S3). \ce{Ni4} clusters span the 8 {\AA} pores of NU-1000, connecting two adjacent nodes (Figure~\ref{fig:Ni-MOF-model}b) by replacing a proton on each node.\cite{Ye2017} 
 
-854 different ligand environments are considered to provide molecular-level insight into the types of ligand environments that could lead to the experimentally observed d-PDFs. These ligand environments include \ce{OH}, \ce{H2O}, \ce{H}, and \ce{O} and have stoichiometries of \ce{Ni_4O_xH_y}. Four example structures are shown in Figure~\ref{fig:Ni-MOF-structures}. The full library of structures considered in this work can be accessed on GitHub.\cite{GitHub-Ni4Project} The \ce{Ni-O} coordination numbers are calculated according to geometric criteria (distance and orientation) as discussed in Supporting Information Section S1.7. 
+854 different ligand environments are considered to provide molecular-level insight into the types of ligand environments that could lead to the experimentally observed d-PDFs. These ligand environments include \ce{OH}, \ce{H2O}, \ce{H}, and \ce{O} and have stoichiometries of \ce{Ni_4O_xH_y}. \hl{Note that the library includes structures with the same \ce{Ni_4O_xH_y} stoichiometry, but different arrangements between and compositions of ligands (as illustrated in Figure~S\textbf{XXX}).} Four example structures are shown in Figure~\ref{fig:Ni-MOF-structures}. The full library of structures considered in this work can be accessed on GitHub.\cite{GitHub-Ni4Project} The \ce{Ni-O} coordination numbers are calculated according to geometric criteria (distance and orientation) as discussed in Supporting Information Section S1.7. 
 
 \begin{figure}
     \centering
@@ -284,7 +284,702 @@ Further details in the computational parameters, \textit{ab initio} thermodynami
 %% Notice that the class file automatically sets \bibliographystyle
 %% and also names the section correctly.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\bibliography{achemso-demo}
+% \bibliography{zreferences}
+\providecommand{\latin}[1]{#1}
+\makeatletter
+\providecommand{\doi}
+  {\begingroup\let\do\@makeother\dospecials
+  \catcode`\{=1 \catcode`\}=2 \doi@aux}
+\providecommand{\doi@aux}[1]{\endgroup\texttt{#1}}
+\makeatother
+\providecommand*\mcitethebibliography{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+  {\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{69}
+\providecommand*\natexlab[1]{#1}
+\providecommand*\mciteSetBstSublistMode[1]{}
+\providecommand*\mciteSetBstMaxWidthForm[2]{}
+\providecommand*\mciteBstWouldAddEndPuncttrue
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*\mciteBstWouldAddEndPunctfalse
+  {\let\EndOfBibitem\relax}
+\providecommand*\mciteSetBstMidEndSepPunct[3]{}
+\providecommand*\mciteSetBstSublistLabelBeginEnd[3]{}
+\providecommand*\EndOfBibitem{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
+\mciteSetBstSublistLabelBeginEnd
+  {\mcitemaxwidthsubitemform\space}
+  {\relax}
+  {\relax}
+
+\bibitem[Thomas \latin{et~al.}(2005)Thomas, Raja, and Lewis]{Thomas2005}
+Thomas,~J.~M.; Raja,~R.; Lewis,~D.~W. Single-site heterogeneous catalysts.
+  \emph{Angewandte Chemie - International Edition} \textbf{2005}, \emph{44},
+  6456--6482\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Qiao \latin{et~al.}(2011)Qiao, Wang, Yang, Allard, Jiang, Cui, Liu,
+  Li, and Zhang]{Qiao2011}
+Qiao,~B.; Wang,~A.; Yang,~X.; Allard,~L.~F.; Jiang,~Z.; Cui,~Y.; Liu,~J.;
+  Li,~J.; Zhang,~T. Single-atom catalysis of CO oxidation using Pt1/FeOx.
+  \emph{Nature Chemistry} \textbf{2011}, \emph{3}, 634--641\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Cui \latin{et~al.}(2017)Cui, Junge, Dai, Kreyenschulte, Pohl, Wohlrab,
+  Shi, Brückner, and Beller]{Cui2017}
+Cui,~X.; Junge,~K.; Dai,~X.; Kreyenschulte,~C.; Pohl,~M.~M.; Wohlrab,~S.;
+  Shi,~F.; Brückner,~A.; Beller,~M. Synthesis of Single Atom Based
+  Heterogeneous Platinum Catalysts: High Selectivity and Activity for
+  Hydrosilylation Reactions. \emph{ACS Central Science} \textbf{2017},
+  \emph{3}, 580--585\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Yang \latin{et~al.}(2013)Yang, Wang, Qiao, Li, Liu, and
+  Zhang]{Yang2013}
+Yang,~X.~F.; Wang,~A.; Qiao,~B.; Li,~J.; Liu,~J.; Zhang,~T. Single-atom
+  catalysts: A new frontier in heterogeneous catalysis. \emph{Accounts of
+  Chemical Research} \textbf{2013}, \emph{46}, 1740--1748\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hlatky(2000)]{Hlatky2000}
+Hlatky,~G.~G. Heterogeneous single-site catalysts for olefin polymerization.
+  \emph{Chemical Reviews} \textbf{2000}, \emph{100}, 1347--1376\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kaiser \latin{et~al.}(2020)Kaiser, Chen, Akl, Mitchell, and
+  Pérez-Ramírez]{Kaiser2020}
+Kaiser,~S.~K.; Chen,~Z.; Akl,~D.~F.; Mitchell,~S.; Pérez-Ramírez,~J.
+  Single-Atom Catalysts across the Periodic Table. \emph{Chemical Reviews}
+  \textbf{2020}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wasson \latin{et~al.}(2019)Wasson, Buru, Chen, Islamoglu, and
+  Farha]{Wasson2019}
+Wasson,~M.~C.; Buru,~C.~T.; Chen,~Z.; Islamoglu,~T.; Farha,~O.~K.
+  Metal–organic frameworks: A tunable platform to access single-site
+  heterogeneous catalysts. \emph{Applied Catalysis A: General} \textbf{2019},
+  \emph{586}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Zheng \latin{et~al.}(2019)Zheng, Ye, Ortuño, Fulton, Gutiérrez,
+  Camaioni, Motkuri, Li, Webber, Mehdi, Browning, Penn, Farha, Hupp, Truhlar,
+  Cramer, and Lercher]{Zheng2019}
+Zheng,~J. \latin{et~al.}  Selective Methane Oxidation to Methanol on Cu-Oxo
+  Dimers Stabilized by Zirconia Nodes of an NU-1000 Metal-Organic Framework.
+  \emph{Journal of the American Chemical Society} \textbf{2019}, \emph{141},
+  9292--9304\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Abdel-Mageed \latin{et~al.}(2019)Abdel-Mageed, Rungtaweevoranit,
+  Parlinska-Wojtan, Pei, Yaghi, and Behm]{AbdelMageed2019}
+Abdel-Mageed,~A.~M.; Rungtaweevoranit,~B.; Parlinska-Wojtan,~M.; Pei,~X.;
+  Yaghi,~O.~M.; Behm,~R.~J. Highly Active and Stable Single-Atom Cu Catalysts
+  Supported by a Metal-Organic Framework. \emph{Journal of the American
+  Chemical Society} \textbf{2019}, \emph{141}, 5201--5210\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Huang \latin{et~al.}(2019)Huang, Dong, Sun, Xue, Ma, Zheng, Liu, Li,
+  Zhou, Qiao, Song, Ma, Zhang, Lin, and Wang]{Huang2019}
+Huang,~C.; Dong,~J.; Sun,~W.; Xue,~Z.; Ma,~J.; Zheng,~L.; Liu,~C.; Li,~X.;
+  Zhou,~K.; Qiao,~X.; Song,~Q.; Ma,~W.; Zhang,~L.; Lin,~Z.; Wang,~T.
+  Coordination mode engineering in stacked-nanosheet metal–organic frameworks
+  to enhance catalytic reactivity and structural robustness. \emph{Nature
+  Communications} \textbf{2019}, \emph{10}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Zhong \latin{et~al.}(2019)Zhong, Sa, Li, He, Li, Bi, Zhuang, Yu, and
+  Zou]{Zhong2019}
+Zhong,~W.; Sa,~R.; Li,~L.; He,~Y.; Li,~L.; Bi,~J.; Zhuang,~Z.; Yu,~Y.; Zou,~Z.
+  A Covalent Organic Framework Bearing Single Ni Sites as a Synergistic
+  Photocatalyst for Selective Photoreduction of CO2 to CO. \emph{Journal of the
+  American Chemical Society} \textbf{2019}, \emph{141}, 7615--7621\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Romero-Muñiz \latin{et~al.}(2020)Romero-Muñiz, Mavrandonakis,
+  Albacete, Vega, Briois, Zamora, and Platero-Prats]{Romero-Muniz2020}
+Romero-Muñiz,~I.; Mavrandonakis,~A.; Albacete,~P.; Vega,~A.; Briois,~V.;
+  Zamora,~F.; Platero-Prats,~A.~E. Unveiling the Local Structure of Palladium
+  Loaded into Imine-Linked Layered Covalent Organic Frameworks for
+  Cross-Coupling Catalysis. \emph{Angewandte Chemie - International Edition}
+  \textbf{2020}, \emph{59}, 13013--13020\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mao \latin{et~al.}(2016)Mao, Wang, Wang, and Hu]{Mao2016}
+Mao,~Y.; Wang,~Z.; Wang,~H.~F.; Hu,~P. Understanding Catalytic Reactions over
+  Zeolites: A Density Functional Theory Study of Selective Catalytic Reduction
+  of NOx by NH3 over Cu-SAPO-34. \emph{ACS Catalysis} \textbf{2016}, \emph{6},
+  7882--7891\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kistler \latin{et~al.}(2014)Kistler, Chotigkrai, Xu, Enderle,
+  Praserthdam, Chen, Browning, and Gates]{Kistler2014}
+Kistler,~J.~D.; Chotigkrai,~N.; Xu,~P.; Enderle,~B.; Praserthdam,~P.;
+  Chen,~C.~Y.; Browning,~N.~D.; Gates,~B.~C. A single-site platinum CO
+  oxidation catalyst in zeolite KLTL: Microscopic and spectroscopic
+  determination of the locations of the platinum atoms. \emph{Angewandte Chemie
+  - International Edition} \textbf{2014}, \emph{53}, 8904--8907\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Patel \latin{et~al.}(2019)Patel, Hannagan, Kress, Schilling, Çlnar,
+  and Sykes]{Patel2019}
+Patel,~D.~A.; Hannagan,~R.~T.; Kress,~P.~L.; Schilling,~A.~C.; Çlnar,~V.;
+  Sykes,~E. C.~H. Atomic-Scale Surface Structure and CO Tolerance of NiCu
+  Single-Atom Alloys. \emph{Journal of Physical Chemistry C} \textbf{2019},
+  \emph{123}, 28142--28147\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Pei \latin{et~al.}(2017)Pei, Liu, Yang, Zhang, Wang, Li, Wang, Wang,
+  and Zhang]{Pei2017}
+Pei,~G.~X.; Liu,~X.~Y.; Yang,~X.; Zhang,~L.; Wang,~A.; Li,~L.; Wang,~H.;
+  Wang,~X.; Zhang,~T. Performance of Cu-Alloyed Pd Single-Atom Catalyst for
+  Semihydrogenation of Acetylene under Simulated Front-End Conditions.
+  \emph{ACS Catalysis} \textbf{2017}, \emph{7}, 1491--1500\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Jiao \latin{et~al.}(2019)Jiao, Lin, Liu, Cheong, Zhang, Chen, Pan,
+  Tang, Wu, Hung, Chen, Zheng, Lu, Yang, Xu, Xiao, Li, Wang, Peng, Chen, and
+  Li]{Jiao2019}
+Jiao,~J. \latin{et~al.}  Copper atom-pair catalyst anchored on alloy nanowires
+  for selective and efficient electrochemical reduction of CO 2. \emph{Nature
+  Chemistry} \textbf{2019}, \emph{11}, 222--228\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Bo \latin{et~al.}(2019)Bo, Thornburg, Peng, Moreno, Nolan, Marks, and
+  Notestein]{Bo2019}
+Bo,~Z.; Thornburg,~N.~E.; Peng,~L.; Moreno,~J. J.~G.; Nolan,~M.; Marks,~L.~D.;
+  Notestein,~J.~M. Direct Visualization of Independent Ta Centers Supported on
+  Two-Dimensional TiO2 Nanosheets. \emph{Nano Letters} \textbf{2019},
+  \emph{19}, 8103--8108\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Riley \latin{et~al.}(2018)Riley, Zhou, Kunwar, Riva, Peterson, Payne,
+  Gao, Lin, Guo, and Datye]{Riley2018}
+Riley,~C.; Zhou,~S.; Kunwar,~D.; Riva,~A. D.~L.; Peterson,~E.; Payne,~R.;
+  Gao,~L.; Lin,~S.; Guo,~H.; Datye,~A. Design of Effective Catalysts for
+  Selective Alkyne Hydrogenation by Doping of Ceria with a Single-Atom
+  Promotor. \emph{Journal of the American Chemical Society} \textbf{2018},
+  \emph{140}, 12964--12973\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Tang \latin{et~al.}(2019)Tang, Asokan, Xu, Graham, Pan, Christopher,
+  Li, and Sautet]{Tang2019}
+Tang,~Y.; Asokan,~C.; Xu,~M.; Graham,~G.~W.; Pan,~X.; Christopher,~P.; Li,~J.;
+  Sautet,~P. Rh single atoms on TiO2 dynamically respond to reaction conditions
+  by adapting their site. \emph{Nature Communications} \textbf{2019},
+  \emph{10}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[DeRita \latin{et~al.}(2019)DeRita, Resasco, Dai, Boubnov, Thang,
+  Hoffman, Ro, Graham, Bare, Pacchioni, Pan, and Christopher]{DeRita2019}
+DeRita,~L.; Resasco,~J.; Dai,~S.; Boubnov,~A.; Thang,~H.~V.; Hoffman,~A.~S.;
+  Ro,~I.; Graham,~G.~W.; Bare,~S.~R.; Pacchioni,~G.; Pan,~X.; Christopher,~P.
+  Structural evolution of atomically dispersed Pt catalysts dictates
+  reactivity. \emph{Nature Materials} \textbf{2019}, \emph{18}, 746--751\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Rogge \latin{et~al.}(2017)Rogge, Bavykina, Hajek, Garcia,
+  Olivos-Suarez, Sepúlveda-Escribano, Vimont, Clet, Bazin, Kapteijn, Daturi,
+  Ramos-Fernandez, Xamena, Speybroeck, and Gascon]{Rogge2017}
+Rogge,~S.~M.; Bavykina,~A.; Hajek,~J.; Garcia,~H.; Olivos-Suarez,~A.~I.;
+  Sepúlveda-Escribano,~A.; Vimont,~A.; Clet,~G.; Bazin,~P.; Kapteijn,~F.;
+  Daturi,~M.; Ramos-Fernandez,~E.~V.; Xamena,~F. X.~L.; Speybroeck,~V.~V.;
+  Gascon,~J. Metal-organic and covalent organic frameworks as single-site
+  catalysts. \emph{Chemical Society Reviews} \textbf{2017}, \emph{46},
+  3134--3184\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Desai \latin{et~al.}(2018)Desai, Ye, Zheng, Ferrandon, Webber,
+  Platero-Prats, Duan, Garcia-Holley, Camaioni, Chapman, Delferro, Farha,
+  Fulton, Gagliardi, Lercher, Penn, Stein, and Lu]{Desai2018}
+Desai,~S.~P. \latin{et~al.}  Well-Defined Rhodium-Gallium Catalytic Sites in a
+  Metal-Organic Framework: Promoter-Controlled Selectivity in Alkyne
+  Semihydrogenation to E-Alkenes. \emph{Journal of the American Chemical
+  Society} \textbf{2018}, \emph{140}, 15309--15318\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Manna \latin{et~al.}(2016)Manna, Ji, Lin, Greene, Urban, Thacker, and
+  Lin]{Manna2016}
+Manna,~K.; Ji,~P.; Lin,~Z.; Greene,~F.~X.; Urban,~A.; Thacker,~N.~C.; Lin,~W.
+  Chemoselective single-site Earth-abundant metal catalysts at metal-organic
+  framework nodes. \emph{Nature Communications} \textbf{2016}, \emph{7}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Beyzavi \latin{et~al.}(2015)Beyzavi, Vermeulen, Howarth, Tussupbayev,
+  League, Schweitzer, Gallagher, Platero-Prats, Hafezi, Sarjeant, Miller,
+  Chapman, Stoddart, Cramer, Hupp, and Farha]{Beyzavi2015}
+Beyzavi,~M.~H. \latin{et~al.}  A Hafnium-Based Metal-Organic Framework as a
+  Nature-Inspired Tandem Reaction Catalyst. \emph{Journal of the American
+  Chemical Society} \textbf{2015}, \emph{137}, 13624--13631\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Shi \latin{et~al.}(2021)Shi, Lin, Luo, Wu, Li, Zhao, and
+  Gong]{Shi2021}
+Shi,~X.; Lin,~X.; Luo,~R.; Wu,~S.; Li,~L.; Zhao,~Z.-J.; Gong,~J. Dynamics of
+  Heterogeneous Catalytic Processes at Operando Conditions. \emph{JACS Au}
+  \textbf{2021}, \emph{1}, 2100--2120\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Getman \latin{et~al.}(2008)Getman, Xu, and Schneider]{Getman2008}
+Getman,~R.~B.; Xu,~Y.; Schneider,~W.~F. Thermodynamics of environment-dependent
+  oxygen chemisorption on Pt(111). \emph{Journal of Physical Chemistry C}
+  \textbf{2008}, \emph{112}, 9559--9572\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Miller \latin{et~al.}(2011)Miller, Inoǧlu, and Kitchin]{Miller2011}
+Miller,~S.~D.; Inoǧlu,~N.; Kitchin,~J.~R. Configurational correlations in the
+  coverage dependent adsorption energies of oxygen atoms on late transition
+  metal fcc(111) surfaces. \emph{Journal of Chemical Physics} \textbf{2011},
+  \emph{134}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ranea \latin{et~al.}(2008)Ranea, Schneider, and Carmichael]{Ranea2008}
+Ranea,~V.~A.; Schneider,~W.~F.; Carmichael,~I. DFT characterization of coverage
+  dependent molecular water adsorption modes on α-Al2O3(0 0 0 1).
+  \emph{Surface Science} \textbf{2008}, \emph{602}, 268--275\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Heard \latin{et~al.}(2016)Heard, Siahrostami, and
+  Grönbeck]{Heard2016}
+Heard,~C.~J.; Siahrostami,~S.; Grönbeck,~H. Structural and Energetic Trends of
+  Ethylene Hydrogenation over Transition Metal Surfaces. \emph{Journal of
+  Physical Chemistry C} \textbf{2016}, \emph{120}, 995--1003\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Bray and Schneider(2015)Bray, and Schneider]{Bray2014}
+Bray,~J.~M.; Schneider,~W.~F. First-principles analysis of structure
+  sensitivity in NO oxidation on Pt. \emph{ACS Catalysis} \textbf{2015},
+  \emph{5}, 1087--1099\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gänzler \latin{et~al.}(2017)Gänzler, Casapu, Vernoux, Loridant,
+  Aires, Epicier, Betz, Hoyer, and Grunwaldt]{Ganzler2017}
+Gänzler,~A.~M.; Casapu,~M.; Vernoux,~P.; Loridant,~S.; Aires,~F. J. C.~S.;
+  Epicier,~T.; Betz,~B.; Hoyer,~R.; Grunwaldt,~J.-D. Tuning the Structure of
+  Platinum Particles on Ceria In Situ for Enhancing the Catalytic Performance
+  of Exhaust Gas Catalysts. \emph{Angewandte Chemie} \textbf{2017}, \emph{129},
+  13258--13262\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mandal \latin{et~al.}(2020)Mandal, Gu, Westendorff, Li, Pihl, Grabow,
+  Epling, and Paolucci]{Mandal2020}
+Mandal,~K.; Gu,~Y.; Westendorff,~K.~S.; Li,~S.; Pihl,~J.~A.; Grabow,~L.~C.;
+  Epling,~W.~S.; Paolucci,~C. Condition-Dependent Pd Speciation and NO
+  adsorption in Pd/Zeolites. \emph{ACS Catalysis} \textbf{2020}, \relax
+\mciteBstWouldAddEndPunctfalse
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Felvey \latin{et~al.}(2022)Felvey, Guo, Rana, Xu, Bare, Gates, Katz,
+  Kulkarni, Runnebaum, and Kronawitter]{Felvey2022}
+Felvey,~N.; Guo,~J.; Rana,~R.; Xu,~L.; Bare,~S.~R.; Gates,~B.~C.; Katz,~A.;
+  Kulkarni,~A.~R.; Runnebaum,~R.~C.; Kronawitter,~C.~X. Interconversion of
+  Atomically Dispersed Platinum Cations and Platinum Clusters in Zeolite ZSM-5
+  and Formation of Platinum gem-Dicarbonyls. \emph{Journal of the American
+  Chemical Society} \textbf{2022}, \emph{144}, 13874--13887\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Giewont \latin{et~al.}(2021)Giewont, Kyriakidou, and
+  Walker]{Giewont2021}
+Giewont,~K.; Kyriakidou,~E.~A.; Walker,~E.~A. Investigation of Potential
+  Catalytic Active Sites of Pd/SSZ-13: A DFT Perspective. \emph{Journal of
+  Physical Chemistry C} \textbf{2021}, \emph{125}, 15262--15274\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mesilov \latin{et~al.}(2021)Mesilov, Xiao, Dahlin, Bergman,
+  Pettersson, and Bernasek]{Mesilov2021}
+Mesilov,~V.; Xiao,~Y.; Dahlin,~S.; Bergman,~S.~L.; Pettersson,~L.~J.;
+  Bernasek,~S.~L. First-Principles Calculations of Condition-Dependent Cu/Fe
+  Speciation in Sulfur-Poisoned Cu- And Fe-SSZ-13 Catalysts. \emph{Journal of
+  Physical Chemistry C} \textbf{2021}, \emph{125}, 4632--4645\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Liu \latin{et~al.}(2019)Liu, Li, Zhang, Otake, Zhang, Peters, Young,
+  Bedford, Letourneau, Mandia, Elam, Farha, and Hupp]{Liu2019}
+Liu,~J.; Li,~Z.; Zhang,~X.; Otake,~K.~I.; Zhang,~L.; Peters,~A.~W.;
+  Young,~M.~J.; Bedford,~N.~M.; Letourneau,~S.~P.; Mandia,~D.~J.; Elam,~J.~W.;
+  Farha,~O.~K.; Hupp,~J.~T. Introducing Nonstructural Ligands to Zirconia-like
+  Metal-Organic Framework Nodes to Tune the Activity of Node-Supported Nickel
+  Catalysts for Ethylene Hydrogenation. \emph{ACS Catalysis} \textbf{2019},
+  \emph{9}, 3198--3207\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Reuben and Wittcoff(1988)Reuben, and Wittcoff]{1988Reuben}
+Reuben,~B.; Wittcoff,~H. The SHOP process: An example of industrial creativity.
+  \emph{Journal of Chemical Education} \textbf{1988}, \emph{65}, 605--607\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ross and Steel(1973)Ross, and Steel]{Ross1973}
+Ross,~J. R.~H.; Steel,~M. C.~F. Mechanism of the steam reforming of methane
+  over a coprecipitated nickel-alumina catalyst. \emph{J. Chem. Soc.{,} Faraday
+  Trans. 1} \textbf{1973}, \emph{69}, 10--21\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ryabchuk \latin{et~al.}(2018)Ryabchuk, Agostini, Pohl, Lund, Agapova,
+  Junge, Junge, and Beller]{Ryabchuk2018}
+Ryabchuk,~P.; Agostini,~G.; Pohl,~M.-M.; Lund,~H.; Agapova,~A.; Junge,~H.;
+  Junge,~K.; Beller,~M. Intermetallic nickel silicide nanocatalyst-A non-noble
+  metal-based general hydrogenation catalyst. \emph{Science Advances}
+  \textbf{2018}, \emph{4}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mondloch \latin{et~al.}(2013)Mondloch, Bury, Fairen-Jimenez, Kwon,
+  Demarco, Weston, Sarjeant, Nguyen, Stair, Snurr, Farha, and
+  Hupp]{Mondloch2013}
+Mondloch,~J.~E.; Bury,~W.; Fairen-Jimenez,~D.; Kwon,~S.; Demarco,~E.~J.;
+  Weston,~M.~H.; Sarjeant,~A.~A.; Nguyen,~S.~T.; Stair,~P.~C.; Snurr,~R.~Q.;
+  Farha,~O.~K.; Hupp,~J.~T. Vapor-phase metalation by atomic layer deposition
+  in a metal-organic framework. \emph{Journal of the American Chemical Society}
+  \textbf{2013}, \emph{135}, 10294--10297\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Li \latin{et~al.}(2016)Li, Schweitzer, League, Bernales, Peters,
+  Getsoian, Wang, Miller, Vjunov, Fulton, Lercher, Cramer, Gagliardi, Hupp, and
+  Farha]{Li2016sintering}
+Li,~Z.; Schweitzer,~N.~M.; League,~A.~B.; Bernales,~V.; Peters,~A.~W.;
+  Getsoian,~A.~B.; Wang,~T.~C.; Miller,~J.~T.; Vjunov,~A.; Fulton,~J.~L.;
+  Lercher,~J.~A.; Cramer,~C.~J.; Gagliardi,~L.; Hupp,~J.~T.; Farha,~O.~K.
+  Sintering-Resistant Single-Site Nickel Catalyst Supported by Metal-Organic
+  Framework. \emph{Journal of the American Chemical Society} \textbf{2016},
+  \emph{138}, 1977--1982\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Platero-Prats \latin{et~al.}(2017)Platero-Prats, League, Bernales, Ye,
+  Gallington, Vjunov, Schweitzer, Li, Zheng, Mehdi, Stevens, Dohnalkova,
+  Balasubramanian, Farha, Hupp, Browning, Fulton, Camaioni, Lercher, Truhlar,
+  Gagliardi, Cramer, and Chapman]{PlateroPrats2017}
+Platero-Prats,~A.~E. \latin{et~al.}  Bridging Zirconia Nodes within a
+  Metal-Organic Framework via Catalytic Ni-Hydroxo Clusters to Form
+  Heterobimetallic Nanowires. \emph{Journal of the American Chemical Society}
+  \textbf{2017}, \emph{139}, 10410--10418\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Shabbir \latin{et~al.}(2020)Shabbir, Pellizzeri, Ferrandon, Kim,
+  Vermeulen, Farha, Delferro, Martinson, and Getman]{Shabbir2020}
+Shabbir,~H.; Pellizzeri,~S.; Ferrandon,~M.; Kim,~I.~S.; Vermeulen,~N.~A.;
+  Farha,~O.~K.; Delferro,~M.; Martinson,~A.~B.; Getman,~R.~B. Influence of spin
+  state and electron configuration on the active site and mechanism for
+  catalytic hydrogenation on metal cation catalysts supported on NU-1000:
+  insights from experiments and microkinetic modeling. \emph{Catalysis Science
+  and Technology} \textbf{2020}, \emph{10}, 3594--3602\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Yeh \latin{et~al.}(2021)Yeh, Vicchio, Chheda, Zheng, Schmid, Löbbert,
+  Bermejo-Deval, Gutiérrez, Lercher, Lu, Neurock, Getman, Gagliardi, and
+  Bhan]{Yeh2021}
+Yeh,~B.; Vicchio,~S.~P.; Chheda,~S.; Zheng,~J.; Schmid,~J.; Löbbert,~L.;
+  Bermejo-Deval,~R.; Gutiérrez,~O.~Y.; Lercher,~J.~A.; Lu,~C.~C.; Neurock,~M.;
+  Getman,~R.~B.; Gagliardi,~L.; Bhan,~A. Site Densities, Rates, and Mechanism
+  of Stable Ni/UiO-66 Ethylene Oligomerization Catalysts. \emph{Journal of the
+  American Chemical Society} \textbf{2021}, \emph{143}, 20274--20280\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Brogaard and Olsbye(2016)Brogaard, and Olsbye]{Brogaard2016}
+Brogaard,~R.~Y.; Olsbye,~U. Ethene Oligomerization in Ni-Containing Zeolites:
+  Theoretical Discrimination of Reaction Mechanisms. \emph{ACS Catalysis}
+  \textbf{2016}, \emph{6}, 1205--1214\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wang \latin{et~al.}(2016)Wang, Vermeulen, Kim, Martinson, Stoddart,
+  Hupp, and Farha]{Wang2016}
+Wang,~T.~C.; Vermeulen,~N.~A.; Kim,~I.~S.; Martinson,~A.~B.; Stoddart,~J.~F.;
+  Hupp,~J.~T.; Farha,~O.~K. Scalable synthesis and post-modification of a
+  mesoporous metal-organic framework called NU-1000. \emph{Nature Protocols}
+  \textbf{2016}, \emph{11}, 149--162\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Farrow \latin{et~al.}(2007)Farrow, Juhas, Liu, Bryndin, Boin, Bloch,
+  Proffen, and Billinge]{Farrow2007}
+Farrow,~C.~L.; Juhas,~P.; Liu,~J.~W.; Bryndin,~D.; Boin,~E.~S.; Bloch,~J.;
+  Proffen,~T.; Billinge,~S.~J. PDFfit2 and PDFgui: Computer programs for
+  studying nanostructure in crystals. \emph{Journal of Physics Condensed
+  Matter} \textbf{2007}, \emph{19}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Ye \latin{et~al.}(2017)Ye, Gagliardi, Cramer, and Truhlar]{Ye2017}
+Ye,~J.; Gagliardi,~L.; Cramer,~C.~J.; Truhlar,~D.~G. Single Ni atoms and Ni4
+  clusters have similar catalytic activity for ethylene dimerization.
+  \emph{Journal of Catalysis} \textbf{2017}, \emph{354}, 278--286\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Git(2022)]{GitHub-Ni4Project}
+Ni4-Cluster-Structure-Files. 2022;
+  \url{https://github.com/getman-research-group/Ni4-Cluster-Structure-Files}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Reuter and Scheffler(2003)Reuter, and Scheffler]{Reuter2003}
+Reuter,~K.; Scheffler,~M. First-Principles Atomistic Thermodynamics for
+  Oxidation Catalysis: Surface Phase Diagrams and Catalytically Interesting
+  Regions. \emph{Physical Review Letters} \textbf{2003}, \emph{90}, 4\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Reuter and Scheffler(2004)Reuter, and Scheffler]{Reuter2004}
+Reuter,~K.; Scheffler,~M. Oxide formation at the surface of late 4d transition
+  metals: Insights from first-principles atomistic thermodynamics.
+  \emph{Applied Physics A: Materials Science and Processing} \textbf{2004},
+  \emph{78}, 793--798\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Grundner \latin{et~al.}(2015)Grundner, Markovits, Li, Tromp, Pidko,
+  Hensen, Jentys, Sanchez-Sanchez, and Lercher]{Grundner2015}
+Grundner,~S.; Markovits,~M.~A.; Li,~G.; Tromp,~M.; Pidko,~E.~A.; Hensen,~E.~J.;
+  Jentys,~A.; Sanchez-Sanchez,~M.; Lercher,~J.~A. Single-site trinuclear copper
+  oxygen clusters in mordenite for selective conversion of methane to methanol.
+  \emph{Nature Communications} \textbf{2015}, \emph{6}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Paolucci \latin{et~al.}(2016)Paolucci, Parekh, Khurana, Iorio, Li,
+  Caballero, Shih, Anggara, Delgass, Miller, Ribeiro, Gounder, and
+  Schneider]{Paolucci2016}
+Paolucci,~C.; Parekh,~A.~A.; Khurana,~I.; Iorio,~J. R.~D.; Li,~H.;
+  Caballero,~J. D.~A.; Shih,~A.~J.; Anggara,~T.; Delgass,~W.~N.; Miller,~J.~T.;
+  Ribeiro,~F.~H.; Gounder,~R.; Schneider,~W.~F. Catalysis in a cage:
+  Condition-dependent speciation and dynamics of exchanged cu cations in ssz-13
+  zeolites. \emph{Journal of the American Chemical Society} \textbf{2016},
+  \emph{138}, 6028--6048\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Li \latin{et~al.}(2016)Li, Vassilev, Sanchez-Sanchez, Lercher, Hensen,
+  and Pidko]{Li2016}
+Li,~G.; Vassilev,~P.; Sanchez-Sanchez,~M.; Lercher,~J.~A.; Hensen,~E.~J.;
+  Pidko,~E.~A. Stability and reactivity of copper oxo-clusters in ZSM-5 zeolite
+  for selective methane oxidation to methanol. \emph{Journal of Catalysis}
+  \textbf{2016}, \emph{338}, 305--312\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Zuo \latin{et~al.}(2016)Zuo, Li, Liu, Han, and Huang]{Zuo2016}
+Zuo,~Z.~J.; Li,~N.; Liu,~S.~Z.; Han,~P.~D.; Huang,~W. Initial stages of
+  oxidation for Cu-based catalysts using density functional theory.
+  \emph{Applied Surface Science} \textbf{2016}, \emph{366}, 85--94\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Alberty(1997)]{Alberty1997}
+Alberty,~R.~A. Legendre transforms in chemical thermodynamics. \emph{Journal of
+  Chemical Thermodynamics} \textbf{1997}, \emph{29}, 501--516\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hutter \latin{et~al.}(2014)Hutter, Iannuzzi, Schiffmann, and
+  Vandevondele]{Hutter2014}
+Hutter,~J.; Iannuzzi,~M.; Schiffmann,~F.; Vandevondele,~J. {Cp2k: Atomistic
+  simulations of condensed matter systems}. \emph{Wiley Interdisciplinary
+  Reviews: Computational Molecular Science} \textbf{2014}, \emph{4},
+  15--25\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Perdew \latin{et~al.}(1996)Perdew, Burke, and Ernzerhof]{Perdew1996}
+Perdew,~J.~P.; Burke,~K.; Ernzerhof,~M. Generalized Gradient Approximation Made
+  Simple. \emph{Physical Review Letters} \textbf{1996}, \emph{77},
+  3865--3868\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Grimme \latin{et~al.}(2010)Grimme, Antony, Ehrlich, and
+  Krieg]{Grimme2010}
+Grimme,~S.; Antony,~J.; Ehrlich,~S.; Krieg,~H. A consistent and accurate ab
+  initio parametrization of density functional dispersion correction (DFT-D)
+  for the 94 elements H-Pu. \emph{Journal of Chemical Physics} \textbf{2010},
+  \emph{132}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[VandeVondele and Hutter(2007)VandeVondele, and
+  Hutter]{VandeVondele2007}
+VandeVondele,~J.; Hutter,~J. Gaussian basis sets for accurate calculations on
+  molecular systems in gas and condensed phases. \emph{Journal of Chemical
+  Physics} \textbf{2007}, \emph{127}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Goedecker \latin{et~al.}(1996)Goedecker, Teter, and
+  Hutter]{Goedecker1996}
+Goedecker,~S.; Teter,~M.; Hutter,~J. Separable dual-space Gaussian
+  pseudopotentials. \emph{Physical Review B} \textbf{1996}, \emph{54},
+  1703--1710\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Bernales \latin{et~al.}(2016)Bernales, League, Li, Schweitzer, Peters,
+  Carlson, Hupp, Cramer, Farha, and Gagliardi]{Bernales2016}
+Bernales,~V.; League,~A.~B.; Li,~Z.; Schweitzer,~N.~M.; Peters,~A.~W.;
+  Carlson,~R.~K.; Hupp,~J.~T.; Cramer,~C.~J.; Farha,~O.~K.; Gagliardi,~L.
+  Computationally Guided Discovery of a Catalytic Cobalt-Decorated
+  Metal-Organic Framework for Ethylene Dimerization. \emph{Journal of Physical
+  Chemistry C} \textbf{2016}, \emph{120}, 23576--23583\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hanikel \latin{et~al.}(2021)Hanikel, Pei, Chheda, Lyu, Jeong, Sauer,
+  Gagliardi, and Yaghi]{Hanikel2021}
+Hanikel,~N.; Pei,~X.; Chheda,~S.; Lyu,~H.; Jeong,~W.; Sauer,~J.; Gagliardi,~L.;
+  Yaghi,~O.~M. Evolution of water structures in metal-organic frameworks for
+  improved atmospheric water harvesting. \emph{Science} \textbf{2021},
+  \emph{374}, 454--459\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Kim \latin{et~al.}(2017)Kim, Yang, Rao, Narayanan, Kapustin, Furukawa,
+  Umans, Yaghi, and Wang]{Kim2017}
+Kim,~H.; Yang,~S.; Rao,~S.~R.; Narayanan,~S.; Kapustin,~E.~A.; Furukawa,~H.;
+  Umans,~A.~S.; Yaghi,~O.~M.; Wang,~E.~N. Water harvesting from air with
+  metal-organic frameworks powered by natural sunlight. \emph{Science}
+  \textbf{2017}, \emph{356}, 28\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Platero-Prats \latin{et~al.}(2016)Platero-Prats, Mavrandonakis,
+  Gallington, Liu, Hupp, Farha, Cramer, and Chapman]{PlateroPrats2016}
+Platero-Prats,~A.~E.; Mavrandonakis,~A.; Gallington,~L.~C.; Liu,~Y.;
+  Hupp,~J.~T.; Farha,~O.~K.; Cramer,~C.~J.; Chapman,~K.~W. Structural
+  Transitions of the Metal-Oxide Nodes within Metal-Organic Frameworks: On the
+  Local Structures of NU-1000 and UiO-66. \emph{Journal of the American
+  Chemical Society} \textbf{2016}, \emph{138}, 4178--4185\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Halder \latin{et~al.}(2020)Halder, Lee, Yang, Pellin, Vajda, Li, Yang,
+  Farha, and Hupp]{Halder2020}
+Halder,~A.; Lee,~S.; Yang,~B.; Pellin,~M.~J.; Vajda,~S.; Li,~Z.; Yang,~Y.;
+  Farha,~O.~K.; Hupp,~J.~T. Structural reversibility of Cu doped NU-1000 MOFs
+  under hydrogenation conditions. \emph{Journal of Chemical Physics}
+  \textbf{2020}, \emph{152}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Halder \latin{et~al.}(2020)Halder, Ha, Zhai, Yang, Pellin, Seifert,
+  Alexandrova, and Vajda]{Halder2020ensemble}
+Halder,~A.; Ha,~M.~A.; Zhai,~H.; Yang,~B.; Pellin,~M.~J.; Seifert,~S.;
+  Alexandrova,~A.~N.; Vajda,~S. Oxidative Dehydrogenation of Cyclohexane by Cu
+  vs Pd Clusters: Selectivity Control by Specific Cluster Dynamics.
+  \emph{ChemCatChem} \textbf{2020}, \emph{12}, 1307--1315\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 
