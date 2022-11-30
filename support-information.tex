@@ -729,14 +729,30 @@ Figure~\ref{fig:SI-variable-Ni-content} considered the thermodynamic landscape o
 \section{Phase Diagram with All Structure Schematics}
 \begin{figure}[H]
     \centering
-    % \includegraphics[width=0.60\textwidth]{}
+    \includegraphics[width=0.75\textwidth]{zi-images/04-SI-images/2022-SI-phase-diagram-structure-combined.png}
     \caption{
-        Calculated phase diagram for the \ce{Ni4} cluster presented as a function $\Delta \mu_{\ce{H2}}$ and $\Delta \mu_{\ce{H2O}}$, Figure 4 (main text), combined with all the schematic representations of the structures appearing on the phase diagram (for improved clarity). The same key as in Figure~\ref{fig:SI-all-dPDFs} is used and the vertical dashed line indicates for the experimental conditions from the dPDF as described in Figure 4 (main text).
+        Calculated phase diagram for the \ce{Ni4} cluster presented as a function $\Delta \mu_{\ce{H2}}$ and $\Delta \mu_{\ce{H2O}}$, Figure 4 (main text), combined with all the schematic representations of the structures appearing on the phase diagram for improved clarity. The same key as in Figure~\ref{fig:SI-all-dPDFs} is used and the vertical dashed line indicates for the experimental conditions.
     }
     \label{fig:SI-full_phase_diagram_with_all_structures}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DFT + U Phase Diagram
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Phase Diagram with DFT + U Correction Terms}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/2022-SI-phase-diagram-DFTU.png}
+    \caption{
+        Calculated phase diagram for the \ce{Ni4} cluster presented as a function $\Delta \mu_{\ce{H2}}$ and $\Delta \mu_{\ce{H2O}}$ with the DFT + U correction term implemented. The correct terms (U = 6.8667 and J = 1.23958 for \ce{NiO2}) are from the \textit{Database of Hubbard U and J Values for TMOs}\hl{REF-XXX} according to \hl{Moore et al.REF-XXX}. The conditions for $\Delta \mu_{\ce{H2}}$ and $\Delta \mu_{\ce{H2O}}$ are expanded from the conditions presented in Figure~4 (main text). The different colored regions indicate different structures, following the same key as in Figure~\ref{fig:SI-all-dPDFs}. \textcolor{red}{The vertical dashed line indicates the value of $\Delta \mu_{\text{H}_2}$ corresponding to the conditions where the experimental d-PDF was collected.\cite{PlateroPrats2016}}
+    }
+    \label{fig:SI-phase_diagram_DFTU}
+\end{figure}
 
+\textcolor{red}{
+    Figure~\ref{fig:SI-phase_diagram_DFTU} considers the DFT + U correction term. Starting from the converged geometries of the structures appearing on phase diagram (Figure~4 of the main text), the electronic energy was recalculated with the DFT + U formalism to evaluate the influence of U on the phase diagram structures. Figure~\ref{fig:SI-phase_diagram_DFTU} includes the electronic energy from the DFT + U calculation and the vibrational contributions to the free energy. We selected U and J parameters for \ce{NiO2} according to \textit{Database of Hubbard U and J Values for TMOs}\hl{REF-XXX} as an approximation for the U and J parameters of the \ce{Ni4} cluster. The conditions for $\Delta \mu_{\ce{H2}}$ and $\Delta \mu_{\ce{H2O}}$ are expanded from the Figure~4 to evaluate the influence of DFT + U on the phase diagram. A few structures at low \ce{Ni-O} coordination numbers are removed (\ce{Ni4(OH)4} (white) and \ce{Ni4(OH)3(H).H2O} (magenta)). However, all structures with \ce{Ni-O} above 3.25 remain, which are the structures that are in better agreement based on the experimentally observed \ce{Ni-O} coordination numbers. This finding suggests minimal influence of DFT + U on the free energy landscape for these \ce{Ni4} clusters. 
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Phase Diagram Structures
@@ -879,7 +895,31 @@ where $\Delta G$ is the free energy of structure computed according to Eq.~\ref{
 %% Structure Heat Maps
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Phase Diagram Structure Heat Maps}
+\section{  Cluster Fluxionality}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.50\textwidth]{zi-images/04-SI-images/2022-SI-flux-blue.png}
+    \caption{
+        \textcolor{red}{The relative free energy referenced to the \ce{Ni4(OH)5(H).4H2O} (blue) structure. Alternative structures are plausible for this structure suggesting that fluxionality is important for this particular structure.}
+    }
+    \label{fig:SI-flux-blue}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.50\textwidth]{zi-images/04-SI-images/2022-SI-flux-purple.png}
+    \caption{
+        \textcolor{red}{The relative free energy referenced to the \ce{Ni4(OH)6.3H2O} (purple) structure. Alternative structures are not plausible for this structure suggesting that fluxionality is not important for this particular structure on the phase diagram. Note that these structures are within 100 kJ/mol of each other electronically, but including the vibrational contributions results in the large differences in free energy.}
+    }
+    \label{fig:SI-flux-purple}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Structure Heat Maps
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{ Phase Diagram Structure Heat Maps}
 We generate heat maps further probe the potential energy surface of the \ce{Ni4} cluster, and consider the sensitivity of the different regions appearing on the phase diagram. The heat maps are created by taking the difference in free energy values (denoted $\Delta \Delta F^{(2)}$) between structure ($i$) and the low energy structure ($o$) at $\Delta \mu_{\ce{H2O}}$ and $\Delta \mu_{\ce{H2}}$ (shown in Eq.~\ref{eq:delta_delta_F}). The low energy structure is the structure that is the thermodynamic minima at specific $\mu_{\ce{H2O}}$ and $\mu_{\ce{H2}}$ values. 
 \begin{equation}
     \Delta \Delta F^{(2)}_{i}(V,T,\mu_{\text{H}}, \mu_{\text{O}}, N_{\text{Ni}}) = F^{(2)}_{i}(V,T,\mu_{\text{H}}, \mu_{\text{O}}, N_{\text{Ni}}) - F^{(2)}_{o}(V,T,\mu_{\text{H}}, \mu_{\text{O}}, N_{\text{Ni}})
@@ -997,30 +1037,49 @@ The heat maps for all thermodynamically relevant structures and select structure
 % gray - good
 %
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Water Movement Check
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{ Increasing \ce{H2O}-Ligand Content of \ce{Ni4} Cluster}
+\section{  Increasing H2O-Ligand Content of Ni4 Cluster}
 
 \begin{center}
 \begin{table}[H]
 \centering
   \setlength\tabcolsep{8pt}
-  \caption{Water Selection Configuration}
+  \caption{Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.4H2O} (green)}
+  \label{tbl:water_selection_energies_green}
+  \begin{tabular}{lcc}
+    \hline
+        Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)\textsuperscript{a}} \\
+        \hline
+        \ce{Ni4(OH)6.4H2O} (green)               & -4846.6895 &  0.0 \\
+        \ce{Ni4(OH)6.3H2O}-config$_{1}$ (purple)    & -4846.6844 & 13.4 \\
+        \ce{Ni4(OH)6.3H2O}-config$_{2}$ (purple)    & -4846.6873 &  5.7 \\
+        \ce{Ni4(OH)6.3H2O}-config$_{3}$ (purple)    & -4846.6864 &  8.1 \\
+        \hline
+    \end{tabular} \\
+    \textsuperscript{a}Reference: \ce{Ni4(OH)6.4H2O} (green) \\
+\end{table}    
+\end{center}
+
+\begin{center}
+\begin{table}[H]
+\centering
+  \setlength\tabcolsep{8pt}
+  \caption{Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.3H2O} (purple)}
   \label{tbl:water_selection_energies_purple}
   \begin{tabular}{lcc}
     \hline
-        Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)} \\
+        Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)\textsuperscript{a}} \\
         \hline
-        \ce{Ni4(OH)6.3H2O} (purple)             & -4829.4227 &  0.0 \\
-        \ce{Ni4(OH)6.4H2O}-config\_1 (green)    & -4829.3949 & 73.2 \\
-        \ce{Ni4(OH)6.4H2O}-config\_2 (green)    & -4829.4059 & 44.3 \\
+        \ce{Ni4(OH)6.3H2O} (purple)               & -4829.4227 &    0.0 \\
+        \ce{Ni4(OH)6.2H2O}-config$_{1}$ (cyan)    & -4829.4323 &  -25.0 \\
+        \ce{Ni4(OH)6.2H2O}-config$_{2}$ (cyan)    & -4829.4290 &  -16.4 \\
+        \ce{Ni4(OH)6.2H2O}-config$_{3}$ (cyan)    & -4829.4363 &  -35.7 \\
         \hline
     \end{tabular} \\
-    % \textsuperscript{a}unit cell parameters are fixed at $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$ \\
-    % \textsuperscript{b}unit cell parameters $a=b$ and $c$ are varied with $\alpha=\beta=\ang{90}$ and $\gamma=\ang{60}$ fixed
+    \textsuperscript{a}Reference: \ce{Ni4(OH)6.3H2O} (purple) \\
 \end{table}    
 \end{center}
 
@@ -1028,23 +1087,25 @@ The heat maps for all thermodynamically relevant structures and select structure
 \begin{table}[H]
 \centering
   \setlength\tabcolsep{8pt}
-  \caption{Water Selection Configuration}
-  \label{tbl:water_selection_energies_cyan}
+  \caption{Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.1H2O} (teal)}
+  \label{tbl:water_selection_energies_teal}
   \begin{tabular}{lcc}
     \hline
-        Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)} \\
+        Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)\textsuperscript{a}} \\
         \hline
-        \ce{Ni4(OH)6.2H2O} (cyan)                & -4812.1716 &  0.0 \\
-        \ce{Ni4(OH)6.3H2O}-config\_1 (purple)    & -4812.1410 & 80.1 \\
-        \ce{Ni4(OH)6.3H2O}-config\_2 (purple)    & -4812.1396 & 83.9 \\
+        \ce{Ni4(OH)6.3H2O} (teal)                  & -4794.9465 &    0.0 \\
+        \ce{Ni4(OH)6.2H2O}-config$_{1}$ (white)    & -4794.9327 &   36.2 \\
+        \ce{Ni4(OH)6.2H2O}-config$_{2}$ (white)    & -4794.9380 &   22.3 \\
+        \ce{Ni4(OH)6.2H2O}-config$_{3}$ (white)    & -4794.9433 &    8.4 \\
         \hline
     \end{tabular} \\
-    % \textsuperscript{a}unit cell parameters are fixed at $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$ \\
-    % \textsuperscript{b}unit cell parameters $a=b$ and $c$ are varied with $\alpha=\beta=\ang{90}$ and $\gamma=\ang{60}$ fixed
+    \textsuperscript{a}Reference: \ce{Ni4(OH)6.1H2O} (teal) \\
 \end{table}    
 \end{center}
 
-Table~\ref{tbl:water_selection_energies_purple} and \ref{tbl:water_selection_energies_cyan} show the relative energies of structures with the same overall stoichiometry, but different \ce{Ni_4} clusters. \ce{H2O}-ligands were moved from adjacent NU-1000 nodes to increase the \ce{H2O}-ligands present on the cluster (i.e., \ce{Ni4(OH)6.3H2O} (purple) is converted to \ce{Ni4(OH)6.4H2O}-config\_1 (green) and \ce{Ni4(OH)6.4H2O}-config\_2 (green), and \ce{Ni4(OH)6.2H2O} (cyan) is converted to \ce{Ni4(OH)6.3H2O}-config\_1 (purple) and \ce{Ni4(OH)6.3H2O}-config\_2 (purple)). Both Table~\ref{tbl:water_selection_energies_purple} and~\ref{tbl:water_selection_energies_cyan} show that moving an \ce{H2O}-ligand from the MOF node to increase the \ce{H2O}-ligand content on the \ce{Ni4} cluster is thermodynamically unfavorable. 
+Tables~\ref{tbl:water_selection_energies_green} to \ref{tbl:water_selection_energies_teal} show the relative energies of structures with the same overall stoichiometry, but different \ce{Ni_4} clusters. A single \ce{H2O}-ligand was moved from the \ce{Ni4} cluster to the \ce{OH}/\ce{H2O} ligand pairs on adjacent nodes to capture the thermodynamics of \ce{H2O}-ligands interchanging from the node and the \ce{Ni4} cluster. We simulate different configurations to account for \ce{H2O}-ligand placement on the node. $\Delta$Electronic Energy less than 0 indicate \ce{H2O} ligand on the node is more favorable, whereas $\Delta$Electronic Energy greater than 0 indicate the \ce{H2O} ligand on the cluster is more favorable. The results presented in Tables~\ref{tbl:water_selection_energies_green} to \ref{tbl:water_selection_energies_teal} suggest that in some circumstances \ce{H2O} moving from the node to the cluster is thermodynamically favorable.  
+
+% Both Table~\ref{tbl:water_selection_energies_purple} and~\ref{tbl:water_selection_energies_cyan} show that moving an \ce{H2O}-ligand from the MOF node to increase the \ce{H2O}-ligand content on the \ce{Ni4} cluster is thermodynamically unfavorable. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The appropriate \bibliography command should be placed here.
@@ -1052,6 +1113,6 @@ Table~\ref{tbl:water_selection_energies_purple} and \ref{tbl:water_selection_ene
 %% and also names the section correctly.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\bibliography{achemso-demo}
+\bibliography{zreferences}
 
 \end{document}
