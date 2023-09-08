@@ -9,7 +9,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Place any additional packages needed here.  Only include packages
-%% which are essential, to avoid problems later. Do NOT use any
+%% which are essential to avoid problems later. Do NOT use any
 %% packages which require e-TeX (for example etoolbox): the e-TeX
 %% extensions are not currently available on the ACS conversion
 %% servers. 
@@ -74,18 +74,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Stephen P. Vicchio}
 \affiliation[Clemson University]
-{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, SC 29634, United States}
+{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, SC}
 \author{Zhihengyu Chen}
 \affiliation[Stony Brook University]
-{Department of Chemistry, Stony Brook University, Stony Brook, NY 11794, United States} 
+{Department of Chemistry, Stony Brook University, Stony Brook, NY}
 \author{Karena W. Chapman}
 \email{karena.chapman@stonybrook.edu}
 \affiliation[Stony Brook University]
-{Department of Chemistry, Stony Brook University, Stony Brook, NY 11794, United States}
+{Department of Chemistry, Stony Brook University, Stony Brook, NY}
 \author{Rachel B. Getman}
 \email{rgetman@clemson.edu}
 \affiliation[Clemson University]
-{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, SC 29634, United States}
+{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, SC}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The document title should be given as usual. Some journals require
@@ -132,7 +132,7 @@ Also similar to homogeneous catalysts is the appeal of tuning ligand environment
 
 In this work, we seek to improve insights about ligand environments of SSHCs under under catalytic operating conditions by characterizing a ligated \ce{Ni} cation catalyst under conditions relevant to catalytic hydrogenation. We are interested in hydrogenation conditions because of their importance to the energy industry, with Ni being a prevalent catalyst. For example, the Shell higher olefins process (ethene oligomerization),\cite{1988Reuben} steam reforming of methane,\cite{Ross1973} and various hydrocarbon hydrogenation reactions\cite{Ryabchuk2018} employ ligated \ce{Ni} cation catalysts. As a model of a ligated \ce{Ni} cation catalyst, we investigate a \ce{Ni} oxo cluster supported on the metal-organic framework NU-1000. Prior experimental and computational investigation into this cluster provides clues about the structure and ligand environment that is present under hydrogenation conditions.\cite{Mondloch2013, Li2016sintering} Specifically, the \ce{Ni} cluster is believed to comprise oxo- (\ce{O}), hydroxo- (\ce{OH}), water (\ce{H2O}), and hydride (\ce{H}) ligands.\cite{PlateroPrats2017} All of these ligands have been implicated as being relevant to hydrogenation catalysis,\cite{Shabbir2020} particularly the \ce{H} ligand, which has been suggested as the active site in catalytic hydrogenation and oligomerization.\cite{Shabbir2020, Li2016sintering, Yeh2021, Brogaard2016} However, questions still remain as to the precise ligand environment, as well as how it influences catalytic performance. 
 
-Herein, we combine pair distribution function (PDF) analysis, density functional theory (DFT) calculations, and \textit{ab initio} thermodynamic modeling to provide insight into the ligand environment of a \ce{Ni} oxo catalyst supported in NU-1000. We find that the \ce{Ni} ions are highly coordinated with \ce{OH}, \ce{H2O}, and possibly \ce{H} ligands. We further find that ligand arrangements are asymmetric, with different Ni ions comprising different numbers of ligands, or even different ligands altogether. Our results additionally suggest a distribution of clusters with different ligand environments within NU-1000.  
+Herein, we combine pair distribution function (PDF) analysis, density functional theory (DFT) calculations, and \textit{ab initio} thermodynamic modeling to provide insight into the ligand environment of a \ce{Ni} oxo catalyst supported in NU-1000. We find that the \ce{Ni} ions are highly coordinated with \ce{OH}, \ce{H2O}, \textcolor{red}{and possibly \ce{H} ligands}. We further find that ligand arrangements are asymmetric, with different Ni ions comprising different numbers of ligands, or even different ligands altogether. Our results additionally suggest a distribution of clusters with different ligand environments within NU-1000.  
 
 \section{Methodology}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,7 +140,7 @@ Herein, we combine pair distribution function (PDF) analysis, density functional
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{NU-1000 Structure}
-The MOF NU-1000 is comprised of \ce{Zr6(\mu_{3}-O)4(\mu_{3}-OH)4(H2O)4(OH)4} nodes interconnected with tetratopic 1,3,6,8-tetrakis (p-benzoate) pyrene (TBAPy) linkers.\cite{Wang2016}  It features small 8~{\AA} pores with uniform hexagonal (31~{\AA}) and triangular (10~{\AA}) channels (Figure~\ref{fig:Ni-MOF-model}). \ce{Ni} cations are installed using the atomic layer deposition (ALD) in MOFs (AIM) process, which introduces pulses of a metal precursor followed by several pulses of \ce{H2O} vapor to the system.\cite{Mondloch2013} The \ce{H2O} pulses eliminate the organic molecules from the precursor and form \ce{OH} and \ce{H2O} ligands within the MOF. During AIM, the \ce{Ni} cations anchor to the NU-1000 nodes via the accessible \ce{OH}/\ce{H2O} ligands. Multiple cycles of AIM can be carried out on the same system; the catalyst loading depends on the number of AIM cycles as well as the number of free \ce{OH} ligands.\cite{PlateroPrats2017} Prior work combining K-edge extended x-ray absorption fine structure (EXAFS), inductively coupled plasma−atomic emission spectroscopy (ICP-AES), and DFT indicate a \ce{Ni} loading of 4.1 $\pm$ 0.4 atoms per node.\cite{PlateroPrats2017,Ye2017} Following installation the \ce{Ni} clusters, the sample is heated to 200 \degree C in 3-5\% \ce{H2} (in \ce{He}) under ambient pressure.
+The MOF NU-1000 is comprised of \ce{Zr6(\mu_{3}-O)4(\mu_{3}-OH)4(H2O)4(OH)4} nodes interconnected with tetratopic 1,3,6,8-tetrakis (p-benzoate) pyrene (TBAPy) linkers.\cite{Wang2016}  It features small 8~{\AA} pores with uniform hexagonal (31~{\AA}) and triangular (10~{\AA}) channels (Figure~\ref{fig:Ni-MOF-model}). \ce{Ni} cations are installed using the atomic layer deposition (ALD) in MOFs (AIM) process, \textcolor{red}{which introduces pulses of a metal precursor followed by several pulses of \ce{H2O} vapor to the system.\cite{Mondloch2013} The \ce{H2O} pulses eliminate the organic molecules from the precursor and form \ce{OH} and \ce{H2O} ligands within the MOF.} During AIM, the \ce{Ni} cations anchor to the NU-1000 nodes via the accessible \ce{OH}/\ce{H2O} ligands. \textcolor{red}{Multiple cycles of AIM can be carried out on the same system; the catalyst loading depends on the number of AIM cycles as well as the number of free \ce{OH} ligands.\cite{PlateroPrats2017} Prior work combining K-edge extended x-ray absorption fine structure (EXAFS), inductively coupled plasma−atomic emission spectroscopy (ICP-AES), and DFT indicate a \ce{Ni} loading of 4.1 $\pm$ 0.4 atoms per node.\cite{PlateroPrats2017,Ye2017} Following installation the \ce{Ni} clusters, the sample is heated to 200 \degree C in 3-5\% \ce{H2} (in \ce{He}) under ambient pressure.}
 
 \begin{figure}
     \centering
@@ -158,9 +158,9 @@ Powder X-ray diffraction (XRD) and total scattering data suitable for PDF analys
 
 \subsubsection{Catalyst Structure Models}
 
-Modeling is carried out to provide molecular level insight into the ligand environment of Ni-NU-1000. NU-1000 unit cells in the P6/mmm space group with DFT-optimized parameters of $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$ are employed. These periodic calculations are compared with their gas phase analogs in Supporting Information Section S1.11. Following prior work,\cite{Ye2017} \ce{Ni} oxo catalysts are modeled with \ce{Ni4} clusters. Clusters comprising fewer than four \ce{Ni} ions were also evaluated, but gave poor agreement with the experimental d-PDF (see Supporting Information Section S3). \ce{Ni4} clusters span the 8 {\AA} pores of NU-1000, connecting two adjacent nodes (Figure~\ref{fig:Ni-MOF-model}b) by replacing a proton on each node.\cite{Ye2017} 
+Modeling is carried out to provide molecular level insight into the ligand environment of Ni-NU-1000. NU-1000 unit cells in the P6/mmm space group with DFT-optimized parameters of $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$ are employed. \textcolor{red}{These periodic calculations are compared with their gas phase analogs in Supporting Information Section S1.11.} Following prior work,\cite{Ye2017} \ce{Ni} oxo catalysts are modeled with \ce{Ni4} clusters. Clusters comprising fewer than four \ce{Ni} ions were also evaluated, but gave poor agreement with the experimental d-PDF (see Supporting Information Section S3). \ce{Ni4} clusters span the 8 {\AA} pores of NU-1000, connecting two adjacent nodes (Figure~\ref{fig:Ni-MOF-model}b) by replacing a proton on each node.\cite{Ye2017} 
 
-854 different ligand environments are considered to provide molecular-level insight into the types of ligand environments that could lead to the experimentally observed d-PDFs. These ligand environments include \ce{OH}, \ce{H2O}, \ce{O}, and \ce{H} and have stoichiometries of \ce{Ni_4O_xH_y}. Four example structures are shown in Figure~\ref{fig:Ni-MOF-structures}. The full library of structures considered in this work can be accessed on GitHub.\cite{GitHub-Ni4Project} The GitHub repository also contains all input files required to replicate the DFT calculations of the most relevant structures identified in this work (i.e., CP2K input, pseudopotential, basis set, and dftb3 files), as well as the associated output files (i.e., output and frequency files). \ce{Ni-O} coordination numbers are calculated for each structure according to geometric criteria (distance and orientation) as discussed in Supporting Information Section S1.7. 
+854 different ligand environments are considered to provide molecular-level insight into the types of ligand environments that could lead to the experimentally observed d-PDFs. These ligand environments include \ce{OH}, \ce{H2O}, \ce{O}, and \ce{H} and have stoichiometries of \ce{Ni_4O_xH_y}. Four example structures are shown in Figure~\ref{fig:Ni-MOF-structures}. The full library of structures considered in this work can be accessed on GitHub.\cite{GitHub-Ni4Project} \textcolor{red}{The GitHub repository also contains all input files required to replicate the DFT calculations of the most relevant structures identified in this work (i.e., CP2K input, pseudopotential, basis set, and dftb3 files), as well as the associated output files (i.e., output and frequency files).} \ce{Ni-O} coordination numbers are calculated for each structure according to geometric criteria (distance and orientation) as discussed in Supporting Information Section S1.7. 
 
 \begin{figure}
     \centering
@@ -185,7 +185,7 @@ Modeling is carried out to provide molecular level insight into the ligand envir
 where $F^{(2)}$ is the the second Legendre transform of the Helmholtz free energy (i.e., of $N_{\ce{H}}$ and $N_{\ce{O}}$ to $\mu_{\ce{H}}$ and $\mu_{\ce{O}}$),\cite{Alberty1997} $V$ is volume, $T$ is temperature, $\mu$ is chemical potential, and $N$ is number, i.e., of \ce{O} and \ce{H} atoms within the cluster. The $\Delta$'s in Eq.~\ref{eq:free-energy-trans} indicate quantities taken relative to a reference structure; the reference structure used in this work is the \ce{Ni4(OH)6.4H2O} structure shown in Figure~\ref{fig:Ni-MOF-structures}a. Here $\mu_{\ce{H}} = \frac{1}{2} \mu_{\ce{H}_2}$, and $\mu_{\text{O}} = \mu_{\ce{H2O}} - 2\mu_{\ce{H}}$. $F = E^\text{elec} + E^\text{ZP} + F^\text{vib}$, where $E^\text{elec}$ is the electronic energy calculated with DFT, $E^\text{ZP}$ is the zero point vibrational energy, and $F^\text{vib}$ is the temperature dependent vibrational free energy. $E^\text{ZP}$ and $F^\text{vib}$ are calculated from the DFT-calculated vibrational modes. Vibrational modes are only calculated for structures within 100 kJ/mol of the lowest electronic-energy cluster at each unique composition to decrease computational expense. Details about how the vibrational modes, $E^\text{ZP}$, and $F^\text{vib}$ are calculated are provided in Supporting Information Section S1.4.  
 
 \subsubsection{Density Functional Theory Calculations}
-Electronic energies are calculated using the CP2K software package\cite{Hutter2014} using the PBE exchange and correlation functional\cite{Perdew1996}, damped D3 dispersion corrections,\cite{Grimme2010} the DZVP-MOLOPT basis set,\cite{VandeVondele2007} and Goedecker pseudopotentials.\cite{Goedecker1996} Comparisons of this method with the DFT + U approach, which can be important for systems comprising \ce{NiO} and \ce{NiOOH}, are made in Supporting Information Section S11. Plane waves are simulated up to 360 Ry. As a single \ce{Ni} ion can adopt singlet or triplet spin states, we evaluate singlet, triplet, quintet, septet, and nonet states for the \ce{Ni4} clusters, following prior work.\cite{Shabbir2020, Ye2017, Bernales2016} The unrestricted Kohn-Sham (UKS) method is employed given the open shell nature of the system. Spin states exhibiting spin contamination are not considered in \textit{ab initio} thermodynamic analysis. Details about how spin contamination is determined and the criteria used to keep or discard structures is provided in Supporting Information Section S1.6. Electronic energies are obtained from geometry relaxations where the cell shape and volume are held fixed, but all atoms within the unit cell are allowed to relax. We find a maximum 6~kJ/mol difference in the calculated electronic energies when the cell volume is allowed to relax also (see Supporting Information Section S12). As relaxation of the cell volume can have subtle influences on the structural details of the Ni clusters (see Supporting Information Section S12), structures are re-relaxed, this time allowing both the unit cell volume and atomic positions to relax, in order to create d-PDFs. Thermal fluctuations, which would impact the peak widths of the d-PDFs,\cite{PlateroPrats2016} are not included. Other details about the DFT calculations, including how $E_{\text{H}_2}$ and $E_{\text{H}_2\text{O}}$ are calculated and sample CP2K input files for all types of DFT calculations carried out in this work are provided in Supporting Information Sections S1.8, S1.9, and S1.10.  
+Electronic energies are calculated using the CP2K software package\cite{Hutter2014} using the PBE exchange and correlation functional\cite{Perdew1996}, damped D3 dispersion corrections,\cite{Grimme2010} the DZVP-MOLOPT basis set,\cite{VandeVondele2007} and Goedecker pseudopotentials.\cite{Goedecker1996} \textcolor{red}{Comparisons of this method with the DFT + U approach, which can be important for systems comprising \ce{NiO} and \ce{NiOOH}, are made in Supporting Information Section S11.} Plane waves are simulated up to 360 Ry. As a single \ce{Ni} ion can adopt singlet or triplet spin states, we evaluate singlet, triplet, quintet, septet, and nonet states for the \ce{Ni4} clusters, following prior work.\cite{Shabbir2020, Ye2017, Bernales2016} The unrestricted Kohn-Sham (UKS) method is employed given the open shell nature of the system. Spin states exhibiting spin contamination are not considered in \textit{ab initio} thermodynamic analysis. Details about how spin contamination is determined and the criteria used to keep or discard structures is provided in Supporting Information Section S1.6. Electronic energies are obtained from geometry relaxations where the cell shape and volume are held fixed, but all atoms within the unit cell are allowed to relax. \textcolor{red}{We find a maximum 6~kJ/mol difference in the calculated electronic energies when the cell volume is allowed to relax also (see Supporting Information Section S12). As relaxation of the cell volume can have subtle influences on the structural details of the Ni clusters (see Supporting Information Section S12), structures are re-relaxed, this time allowing both the unit cell volume and atomic positions to relax, in order to create d-PDFs. Thermal fluctuations, which would impact the peak widths of the d-PDFs,\cite{PlateroPrats2016} are not included.} Other details about the DFT calculations, including how $E_{\text{H}_2}$ and $E_{\text{H}_2\text{O}}$ are calculated and sample CP2K input files for all types of DFT calculations carried out in this work are provided in Supporting Information Sections S1.8, S1.9, and S1.10.  
 
 \section{Results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -194,7 +194,7 @@ Electronic energies are calculated using the CP2K software package\cite{Hutter20
 
 \subsection{Comparison of \ce{Ni-O} Coordination Number and \ce{H2} Chemical Potential}
 
-Results from \textit{ab initio} thermodynamic analysis are presented in Figure~\ref{fig:phase_diagram_Ni}, which is a phase diagram indicating the structures that minimize $\Delta F^{(2)}$ as a function of $\mu_{\ce{H}_2}$ and $\mu_{\ce{H2O}}$. The different colored regions correspond to different structures, which are depicted in Figure~\ref{fig:Ni-structure-diagram}a. The \ce{Ni4(OH)6.4H2O} (green), \ce{Ni4(OH)5(H).4H2O} (blue), and \ce{Ni4(OH)4(O)} (yellow) structures are additionally shown in Figures~\ref{fig:Ni-MOF-structures}a-c. A combined phase diagram and structure diagram is provided in Supporting Information Section S10. Note that fluxionality\cite{Halder2020, Halder2020ensemble, Zhai2017} is not considered when creating the phase diagrams presented herein. However, we show in the Discussion Section that it could contribute to the observed d-PDF, and we show in Supporting Information Section S8 that it is likely important when modeling clusters in certain regions of the phase diagram.
+Results from \textit{ab initio} thermodynamic analysis are presented in Figure~\ref{fig:phase_diagram_Ni}, which is a phase diagram indicating the structures that minimize $\Delta F^{(2)}$ as a function of $\mu_{\ce{H}_2}$ and $\mu_{\ce{H2O}}$. The different colored regions correspond to different structures, which are depicted in Figure~\ref{fig:Ni-structure-diagram}a. \textcolor{red}{A combined phase diagram and structure diagram is provided in Supporting Information Section S10. Further, Supporting Information Section S9 illustrates the difference in free energy between the thermodynamic minimum structure and the next lowest free energy structure as a function of $\mu_{\ce{H}_2}$ and $\mu_{\ce{H2O}}$. Examples of such structures are provided in Supporting Information Section S8.}
 
 % Phase Diagram
 \begin{figure}[H]
@@ -216,11 +216,9 @@ Results from \textit{ab initio} thermodynamic analysis are presented in Figure~\
     \label{fig:Ni-structure-diagram}
 \end{figure}
 
-Each structure in Figure~\ref{fig:phase_diagram_Ni} is annotated with its \ce{Ni-O} coordination number. Prior work indicates that the average \ce{Ni-O} coordination number in the experimental structure is $\sim$5;\cite{PlateroPrats2017} hence, ranges of $\mu_{\ce{H2}}$ and $\mu_{\ce{H2O}}$ are selected such that coordination numbers $\sim$5 are centered. The \ce{Ni4(OH)6.2H2O} (cyan), \ce{Ni4(OH)6.3H2O} (purple), and \ce{Ni4(OH)6.4H2O} (green) structures give \ce{Ni-O} coordination numbers of 5.0, 5.25, and 5.5, respectively, which are in line with the experimentally observed value of $\sim$5. These structures comprise significant \ce{OH} and \ce{H2O} ligands and no \ce{O} or \ce{H} ligands and are highly symmetric (Figure~\ref{fig:Ni-structure-diagram}a). They reside on the phase diagram at higher (more positive) values of $\mu_{\text{H}_2\text{O}}$ and modest values of $\mu_{\text{H}_2}$ (slightly more negative than $\mu_{\text{H}_2}\left(0~\text{K}\right)$). As the experimental d-PDF was obtained under hydrogenation conditions, this suggests that the \ce{H2O} is coming from NU-1000. Hypothetically, this \ce{H2O} is left after AIM, reminiscent of the \ce{H2O} storage abilities of MOF-303 and MOF-801.\cite{Hanikel2021,Kim2017} For example, such \ce{H2O} molecules could bind to NU-1000 nodes during AIM and then later transfer to the Ni cluster. Test calculations (see Supporting Information S14) indicate that both processes are favorable for structures with \ce{Ni-O} coordination numbers just below 5.  
+From Figure~\ref{fig:phase_diagram_Ni}, the \ce{Ni4(OH)6.4H2O} (green), \ce{Ni4(OH)5(H).4H2O} (blue), and \ce{Ni4(OH)4(O)} (yellow) structures are additionally shown in Figures~\ref{fig:Ni-MOF-structures}a-c. Prior work indicates that the average \ce{Ni-O} coordination number in the experimental structure is $\sim$5.\cite{PlateroPrats2017} Hence, in Figure~\ref{fig:phase_diagram_Ni}, each structure is annotated with its \ce{Ni-O} coordination number; ranges of $\mu_{\ce{H2}}$ and $\mu_{\ce{H2O}}$ are selected such that coordination numbers $\sim$5 are centered. The \ce{Ni4(OH)6.2H2O} (cyan), \ce{Ni4(OH)6.3H2O} (purple), and \ce{Ni4(OH)6.4H2O} (green) structures give \ce{Ni-O} coordination numbers of 5.0, 5.25, and 5.5, respectively, which are in line with the experimentally observed value of $\sim$5. These structures comprise significant \ce{OH} and \ce{H2O} ligands and no \ce{O} or \ce{H} ligands and are highly symmetric (Figure~\ref{fig:Ni-structure-diagram}a). They reside on the phase diagram at higher (more positive) values of $\mu_{\text{H}_2\text{O}}$ and lower (more negative) values of $\mu_{\text{H}_2}$. As the experimental d-PDF was obtained under hydrogenation conditions, this suggests that the \ce{H2O} is coming from NU-1000, reminiscent of the \ce{H2O} storage abilities of MOF-303 and MOF-801.\cite{Hanikel2021,Kim2017} \textcolor{red}{Hypothetically, this \ce{H2O} is left after AIM. For example, such \ce{H2O} molecules could bind to NU-1000 nodes during AIM and then later transfer to the Ni cluster. Test calculations (see Supporting Information S14) indicate that both processes are favorable for structures with \ce{Ni-O} coordination numbers just below 5. } 
 
-The vertical dotted line in Figure~\ref{fig:phase_diagram_Ni} indicates values of $\mu_{\ce{H2}}$ used during collection of the experimental d-PDF. The \ce{Ni4(OH)6.3H2O} (purple) and \ce{Ni4(OH)5(H).4H2O} (blue) structures fall along this line. While the \ce{Ni-O} coordination number of the \ce{Ni4(OH)6.3H2O} (purple) structure is 5.25, the coordination number of the \ce{Ni4(OH)5(H).4H2O} (blue) structure is notably lower at 4.25.  From Figures~\ref{fig:Ni-MOF-structures}b and~\ref{fig:Ni-structure-diagram}a, the ligand environments on the different \ce{Ni} ions in the \ce{Ni4(OH)5(H).4H2O} (blue) structure are highly asymmetric, with one \ce{Ni} ion comprising four \ce{OH} ligands, one comprising five \ce{OH} ligands, one comprising \ce{OH} and \ce{H} ligands, and another comprising \ce{OH} and \ce{H2O} ligands, one of which is involved in a hydrogen bonded chain of \ce{H2O} molecules. Interestingly, the \ce{Ni4(OH)5(H).4H2O} (blue) structure comprises a hydride ligand. As shown in Supporting Information Section S8, there are several structures of constant stoichiometry that have $\Delta F$ within 50~kJ/mol of the \ce{Ni4(OH)5(H).4H2O} (blue) structure, which suggests fluxionality is important under the chemical potentials where the \ce{Ni4(OH)5(H).4H2O} (blue) structure is stable. All of the competing structures comprise \ce{OH} and \ce{H2O} ligands, and none comprises a \ce{H} ligand.
-
-Two other structures on the phase diagram, \ce{Ni4(OH)3(H).H2O} (magenta) and \ce{Ni4(H)4} (red), also comprise hydride ligands (see Supporting Information Section S5). These structures have \ce{Ni-O} coordination numbers of 2.5 and 1.0, respectively, which are well below the value observed in experiments. Expansion of the phase diagram to higher and lower values of $\mu_{\text{H}_2}$ and $\mu_{\text{H}_2\text{O}}$ does not reveal any additional structures (or higher coordination numbers; see Supporting Information Section S4). These results suggest that, while hydride ligands are indeed stable under certain conditions, potentially including those under which the experimental d-PDF was collected, they exhibit \ce{Ni-O} coordination numbers that are too low to fully account for experimental observations.   
+The vertical dotted line in Figure~\ref{fig:phase_diagram_Ni} indicates values of $\mu_{\ce{H2}}$ used during collection of the experimental d-PDF. The \ce{Ni4(OH)6.3H2O} (purple) and \ce{Ni4(OH)5(H).4H2O} (blue) structures fall along this line. While the \ce{Ni-O} coordination number of the \ce{Ni4(OH)6.3H2O} (purple) structure is 5.25, the coordination number of the \ce{Ni4(OH)5(H).4H2O} (blue) structure is notably lower at 4.25.  From Figures~\ref{fig:Ni-MOF-structures}b and~\ref{fig:Ni-structure-diagram}a, the ligand environments on the different \ce{Ni} ions in the \ce{Ni4(OH)5(H).4H2O} (blue) structure are highly asymmetric, with one \ce{Ni} ion comprising four \ce{OH} ligands, one comprising five \ce{OH} ligands, one comprising \ce{OH} and \ce{H} ligands, and another comprising \ce{OH} and \ce{H2O} ligands, one of which is involved in a hydrogen bonded chain of \ce{H2O} molecules. \textcolor{red}{Interestingly, the \ce{Ni4(OH)5(H).4H2O} (blue) structure comprises a hydride ligand. Two other structures on the phase diagram, \ce{Ni4(OH)3(H).H2O} (magenta) and \ce{Ni4(H)4} (red), also comprise hydride ligands (see Supporting Information Section S5). These structures have even lower \ce{Ni-O} coordination numbers. Expansion of the phase diagram to higher and lower values of $\mu_{\text{H}_2}$ and $\mu_{\text{H}_2\text{O}}$ does not reveal any additional structures (or higher coordination numbers; see Supporting Information Section S4). These results suggest that, while hydride ligands are indeed stable under certain conditions, potentially including those under which the experimental d-PDF was collected, they exhibit \ce{Ni-O} coordination numbers that are too low to fully account for experimental observations.}   
 
 \subsection{Comparison of \ce{Ni-O}, \ce{Ni{\Compactcdots}Ni}, and \ce{Ni{\Compactcdots}Zr} peaks}
 
@@ -243,7 +241,7 @@ The last remaining feature of the d-PDFs is the \ce{Ni{\Compactcdots}Zr} peaks. 
 \section{Discussion}
 Our results suggest that the \ce{Ni} ions in \ce{Ni}-NU-1000 catalysts comprise \ce{OH}, \ce{H2O}, and possibly \ce{H} ligands and that asymmetries in the ligand environment lead to split \ce{Ni{\Compactcdots}Ni} peaks. At \ce{Ni-O} coordination numbers $\le$5, these asymmetries may be as simple as different numbers of \ce{H2O} ligands on the different \ce{Ni} ions. To illustrate this, we computed the d-PDF for the \ce{Ni4(OH)6.1H2O} (teal) structure (Figure~\ref{fig:dPDFs-graphic}c). This structure comprises just one \ce{H2O} ligand and the remainder \ce{OH} ligands (Figure~\ref{fig:Ni-structure-diagram}b) and has a \ce{Ni-O} coordination number of 4.75. Like the compositionally similar \ce{Ni4(OH)6.2H2O} (cyan) structure (\ce{Ni-O} coordination number = 5.0), the \ce{Ni4(OH)6.1H2O} (teal) structure exhibits split \ce{Ni{\Compactcdots}Ni} peaks. In contrast, the \ce{Ni4(OH)6.3H2O} (purple) and \ce{Ni4(OH)6.4H2O} (green) structures, which are also compositionally similar but have \ce{Ni-O} coordination numbers of 5.25 and 5.5, exhibit a single \ce{Ni{\Compactcdots}Ni} peak.   
 
-An alternative explanation for the observed \ce{Ni{\Compactcdots}Ni} peak splitting is that fluxionality\cite{Halder2020, Halder2020ensemble} is important for Ni-NU-1000 catalysts under catalytic hydrogenation conditions. To test this hypothesis, we constructed a d-PDF with contributions from multiple simulated structures based on their Boltzmann weights calculated from their relative free energies evaluated at various $\mu_{\ce{H2}}$ and $\mu_{\ce{H2O}}$ (see Supporting Information Section S7). An example of such a d-PDF is provided in Figure~\ref{fig:dPDFs-graphic}d. The d-PDF of this structure was constructed using chemical potentials near the boundaries between the \ce{Ni4(OH)6.3H2O} (purple) and \ce{Ni4(OH)6.4H2O} (green) structures in Figure~\ref{fig:phase_diagram_Ni} (i.e., $\Delta \mu_{\ce{H2}}$ = $-$250 kJ/mol and $\Delta \mu_{\ce{H2O}}$ = 205 kJ/mol). This Boltzmann weighted d-PDF exhibits a broad \ce{Ni{\Compactcdots}Ni} peak, suggesting that a distribution of ligand environments with subtly different \ce{H2O} contents could lead to split, or at least broadened \ce{Ni{\Compactcdots}Ni} peaks, even at \ce{Ni-O} coordination numbers $>$5. 
+\textcolor{red}{An alternative explanation for the observed \ce{Ni{\Compactcdots}Ni} peak splitting is that fluxionality is important for Ni-NU-1000 catalysts under catalytic hydrogenation conditions.\cite{Halder2020, Halder2020ensemble}} To test this hypothesis, we constructed a d-PDF with contributions from multiple simulated structures based on their Boltzmann weights calculated from their relative free energies evaluated at various $\mu_{\ce{H2}}$ and $\mu_{\ce{H2O}}$ (see Supporting Information Section S7). An example of such a d-PDF is provided in Figure~\ref{fig:dPDFs-graphic}d. The d-PDF of this structure was constructed using chemical potentials near the boundaries between the \ce{Ni4(OH)6.3H2O} (purple) and \ce{Ni4(OH)6.4H2O} (green) structures in Figure~\ref{fig:phase_diagram_Ni} (i.e., $\Delta \mu_{\ce{H2}}$ = $-$250 kJ/mol and $\Delta \mu_{\ce{H2O}}$ = 205 kJ/mol). This Boltzmann weighted d-PDF exhibits a broad \ce{Ni{\Compactcdots}Ni} peak, suggesting that a distribution of ligand environments with subtly different \ce{H2O} contents could lead to split, or at least broadened \ce{Ni{\Compactcdots}Ni} peaks, even at \ce{Ni-O} coordination numbers $>$5. 
 
 
 
@@ -253,22 +251,28 @@ An alternative explanation for the observed \ce{Ni{\Compactcdots}Ni} peak splitt
 %% Conclusions  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The ligand environment of a \ce{Ni} oxo catalyst supported in the MOF NU-1000 is explored using a combination of experiments and simulations. Prior results indicate that the \ce{Ni-O} coordination number is $\sim$5. We find that clusters that exhibit such high coordination comprise a significant number of \ce{OH} and \ce{H2O} ligands and are only achievable under appreciable \ce{H2O} chemical potential. Given that experiments were performed under hydrogenation conditions, this suggests that \ce{H2O} in the cluster comes from the NU-1000 support. Hypothetically, this \ce{H2O} is added to NU-1000 during AIM and remains even after thermal pretreatment. Comparisons of experimental and simulated \ce{Ni-O} coordination numbers, \ce{H2} chemical potentials, and d-PDFs suggest ligand environments comprise \ce{OH}, \ce{H2O}, and possibly \ce{H} ligands. Further, asymmetric distributions of ligands, either within the same cluster or amongst a distribution of clusters within NU-1000, cause \ce{Ni{\Compactcdots}Ni} and possibly \ce{Ni{\Compactcdots}Zr} peak splitting.      
+The ligand environment of a \ce{Ni} oxo catalyst supported in the MOF NU-1000 is explored using a combination of experiments and simulations. Prior results indicate that the \ce{Ni-O} coordination number is $\sim$5. We find that clusters that exhibit such high coordination comprise a significant number of \ce{OH} and \ce{H2O} ligands and are only achievable under appreciable \ce{H2O} chemical potential. Given that experiments were performed under hydrogenation conditions, this suggests that \ce{H2O} in the cluster comes from the NU-1000 support. \textcolor{red}{Hypothetically, this \ce{H2O} is added to NU-1000 during AIM and remains even after thermal pretreatment.} Comparisons of experimental and simulated \ce{Ni-O} coordination numbers, \ce{H2} chemical potentials, and d-PDFs suggest ligand environments comprise \ce{OH}, \ce{H2O}, \textcolor{red}{and possibly \ce{H} ligands}. Further, asymmetric distributions of ligands, either within the same cluster or amongst a distribution of clusters within NU-1000, cause \ce{Ni{\Compactcdots}Ni} and possibly \ce{Ni{\Compactcdots}Zr} peak splitting.      
 
-Interestingly, we only identified one stable structure comprising a \ce{Ni} hydride, i.e., structure \ce{Ni4(OH)5(H).4H2O} (blue), with a \ce{H2} chemical potential commensurate with hydrogenation conditions and conditions under which the experimental d-PDF was collected. However, the \ce{Ni-O} coordination number for this structure is notably lower at 4.25 than the experimentally observed value of $\sim$5. Further, the highly asymmetric ligand environment on this structure leads to three \ce{Ni{\Compactcdots}Ni} peaks, which is more than observed experimentally. Finally, there are several structures of constant stoichiometry with $\Delta F$ within 50~kJ/mol of this structure, suggesting that fluxionality is important at the chemical potentials where it is stable. All of these structures comprise \ce{OH} and \ce{H2O} ligands, and none comprises a hydride ligand. These results suggest that if structures with hydride ligands exist in the experimental structure, they are present in relatively low amounts compared to structures with \ce{OH} and \ce{H2O} ligands. Alternatively, hydrides may be transient in catalytic hydrogenation and oligomerization, as hypothesized by \citeauthor{Li2016sintering}, or the active site could involve \ce{O}/\ce{OH} or \ce{OH}/\ce{H2O} ligands rather than a hydride, as proposed by \citeauthor{Shabbir2020} Answering these questions is a topic of ongoing work.  
-
+Interestingly, we only identified one stable structure comprising a \ce{Ni} hydride, i.e., structure \ce{Ni4(OH)5(H).4H2O} (blue), with a \ce{H2} chemical potential commensurate with hydrogenation conditions and conditions under which the experimental d-PDF was collected. However, the \ce{Ni-O} coordination number for this structure is notably lower at 4.25 than the experimentally observed value of $\sim$5. Further, the highly asymmetric ligand environment on this structure leads to three \ce{Ni{\Compactcdots}Ni} peaks, which is more than observed experimentally. These results suggest that if structures with hydride ligands exist in the experimental structure, they are present in relatively low amounts compared to structures with \ce{OH} and \ce{H2O} ligands. Alternatively, hydrides may be transient in catalytic hydrogenation and oligomerization, as hypothesized by \citeauthor{Li2016sintering}, or the active site could involve \ce{O}/\ce{OH} or \ce{OH}/\ce{H2O} ligands rather than a hydride, as proposed by \citeauthor{Shabbir2020} Answering these questions is a topic of ongoing work.  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Author Contact Information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Author Contact Information}
-\textbf{Stephen P. Vicchio} - \textit{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, South Carolina 29634-0909, United States}
-
-\noindent \textbf{Zhihengyu Chen} - \textit{Department of Chemistry, Stony Brook University, Stony Brook, New York, 11794, United States}
-
-\noindent \textbf{Karena W. Chapman} - \textit{Department of Chemistry, Stony Brook University, Stony Brook, New York, 11794, United States}
-
-\noindent \textbf{Rachel B. Getman} - \textit{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, South Carolina 29634-0909, United States} 
-
+\textcolor{red}{
+\textbf{Stephen P. Vicchio} - \textit{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, South Carolina 29634-0909, United States} 
+}
+\\
+\textcolor{red}{
+\textbf{Zhihengyu Chen} - \textit{Department of Chemistry, Stony Brook University, Stony Brook, New York, 11794, United States} 
+}
+\\
+\textcolor{red}{
+\textbf{Karena W. Chapman} - \textit{Department of Chemistry, Stony Brook University, Stony Brook, New York, 11794, United States} 
+}
+\\
+\textcolor{red}{
+\textbf{Rachel B. Getman} - \textit{Department of Chemical and Biomolecular Engineering, Clemson University, Clemson, South Carolina 29634-0909, United States} 
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Conflict of Interest Statement
@@ -283,7 +287,8 @@ The authors declare no competing interests.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{acknowledgement}
 
-This work was initially supported as part of Inorganometallic Catalyst Design Center, an Energy Frontier Research Center (EFRC) funded by the U.S. Department of Energy, Office of Science, Basic Energy Sciences (DE-SC0012702), and subsequently as part of the Catalyst Design for Decarbonization Center EFRC (DE-SC0023383). SPV is also supported by a GAANN Fellowship (Award Number: P200A180076) from the United States Department of Education. SPV and RBG would like to acknowledge the Clemson Computing and Information Technology (CITI) Advanced Computing and Data Science (ACDS) group for the generous allotment of compute time on the Palmetto cluster. Experimental PDF measurements used beamline 11-ID-B of the Advanced Photon Source, a U.S. Department of Energy (DOE) Office of Science User Facility operated for the DOE Office of Science by Argonne National Laboratory under contract no. DE-AC02-06CH11357.
+This work was supported as part of the Inorganometallic Catalyst Design Center, an Energy Frontier Research Center funded by the US Department of Energy, Office of Science, Basic Energy Sciences, under award DE-SC0012702. SPV is also supported by a GAANN Fellowship (Award Number: P200A180076) from the United States Department of Education. SPV and RBG would like to acknowledge the Clemson Computing and Information Technology (CITI) Advanced Computing and Data Science (ACDS) group for the generous allotment of compute time on the Palmetto cluster.
+
 \end{acknowledgement}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -310,7 +315,7 @@ Further details in the computational parameters, \textit{ab initio} thermodynami
 \providecommand*\mcitethebibliography{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
   {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{70}
+\begin{mcitethebibliography}{69}
 \providecommand*\natexlab[1]{#1}
 \providecommand*\mciteSetBstSublistMode[1]{}
 \providecommand*\mciteSetBstMaxWidthForm[2]{}
@@ -797,13 +802,10 @@ Wang,~T.~C.; Vermeulen,~N.~A.; Kim,~I.~S.; Martinson,~A.~B.; Stoddart,~J.~F.;
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Platero-Prats \latin{et~al.}(2016)Platero-Prats, Mavrandonakis,
-  Gallington, Liu, Hupp, Farha, Cramer, and Chapman]{PlateroPrats2016}
-Platero-Prats,~A.~E.; Mavrandonakis,~A.; Gallington,~L.~C.; Liu,~Y.;
-  Hupp,~J.~T.; Farha,~O.~K.; Cramer,~C.~J.; Chapman,~K.~W. Structural
-  Transitions of the Metal-Oxide Nodes within Metal-Organic Frameworks: On the
-  Local Structures of NU-1000 and UiO-66. \emph{Journal of the American
-  Chemical Society} \textbf{2016}, \emph{138}, 4178--4185\relax
+\bibitem[Ye \latin{et~al.}(2017)Ye, Gagliardi, Cramer, and Truhlar]{Ye2017}
+Ye,~J.; Gagliardi,~L.; Cramer,~C.~J.; Truhlar,~D.~G. Single Ni atoms and Ni4
+  clusters have similar catalytic activity for ethylene dimerization.
+  \emph{Journal of Catalysis} \textbf{2017}, \emph{354}, 278--286\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -818,18 +820,20 @@ Farrow,~C.~L.; Juhas,~P.; Liu,~J.~W.; Bryndin,~D.; Boin,~E.~S.; Bloch,~J.;
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Ye \latin{et~al.}(2017)Ye, Gagliardi, Cramer, and Truhlar]{Ye2017}
-Ye,~J.; Gagliardi,~L.; Cramer,~C.~J.; Truhlar,~D.~G. Single Ni atoms and Ni4
-  clusters have similar catalytic activity for ethylene dimerization.
-  \emph{Journal of Catalysis} \textbf{2017}, \emph{354}, 278--286\relax
+\bibitem[Platero-Prats \latin{et~al.}(2016)Platero-Prats, Mavrandonakis,
+  Gallington, Liu, Hupp, Farha, Cramer, and Chapman]{PlateroPrats2016}
+Platero-Prats,~A.~E.; Mavrandonakis,~A.; Gallington,~L.~C.; Liu,~Y.;
+  Hupp,~J.~T.; Farha,~O.~K.; Cramer,~C.~J.; Chapman,~K.~W. Structural
+  Transitions of the Metal-Oxide Nodes within Metal-Organic Frameworks: On the
+  Local Structures of NU-1000 and UiO-66. \emph{Journal of the American
+  Chemical Society} \textbf{2016}, \emph{138}, 4178--4185\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
 \bibitem[Git(2022)]{GitHub-Ni4Project}
 Ni4-Cluster-Structure-Files. 2022;
-  \url{https://github.com/getman-research-group/Ni4-Cluster-Structure-Files},
-  [Online; accessed 2022-09-03]\relax
+  \url{https://github.com/getman-research-group/Ni4-Cluster-Structure-Files}\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -996,15 +1000,9 @@ Halder,~A.; Ha,~M.~A.; Zhai,~H.; Yang,~B.; Pellin,~M.~J.; Seifert,~S.;
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Zhai and Alexandrova(2017)Zhai, and Alexandrova]{Zhai2017}
-Zhai,~H.; Alexandrova,~A.~N. Fluxionality of Catalytic Clusters: When It
-  Matters and How to Address It. \emph{ACS Catalysis} \textbf{2017}, \emph{7},
-  1905--1911\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \end{mcitethebibliography}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 

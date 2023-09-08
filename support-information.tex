@@ -27,11 +27,11 @@
 \usepackage{verbatim}
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks=true,
-    citecolor= red,
-    linkcolor=blue,
-    urlcolor=blue, 
-    breaklinks=true
+    colorlinks= true,
+    citecolor= black, % red
+    linkcolor= black, % blue
+    urlcolor= blue, 
+    breaklinks= true
 }
 \usepackage{ulem}
 \usepackage{float}
@@ -110,7 +110,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[manuscript]{
 Supporting Information: \\
-Computational and Experimental Characterization of the Ligand Environment of a \ce{Ni}-Oxo Catalyst Cluster Supported in the Metal-Organic Framework NU-1000}
+Computational and Experimental Characterization of the Ligand Environment of a \ce{Ni}-Oxo Catalyst Supported in the Metal-Organic Framework NU-1000}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Some journals require a list of abbreviations or keywords to be
@@ -180,7 +180,6 @@ Computational and Experimental Characterization of the Ligand Environment of a \
         \caption{Diagram showing the assumed equilibria necessary to transform with \ce{H}, \ce{OH}, \ce{Ni} for the \textit{ab initio} thermodynamic analysis method. The assume assumed equilibria capture the operating conditions influences on the stability of the \ce{Ni} ion cluster.}
         \label{fig:SI-FPT-process-diagram}
     \end{figure}
-
 
     Figure~\ref{fig:SI-FPT-process-diagram} shows a schematic for \textit{ab initio} thermodynamic analysis,\cite{Reuter2003, Reuter2004, Grundner2015, Paolucci2016, Li2016, Getman2008, Mandal2020, Zuo2016, Tang2019} which is used to evaluate the stability of a \ce{Ni4}-cluster supported on NU-1000. We assume the \ce{Ni} ion cluster is in equilibrium with three different reservoirs, which allows for transformations with respect to \ce{H}, \ce{O}, and \ce{Ni}. Equilibrium with the bulk \ce{Ni} reservoir is turned off by assuming $\Delta N_{\ce{Ni}} = 0$, implying that the number of \ce{Ni} ions is fixed at four. We derive expressions relating the chemical potentials for each transformed species to their respective bulk reservoirs.   
 
@@ -323,10 +322,8 @@ The library was optimized at different \ce{Ni} spin states; the considered spin 
 \end{center}
 From Table \ref{tbl:spin_contamination}, the lowest energy structure is c) three singlet, one triplet \ce{Ni} ions; however, the structure is removed from the analysis because the ideal $S^{**}2$ and single $S^{**}2$ deviate. Therefore, the lowest energy structure for this particular configuration is the e) one singlet, three triplet \ce{Ni} ions. 
 
-
-
 \newpage
-\subsection{\ce{Ni-O} Coordination Numbers}
+\subsection{Ni-O Coordination Numbers}
 We report the \ce{Ni-O} coordination numbers for structures appearing on the phase diagram. The \ce{Ni-O} coordination numbers are determined by geometric criteria defined by the \ce{Ni-O} distance, which is between 1.9 {\AA} and 2.4 {\AA} for \ce{OH} and\ce{O} ligands. For \ce{H2O} ligands, we add an additional geometric criteria that includes the orientation of the \ce{H2O} ligand relative to the cluster. If the \ce{Ni-O} distance is below 2.4 {\AA}, the \ce{H2O} is coordinated. Additionally for \ce{H2O} ligands, if the \ce{Ni-O} distance is below 3.3 and the \ce{Ni-O} distance is less than the \ce{Ni-H} distances is coordinated to the cluster. We report the coordination numbers on a per \ce{Ni} basis, which is the average of the four \ce{Ni} ions present within the cluster.
 
 \newpage
@@ -684,7 +681,7 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
     \centering
     \includegraphics[width=0.75\textwidth]{zi-images/04-SI-images/2022-SI-cluster-gas-phase-calculation-schematic.png}
     \caption{
-        Atomic drawings showing the conversion a periodic structure to a cluster structure for DFT optimization. The cluster structure represents a gas phase DFT calculation that we tested in CP2K, given none of the framework being included in the calculation and the unit cell is expanded to a 50 {\AA} 50 {\AA} 50 {\AA} cubic box. The pyrene linkers were truncated and capped with H atoms, as described by the formate cluster model.\cite{Bernales2016}
+        Atomic drawings showing the conversion a periodic structure to a cluster structure for DFT optimization. The cluster structure represents a gas phase DFT calculation that we tested in CP2K, given none of the framework being included in the calculation and the unit cell is expanded to a 50 {\AA} x 50 {\AA} x 50 {\AA} cubic box. The pyrene linkers were truncated and capped with H atoms, as described by the formate cluster model.\cite{Bernales2016} The node structures are fixed entirely here, only allowing the \ce{Ni4} cluster to relax. This is the same procedure we used when performing the frequency calculations in the periodic calculations. 
     }
     \label{fig:SI-cluster-gas-phase-schematic}
 \end{figure}
@@ -709,7 +706,7 @@ Below is a sample CP2K input file. If the singlet spin state was desired for all
 \end{table}    
 \end{center}
 
-The conversion from a periodic \ce{Ni4} cluster to a gas phase \ce{Ni4} cluster is shown in Figure~\ref{fig:SI-cluster-gas-phase-schematic}. The electronic structure parameters for the gas phase \ce{Ni4} cluster calculations is the same as the computational parameters presented in SI S1.8. The unit cell for the gas phase parameters is expanded to a 50 {\AA} 50 {\AA} 50 {\AA} cubic box to represent the gas phase conditions. Table~\ref{tbl:alternate_model_energies_gas_phase} shows the $\Delta E_{\text{periodic}}$ calculated from periodic DFT calculations in CP2K and the $\Delta E_{\text{gas}}$ computed from the gas phase CP2K calculations. 
+The conversion from a periodic \ce{Ni4} cluster to a gas phase \ce{Ni4} cluster is shown in Figure~\ref{fig:SI-cluster-gas-phase-schematic}. The electronic structure parameters for the gas phase \ce{Ni4} cluster calculations is the same as the computational parameters presented in SI S1.8. The unit cell for the gas phase parameters is expanded to a 50 {\AA} x 50 {\AA} x 50 {\AA} cubic box to represent the gas phase conditions. Table~\ref{tbl:alternate_model_energies_gas_phase} shows the $\Delta E_{\text{periodic}}$ calculated from periodic DFT calculations in CP2K and the $\Delta E_{\text{gas}}$ computed from the gas phase CP2K calculations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Full d-PDF Diagrams for all structures on the phase diagram
@@ -730,7 +727,7 @@ The conversion from a periodic \ce{Ni4} cluster to a gas phase \ce{Ni4} cluster 
 %% Variable Ni Content Phase Diagram
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Variable \ce{Ni} Content Phase Diagram}
+\section{Variable Ni Content Phase Diagram}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.60\textwidth]{zi-images/04-SI-images/2021-SI-phase-diagram-trans_Ni.png}
@@ -762,7 +759,7 @@ Figure~\ref{fig:SI-variable-Ni-content} considered the thermodynamic landscape o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Phase Diagram Structures with Atomic and Schematic Representations}
-All thermodynamic minima structures according to \textit{ab initio} thermodynamic analysis are presented in Figures~S\ref{fig:SI-dPDF-green} to~S\ref{fig:SI-dPDF-red}. Each figure includes the (a) d-PDF, (b) the schematic drawing, and (c) the atomic rendering for that structure. 
+All thermodynamic minima structures according to \textit{ab initio} thermodynamic analysis are presented in Figures~\ref{fig:SI-dPDF-green} to~\ref{fig:SI-dPDF-red}. Each figure includes the (a) fixed unit cell d-PDFs, (b) the schematic drawing, and (c) the atomic rendering for that structure. 
 
 \begin{figure}[H]
     \centering
@@ -852,7 +849,7 @@ All thermodynamic minima structures according to \textit{ab initio} thermodynami
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Key Alternate Structures}
-Additionally, we identified key alternate structures that are not thermodynamic minima according to \textit{ab initio} thermodynamic analysis. These structures are shown in Figures~S\ref{fig:SI-dPDF-teal} and~S\ref{fig:SI-dPDF-maroon}. Each figure includes the (a) d-PDF, (b) the schematic drawing, and (c) the atomic rendering for that structure. 
+Additionally, we identified key alternate structures that are not thermodynamic minima according to \textit{ab initio} thermodynamic analysis. These structures are shown in Figures~\ref{fig:SI-dPDF-teal} and~\ref{fig:SI-dPDF-maroon}. Each figure includes the (a) d-PDF, (b) the schematic drawing, and (c) the atomic rendering for that structure. 
 
 \begin{figure}[H]
     \centering
@@ -906,7 +903,7 @@ We compute the free energy landscape of \ce{Ni4(OH)5(H).4H2O} (blue) and \ce{Ni4
     \centering
     \includegraphics[width=0.50\textwidth]{zi-images/04-SI-images/2022-SI-flux-blue.png}
     \caption{
-        The relative free energy referenced to the \ce{Ni4(OH)5(H).4H2O} (blue) structure. Alternative structures are plausible for this structure, suggesting that fluxionality may be important for this particular structure.
+        The relative free energy referenced to the \ce{Ni4(OH)5(H).4H2O} (blue) structure at standard conditions. Alternative structures are plausible for this structure, suggesting that fluxionality may be important for this particular structure. 
     }
     \label{fig:SI-flux-blue}
 \end{figure}
@@ -915,7 +912,7 @@ We compute the free energy landscape of \ce{Ni4(OH)5(H).4H2O} (blue) and \ce{Ni4
     \centering
     \includegraphics[width=0.50\textwidth]{zi-images/04-SI-images/2022-SI-flux-purple.png}
     \caption{
-        The relative free energy referenced to the \ce{Ni4(OH)6.3H2O} (purple) structure. Alternative structures are not plausible for this structure, suggesting that fluxionality probably is not important for this particular structure on the phase diagram. Note that these structures are within 100 kJ/mol of each other electronically, but including the vibrational contributions results in the large differences in free energy.
+        The relative free energy referenced to the \ce{Ni4(OH)6.3H2O} (purple) structure at standard conditions. Alternative structures are not plausible for this structure, suggesting that fluxionality probably is not important for this particular structure on the phase diagram. Note that these structures are within 100 kJ/mol of each other electronically, but including the vibrational contributions results in the large differences in free energy.
     }
     \label{fig:SI-flux-purple}
 \end{figure}
@@ -983,7 +980,7 @@ The heat maps for all thermodynamically relevant structures and select structure
 \begin{table}[H]
 \centering
   \setlength\tabcolsep{8pt}
-  \caption{Comparing Periodic and Gas Phase Reaction Energies}
+  \caption{Comparing Periodic and DFT + U Reaction Energies}
   \label{tbl:alternate_model_energies_DFTU}
   \begin{tabular}{lcccc}
     \hline
@@ -1010,9 +1007,7 @@ The heat maps for all thermodynamically relevant structures and select structure
 
 We evaluate the performance of the Hubbard model DFT + U scheme for the \ce{Ni4} clusters by including the Hubbard terms for the \ce{Ni} atoms within the system. We selected correction terms for \ce{NiO2} (U = 6.8667 eV and J = 1.23958 eV) from the \textit{Database of Hubbard U and J Values for TMOs}\cite{Hubbard_parameter_website} as formulated by \citeauthor{Moore2022} We add terms to the \ce{Ni} species within the CP2K input file and perform single-point energy calculations for all structures on the phase diagram. Geometry optimizations were not feasible in CP2K with the \textit{PLUS\_U\_METHOD LOWDIN} selection; however, we could not converge the SCF when using the \textit{PLUS\_U\_METHOD MULLIKEN}. The results presented in Table~\ref{tbl:alternate_model_energies_DFTU} and Figure~\ref{fig:SI-phase_diagram_DFTU} are from single point energy calculations only involving the DFT + U method; geometry optimizations with DFT + U were not feasible. 
 
-Figure~\ref{fig:SI-phase_diagram_DFTU} considers the DFT + U correction term. Starting from the converged geometries of the structures appearing on phase diagram (Figure~4 of the main text), the electronic energy was recalculated with the DFT + U formalism to evaluate the influence of U on the phase diagram structures. Figure~\ref{fig:SI-phase_diagram_DFTU} includes the electronic energy from the DFT + U calculation and the vibrational contributions to the free energy. We selected U and J parameters for \ce{NiO2} according to \textit{Database of Hubbard U and J Values for TMOs}\cite{Hubbard_parameter_website} as the U and J parameters of the \ce{Ni4} cluster.\cite{Moore2022} We were unable to optimize the geometries for the phase diagram structures due to limitations in the methods (Lowdin population analysis was implemented due to issues converging the electronic structure with Mulliken population analysis) ; therefore, only single point energies are calculated for these structures. 
-
-Large differences in Table~\ref{tbl:alternate_model_energies_DFTU} are observed between $\Delta E_{\text{periodic}}$ and $\Delta E_{\text{DFT + U}}$. These differences cannot be separated into contributions from the +U method versus the energies were computed from unconverged structures (due to now implement the +U method). However, we still construct a phase diagram with these energies from DFT + U combined with the vibrational free energy term that does not provide any new observations or conclusions. The conditions for $\Delta \mu_{\ce{H2}}$ and $\Delta \mu_{\ce{H2O}}$ are expanded from the Figure~4 to evaluate the influence of DFT + U on the phase diagram. A few structures at low \ce{Ni-O} coordination numbers are removed (\ce{Ni4(OH)4} (white) and \ce{Ni4(OH)3(H).H2O} (magenta)). However, all structures with \ce{Ni-O} above 3.25 remain, which are the structures that are in better agreement based on the experimentally observed \ce{Ni-O} coordination numbers. This finding suggests minimal influence of DFT + U on the free energy landscape for these \ce{Ni4} clusters. 
+Starting from the converged geometries of the structures appearing on phase diagram (Figure~4 of the main text), the electronic energy was recalculated with the DFT + U formalism to evaluate the influence of U on the phase diagram structures. The reaction energies ($\Delta E$) are computed in Table~\ref{tbl:alternate_model_energies_DFTU} for the periodic and DFT + U electronic energies. Large differences in Table~\ref{tbl:alternate_model_energies_DFTU} are observed between $\Delta E_{\text{periodic}}$ and $\Delta E_{\text{DFT + U}}$. These differences cannot be separated into contributions from the +U method versus the energies were computed from unconverged structures (due to now implementation the +U method). However, we still construct a phase diagram with these energies from DFT + U combined with the vibrational free energy term that does not provide any new observations or conclusions (Figure~\ref{fig:SI-phase_diagram_DFTU}). The conditions for $\Delta \mu_{\ce{H2}}$ and $\Delta \mu_{\ce{H2O}}$ are expanded from the Figure~4 to evaluate the influence of DFT + U on the phase diagram. A few structures at low \ce{Ni-O} coordination numbers are removed (\ce{Ni4(OH)4} (white) and \ce{Ni4(OH)3(H).H2O} (magenta)). However, all structures with \ce{Ni-O} above 3.25 remain, which are the structures that are in better agreement based on the experimentally observed \ce{Ni-O} coordination numbers. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1159,14 +1154,14 @@ Large differences in Table~\ref{tbl:alternate_model_energies_DFTU} are observed 
     \label{fig:SI-dPDF_unit_cell_magenta}
 \end{figure}
 
-% gray
+% red
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{zi-images/04-SI-images/2022-SI-dPDF-compare-gray.png}
+    \includegraphics[width=0.75\textwidth]{zi-images/04-SI-images/2022-SI-dPDF-compare-red.png}
     \caption{
-        The d-PDFs for \ce{Ni4} (gray) with variable unit cell (solid gray) and fixed unit cell (black), where the peaks of the variable unit cell (black) are labeled.
+        The d-PDFs for \ce{Ni4(H)4} (red) with variable unit cell (solid red) and fixed unit cell (black), where the peaks of the variable unit cell (black) are labeled.
     }
-    \label{fig:SI-dPDF_unit_cell_gray}
+    \label{fig:SI-dPDF_unit_cell_red}
 \end{figure}
 
 % gray
@@ -1202,53 +1197,53 @@ Large differences in Table~\ref{tbl:alternate_model_energies_DFTU} are observed 
 We allow the unit cell to relax for all structures appearing on the phase diagram, Figure 4 (main text), as well as the \ce{Ni4(OH)4(O).3H2O} (maroon) structure. Table~\ref{tbl:unit_cell_optimization_cell_parameters} and~\ref{tbl:unit_cell_optimization_energies} show the unit cell parameters and the energies for these unit cell optimizations. We observe negligible differences in both the unit cell parameters and the energies after the cell optimizations. Furthermore, the d-PDFs these new optimized structures are reported in Figures~\ref{fig:SI-dPDF_unit_cell_green} to \ref{fig:SI-dPDF_unit_cell_teal}; similarly, negligible changes in the d-PDF peak positions are observed when optimizing the unit cell parameters (black line) compared to the original the peak positions of the fixed unit cell (solid, colored line) for all structures. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Water Movement Check (node to cluster)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{ Energetics of Moving a Node Water Ligand from the Node to Cluster}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %% Water Movement Check (node to cluster)
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newpage
+% \section{ Energetics of Moving a Node Water Ligand from the Node to Cluster}
 
-\begin{center}
-\begin{table}[H]
-\centering
-  \setlength\tabcolsep{8pt}
-  \caption{Water Selection Configuration}
-  \label{tbl:water_selection_energies_purple_alt}
-  \begin{tabular}{lcc}
-    \hline
-        Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)} \\
-        \hline
-        \ce{Ni4(OH)6.3H2O} (purple)             & -4829.4227 &  0.0 \\
-        \ce{Ni4(OH)6.4H2O}-config\_1 (green)    & -4829.3949 & 73.2 \\
-        \ce{Ni4(OH)6.4H2O}-config\_2 (green)    & -4829.4059 & 44.3 \\
-        \hline
-    \end{tabular} \\
-    % \textsuperscript{a}unit cell parameters are fixed at $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$ \\
-    % \textsuperscript{b}unit cell parameters $a=b$ and $c$ are varied with $\alpha=\beta=\ang{90}$ and $\gamma=\ang{60}$ fixed
-\end{table}    
-\end{center}
+% \begin{center}
+% \begin{table}[H]
+% \centering
+%   \setlength\tabcolsep{8pt}
+%   \caption{Water Selection Configuration}
+%   \label{tbl:water_selection_energies_purple_alt}
+%   \begin{tabular}{lcc}
+%     \hline
+%         Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)} \\
+%         \hline
+%         \ce{Ni4(OH)6.3H2O} (purple)             & -4829.4227 &  0.0 \\
+%         \ce{Ni4(OH)6.4H2O}-config\_1 (green)    & -4829.3949 & 73.2 \\
+%         \ce{Ni4(OH)6.4H2O}-config\_2 (green)    & -4829.4059 & 44.3 \\
+%         \hline
+%     \end{tabular} \\
+%     % \textsuperscript{a}unit cell parameters are fixed at $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$ \\
+%     % \textsuperscript{b}unit cell parameters $a=b$ and $c$ are varied with $\alpha=\beta=\ang{90}$ and $\gamma=\ang{60}$ fixed
+% \end{table}    
+% \end{center}
 
-\begin{center}
-\begin{table}[H]
-\centering
-  \setlength\tabcolsep{8pt}
-  \caption{Water Selection Configuration}
-  \label{tbl:water_selection_energies_cyan_alt}
-  \begin{tabular}{lcc}
-    \hline
-        Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)} \\
-        \hline
-        \ce{Ni4(OH)6.2H2O} (cyan)                & -4812.1716 &  0.0 \\
-        \ce{Ni4(OH)6.3H2O}-config\_1 (purple)    & -4812.1410 & 80.1 \\
-        \ce{Ni4(OH)6.3H2O}-config\_2 (purple)    & -4812.1396 & 83.9 \\
-        \hline
-    \end{tabular} \\
-    % \textsuperscript{a}unit cell parameters are fixed at $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$ \\
-    % \textsuperscript{b}unit cell parameters $a=b$ and $c$ are varied with $\alpha=\beta=\ang{90}$ and $\gamma=\ang{60}$ fixed
-\end{table}    
-\end{center}
+% \begin{center}
+% \begin{table}[H]
+% \centering
+%   \setlength\tabcolsep{8pt}
+%   \caption{Water Selection Configuration}
+%   \label{tbl:water_selection_energies_cyan_alt}
+%   \begin{tabular}{lcc}
+%     \hline
+%         Structure &  \thead{Electronic Energy \\ (hartree)} & \thead{$\Delta$Electronic \\ Energy (kJ/mol)} \\
+%         \hline
+%         \ce{Ni4(OH)6.2H2O} (cyan)                & -4812.1716 &  0.0 \\
+%         \ce{Ni4(OH)6.3H2O}-config\_1 (purple)    & -4812.1410 & 80.1 \\
+%         \ce{Ni4(OH)6.3H2O}-config\_2 (purple)    & -4812.1396 & 83.9 \\
+%         \hline
+%     \end{tabular} \\
+%     % \textsuperscript{a}unit cell parameters are fixed at $a=b=40.611$ {\AA}, $c=15.990$ {\AA}, $\alpha=\beta=\ang{90}$, and $\gamma=\ang{60}$ \\
+%     % \textsuperscript{b}unit cell parameters $a=b$ and $c$ are varied with $\alpha=\beta=\ang{90}$ and $\gamma=\ang{60}$ fixed
+% \end{table}    
+% \end{center}
 
-Table~\ref{tbl:water_selection_energies_purple_alt} and \ref{tbl:water_selection_energies_cyan_alt} show the relative energies of structures with the same overall stoichiometry, but different \ce{Ni_4} clusters. \ce{H2O}-ligands were moved from adjacent NU-1000 nodes to increase the \ce{H2O}-ligands present on the cluster (i.e., \ce{Ni4(OH)6.3H2O} (purple) is converted to \ce{Ni4(OH)6.4H2O}-config\_1 (green) and \ce{Ni4(OH)6.4H2O}-config\_2 (green), and \ce{Ni4(OH)6.2H2O} (cyan) is converted to \ce{Ni4(OH)6.3H2O}-config\_1 (purple) and \ce{Ni4(OH)6.3H2O}-config\_2 (purple)). Both Table~\ref{tbl:water_selection_energies_purple_alt} and~\ref{tbl:water_selection_energies_cyan_alt} show that moving an \ce{H2O}-ligand from the MOF node to increase the \ce{H2O}-ligand content on the \ce{Ni4} cluster is thermodynamically unfavorable. 
+% Table~\ref{tbl:water_selection_energies_purple_alt} and \ref{tbl:water_selection_energies_cyan_alt} show the relative energies of structures with the same overall stoichiometry, but different \ce{Ni_4} clusters. \ce{H2O}-ligands were moved from adjacent NU-1000 nodes to increase the \ce{H2O}-ligands present on the cluster (i.e., \ce{Ni4(OH)6.3H2O} (purple) is converted to \ce{Ni4(OH)6.4H2O}-config\_1 (green) and \ce{Ni4(OH)6.4H2O}-config\_2 (green), and \ce{Ni4(OH)6.2H2O} (cyan) is converted to \ce{Ni4(OH)6.3H2O}-config\_1 (purple) and \ce{Ni4(OH)6.3H2O}-config\_2 (purple)). Both Table~\ref{tbl:water_selection_energies_purple_alt} and~\ref{tbl:water_selection_energies_cyan_alt} show that moving an \ce{H2O}-ligand from the MOF node to increase the \ce{H2O}-ligand content on the \ce{Ni4} cluster is thermodynamically unfavorable. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1261,68 +1256,71 @@ Table~\ref{tbl:water_selection_energies_purple_alt} and \ref{tbl:water_selection
     \centering
     \includegraphics[width=0.75\textwidth]{zi-images/04-SI-images/2022-SI-H2O_node_to_cluster.png}
     \caption{
-        A schematic drawing showing the the interconversion from a hydrogen bonded \ce{H2O} on an adjacent \ce{OH}/\ce{H2O} pair to the \ce{Ni4} cluster. Note that the hydrogen bonded \ce{H2O} ligand is not shown. The different configurations shown in Tables~\ref{tbl:water_selection_energies_green} to \ref{tbl:water_selection_energies_teal} represent the different initial configurations for \ce{H2O} ligand placement on the node. 
+        A schematic drawing showing the interconversion from a hydrogen bonded \ce{H2O} on an adjacent \ce{OH}/\ce{H2O} pair to the \ce{Ni4} cluster. Note that the hydrogen bonded \ce{H2O} ligand is not shown. The different configurations shown in Tables~\ref{tbl:water_selection_energies_green} to \ref{tbl:water_selection_energies_teal} represent the different initial configurations for \ce{H2O} ligand placement on the node. 
     }
     \label{fig:SI-H2O_node_to_ligand}
 \end{figure}
 
-% \begin{center}
+The \ce{H2O} transfer energy ($\Delta E_{\text{transfer}}$), which represents the energy of \ce{H2O} ligand transferring from the MOF node to the \ce{Ni4} cluster, is computed according to Eq.~\ref{eq:h2o_transfer_energy}:
+\begin{equation}
+    \begin{split}
+        [\text{MOF Node with } \ce{H2O}] + [\ce{Ni4} & \text{ Cluster missing } \ce{H2O}]   \\
+        & \ce{->[$\Delta E_{\text{transfer}}$]} [\ce{Ni4} \text{ Cluster with } \ce{H2O}] + [\text{MOF Node missing } \ce{H2O}]     
+    \end{split}
+    \label{eq:h2o_transfer_energy}
+\end{equation}
+
+The \ce{H2O} binding energy of a \ce{H2O} to the MOF node ($\Delta E_{\ce{H2O}}$) is computed according to Eq.~\ref{eq:h2o_binding_energy}:
+\begin{equation}
+     [\text{MOF Node missing } \ce{H2O}] + \ce{H2O} \ce{->[$\Delta E_{\text{\ce{H2O}}}$]} [\text{MOF Node with } \ce{H2O}]
+    \label{eq:h2o_binding_energy}
+\end{equation}
+
+Using the electronic energies presented in Tables~\ref{tbl:water_selection_energies_green} and ~\ref{tbl:water_selection_energies_purple}, which are for the \ce{Ni4(OH)6.4H2O} (green) and \ce{Ni4(OH)6.3H2O} (purple) structures appearing on the phase diagram respectively, the $\Delta E_{\text{transfer}}$ and $\Delta E_{\ce{H2O}}$ are computed. The findings are presented in Table~\ref{tbl:water_selection_energies_binding_transfer}. Additionally, we also computed the $\Delta E_{\ce{H2O}}$ for the \ce{Ni4(OH)6.1H2O} (teal) structure, which does not appear on the phase diagram as it is not a thermodynamic minima under any of the conditions explored, with the electronic energies for \ce{Ni4(OH)6.1H2O} (teal) are presented in Table~\ref{tbl:water_selection_energies_teal}. 
+
+\begin{center}
 \begin{table}[H]
 \centering
   \setlength\tabcolsep{5pt}
-  \caption{Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.4H2O} (green)}
+  \caption{Electronic Energies for Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.4H2O} (green)}
   \label{tbl:water_selection_energies_green}
-  \begin{tabular}{lccccc}
+  \begin{tabular}{lcc}
+    \hline
+        Structure & 
+        Reaction Nomenclature & 
+        \thead{$E$ \\ (hartree)} \\
+        \hline
+        \ce{Ni4(OH)6.4H2O} (green)                       &   \ce{Ni4} Cluster with \ce{H2O}     & -4846.6895  \\ 
+        \ce{Ni4(OH)6.3H2O} (purple)                      &   \ce{Ni4} Cluster missing \ce{H2O}  & -4829.4227  \\ 
+        \ce{Ni4(OH)6.3H2O}-alt\textsuperscript{a}        &   MOF Node with \ce{H2O}             & -4846.6864  \\ 
+        \ce{Ni4(OH)6.3H2O}-r\ce{H2O}\textsuperscript{b}  &   MOF Node missing \ce{H2O}          & -4829.4444  \\ 
+        \hline
+    \end{tabular} \\
+    \textsuperscript{a}The -alt indicates an \ce{H2O} ligand placed on an adjacent node. \\
+    \textsuperscript{b}The -r\ce{H2O} indicates the removal of an \ce{H2O} ligand placed on an adjacent node. 
+\end{table}    
+\end{center}
+
+\begin{center}
+\begin{table}[H]
+\centering
+  \setlength\tabcolsep{5pt}
+  \caption{Electronic Energies for Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.3H2O} (purple)}
+  \label{tbl:water_selection_energies_purple}
+  \begin{tabular}{lcc}
     \hline
         Structure &
-        \thead{$E_{\text{config}}$ \\ (hartree)} &
-        \thead{$E_{\text{config-rH2O}}$ \\ (hartree)} & 
-        \thead{$\Delta E_{\text{rel}}$ \\ (kJ/mol)\textsuperscript{a,b}} &
-        \thead{$\Delta E_{\text{transfer}}$ \\ (kJ/mol)\textsuperscript{c}} &
-        \thead{$\Delta E_{\text{\ce{H2O}}}$ \\ (kJ/mol)\textsuperscript{d,e}} \\
+        Reaction Nomenclature & 
+        \thead{$E$ \\ (hartree)} \\
         \hline
-        \ce{Ni4(OH)6.4H2O} (green)             & -4846.6895 &    -         &      -  &    -    &    -   \\
-        \ce{Ni4(OH)6.3H2O} (purple)            & -4829.4227 &    -         &      -  &    -    &    -   \\
-        \ce{Ni4(OH)6.3H2O}-config1             & -4846.6844 &  -4829.4161  &   -13.4 &    4.1  & -126.3 \\
-        \ce{Ni4(OH)6.3H2O}-config2             & -4846.6873 &  -4829.4429  &    -5.7 &  -58.6  &  -63.6 \\
-        \ce{Ni4(OH)6.3H2O}-config3             & -4846.6864 &  -4829.4444  &    -8.1 &  -65.0  &  -57.2 \\
+        \ce{Ni4(OH)6.3H2O} (purple)                      &   \ce{Ni4} Cluster with \ce{H2O}       & -4829.4227  \\ 
+        \ce{Ni4(OH)6.2H2O} (cyan)                        &   \ce{Ni4} Cluster missing \ce{H2O}    & -4812.1716  \\ 
+        \ce{Ni4(OH)6.2H2O}-alt\textsuperscript{a}        &   MOF Node with \ce{H2O}               & -4829.4364  \\
+        \ce{Ni4(OH)6.2H2O}-r\ce{H2O}\textsuperscript{b}  &   MOF Node missing \ce{H2O}            & -4812.1981  \\ 
         \hline
     \end{tabular} \\
-    \textsuperscript{a}Reference: \ce{Ni4(OH)6.4H2O} (green) \\
-    \textsuperscript{b} \ce{Ni4(OH)6.3H2O}\text{-config} \ce{->[$\Delta E_{\text{rel}}$]} \ce{Ni4(OH)6.4H2O} \\ 
-    \textsuperscript{c}\ce{Ni4(OH)6.3H2O}-config + \ce{Ni4(OH)6.3H2O} \ce{->[$\Delta E_{\text{transfer}}$]} \ce{Ni4(OH)6.3H2O}-config-rH2O + \ce{Ni4(OH)6.4H2O} \\
-    \textsuperscript{d}\ce{Ni4(OH)6.3H2O}-config-rH2O + E \ce{->[$\Delta E_{\text{\ce{H2O}}}$]} \ce{Ni4(OH)6.3H2O}-config \\
-    \textsuperscript{e}$E_{\ce{H2O}}=-17.2202$ hartree
-\end{table}    
-% \end{center}
-
-\begin{center}
-\begin{table}[H]
-\centering
-  \setlength\tabcolsep{8pt}
-  \caption{Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.3H2O} (purple)}
-  \label{tbl:water_selection_energies_purple}
-  \begin{tabular}{lccccc}
-    \hline
-    Structure &
-    \thead{$E_{\text{config}}$ \\ (hartree)} &
-    \thead{$E_{\text{config-rH2O}}$ \\ (hartree)} & 
-    \thead{$\Delta E_{\text{rel}}$ \\ (kJ/mol)\textsuperscript{a,b}} &
-    \thead{$\Delta E_{\text{transfer}}$ \\ (kJ/mol)\textsuperscript{c}} &
-    \thead{$\Delta E_{\text{\ce{H2O}}}$ \\ (kJ/mol)\textsuperscript{d,e}} \\
-        \hline
-        \ce{Ni4(OH)6.3H2O} (purple)  & -4829.4227 &        -      &   -   &    -     &    -  \\
-        \ce{Ni4(OH)6.2H2O} (cyan)    & -4812.1716 &        -      &   -   &    -     &    -  \\
-        \ce{Ni4(OH)6.2H2O}-config1   & -4829.4323 &   -4812.1908  &  25.0 &  -25.4   & -55.9 \\
-        \ce{Ni4(OH)6.2H2O}-config2   & -4829.4290 &   -4812.1907  &  16.4 &  -34.0   & -47.3 \\
-        \ce{Ni4(OH)6.2H2O}-config3   & -4829.4363 &   -4812.1981  &  35.7 &  -34.0   & -47.2 \\
-        \hline
-    \end{tabular} \\
-    \textsuperscript{a}Reference: \ce{Ni4(OH)6.3H2O} (purple) \\
-    \textsuperscript{b}$\Delta E = E_{\ce{Ni4(OH)6.3H2O}} - E_{\ce{Ni4(OH)6.2H2O}\text{-config}}$ \\ 
-    \textsuperscript{c}\ce{Ni4(OH)6.2H2O}-config + \ce{Ni4(OH)6.2H2O} \ce{->[$\Delta E_{\text{transfer}}$]} \ce{Ni4(OH)6.2H2O}-config-rH2O + \ce{Ni4(OH)6.3H2O} \\
-    \textsuperscript{d}\ce{Ni4(OH)6.2H2O}-config-rH2O + \ce{H2O} \ce{->[$\Delta E_{\text{\ce{H2O}}}$]} \ce{Ni4(OH)6.2H2O}-config \\
-    \textsuperscript{e}$E_{\ce{H2O}}=-17.2202$ hartree
+    \textsuperscript{a}The -alt indicates an \ce{H2O} ligand placed on an adjacent node. \\
+    \textsuperscript{b}The -r\ce{H2O} indicates the removal of an \ce{H2O} ligand placed on an adjacent node.
 \end{table}    
 \end{center}
 
@@ -1330,30 +1328,47 @@ Table~\ref{tbl:water_selection_energies_purple_alt} and \ref{tbl:water_selection
 \begin{table}[H]
 \centering
   \setlength\tabcolsep{8pt}
-  \caption{Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.1H2O} (teal)}
+  \caption{Electronic Energies for Alternate \ce{H2O}-ligands for \ce{Ni4(OH)6.1H2O} (teal)}
   \label{tbl:water_selection_energies_teal}
-  \begin{tabular}{lcccc}
+  \begin{tabular}{lcc}
     \hline
     Structure &
-    \thead{Electronic Energy \\ (hartree)} &
-    \thead{$E_{\text{config-rH2O}}$ \\ (hartree)} & 
-    \thead{$\Delta E_{\text{rel}}$ \\ (kJ/mol)\textsuperscript{a,b}} &
-    \thead{$\Delta E_{\text{\ce{H2O}}}$ \\ (kJ/mol)\textsuperscript{c,d}} \\
+    Reaction Nomenclature & 
+    \thead{$E$ \\ (hartree)} \\
         \hline
-        \ce{Ni4(OH)6.1H2O} (teal)        & -4794.9465 &      0.0     &       -  &    -    \\
-        \ce{Ni4(OH)6}-config1 (white)    & -4794.9327 &  -4777.6987  &   -36.2  &   -36.2 \\
-        \ce{Ni4(OH)6}-config2 (white)    & -4794.9380 &  -4777.7040  &   -22.3  &   -36.3 \\
-        \ce{Ni4(OH)6}-config3 (white)    & -4794.9433 &  -4777.6995  &    -8.4  &   -62.1 \\
+        \ce{Ni4(OH)6.1H2O} (teal)                    &   \ce{Ni4} Cluster with \ce{H2O}       & -4794.9465  \\ 
+        \ce{Ni4(OH)6}-alt\textsuperscript{a}         &   MOF Node with \ce{H2O}               & -4794.9433  \\
+        \ce{Ni4(OH)6}-r\ce{H2O}\textsuperscript{b}   &   MOF Node missing \ce{H2O}            & -4777.6995  \\ 
         \hline
     \end{tabular} \\
-    \textsuperscript{a}Reference: \ce{Ni4(OH)6.1H2O} (teal) \\
-    \textsuperscript{b}$\Delta E = E_{\ce{Ni4(OH)6.1H2O}} - E_{\ce{Ni4(OH)6}\text{-config}}$ \\  
-    \textsuperscript{c}\ce{Ni4(OH)6}-config-rH2O + \ce{H2O} \ce{->[$\Delta E_{\text{\ce{H2O}}}$]} \ce{Ni4(OH)6}-config \\
-    \textsuperscript{d}$E_{\ce{H2O}}=-17.2202$ hartree    
+    \textsuperscript{a}The -alt indicates an \ce{H2O} ligand placed on an adjacent node. \\
+    \textsuperscript{b}The -r\ce{H2O} indicates the removal of an \ce{H2O} ligand placed on an adjacent node. 
 \end{table}    
 \end{center}
 
-Tables~\ref{tbl:water_selection_energies_green} to \ref{tbl:water_selection_energies_teal} show the relative energies of structures with the same overall stoichiometry, but different \ce{Ni_4} clusters. A single, hydrogen bonded \ce{H2O}-ligand was moved from the \ce{OH}/\ce{H2O} ligand pairs on an adjacent node to the \ce{Ni4} cluster to capture the thermodynamics of \ce{H2O}-ligands interchanging from the node and the cluster. We simulate different configurations to account for \ce{H2O}-ligand placement on the node (Figure~\ref{fig:SI-H2O_node_to_ligand}). $\Delta E < 0$ indicates \ce{H2O} ligand on the node is more favorable, whereas $\Delta E > 0$ indicate the \ce{H2O} ligand on the cluster is more favorable. The results presented in Tables~\ref{tbl:water_selection_energies_green} to \ref{tbl:water_selection_energies_teal} suggest that in some circumstances \ce{H2O} moving from the node to the cluster is thermodynamically favorable. Additionally, $E_{\text{\ce{H2O}}}$ represents the \ce{H2O} binding energy of the free \ce{H2O} ligand anchored to the node (as shown in Tables~\ref{tbl:water_selection_energies_green} to \ref{tbl:water_selection_energies_teal}). The average $E_{\text{\ce{H2O}}}$ for free a \ce{H2O} ligand hydrogen bonding the accessible \ce{-OH}/\ce{-OH2} ligands of an adjacent node is -59.1 kJ/mol. 
+\begin{center}
+\begin{table}[H]
+\centering
+  \setlength\tabcolsep{8pt}
+  \caption{Computed $\Delta E_{\text{transfer}}$ and $\Delta E_{\text{\ce{H2O}}}$}
+  \label{tbl:water_selection_energies_binding_transfer}
+  \begin{tabular}{lcc}
+    \hline
+    Structure &
+    \thead{$\Delta E_{\text{transfer}}$ \\ (kJ/mol)\textsuperscript{a}} &
+    \thead{$\Delta E_{\text{\ce{H2O}}}$ \\ (kJ/mol)\textsuperscript{b}} \\
+        \hline
+           \ce{Ni4(OH)6.4H2O} (green)     &     -65.0    &  -57.2 \\ 
+           \ce{Ni4(OH)6.3H2O} (purple)    &     -34.0    &  -47.2 \\
+           \ce{Ni4(OH)6.1H2O} (teal)      &       -      &  -62.1   \\ 
+        \hline
+    \end{tabular} \\
+    \textsuperscript{a}Computed according to Eq.~\ref{eq:h2o_transfer_energy} \\
+    \textsuperscript{b}Computed according to Eq.~\ref{eq:h2o_binding_energy} 
+\end{table}    
+\end{center}
+
+Table~\ref{tbl:water_selection_energies_binding_transfer} shows the $\Delta E_{\text{transfer}}$ and the $\Delta E_{\text{\ce{H2O}}}$ for a single, hydrogen bonded \ce{H2O}-ligand was moved from the \ce{OH}/\ce{H2O} ligand pairs on an adjacent node to the \ce{Ni4} cluster to capture the thermodynamics of \ce{H2O}-ligands interchanging from the node and the cluster. We simulate different configurations to account for \ce{H2O}-ligand placement on the node (Figure~\ref{fig:SI-H2O_node_to_ligand}), but only present the lowest energy configurations (denoted -alt) is considered. We also consider removing this single, hydrogen bonded \ce{H2O} ligand (denoted -r\ce{H2O}). The results presented in Table~\ref{tbl:water_selection_energies_binding_transfer} suggest that in some circumstances \ce{H2O} moving from the node to the cluster is thermodynamically favorable given that the average $E_{\text{transfer}}$ is -53.7 kJ/mol, and the average $E_{\text{\ce{H2O}}}$ for a free \ce{H2O} ligand hydrogen bonding the accessible \ce{-OH}/\ce{-OH2} ligands to the cluster is -52.2 kJ/mol. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% The appropriate \bibliography command should be placed here.
